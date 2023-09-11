@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('fontes/Inter/Inter-VariableFont_slnt\,wght.ttf') format('truetype');
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Inter';
+    background-image: url('imgs/cabecalho.png');
+    background-repeat: no-repeat;
+    /*background-size: 100%;*/
+    background-size: auto 300px;
+    /*background-attachment: fixed;*/
+    background-position: center top;
+    background-color: beige;
+}
+
+#geral {
+    width: 100%;
+    /*background-color: beige;*/
+    padding-bottom: 20px;
+}
+
+#central {
+    max-width: 1100px;
+    /*background-color: white;*/
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 300px;
+    padding-bottom: 20px;
+}
+
+#top {
+    /*min-height: 30%;*/
+    width: 100%;
+    text-align: center;
+    /*display: flex;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#titulo{
+    font-size: 200% !important;
+    color: white;
+}
+
+#subtitulo{
+    font-size: 150%;
+    color: white;
+}
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!--<script type="text/javascript" src="jquery/code.jquery.com_jquery-3.7.1.min.js">-->
+    <script type="text/javascript">
+        /*$(document).ready(function() {
+            var height = $("#top").height();
+            console.log(height);
+            alert(height);
+        });*/
+        var largDoc = window.innerWidth;
+        var elemento = document.getElementById('#top');
+        console.log(elemento)
+        alert((largDoc/6)+"px");
+        var calc = (largDoc/6);
+        elemento.style.height  = 120 + 'px';
+
+    </script>
+</head>
+<body>
+    <div id="geral">
+        <div class='' id="central">
+            <div id="top">
+                    <div id="form">
+                        <span id="titulo">Sei! Sistema Eletrônico de Informações</span><br>
+                        <span id="subtitulo">Perguntas frequentes</span>
+                        <form id="pesq" action="pesquisar.php">
+                            <input type="text" id="duvida" style="width: calc(100% - 170px); height:24px;">
+                            <input type="submit" id="pesquisar" value="Pesquisar" style="width:150px; height:30px;">    
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </div>
+</body>
+</html>
