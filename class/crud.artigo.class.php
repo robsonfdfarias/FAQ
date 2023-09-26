@@ -90,6 +90,7 @@ class CRUD{
         for($i=0; $i<count($array2); $i++){
             $sql = $sql." OR tags LIKE ?";
         }
+        //echo $sql;
         
         $obj = DB::conn()->prepare($sql);
         $dados[] = "%".$original."%";
@@ -101,6 +102,7 @@ class CRUD{
         if($obj->execute($dados)){
             $num = $obj->rowCount();
             if($num>0){
+                $categoria = new Categoria();
                 while($linha=$obj->fetchObject()){
                     echo '<div class="questao">
                             <span class="tituloQuestao"><a href="artigo.php?id='.$linha->categoria.'">'.$linha->titulo.'</a></span><br>
@@ -150,6 +152,7 @@ class CRUD{
                     <header id="titulo">'.$linha->titulo.'</header>
                     <nav>
                         <a href="index.php">HOME</a> -> 
+                        <a href="perguntasFrequentes.php">Perguntas Frequentes</a> -> 
                         <a href="categoria.php?id='.$linha->categoria.'">'.$categ->getCatById($linha->categoria).'</a>
                     </nav>
                     

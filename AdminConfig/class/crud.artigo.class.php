@@ -137,6 +137,7 @@ class CRUD{
                     <header id="titulo">'.$linha->titulo.'</header>
                     <nav>
                         <a href="index.php">HOME</a> -> 
+                        <a href="perguntasFrequentes.php">Perguntas Frequentes</a> -> 
                         <a href="categoria.php?id='.$linha->categoria.'">'.$categ->getCatById($linha->categoria).'</a>
                     </nav>
                     
