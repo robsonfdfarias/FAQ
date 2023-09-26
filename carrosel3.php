@@ -75,7 +75,7 @@
         }
 
         .btnCarossel:hover{
-            background: rgba(20,20,20,.65);
+            background-color: rgba(20,20,20,.65);
 
             #seta{
                 box-shadow: 2px -2px 0 1px #fff inset;
@@ -87,22 +87,41 @@
 
         .BtnBack{
             left: 0;
+                background-image: url('imgs/anterior.png');
+                background-repeat: no-repeat;
+                /*background-size: 100%;*/
+                background-size: auto 35px;
+                /*background-attachment: fixed;*/
+                background-position: center center;
+                transition: ease-in-out 0.3s;
 
             #seta{
+
                 position: absolute;
-            padding: 17%;
-            box-shadow: 2px -2px 0 -1px #fff inset;
-            border: solid transparent;
-            border-width: 0 0 2px 2px;
-            margin: 0 auto;
-            opacity: 0;
-            transition: box-shadow 100ms;
-            transform: rotate(45deg);
+                padding: 17%;
+                box-shadow: 2px -2px 0 -1px #fff inset;
+                border: solid transparent;
+                border-width: 0 0 2px 2px;
+                margin: 0 auto;
+                opacity: 0;
+                transition: box-shadow 100ms;
+                transform: rotate(45deg);
             }
+        }
+        .BtnBack:hover{
+            background-size: auto 45px;
+            transition: ease-in-out 0.3s;
         }
 
         .BtnNext{
             right: 0;
+                background-image: url('imgs/proximo.png');
+                background-repeat: no-repeat;
+                /*background-size: 100%;*/
+                background-size: auto 35px;
+                /*background-attachment: fixed;*/
+                background-position: center center;
+                transition: ease-in-out 0.3s;
             
             #seta{
                 position: absolute;
@@ -115,6 +134,10 @@
                 transition: box-shadow 100ms;
                 transform: rotate(225deg); 
             }
+        }
+        .BtnNext:hover{
+            background-size: auto 45px;
+            transition: ease-in-out 0.3s;
         }
     </style>
 </head>
@@ -131,6 +154,7 @@
       <div class="item"><a href="perguntasFrequentes.php"><img src="imgs/perguntas-frequentes.png" alt="img" width="100%"></a></div>
       <div class="item"><a href="https://www.escolavirtual.gov.br/curso/74"><img src="imgs/cursoSei.png" alt="img" width="100%"></a></div>
       <div class="item"><a href="coisasParaSaberSei.php"><img src="imgs/curiosidadesSei.png" alt="img" width="100%"></a></div>
+      <div class="item"><a href="anexos/POP-Procedimento-Operacional-Padrao.pdf" target="_blank"><img src="imgs/manual.png" alt="img" width="100%"></a></div>
       <!--<div class="item">3</div>
       <div class="item">4</div>
       <div class="item">5</div>
@@ -240,9 +264,9 @@
             var container = document.getElementById("container");
             var item = document.getElementsByClassName("item")[0];
             let style = window.getComputedStyle(item);
-            console.log(style.width);
+            //console.log(style.width);
             let heig = parseInt(style.width)*0.5;
-            console.log(heig+"px;")
+            //console.log(heig+"px;")
             secCar.setAttribute("style", "height: "+heig+"px;")
             container.setAttribute("style", "height: "+heig+"px;")
         }
@@ -257,6 +281,19 @@
                                 roda()
                             }, tempo);
         });
+
+        var itens = document.getElementsByClassName("item");
+        for(i=0; i<itens.length; i++){
+            itens[i].addEventListener("mouseover", function(){
+                clearInterval(intervalo);
+            });
+            itens[i].addEventListener("mouseout", function(){
+                roda();
+                intervalo = setInterval(() => {
+                                roda()
+                            }, tempo);
+            });
+        }
     </script>
 </body>
 </html>

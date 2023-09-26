@@ -7,9 +7,22 @@
     <!--<script type="text/javascript" src="jquery/code.jquery.com_jquery-3.7.1.min.js">-->
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="shortcut icon" href="imgs/logo_sei_93x60.ico" type="image/x-icon" />
-    <style>
-        
-    </style>
+    <script type="text/javascript">
+        /*function resizeRobson(){
+            //alert("sdafdfad");
+            var elemento = document.getElementById('top');
+            console.log(elemento+"-----");
+            var calcula = 260-parseInt(elemento.clientHeight);
+            calcula = calcula/2;
+            console.log(calcula+" ---");
+            elemento.style.paddingTop  = calcula + 'px';
+            elemento.style.paddingBottom  = calcula + 'px';
+        }
+        window.addEventListener('resize', function(){
+            resizeRobson();
+        });
+        window.onload = resizeRobson();*/
+    </script>
 </head>
 <body>
     <div id="geral">
@@ -35,7 +48,7 @@
                                     <tr><td colspan="2"><span id="tituloRedSocial">Redes Sociais</span></td></tr>
                                     <tr>
                                         <td><img src="imgs/youtube.svg" alt="Acesse nosso canal do Youtube" height="30"></td>
-                                        <td><span id="texto"><a href="#">Acesse nosso canal do Youtube</a></span></td>
+                                        <td><span id="texto"><a href="https://www.youtube.com/@InformaticacomRobsonFarias">Acesse nosso canal do Youtube</a></span></td>
                                     </tr>
                                     <tr>
                                         <td><img src="imgs/instagram.svg" alt="Acesse nosso canal do Instagram" height="30"></td>
@@ -53,22 +66,15 @@
             </div>
 
             <div id="itemdois">
-                <h3>Artigos recentes</h3><hr id="recentes"><br>
+                <h3 style="padding-left: 10px;">Postagens recentes</h3><hr id="recentes"><br>
                 <?php
+                    include_once("class/crud.artigo.class.php");
+                    $obj2 = new CRUD();
                     $obj2->selectArtigos();
                 ?>
                 
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        var elemento = document.getElementById('top');
-        var calcula = 260-elemento.clientHeight;
-        calcula = calcula/2;
-        console.log(calcula+" ---");
-        elemento.style.paddingTop  = calcula + 'px';
-        elemento.style.paddingBottom  = calcula + 'px';
-
-    </script>
 </body>
 </html>

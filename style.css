@@ -41,6 +41,7 @@ body{
     margin-right: auto;
     min-height: 300px;
     padding-bottom: 20px;
+    padding-top: 60px;
 }
 
 #top {
@@ -75,7 +76,7 @@ body{
 
 div.objitensum {
     width: 33%;
-    height: 400px;
+    min-height: 400px;
     background-color: #fff;
     margin: 5px;
     padding: 0px;
@@ -119,7 +120,7 @@ div.objitensum {
 
 #texto{
     width:calc(100%-10px);
-    height: 300px;
+    min-height: 150px;
     margin-top: 5px;
     padding: 10px;
 }
@@ -165,6 +166,8 @@ div.objitensum {
     width: calc(100% - 10px);
     padding: 5px;
     background-color: white;
+    margin-top: 15px;
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
 }
 
 .questao{
@@ -246,7 +249,7 @@ hr#recentes{
 
 
 #redes{
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 @media screen and (min-width: 769px) {
@@ -328,11 +331,61 @@ table#principal{
 
 #redeSocial table tr td img{
     filter: invert(25%) sepia(11%) saturate(4040%) hue-rotate(99deg) brightness(93%) contrast(91%);
+    transition: ease-in-out 0.5s;
 }
 #redeSocial table tr td img:hover{
     filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+    transition: ease-in-out 0.5s;
 }
 #tituloRedSocial {
     font-size: 1.5rem;
     color: #0c582c;
+}
+
+span#categoria{
+    float: right;
+}
+
+#artigo{
+    background-color: #fff;
+    padding: 15px;
+}
+
+#artigo header#titulo{
+    font-size: 2rem;
+    color: #0c582c;
+    text-align: left;
+    font-weight: bold;
+}
+
+#artigo header#data{
+    color: #a0a0a0;
+    text-align: left;
+    font-weight: bold;
+}
+
+section#cat{
+    text-align: left;
+    border-top: 1px solid #a0a0a0;
+    width: 200px;
+    padding: 10px;
+}
+#artigo nav{
+    text-align: left;
+    margin: 20px;
+}
+#artigo nav a{
+    text-decoration: none;
+    color: #0c582c;
+    font-weight: bold;
+}
+#artigo nav a:hover{
+    color: #04c052;
+    font-size: 1.3rem;
+}
+#artigo article{
+    padding-bottom: 10px;
+}
+span#catSpan{
+    font-weight: bold;
 }

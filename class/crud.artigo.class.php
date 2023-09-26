@@ -4,6 +4,7 @@ class CRUD{
     function __construct(){
         include_once("conn.php");
         include_once("DB.class.php");
+        include_once("crud.categoria.class.php");
         DB::conn();
     }
 
@@ -33,16 +34,18 @@ class CRUD{
 
 
     function selectPrioridades(){
-        $obj = DB::conn()->prepare("SELECT * FROM artigo where prioridade='sim' LIMIT 3");
+        $obj = DB::conn()->prepare("SELECT * FROM artigo where prioridade='sim' ORDER BY id DESC LIMIT 3");
         if($obj->execute()){
             $numRows = $obj->rowCount();
+            $categoria = new Categoria();
             if($numRows>0){
                 while($linha = $obj->fetchObject()){
                     echo '<div class="objitensum">
-                            <div id="img" style="background-image:url(\'imgs/'.$linha->img.'\');"></div>
+                            <div id="img" style="background-image:url(\'imagens/'.$linha->img.'\');"></div>
                             <div id="texto">
-                                <span id="tituloItem"><a href="#">'.$linha->titulo.'</a></span><hr>
-                                <span id="descItem">'.substr($linha->resumo, 0,120).'... <br><a href="">LER MAIS</a></span>
+                                <span id="tituloItem"><a href="artigo.php?id='.$linha->id.'">'.$linha->titulo.'</a></span><hr>
+                                <span id="categ"><i>Categoria: <a href="categoria.php?id='.$linha->categoria.'">'.$categoria->getCatById($linha->categoria).'</a></i><br></span>
+                                <span id="descItem">'.substr($linha->resumo, 0,120).'... <br><a href="artigo.php?id='.$linha->id.'">LER MAIS</a></span>
                             </div>
                         </div>';
                 }
@@ -51,14 +54,17 @@ class CRUD{
     }
 
     function selectArtigos(){
-        $obj = DB::conn()->prepare("SELECT * FROM artigo LIMIT 8");
+        $obj = DB::conn()->prepare("SELECT * FROM artigo ORDER BY id DESC LIMIT 0,8");
         if($obj->execute()){
             $numRows = $obj->rowCount();
+            $categoria = new Categoria();
             if($numRows>0){
                 while($linha = $obj->fetchObject()){
                     echo '<div class="questao">
-                            <span class="tituloQuestao"><a href="#">'.$linha->titulo.'</a></span><br>
-                            <span class="descQuestao">'.$linha->resumo.'<br><a href="#">Ler o artigo completo</a></span>
+                            <span id="categoria"><i>Categoria: <a href="categoria.php?id='.$linha->categoria.'">'.$categoria->getCatById($linha->categoria).'</a></i><br></span>
+                            <span class="tituloQuestao"><a href="artigo.php?id='.$linha->id.'">'.$linha->titulo.'</a></span><br>
+                            <hr style="width:100%; height:50%;">
+                            <span class="descQuestao">'.$linha->resumo.'<br><a href="artigo.php?id='.$linha->id.'">Ler o artigo completo</a></span>
                         </div>';
                 }
             }
@@ -97,8 +103,9 @@ class CRUD{
             if($num>0){
                 while($linha=$obj->fetchObject()){
                     echo '<div class="questao">
-                            <span class="tituloQuestao"><a href="#">'.$linha->titulo.'</a></span><br>
-                            <span class="descQuestao">'.$linha->resumo.'<br><a href="#">Ler o artigo completo</a></span>
+                            <span class="tituloQuestao"><a href="artigo.php?id='.$linha->categoria.'">'.$linha->titulo.'</a></span><br>
+                            <span id="categoria"><i>Categoria: <a href="categoria.php?id='.$linha->categoria.'">'.$categoria->getCatById($linha->categoria).'</a></i><br></span>
+                            <span class="descQuestao">'.$linha->resumo.'<br><a href="artigo.php?id='.$linha->categoria.'">Ler o artigo completo</a></span>
                         </div>';
                 }
             }else{
@@ -107,6 +114,57 @@ class CRUD{
         }
     }
 
+
+    function getArtByCat($idCat){
+        $objCateg = DB::conn()->prepare("SELECT * FROM artigo WHERE categoria=?");
+        if($objCateg->execute(array($idCat))){
+            $nr = $objCateg->rowCount();
+            if($nr>0){
+                while($linha = $objCateg->fetchObject()){
+                    echo '<div class="questao">
+                            <span class="tituloQuestao"><a href="artigo.php?id='.$linha->categoria.'">'.$linha->titulo.'</a></span><br>
+                            <span class="descQuestao">'.$linha->resumo.'<br><a href="artigo.php?id='.$linha->categoria.'">Ler o artigo completo</a></span>
+                        </div>';
+                }
+            }else{
+                echo "Nenhum artigo encontrado nessa categoria";
+            }
+        }else{
+            echo "Erro na conexão com a base de dados!";
+        }
+    }
+
+    function getArtById($id){
+        $obj = DB::conn()->prepare("SELECT * FROM artigo WHERE id=?");
+        if($obj->execute(array($id))){
+            $nr=$obj->rowCount();
+            if($nr>0){
+                $categ = new Categoria();
+                $linha = $obj->fetchObject();
+                if($linha->dataAlter!=null || $linha->dataAlter!=''){
+                    $dataAlter = "Ultima atualização ".$linha->dataAlter;
+                }else{
+                    $dataAlter = "Este artigo não sofreu nenhuma atualização até o momento.";
+                }
+                echo '
+                    <header id="titulo">'.$linha->titulo.'</header>
+                    <nav>
+                        <a href="index.php">HOME</a> -> 
+                        <a href="categoria.php?id='.$linha->categoria.'">'.$categ->getCatById($linha->categoria).'</a>
+                    </nav>
+                    
+                    <article>
+                        <header id="data">Data da postagem: '.$linha->dataPost.'</header>
+                        <p>'.str_replace("../imagens", "imagens", $linha->conteudo).'</p>
+                    </article>
+                    <aside><section id="cat">Categoria: <span id="catSpan"> '.$categ->getCatById($linha->categoria).'</span></section></aside>
+                    <footer>
+                        <p><time pubdate datetime="2014-01-10">'.$dataAlter.'</time></p>
+                    </footer>
+                ';
+            }
+        }
+    }
 
 }
 

@@ -1,0 +1,452 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('fontes/Inter/Inter-VariableFont_slnt\,wght.ttf') format('truetype');
+}
+*{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Inter';
+    background-image: url('imgs/cabecalho.png');
+    background-repeat: no-repeat;
+    /*background-size: 100%;*/
+    background-size: auto 300px;
+    /*background-attachment: fixed;*/
+    background-position: center top;
+    background-color: beige;
+}
+
+* a:link{
+    color: #0c582c;
+    transition: ease-in-out 0.5s;
+}
+* a:hover{
+    color: #04c052;
+    transition: ease-in-out 0.5s;
+}
+
+#geral {
+    width: 100%;
+    /*background-color: beige;*/
+    padding-bottom: 20px;
+}
+
+#central {
+    max-width: 1100px;
+    /*background-color: white;*/
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 300px;
+    padding-bottom: 20px;
+    padding-top: 60px;
+}
+
+#top {
+    /*min-height: 30%;*/
+    width: 100%;
+    text-align: center;
+    /*display: flex;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#titulo{
+    font-size: 200% !important;
+    color: white;
+}
+
+#subtitulo{
+    font-size: 150%;
+    color: white;
+}
+
+div.objitensum {
+    width: 33%;
+    min-height: 400px;
+    background-color: #fff;
+    margin: 5px;
+    padding: 0px;
+    border-radius: 5px 25px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    color: black;
+}
+
+#duvida {
+    width: calc(100% - 170px); 
+    height:35px;
+    border-radius: 15px;
+    transition: ease-in-out 0.5s;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border: 0px;
+    margin-bottom: 5px;
+    font-size: 120%;
+    padding-left: 5px;
+}
+
+#pesquisar {
+    width: 150px; 
+    height: 37px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border: 0px;
+    font-size: 120%;
+    transition: ease-in-out 0.5s;
+}
+#pesquisar:hover {
+    width: 150px; 
+    height: 37px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.8);
+    border: 0px;
+    font-size: 120%;
+    transition: ease-in-out 0.5s;
+    background-color: #0c582c;
+    color: #fff;
+}
+
+#texto{
+    width:calc(100%-10px);
+    min-height: 150px;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+#tituloItem{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#tituloItem a:link{
+    color: #0c582c;
+    text-decoration: none;
+    transition: ease-in-out 0.5s;
+}
+
+#tituloItem a:hover{
+    color: red;
+    font-size: 28px;
+    text-decoration: none;
+    transition: ease-in-out 0.5s;
+}
+
+#descItem{
+    text-align: justify;
+}
+
+#descItem a:link{
+    color: #0c582c;
+    font-size: 18px;
+    text-decoration: none;
+    transition: ease-in-out 0.5s;
+}
+
+#descItem a:hover{
+    color: #0c582c;
+    font-size: 22px;
+    text-decoration: none;
+    transition: ease-in-out 0.5s;
+}
+
+#itemdois {
+    width: calc(100% - 10px);
+    padding: 5px;
+    background-color: white;
+    margin-top: 15px;
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+.questao{
+    width: calc(90%-10px) !important;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.tituloQuestao{
+    font-size: 20px;
+    font-weight: bold;
+    transition: ease-in-out 0.5s;
+}
+.tituloQuestao a{
+    font-size: 20px;
+    color: #0c582c;
+    text-decoration: none;
+    transition: ease-in-out 0.5s;
+}
+.tituloQuestao a:hover{
+    font-size: 23px;
+    color: red;
+    text-decoration: none;
+    transition: ease-in-out 0.5s;
+}
+
+.descQuestao a{
+    font-size: 17px;
+    color: #0c582c;
+    text-decoration: none;
+    transition: ease-in-out 0.5s;
+}
+.descQuestao a:hover{
+    font-size: 20px;
+    color: red;
+    text-decoration: none;
+    transition: ease-in-out 0.5s;
+}
+hr#recentes{
+    border: 1px solid #0c582c;
+    width: 200px;
+    float: left;
+    margin-top: -10px;
+}
+
+
+#itensum {
+    width:100%;
+    /*display: inline-block;
+    justify-content: space-between;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#img{
+    background-image: url('imgs/img1.png');
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: center top;
+    transition: background 1s;
+    background-color: white;
+    height: 200px;
+    width: 100%; /*a:link........define o estilo do link no estado inicial;*/
+    border-radius: 5px 25px 0 0;
+}
+#img:hover{
+    background-size: 120%;
+    transition: background 1s;
+}
+
+.post-content{
+    padding: 20px;
+}
+
+
+#redes{
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 769px) {
+    #itensum {
+        -webkit-column-count: 3; 
+        -moz-column-count: 3; 
+        column-count: 3;
+    }
+    div.objitensum {
+        width: 33%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #itensum {
+        /*-webkit-column-count: 2; 
+        -moz-column-count: 2; 
+        column-count: 2;*/
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+    div.objitensum {
+        width: 48% !important; 
+    }
+    #redes{
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 514px) {
+    #itensum {
+        /*-webkit-column-count: 1; 
+        -moz-column-count: 1; 
+        column-count: 1;*/
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    div.objitensum {
+        width: 100% !important;
+    }
+    #duvida {
+        min-width: 150px;
+    }
+}
+
+table#principal{
+    margin-top: 90px;
+}
+
+#redeSocial{
+    min-width: 200px;
+    background-color: #fff;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#redeSocial table tr td:nth-child(2){
+    text-align: left;
+}
+#redeSocial table tr td {
+    padding: 2px;
+}
+#carrosel{
+    width: 700px;
+
+}
+#id{
+    height: 200px;
+    overflow: hidden;
+}
+
+#redeSocial table tr td img{
+    filter: invert(25%) sepia(11%) saturate(4040%) hue-rotate(99deg) brightness(93%) contrast(91%);
+    transition: ease-in-out 0.5s;
+}
+#redeSocial table tr td img:hover{
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+    transition: ease-in-out 0.5s;
+}
+#tituloRedSocial {
+    font-size: 1.5rem;
+    color: #0c582c;
+}
+
+span#categoria{
+    float: right;
+}
+
+#artigo{
+    background-color: #fff;
+    padding: 15px;
+}
+
+#artigo header#titulo{
+    font-size: 2rem;
+    color: #0c582c;
+    text-align: left;
+    font-weight: bold;
+}
+
+#artigo header#data{
+    color: #a0a0a0;
+    text-align: left;
+    font-weight: bold;
+}
+
+section#cat{
+    text-align: left;
+    border-top: 1px solid #a0a0a0;
+    width: 200px;
+    padding: 10px;
+}
+#artigo nav{
+    text-align: left;
+    margin: 20px;
+}
+#artigo nav a{
+    text-decoration: none;
+    color: #0c582c;
+    font-weight: bold;
+}
+#artigo nav a:hover{
+    color: #04c052;
+    font-size: 1.3rem;
+}
+#artigo article{
+    padding-bottom: 10px;
+}
+span#catSpan{
+    font-weight: bold;
+}
+
+#formLogin{
+    border: 1px solid #cfcfcf;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px;
+    margin-top: 30px;
+}
+#formLogin input{
+    min-height: 30px;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+#formLogin input[type="file"]{
+    min-height: 30px;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    width: 95%;
+}
+#formLogin select{
+    min-height: 30px;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    padding: 10px;
+    font-size: 1.3rem;
+}
+#formLogin #imagemInsert{
+    min-height: 30px;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    padding: 10px;
+    font-size: 1.3rem;
+    width: 96%;
+}
+#formLogin span{
+    font-size: 25px;
+}
+#tituloLogin{
+    position: absolute;
+    padding: 10px;
+    background-color: #fff;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-left: 40px;
+}
+#formLogin table tr td{
+    padding-bottom: 10px;
+}
+
+#enviar{
+    padding: 12px 40px;
+    font-size: 1.3rem;
+}
+
+#boasVindas{
+    padding:5px;
+    color: #fff;
+}
