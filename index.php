@@ -58,6 +58,24 @@
                                         <td><img src="imgs/facebook.svg" alt="Acesse nosso canal do Facebook" height="30"></td>
                                         <td><span id="texto"><a href="#">Acesse nosso canal do Facebook</a></span></td>
                                     </tr>
+
+                                    
+                                    <tr>
+                                        <td><img src="imgs/twitter.svg" alt="Acesse Twitter da prefeitura de Jaraguá do Sul" height="30"></td>
+                                        <td><span id="texto"><a href="#">Acesse Twitter da prefeitura</a></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="imgs/globo.svg" alt="Acesse site da prefeitura de Jaraguá do Sul" height="30"></td>
+                                        <td><span id="texto"><a href="#">Site da prefeitura</a></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="imgs/grampo.svg" alt="Acesse o manual do SEI" height="30"></td>
+                                        <td><span id="texto"><a href="anexos/POP-Procedimento-Operacional-Padrao.pdf">Acesse o manual do SEI</a></span></td>
+                                    </tr>
+                                    <!--<tr>
+                                        <td><img src="imgs/email.svg" alt="E-mail de contato" height="30"></td>
+                                        <td><span id="texto">robsonfdfarias@gmail.com</span></td>
+                                    </tr>-->
                                 </table>
                             </div>
                         </td>
@@ -75,6 +93,9 @@
                 
             </div>
         </div>
+        <?php
+            include_once("footer.php");
+        ?>
     </div>
 </body>
 </html>

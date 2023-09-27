@@ -20,11 +20,11 @@
 
             <div id="itemdois">
                 <?php
-                    $id = $_GET['id'];
-                    //echo $id;
-                    include_once("class/crud.artigo.class.php");
-                    $inserir = new CRUD();
-                    $inserir->deleteArticle($id);
+                    $titulo = $_POST['tituloCat'];
+                    $status = $_POST['status'];
+                    include_once("class/crud.categoria.class.php");
+                    $obj = new Categoria();
+                    $obj->addCategoria($titulo, $status);
                 ?>
             </div>
         </div>

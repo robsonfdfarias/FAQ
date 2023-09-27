@@ -450,3 +450,80 @@ span#catSpan{
     padding:5px;
     color: #fff;
 }
+
+#geralMenuCat{
+    width: calc(100%-30px);
+    background-color: #fff;
+    /*display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;*/
+    padding: 20px;
+    margin-bottom: 20px;
+}
+#opMenuCat{
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #cfcfcf;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+    font-size: 1.2rem;
+}
+#tabCatMenuPage{
+    border-collapse: collapse;
+}
+#tabCatMenuPage tr td{
+    border: 1px solid #cfcfcf;
+    padding: 5px;
+    font-size: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#tabCatMenuPage tr td a{
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#tabCatMenuPage tr td a:visited{
+    font-size: 1.2rem;
+}
+#tabCatMenuPage tr td a:hover{
+    font-size: 1.3rem;
+}
+#tituloCatMenuPag{
+    float:left;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+#addCatMenuPag{
+    float:right;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+#addCatMenuPag a{
+    float:right;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color:#0c582c;
+}
+
+#addCatMenuPag a:visited{
+    font-size: 1.1rem;
+    color:#0c582c;
+}
+
+#addCatMenuPag a:hover{
+    font-size: 1.2rem;
+    color:#04c052;
+}

@@ -48,6 +48,7 @@
             padding: 5px;
             background-color: white;
             box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+            margin-top: 30px;
         }
 
         .questao{
@@ -104,47 +105,36 @@
                 <div id="form">
                     <span id="titulo">Sei! Sistema Eletrônico de Informações</span><br>
                     <span id="subtitulo">Perguntas frequentes</span><br><br>
-                    <form id="pesq" action="pesq.php">
-                        <input type="text" id="duvida">
-                        <input type="submit" id="pesquisar" value="Pesquisar">    
+                    <form id="pesq" method="post" action="pesq.php">
+                        <input type="text" name="duvida" id="duvida" placeholder="Digite sua pesquisa">
+                        <input type="submit" name="pesquisar" id="pesquisar" value="Pesquisar">    
                     </form>
                 </div>
             </div>
             <div id="itensum">
-                <?php
-
-                    include_once("class/crud.artigo.class.php");
-                   $obj2 = new CRUD();
-/*                     $obj2->selectPrioridades();*/
-
-                ?>
-<!--
-                <div class="objitensum">
-                    <div id="img"></div>
-                    <div id="texto">
-                        <span id="tituloItem">Titulo</span><hr>
-                        <span id="descItem">O bold equivale a nossa famosa tag, para simplesmente negritar um trecho. A sintaxe é: font-weight: bold; O negrito serve, basicamente, para destacar um trecho de um texto.</span>
-                    </div>
-                </div>
-    -->
             </div>
 
             <div id="itemdois">
                 <h2>Você pesquisou por: <?php echo "<span style='color:#0c582c;'>".$pesq."</span>"; ?></h2>
                 <?php
+                    include_once("class/crud.artigo.class.php");
+                    $obj2 = new CRUD();
                     $obj2->findArticle($pesq);
                 ?>
                 
             </div>
         </div>
     </div>
+        <?php
+            include_once("footer.php");
+        ?>
     <script type="text/javascript">
-        var elemento = document.getElementById('top');
+        /*var elemento = document.getElementById('top');
         var calcula = 260-elemento.clientHeight;
         calcula = calcula/2;
         console.log(calcula+" ---");
         elemento.style.paddingTop  = calcula + 'px';
-        elemento.style.paddingBottom  = calcula + 'px';
+        elemento.style.paddingBottom  = calcula + 'px';*/
 
     </script>
 </body>

@@ -83,6 +83,9 @@
             </div>
         </div>
     </div>
+    <?php
+        include_once("footer.php");
+    ?>
     <script>
         var enviar = document.getElementById("enviar");
         enviar.addEventListener("click", function(){

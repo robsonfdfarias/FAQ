@@ -16,6 +16,7 @@
             <ul id="menu">
                 <li><a href="index.php">Home</a></li><span id="barra">|</span>
                 <li><a href="inserir.php">Inserir</a></li><span id="barra">|</span>
+                <li><a href="categoriaIndex.php">Categoria</a></li><span id="barra">|</span>
                 <li><a href="pesquisar.php">Pesquisar</a></li><span id="barra">|</span>
                 <li><a href="desloga.php">Deslogar</a></li><span id="barra">|</span>
                 <span id="boasVindas">Logado como: <span id="nome"><?php echo $_SESSION['nome']; ?></span></span>

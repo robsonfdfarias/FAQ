@@ -44,6 +44,9 @@
             </div>
         </div>
     </div>
+    <?php
+        include_once("footer.php");
+    ?>
     <script type="text/javascript">
         /*$(document).ready(function() {
             var height = $("#top").height();

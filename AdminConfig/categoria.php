@@ -41,6 +41,9 @@
             </div>
         </div>
     </div>
+    <?php
+        include_once("footer.php");
+    ?>
     <script type="text/javascript">
         var elemento = document.getElementById('top');
         var calcula = 260-elemento.clientHeight;
