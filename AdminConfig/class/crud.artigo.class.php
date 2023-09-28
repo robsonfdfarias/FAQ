@@ -84,11 +84,16 @@ class CRUD{
         if($obj->execute($dados)){
             $num = $obj->rowCount();
             if($num>0){
+                $categoria = new Categoria();
                 while($linha=$obj->fetchObject()){
                     echo '<div class="questao">
-                            <span class="tituloQuestao"><a href="artigo.php?id='.$linha->categoria.'">'.$linha->titulo.'</a></span><br>
+                            <span class="tituloQuestao"><a href="artigo.php?id='.$linha->id.'">'.$linha->titulo.'</a></span>
                             <span id="categoria"><i>Categoria: <a href="categoria.php?id='.$linha->categoria.'">'.$categoria->getCatById($linha->categoria).'</a></i><br></span>
-                            <span class="descQuestao">'.$linha->resumo.'<br><a href="artigo.php?id='.$linha->categoria.'">Ler o artigo completo</a></span>
+                            <br><br><span class="descQuestao">'.$linha->resumo.'<br>
+                            <a href="editar.php?id='.$linha->id.'">Editar</a> |
+                            <a href="excluir.php?id='.$linha->id.'">Excluir</a> |
+                            <a href="artigo.php?id='.$linha->id.'">Ler o artigo completo</a>
+                            </span>
                         </div>';
                 }
             }else{
@@ -225,6 +230,15 @@ class CRUD{
             </script>
             ';
             header("location: index.php");
+        }
+    }
+
+    function getCountArtForCat($idCat){
+        $objCountArt = DB::conn()->prepare("SELECT * FROM artigo WHERE categoria=?");
+        if($objCountArt->execute(array($idCat))){
+            return $objCountArt->rowCount();
+        }else{
+            return 0;
         }
     }
 

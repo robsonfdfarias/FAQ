@@ -217,7 +217,7 @@
         var calcula = 260-elemento.clientHeight;
         calcula = calcula/2;
         console.log(calcula+" ---");
-        elemento.style.paddingTop  = calcula + 'px';
+        elemento.style.paddingTop  = (calcula-50) + 'px';
         elemento.style.paddingBottom  = calcula + 'px';
 
     </script>

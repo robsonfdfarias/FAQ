@@ -179,6 +179,7 @@ div.objitensum {
 }
 
 .tituloQuestao{
+    float:left;
     font-size: 20px;
     font-weight: bold;
     transition: ease-in-out 0.5s;
@@ -444,7 +445,7 @@ span#catSpan{
 #enviar{
     padding: 12px 40px;
     font-size: 1.3rem;
-    background-color: red;
+    background-color: rgb(27, 88, 3);
     color: #fff;
     transition: ease 1s;
 }
@@ -550,6 +551,11 @@ span#catSpan{
     transition: ease 1s;
 }
 #excluir{
+    min-height: 30px;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    font-size: 1.2rem;
+    width: 100%;
     padding: 12px 40px;
     font-size: 1.3rem;
     background-color: red;

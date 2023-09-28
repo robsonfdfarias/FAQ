@@ -99,6 +99,7 @@
     </style>
 </head>
 <body>
+    <?php include_once("menu.php"); ?>
     <div id="geral">
         <div id="central">
             <div id="top">

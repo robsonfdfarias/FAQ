@@ -1,4 +1,5 @@
 <?php
+include_once("checa.php");
     $pesq = $_POST['duvida'];
 ?>
 <!DOCTYPE html>
@@ -98,14 +99,15 @@
     </style>
 </head>
 <body>
+    <?php include_once("menu.php"); ?>
     <div id="geral">
         <div id="central">
             <div id="top">
                 <div id="form">
                     <span id="titulo">Sei! Sistema Eletrônico de Informações</span><br>
                     <span id="subtitulo">Perguntas frequentes</span><br><br>
-                    <form id="pesq" action="pesq.php">
-                        <input type="text" id="duvida">
+                    <form id="pesq" action="pesq.php" method="post">
+                        <input type="text" id="duvida" name="duvida">
                         <input type="submit" id="pesquisar" value="Pesquisar">    
                     </form>
                 </div>
@@ -144,9 +146,9 @@
     <script type="text/javascript">
         var elemento = document.getElementById('top');
         var calcula = 260-elemento.clientHeight;
-        calcula = calcula/2;
+        calcula = calcula/3;
         console.log(calcula+" ---");
-        elemento.style.paddingTop  = calcula + 'px';
+        elemento.style.paddingTop  = (calcula -30) + 'px';
         elemento.style.paddingBottom  = calcula + 'px';
 
     </script>

@@ -98,7 +98,12 @@
                     <h3>Você tem certeza que deseja excluir o artigo com titulo:<br> <span id="tt"><?php echo $artigo->titulo; ?></span>
                         <br>E resumo:<br> <span id="tt"><?php echo $artigo->resumo; ?></span>
                     </h3>
-                    <button id="excluir" onclick="excluir()">EXCLUIR</button><button id="cancelar" onclick="cancelar()">CANCELAR</button>
+                    <table width="100%">
+                        <tr>
+                            <td width="50%"><button id="excluir" onclick="excluir()">EXCLUIR</button></td>
+                            <td><button id="cancelar" onclick="cancelar()">CANCELAR</button></td>
+                        </tr>
+                    </table>
                     <span id="id" style="display:none;"><?php echo $id; ?></span>
                 </div>
             </div>

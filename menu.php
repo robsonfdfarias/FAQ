@@ -16,11 +16,10 @@
             <ul id="menu">
                 <li><a href="index.php">Home</a></li><span id="barra">|</span>
                 <li><a href="sei.php">O que é o sei</a></li><span id="barra">|</span>
-                <li><a href="#">Mapa</a></li><span id="barra">|</span>
+                <li><a href="mapa.php">Mapa</a></li><span id="barra">|</span>
                 <li><a href="legislacao.php">Legislação</a></li><span id="barra">|</span>
                 <li><a href="coisasParaSaberSei.php">Curiosidades sobre o SEI</a></li><span id="barra">|</span>
                 <li><a href="declaracaoUtilidadePublica.php">Declaração de Utilidade Pública</a></li><span id="barra">|</span>
-                <li><a href="#">Capacitação</a></li><span id="barra">|</span>
                 <li><a href="perguntasFrequentes.php">Perguntas frequentes</a></li>
             </ul>
         </nav>
