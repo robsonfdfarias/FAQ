@@ -427,7 +427,7 @@ span#catSpan{
     width: 96%;
 }
 #formLogin span{
-    font-size: 25px;
+    /*font-size: 25px;*/
 }
 #tituloLogin{
     position: absolute;
@@ -444,6 +444,9 @@ span#catSpan{
 #enviar{
     padding: 12px 40px;
     font-size: 1.3rem;
+    background-color: red;
+    color: #fff;
+    transition: ease 1s;
 }
 
 #boasVindas{
@@ -491,9 +494,11 @@ span#catSpan{
     text-align: center;
 }
 #tabCatMenuPage tr td a:visited{
+    color: #0c582c;
     font-size: 1.2rem;
 }
 #tabCatMenuPage tr td a:hover{
+    color: #04c052;
     font-size: 1.3rem;
 }
 #tituloCatMenuPag{
@@ -526,4 +531,35 @@ span#catSpan{
 #addCatMenuPag a:hover{
     font-size: 1.2rem;
     color:#04c052;
+}
+
+#cancelar{
+    padding: 12px 40px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    background-color:#0c582c;
+    color:#fff;
+    min-height: 30px;
+    width: 100%;
+    transition: ease 1s;
+}
+
+#cancelar:hover{
+    filter: drop-shadow(0 0 0.75rem rgb(69, 136, 7));
+    transition: ease 1s;
+}
+#excluir{
+    padding: 12px 40px;
+    font-size: 1.3rem;
+    background-color: red;
+    color: #fff;
+    transition: ease 1s;
+}
+#excluir:hover{
+    filter: drop-shadow(0 0 0.75rem crimson);
+    transition: ease 1s;
+}
+#infoDeleteCat{
+    font-size: 1.3rem;
 }
