@@ -12,27 +12,18 @@
         <?php include_once("menu.php"); ?>
     <div id="geral">
         <div id="central">
-            <div id="top">
-                <div id="form">
-                    <span id="titulo">Sei! Sistema Eletrônico de Informações</span><br>
-                    <span id="subtitulo">Perguntas frequentes</span><br><br>
-                    <form id="pesq" method="post" action="pesq.php">
-                        <input type="text" name="duvida" id="duvida" placeholder="Digite sua pesquisa">
-                        <input type="submit" name="pesquisar" id="pesquisar" value="Pesquisar">    
-                    </form>
-                </div>
-            </div>
+            <?php include_once("top.php"); ?>
 
             <div id="itemdois">
 
 
                 <div class="post-content">
-                    <header class="entry-header">
+                    <header>
                     <h1 class="entry-title">Legislação</h1>
                                         
-                    </header><!-- .entry-header -->
+                    </header>
 
-                    <div class="entry-content clearfix">
+                    <div class="center">
                     
                         <h3>Estadual</h3>
 

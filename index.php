@@ -28,7 +28,7 @@
     <div id="geral">
             <?php include_once("menu.php"); ?>
         <div id="central">
-            <div id="top">
+            <!--<div id="top">
                 <div id="form">
                     <span id="titulo">Sei! Sistema Eletrônico de Informações</span><br>
                     <span id="subtitulo">Perguntas frequentes</span><br><br>
@@ -37,7 +37,9 @@
                         <input type="submit" name="pesquisar" id="pesquisar" value="Pesquisar">    
                     </form>
                 </div>
-            </div>
+            </div>-->
+            <?php include_once("top.php"); ?>
+
             <div id="itensum">
                 <div id="carrosel"><?php include_once("carrosel3.php"); ?></div>
                 <table id="redes">

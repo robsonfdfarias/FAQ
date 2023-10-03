@@ -175,7 +175,7 @@
     <img src="imgEditor/insertNeonText.svg" title="Inserir um neon no texto" onClick='insertTag("span", "style=\"text-shadow:0px 0px 4px blue;\"")' />
     <img src="imgEditor/insertNeonTextEColorWhite.svg" title="Inserir um neon no texto e deixar o texto transparente" onClick='insertTag("span", "style=\"text-shadow:0px 0px 4px blue; color:#fff;\"")' />
     
-    <img src="imgEditor/inserthyperlinkcontrol.svg" title="Inserir hiperlink" onClick="link()" />
+    <img src="imgEditor/inserthyperlinkcontrol.svg" title="Inserir hiperlink" onClick="openWindowLink()" />
     <img src="imgEditor/removehyperlink.svg" title="Remover hiperlink" onClick="unlink()" />
     <select name="formatH" id="formatH">
         <option value="h1">H1</option>

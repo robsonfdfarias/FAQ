@@ -1,0 +1,51 @@
+:root{
+  --bs-emphasis-color-rgb: #fff;
+}
+.form-control-dark {
+  border-color: var(--bs-gray);
+}
+.form-control-dark:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+}
+
+.text-small {
+  font-size: 85%;
+}
+
+.dropdown-toggle:not(:focus) {
+  outline: 0;
+}
+
+.bgc{
+  background-color: #0c582c;
+}
+
+.ulm li{
+  height: 0.1rem;
+  border-bottom: 0px solid green;
+  transition: ease-in-out 0.3s;
+}
+
+.ulm li:hover{
+  height: 0rem;
+  border-bottom: 4px solid green;
+  transition: ease-in-out 0.3s;
+}
+
+.selected{
+  background-color:forestgreen;
+}
+
+.link{
+  color:#cfcfcf !important;
+  --bs-text-opacity: 1 !important;
+  text-shadow: 0px 0px 0px rgba(0,0,0,0.5) !important;
+  transition: ease-in-out 0.3s !important;
+}
+
+.link:hover{
+  color: #fff !important;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.5) !important;
+  transition: ease-in-out 0.3s !important;
+}

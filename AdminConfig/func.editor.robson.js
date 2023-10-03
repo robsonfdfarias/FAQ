@@ -73,10 +73,16 @@ function insertVi(){
 
 
 
+function openWindowLink(){
+    window.open("windowInsertLink.php");
+}
 
-
-function link() {
-    document.execCommand("createLink", true, "https://www.google.com");
+function link(link, target) {
+    //document.execCommand("createLink", true, "https://www.google.com");
+    //document.execCommand("createLink", true, link);
+    selection = window.getSelection().toString();
+    var link = '<a href="'+link+'"'+target+'>'+selection+'</a>';
+    document.execCommand("insertHTML", true, link);
 }
 function unlink() {
     document.execCommand("unlink", false, null);

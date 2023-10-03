@@ -12,27 +12,18 @@
         <?php include_once("menu.php"); ?>
     <div id="geral">
         <div id="central">
-            <div id="top">
-                <div id="form">
-                    <span id="titulo">Sei! Sistema Eletrônico de Informações</span><br>
-                    <span id="subtitulo">Perguntas frequentes</span><br><br>
-                    <form id="pesq" method="post" action="pesq.php">
-                        <input type="text" name="duvida" id="duvida" placeholder="Digite sua pesquisa">
-                        <input type="submit" name="pesquisar" id="pesquisar" value="Pesquisar">    
-                    </form>
-                </div>
-            </div>
+            <?php include_once("top.php"); ?>
 
             <div id="itemdois">
 
 
                 <div class="post-content">
-                    <header class="entry-header">
+                    <header>
                     <h1 class="entry-title">Declaração de Utilidade Pública</h1>
                                         
-                    </header><!-- .entry-header -->
+                    </header>
 
-                    <div class="entry-content clearfix">
+                    <div class="center">
                     
                         <p class="has-text-align-right">Atualizado em 20/06/2022</p>
 
@@ -42,7 +33,7 @@
 
 
 
-                        <p>1) <strong>A ENTIDADE NÃO É <strong> RECONHECIDA DE UTILIDADE PÚBLICA COMO POSSO SOLICITAR O RECONHECIMENTO</strong>?</strong></p>
+                        <p>1) <strong>A ENTIDADE NÃO É RECONHECIDA DE UTILIDADE PÚBLICA COMO POSSO SOLICITAR O RECONHECIMENTO?</strong></p>
 
 
 
@@ -70,7 +61,7 @@
 
 
 
-                        <p>2) <strong><strong>COMO PROCEDER COM A MANUTENÇÃO DO TÍTULO DE UTILIDADE PÚBLICA? </strong></strong></p>
+                        <p>2) <strong>COMO PROCEDER COM A MANUTENÇÃO DO TÍTULO DE UTILIDADE PÚBLICA? </strong></p>
 
 
 
@@ -122,7 +113,7 @@
 
 
 
-                        <p>4) <strong><strong>QUAL FORMATO DO DOCUMENTO É NECESSÁRIO PARA A PRESTAÇÃO DE CONTAS DE ENTIDADES JÁ RECONHECIDAS DE UTILIDADE PÚBLIC</strong>A?</strong></p>
+                        <p>4) <strong>QUAL FORMATO DO DOCUMENTO É NECESSÁRIO PARA A PRESTAÇÃO DE CONTAS DE ENTIDADES JÁ RECONHECIDAS DE UTILIDADE PÚBLICA?</strong></p>
 
 
 
@@ -146,7 +137,7 @@
 
 
 
-                        <p><strong>6) COMO FAÇO PARA SOLICITAR ALTERAÇÃO DA SEDE OU DA DENOMINAÇÃO SOCIAL DA ENTIDADE?</strong></p>
+                        <p>6) <strong>COMO FAÇO PARA SOLICITAR ALTERAÇÃO DA SEDE OU DA DENOMINAÇÃO SOCIAL DA ENTIDADE?</strong></p>
 
 
 
@@ -154,7 +145,7 @@
 
 
 
-                        <p><strong>7) COMO SOLICITAR A REVOGAÇÃO DA LEI OU DO ATO DA MESA QUE OUTORGOU A DECLARAÇÃO DE ENTIDADE PÚBLICA?</strong></p>
+                        <p>7) <strong>COMO SOLICITAR A REVOGAÇÃO DA LEI OU DO ATO DA MESA QUE OUTORGOU A DECLARAÇÃO DE ENTIDADE PÚBLICA?</strong></p>
 
 
 
@@ -162,7 +153,7 @@
 
 
 
-                        <p><strong>8) COMO FAÇO PARA SABER QUAL A LEI OU O ATO DA MINHA ENTIDADE?</strong></p>
+                        <p>8) <strong>COMO FAÇO PARA SABER QUAL A LEI OU O ATO DA MINHA ENTIDADE?</strong></p>
 
 
 
@@ -178,7 +169,7 @@
 
 
 
-                        <p><strong>9) COMO FAÇO PARA VERIFICAR A SITUAÇÃO DA ENTIDADE PÚBLICA?</strong><br></p>
+                        <p>9) <strong>COMO FAÇO PARA VERIFICAR A SITUAÇÃO DA ENTIDADE PÚBLICA?</strong></p>
 
 
 

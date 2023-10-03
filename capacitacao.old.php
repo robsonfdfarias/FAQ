@@ -221,12 +221,15 @@
             <div id="itemdois">
                 <div class="post-content">
                     <header class="entry-header">
-                    <h1 class="entry-title">Mapa (Estrutura Administrativa para o SEI)</h1>
+                    <h1 class="entry-title">Capacitações disponível</h1>
                                         
-                    </header><!-- .entry-header -->
+                    </header>
                     <div id="conteudoMapa">
-                        No link abaixo você terá acesso ao mapa da Estrutura Administrativa para o SEI:<br>
-                        <a href="https://chill-partner-c3f.notion.site/Estrutura-Administrativa-dfab2dd0ec3c4aa4bec8b8bebd063aa3" target="_blank">Acesse o Mapa aqui</a>
+                        <?php
+                            include_once("class/capacitacao.class.php");
+                            $agenda = new Capacitacao();
+                            $agenda->nextEvent();
+                        ?>
                     </div>
 
                 </div>
@@ -237,18 +240,6 @@
             include_once("footer.php");
         ?>
     <script type="text/javascript">
-        /*$(document).ready(function() {
-            var height = $("#top").height();
-            console.log(height);
-            alert(height);
-        });*/
-        //var largDoc = window.innerWidth;
-        /*var elemento2 = document.getElementById('central');
-        var elemento = document.getElementById('top');
-        console.log(elemento2);
-        console.log(elemento2.clientWidth);
-        var calc = (elemento2.clientWidth/5);
-        elemento.style.height  = calc + 'px';*/
         var elemento = document.getElementById('top');
         var calcula = 260-elemento.clientHeight;
         calcula = calcula/2;

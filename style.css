@@ -9,13 +9,11 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: 'Inter';
-    background-image: url('imgs/cabecalho.png');
+    /*background-image: url('imgs/cabecalho.png');
     background-repeat: no-repeat;
-    /*background-size: 100%;*/
     background-size: auto 300px;
-    /*background-attachment: fixed;*/
-    background-position: center top;
-    background-color: beige;
+    background-position: center top;*/
+    background-color: #fff;
 }
 
 * a:link{
@@ -46,7 +44,6 @@ body{
     margin-right: auto;
     min-height: 300px;
     padding-bottom: 20px;
-    padding-top: 60px;
 }
 
 #top {
@@ -90,22 +87,28 @@ div.objitensum {
     color: black;
 }
 
+#pesq{
+    width: 100%;
+}
+
 #duvida {
     width: calc(100% - 170px); 
-    height:35px;
-    border-radius: 15px;
+    height:37px;
+    border-radius: 5px;
     transition: ease-in-out 0.5s;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     border: 0px;
     margin-bottom: 5px;
     font-size: 120%;
-    padding-left: 5px;
+    padding-left: 10px;
+    margin-right: 10px;
+    border: 1px solid #dfdfdf;
 }
 
 #pesquisar {
     width: 150px; 
     height: 37px;
-    border-radius: 15px;
+    border-radius: 5px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     border: 0px;
     font-size: 120%;
@@ -172,15 +175,16 @@ div.objitensum {
     padding: 5px;
     background-color: white;
     margin-top: 15px;
-    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
+    /*box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
+    border: 1px solid #cfcfcf;*/
 }
 
 .questao{
     width: calc(90%-10px) !important;
     padding: 10px;
-    border-radius: 5px;
+    /*border-radius: 5px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    border: 0.5px solid rgba(0, 0, 0, 0.2);*/
 }
 
 .tituloQuestao{
@@ -195,8 +199,8 @@ div.objitensum {
     transition: ease-in-out 0.5s;
 }
 .tituloQuestao a:hover{
-    font-size: 23px;
-    color: red;
+    font-size: 20px;
+    color: forestgreen;
     text-decoration: none;
     transition: ease-in-out 0.5s;
 }
@@ -208,8 +212,8 @@ div.objitensum {
     transition: ease-in-out 0.5s;
 }
 .descQuestao a:hover{
-    font-size: 20px;
-    color: red;
+    font-size: 17px;
+    color: #04c052;
     text-decoration: none;
     transition: ease-in-out 0.5s;
 }
@@ -354,6 +358,8 @@ span#categoria{
 #artigo{
     background-color: #fff;
     padding: 20px 45px;
+    border: 1px solid #dbdbdb;
+    width: 100%;
 }
 
 #artigo header#titulo{
@@ -393,4 +399,44 @@ section#cat{
 }
 span#catSpan{
     font-weight: bold;
+}
+
+.center h3{
+    margin: 20px 0;
+    padding-left: 75px;
+}
+
+.post-content .entry-title{
+    margin: 20px 0;
+    padding-left: 75px;
+}
+
+#tabFormInsc{
+    border: 1px solid #ececec;
+}
+
+#tabFormInsc tr td{
+    padding: 10px;
+}
+
+#tabFormInsc tr:nth-child(odd){
+    background-color: #ececec;
+}
+
+#divFormInsc{
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#divFormInscGeral{
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

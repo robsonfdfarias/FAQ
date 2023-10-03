@@ -38,10 +38,10 @@
             font-size: 1.2rem;
         }
         #camada1 a:hover{
-            color: blue;
+            color: #04c052;
             text-decoration: none;
             transition: ease 0.4s;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
         #footerCategoriaTitulo{
             font-size: 1.5rem;

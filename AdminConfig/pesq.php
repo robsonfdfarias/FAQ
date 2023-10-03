@@ -102,16 +102,7 @@ include_once("checa.php");
     <?php include_once("menu.php"); ?>
     <div id="geral">
         <div id="central">
-            <div id="top">
-                <div id="form">
-                    <span id="titulo">Sei! Sistema Eletrônico de Informações</span><br>
-                    <span id="subtitulo">Perguntas frequentes</span><br><br>
-                    <form id="pesq" action="pesq.php" method="post">
-                        <input type="text" id="duvida" name="duvida">
-                        <input type="submit" id="pesquisar" value="Pesquisar">    
-                    </form>
-                </div>
-            </div>
+            <?php include_once("top.php"); ?>
             <div id="itensum">
                 <?php
 

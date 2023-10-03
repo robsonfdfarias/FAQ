@@ -20,9 +20,9 @@
                 <div id="artigo" style="border-radius: 5px; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);">
                     <?php
                         $id = $_GET['id'];
-                        include_once("class/crud.artigo.class.php");
-                        $obj = new CRUD();
-                        $obj->getArtById($id);
+                        include_once("class/capacitacao.class.php");
+                        $obj = new Capacitacao();
+                        $obj->getEventById($id);
                     ?>
                 </div>
 

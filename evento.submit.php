@@ -19,10 +19,14 @@
 
                 <div id="artigo" style="border-radius: 5px; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);">
                     <?php
-                        $id = $_GET['id'];
-                        include_once("class/crud.artigo.class.php");
-                        $obj = new CRUD();
-                        $obj->getArtById($id);
+                        $nome = $_POST['nome'];
+                        $secretaria = $_POST['secretaria'];
+                        $matricula = $_POST['matricula'];
+                        $email = $_POST['email'];
+                        $idevento = $_POST['idevento'];
+                        include_once("class/inscricao.class.php");
+                        $obj = new Inscricao();
+                        $obj->insertInsc($nome, $secretaria, $matricula, $email, $idevento);
                     ?>
                 </div>
 

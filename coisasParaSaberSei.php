@@ -216,27 +216,18 @@
         <?php include_once("menu.php"); ?>
     <div id="geral">
         <div id="central">
-            <div id="top">
-                <div id="form">
-                    <span id="titulo">Sei! Sistema Eletrônico de Informações</span><br>
-                    <span id="subtitulo">Perguntas frequentes</span><br><br>
-                    <form id="pesq" method="post" action="pesq.php">
-                        <input type="text" name="duvida" id="duvida" placeholder="Digite sua pesquisa">
-                        <input type="submit" name="pesquisar" id="pesquisar" value="Pesquisar">    
-                    </form>
-                </div>
-            </div>
+            <?php include_once("top.php"); ?>
 
             <div id="itemdois">
 
 
                 <div class="post-content">
-                    <header class="entry-header">
+                    <header>
                     <h1 class="entry-title">15 coisas que você precisa saber sobre o SEI!</h1>
                                         
                     </header><!-- .entry-header -->
 
-                    <div class="entry-content clearfix">
+                    <div class="center">
                     
                         <p>O Sistema Eletrônico de Informações está implantado na Alesc! Sim, para a maioria isso já é notícia velha, mas, mesmo que você já tenha feito toda a <a href="http://portalsei.alesc.sc.gov.br/material-para-capacitacao/">capacitação</a> e treinado bastante, nesse processo de mudança, é normal que muitas dúvidas apareçam. Para tentar ajudar você, reunimos aqui as <strong>“top 15”</strong> informações que<strong> você precisa saber sobre o SEI</strong>.</p>
 

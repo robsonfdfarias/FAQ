@@ -31,12 +31,7 @@
     <div id="geral">
             <?php include_once("menu.php"); ?>
         <div id="central">
-            <div id="top">
-                <div id="form">
-                    <span id="titulo">Sei! Sistema Eletrônico de Informações</span><br>
-                    <span id="subtitulo">Área administrativa</span><br><br>
-                </div>
-            </div>
+            <?php include_once("top.php"); ?>
             
 
             <div id="itemdois">
