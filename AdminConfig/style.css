@@ -485,14 +485,26 @@ span#catSpan{
 }
 #tabCatMenuPage{
     border-collapse: collapse;
+    table-layout: fixed;
+}
+#tabCatMenuPage tr{
+    background-color: #fff;
+}
+#tabCatMenuPage tr:hover{
+    background-color: #e7e7e7;
+}
+#tabCatMenuPage tr:nth-child(1){
+    background-color: #e7e7e7;
 }
 #tabCatMenuPage tr td{
-    border: 1px solid #cfcfcf;
-    padding: 5px;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 10px;
     font-size: 1.2rem;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;
     text-align: center;
+    white-space: pre-wrap;
+    word-wrap:break-word;*/
 }
 #tabCatMenuPage tr td a{
     display: flex;
@@ -500,8 +512,10 @@ span#catSpan{
     font-size: 1.2rem;
     text-decoration: none;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;
     text-align: center;
+    white-space: pre-wrap;
+    word-wrap:break-word;*/
 }
 #tabCatMenuPage tr td a:visited{
     color: #0c582c;
@@ -510,6 +524,15 @@ span#catSpan{
 #tabCatMenuPage tr td a:hover{
     color: #04c052;
     font-size: 1.2rem;
+}
+
+@media screen and (max-width: 732px){
+    #tabCatMenuPage tr td{
+        display: flex;
+    }
+    #tabCatMenuPage tr:nth-child(1){
+        display: none;
+    }
 }
 #tituloCatMenuPag{
     float:left;
@@ -577,4 +600,32 @@ span#catSpan{
 }
 #infoDeleteCat{
     font-size: 1.3rem;
+}
+
+#tabInscForEvent{
+    width: 100%;
+    table-layout:fixed;
+}
+
+#tabInscForEvent tr td{
+    padding: 10px;
+    border-bottom: 1px solid #dfdfdf;
+    border-collapse: collapse;
+    text-align: center;
+    white-space: pre-wrap;
+    word-wrap:break-word;
+}
+
+#tabInscForEvent tr{
+    background-color: #fff;
+    transition: ease-in-out 0.3s;
+}
+
+#tabInscForEvent tr:hover{
+    background-color: #e7e7e7;
+    transition: ease-in-out 0.3s;
+}
+
+#tabInscForEvent tr:nth-child(1){
+    background-color: #e7e7e7;
 }

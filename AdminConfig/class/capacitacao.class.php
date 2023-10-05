@@ -17,11 +17,18 @@
             if($obj->execute()){
                 $rowNum = $obj->rowCount();
                 if($rowNum>0){
-                    echo '<table style="width:100%; padding: 10px;" id="tabCatMenuPage"><tr><td>Título</td><td colspan="2">Opções</td><td>Inscritos</td></tr>';
+                    echo '<table style="width:100%; padding: 10px;" id="tabCatMenuPage"><tr><td width="50%">Título</td><td colspan="2">Opções</td><td>Inscritos</td></tr>';
                     while($linha = $obj->fetchObject()){
-                        echo '<tr><td>Evento: '.$linha->dtinicio.' à '.$linha->dtfim.'</td><td><a href="catEdit.php?id='.$linha->id.'" target="_blank"><img src="imgs/cat-edit.svg" height="30">EDITAR</a></td>
-                            <td><a href="catDelete.php?id='.$linha->id.'" target="_blank"><img src="imgs/cat-delete.svg" height="30">EXCLUIR</a></td>
-                            <td><a href="catDelete.php?id='.$linha->id.'" target="_blank"><img src="imgs/cat-delete.svg" height="30">INSCRITOS</a></td>
+                        if($linha->titulo!=null && $linha->titulo!=''){
+                            $quebra = '<br>';
+                        }else{
+                            $quebra = '';
+                        }
+                        echo '<tr><td><center>'.$linha->titulo.$quebra.' 
+                            Evento: '.$linha->dtinicio.' à '.$linha->dtfim.'</center></td>
+                            <td><a href="editEvent.php?id='.$linha->id.'" target="_blank"><img src="imgs/cat-edit.svg" height="30">EDITAR</a></td>
+                            <td><a href="excluirEvent.php?id='.$linha->id.'" target="_blank"><img src="imgs/cat-delete.svg" height="30">EXCLUIR</a></td>
+                            <td><a href="inscritos.php?id='.$linha->id.'" target="_blank"><img src="imgs/cat-delete.svg" height="30">INSCRITOS</a></td>
                             </tr>';
                     }
                     echo '</table>';
@@ -109,7 +116,7 @@
                     if($objUp->execute(array($preenchido, $id))){
                         $rowNum = $objUp->rowCount();
                         if($rowNum>0){
-                            //echo 'Inscrição efetuada com sucesso!';
+                            //echo 'Alteração efetuada com sucesso!';
                             return true;
                         }
                     }else{
@@ -123,6 +130,64 @@
             }else{
                 echo 'Evento não encontrado!';
                 return false;
+            }
+        }
+
+        function insertEvent($titulo, $dtpost, $dtinicio, $dtfim, $texto, $vagas, $certificado){
+            $objInsertEvent = DB::conn()->prepare("INSERT INTO agenda (titulo, dtpost, dtinicio, dtfim, texto, vagas, certificado) values (?, ?, ?, ?, ?, ?, ?)");
+            if($objInsertEvent->execute(array($titulo, $dtpost, $dtinicio, $dtfim, $texto, $vagas, $certificado))){
+                $rnum = $objInsertEvent->rowCount();
+                if($rnum>0){
+                    echo '<h3>Evento inserido com sucesso</h3>';
+                }else{
+                    echo '<h3>Falha ao inserir o evento. Por favor, tente novamente mais tarde.</h3>';
+                }
+            }else{
+                echo '<h3>Erro interno. Contate o administrador.</h3>';
+            }
+        }
+
+        function deleteEvent($id){
+            $objDel = DB::conn()->prepare("DELETE FROM agenda WHERE id=?");
+            if($objDel->execute(array($id))){
+                $numRow = $objDel->rowCount();
+                if($numRow>0){
+                    echo '<h3>Evento excluído com sucesso!</h3>';
+                }else{
+                    echo '<h3>Não foi possível excluir o evento!</h3>';
+                }
+            }else{
+                echo '<h3>Erro interno.</h3>';
+            }
+        }
+
+        function getEventByIdJson($id){
+            $objJson = DB::conn()->prepare("SELECT * FROM agenda WHERE id=?");
+            if($objJson->execute(array($id))){
+                $numRowJson = $objJson->rowCount();
+                if($numRowJson>0){
+                    return $objJson->fetchObject();
+                }else{
+                    return null;
+                }
+            }else{
+                return null;
+            }
+        }
+
+
+
+        function updateEvent($titulo, $dtpost, $dtinicio, $dtfim, $texto, $vagas, $certificado, $id){
+            $objUp = DB::conn()->prepare("UPDATE agenda SET titulo=?, dtpost=?, dtinicio=?, dtfim=?, texto=?, vagas=?, certificado=? WHERE id=?");
+            if($objUp->execute(array($titulo, $dtpost, $dtinicio, $dtfim, $texto, $vagas, $certificado, $id))){
+                $rowNum = $objUp->rowCount();
+                if($rowNum>0){
+                    echo '<h3>Alteração efetuada com sucesso!</h3>';
+                }else{
+                    echo '<h3>Não foi encontrado nenhum evento com esse identificador!</h3>';
+                }
+            }else{
+                echo '<h3>Erro na alteração.</h3>';
             }
         }
 

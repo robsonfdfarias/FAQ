@@ -15,26 +15,17 @@
         <?php include_once("menu.php"); ?>
     <div id="geral">
         <div id="central">
-            
-        <?php include_once("top.php"); ?>
+            <?php include_once("top.php"); ?>
 
 
-            <div id="itensum">
+            <div id="itensum" style="margin-top:20px;">
 
                 <div id="artigo" style="border-radius: 5px; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);">
-                <div id="geralMenuCat">
-                    <div id="tituloCatMenuPag">Eventos:</div>
-                    <div id="addCatMenuPag">
-                        <a href="insertEvent.php">
-                            <img src="imgs/cat-add.svg" alt="Adicionar categoria" title="Adicionar categoria" height="30"> Adicionar evento
-                        </a>
-                    </div>
-                </div>
                     <?php
                         $id = $_GET['id'];
-                        include_once("class/capacitacao.class.php");
-                        $obj = new Capacitacao();
-                        $obj->agenda();
+                        include_once("class/inscritos.class.php");
+                        $obj = new Inscritos();
+                        $obj->getInscForEvent($id);
                     ?>
                 </div>
 
@@ -42,10 +33,9 @@
 
         </div>
     </div>
-
     <?php
-            include_once("footer.php");
-        ?>
+        include_once("footer.php");
+    ?>
     <script type="text/javascript">
         var elemento = document.getElementById('top');
         var calcula = 260-elemento.clientHeight;
@@ -53,6 +43,7 @@
         console.log(calcula+" ---");
         elemento.style.paddingTop  = calcula + 'px';
         elemento.style.paddingBottom  = calcula + 'px';
+
     </script>
 </body>
 </html>

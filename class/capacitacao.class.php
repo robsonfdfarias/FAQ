@@ -101,7 +101,7 @@
                         <header id="data">Total de vagas: <span id="catSpan"> '.$linha->vagas.'</span></header>
                         <header id="data">Vagas disponíveis: <span id="catSpan"> '.$vagasDisp.'</span></header>
                         <header id="data">Fornece certificado: <span id="catSpan"> '.$cert.'</span></header>
-                        <p>'.$linha->texto.'</p>
+                        <p>'.str_replace("../", "", $linha->texto).'</p>
                     </article>
                     <footer>
                         <p>
