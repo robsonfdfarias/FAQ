@@ -115,7 +115,13 @@
             if($obj->execute(array($data))){
                 $rowNum = $obj->rowCount();
                 if($rowNum>0){
-                    return '<td style="background-color: #ADFF2F; color: #000;"><a href="evento.php?dt='.$data.'">'.$dt[0].'</a></td>';
+                    $linha = $obj->fetchObject();
+                    $vg = $linha->vagas - $linha->preenchido;
+                    if($vg>0){
+                        return '<td style="background-color: #ADFF2F;" title="Clique para saber mais"><a href="evento.php?dt='.$data.'">'.$dt[0].'</a></td>';
+                    }else{
+                        return '<td style="background-color: #ADFF2F;" title="Não há vagas disponíveis para essa capacitação">'.$dt[0].'</td>';
+                    }
                 }else{
                     return '<td>'.$dt[0].'</td>';
                 }

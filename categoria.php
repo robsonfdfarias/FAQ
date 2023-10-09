@@ -15,29 +15,25 @@
     <div id="geral">
             <?php include_once("menu.php"); ?>
         <div id="central">
-            <div id="top">
-                <div id="form">
-                    <span id="titulo">Sei! Sistema Eletrônico de Informações</span><br>
-                    <span id="subtitulo">Perguntas frequentes</span><br><br>
-                    <form id="pesq" method="post" action="pesq.php">
-                        <input type="text" name="duvida" id="duvida" placeholder="Digite sua pesquisa">
-                        <input type="submit" name="pesquisar" id="pesquisar" value="Pesquisar">    
-                    </form>
-                </div>
-            </div>
+            <?php include_once("top.php"); ?>
             
 
             <div id="itemdois">
-                <h3>Artigos recentes</h3><hr id="recentes"><br>
-                <?php
-                    $idCat = $_GET['id'];
-                    include_once("class/crud.artigo.class.php");
-                    $obj2 = new CRUD();
-                    $obj2->getArtByCat($idCat);
-                ?>
+                <div id="centroItemDois" style="margin-top: 30px; width: 84%;">
+                    <h3>Artigos recentes</h3><hr id="recentes"><br>
+                    <?php
+                        $idCat = $_GET['id'];
+                        include_once("class/crud.artigo.class.php");
+                        $obj2 = new CRUD();
+                        $obj2->getArtByCat($idCat);
+                    ?>
+                </div>
             </div>
         </div>
     </div>
+        <?php
+            include_once("footer.php");
+        ?>
     <script type="text/javascript">
         var elemento = document.getElementById('top');
         var calcula = 260-elemento.clientHeight;

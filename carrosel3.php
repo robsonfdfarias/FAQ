@@ -268,9 +268,13 @@
             btnBack.addEventListener('click', ()=>{
                 mover = posicaoAnterior - parseInt(style.width)
                 if(mover>=(itens.length*parseInt(style.width))){
-                    numItem-=1
+                    numItem=1
                 }else{
-                    numItem=1;
+                    if(numItem>1){
+                        numItem-=1;
+                    }else{
+                        numItem=1;
+                    }
                 }
                 if(mover<1){
                     mover=1;

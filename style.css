@@ -366,6 +366,7 @@ span#categoria{
     padding: 20px 45px;
     border: 1px solid #dbdbdb;
     width: 100%;
+    text-align: left;
 }
 
 #artigo header#titulo{
@@ -398,7 +399,7 @@ section#cat{
 }
 #artigo nav a:hover{
     color: #04c052;
-    font-size: 1.3rem;
+    font-size: 1.0rem;
 }
 #artigo article{
     padding-bottom: 10px;

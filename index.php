@@ -86,12 +86,14 @@
             </div>
 
             <div id="itemdois">
-                <h3 style="padding-left: 10px;">Postagens recentes</h3><hr id="recentes"><br>
-                <?php
-                    include_once("class/crud.artigo.class.php");
-                    $obj2 = new CRUD();
-                    $obj2->selectArtigos();
-                ?>
+                <div id="centroItemDois" style="margin-top: 30px; width: 84%;">
+                    <h3 style="padding-left: 10px;">Postagens recentes</h3><hr id="recentes"><br>
+                    <?php
+                        include_once("class/crud.artigo.class.php");
+                        $obj2 = new CRUD();
+                        $obj2->selectArtigos();
+                    ?>
+                </div>
                 
             </div>
         </div>
