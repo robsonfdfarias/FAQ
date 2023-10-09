@@ -46,8 +46,14 @@
                     }
                     if($semana==1 || $semana==7){
                         echo '<td style="background-color:	#98FB98; color: #000;">'.($dia+1).'</td>';
+                        //self::compara(($dia+1)."/".($meses+1)."/".$anoAtual, ($dia+1)."/".($meses+1)."/".$anoAtual)
+                        /*echo '<td style="background-color:	#98FB98; color: #000;">'.
+                        self::linkCalDay(($dia+1)."/".($meses+1)."/".$anoAtual).
+                        '</td>';*/
+                        
                     }else{
-                        echo '<td>'.($dia+1).'</td>';
+                        //echo '<td>'.($dia+1).'</td>';
+                        echo self::linkCalDay(($dia+1)."/".($meses+1)."/".$anoAtual);
                     }
                     $semana++;
                 }
@@ -72,12 +78,56 @@
             if($obj->execute(array($dt))){
                 $rowNum = $obj->rowCount();
                 if($rowNum>0){
+                    $dt = '';
                     while($linha = $obj->fetchObject()){
-                        echo '<a href="evento.php?id='.$linha->id.'">Evento: '.$linha->dtinicio.' à '.$linha->dtfim.'</a><br>';
+                        //echo '<a href="evento.php?id='.$linha->id.'">Evento: '.$linha->dtinicio.' à '.$linha->dtfim.'</a><br>';
+                        $status = $linha->vagas-$linha->preenchido;
+                        if($dt!=$linha->dtinicio){
+                            if($linha->dtinicio!=$linha->dtfim){
+                                if($status>0){
+                                    echo '<a href="evento.php?dt='.$linha->dtinicio.'">Evento: '.$linha->dtinicio.' à '.$linha->dtfim.'</a><br>';
+                                }else{
+                                    echo 'Evento: '.$linha->dtinicio.' à '.$linha->dtfim.' (Sem vagas)<br>';
+                                }
+                            }else{
+                                if($status>0){
+                                    echo '<a href="evento.php?dt='.$linha->dtinicio.'">Evento do dia '.$linha->dtinicio.'</a><br>';
+                                }else{
+                                    echo 'Evento do dia '.$linha->dtinicio.' (Sem vagas)<br>';
+                                }
+                                
+                            }
+                        }
+                        $dt = $linha->dtinicio;
                     }
                 }else{
                     echo "Sem evento nesse mês.";
                 }
+            }
+        }
+
+        function linkCalDay($data){
+            $dt = explode("/", $data);
+            $dias = ["0", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18",
+                    "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"];
+            $data = $dias[$dt[0]].'/'.$dt[1].'/'.$dt[2];
+            $obj = DB::conn()->prepare("SELECT * FROM agenda WHERE dtinicio=?");
+            if($obj->execute(array($data))){
+                $rowNum = $obj->rowCount();
+                if($rowNum>0){
+                    return '<td style="background-color: #ADFF2F; color: #000;"><a href="evento.php?dt='.$data.'">'.$dt[0].'</a></td>';
+                }else{
+                    return '<td>'.$dt[0].'</td>';
+                }
+            }
+        }
+
+        function compara($databanco, $dataCal){
+            $dt = explode("/", $dataCal);
+            if(strcmp($databanco, $dataCal)==0){
+                return '<a href="evento.php?dt='.$dataCal.'">'.$dt[0].'</a>';
+            }else{
+                return $dt[0];
             }
         }
 
@@ -176,6 +226,81 @@
             }
         }
 
-    }
+        
+        function getEventForDate($dt){
+            $objGetDate = DB::conn()->prepare("SELECT * FROM agenda WHERE dtinicio=?");
+            if($objGetDate->execute(array($dt))){
+                $nr = $objGetDate->rowCount();
+                if($nr>0){
+                    $op = array();
+                    while($linha = $objGetDate->fetchObject()){
+                        $vagasDisp = $linha->vagas-$linha->preenchido;
+                        if($vagasDisp>0){
+                            $vag = $vagasDisp;
+                            $o = [$linha->titulo.' - '.$linha->horainicio, $linha->id];
+                            array_push($op, $o);
+                        }else{
+                            $vag = '<strong>Todas as vagas para essa turma estão preenchidas.</strong>';
+                        }
+                        if($linha->certificado>0){
+                            $cert = 'SIM';
+                        }else{
+                            $cert = 'NÃO';
+                        }
+                        echo '
+                            <h3>Turma da hora: '.$linha->dtinicio.'</h3>
+                            <article>
+                                <header id="data">Data da postagem: '.$linha->dtpost.'</header>
+                                <header id="data">Total de vagas: <span id="catSpan"> '.$linha->vagas.'</span></header>
+                                <header id="data">Vagas disponíveis: <span id="catSpan"> '.$vag.'</span></header>
+                                <header id="data">Fornece certificado: <span id="catSpan"> '.$cert.'</span></header>
+                                <p>'.str_replace("../", "", $linha->texto).'</p>
+                            </article>
+                        ';
+                    }
+                    if(!empty($op)){
+                        //echo '<h2>Não está vazio</h2>';
+                        //print_r($op);
+                        echo '<br><div id="divFormInscGeral"><div id="divFormInsc"><h2>Formulario de inscrição para o evento</h2>
+                            <form action="evento.submit.php" method="post" id="formInsc">
+                                <table id="tabFormInsc">
+                                    <tr>
+                                        <td>Selecione a capacitação e a turma:</td>
+                                            <td>
+                                                <select name="idevento" id="idevento" required>';
+                                                    
+                                                for($i=0; $i<count($op); $i++){
+                                                    echo '<option value="'.$op[$i][1].'">'.$op[$i][0].'</option>';
+                                                }
+                        echo '                        </selected>
+                                            </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nome:</td>
+                                        <td><input type="text" name="nome" required></td>
+                                    </tr><tr>
+                                        <td>Secretaria/<br>local de trabalho:</td>
+                                        <td><input type="text" name="secretaria" required></td>
+                                    </tr><tr>
+                                        <td>Matrícula:</td>
+                                        <td><input type="text" name="matricula" required></td>
+                                    </tr><tr>
+                                        <td>E-mail:</td>
+                                        <td><input type="email" name="email" required></td>
+                                    </tr><tr>
+                                        <td colspan="2">
+                                        <input type="submit" name="" value="Inscrever"></td>
+                                    </tr>
+                                </table>
+                            </form></div></div>
+                            ';
+                    }
+                }else{
+                    echo '<h3>Sem eventos para essa data</h3>';
+                }
+            }
+        }
+
+    } 
 
 ?>

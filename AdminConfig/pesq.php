@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("checa.php");
     $pesq = $_POST['duvida'];
 ?>

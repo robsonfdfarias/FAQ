@@ -133,9 +133,9 @@
             }
         }
 
-        function insertEvent($titulo, $dtpost, $dtinicio, $dtfim, $texto, $vagas, $certificado){
-            $objInsertEvent = DB::conn()->prepare("INSERT INTO agenda (titulo, dtpost, dtinicio, dtfim, texto, vagas, certificado) values (?, ?, ?, ?, ?, ?, ?)");
-            if($objInsertEvent->execute(array($titulo, $dtpost, $dtinicio, $dtfim, $texto, $vagas, $certificado))){
+        function insertEvent($titulo, $dtpost, $dtinicio, $dtfim, $texto, $vagas, $certificado, $horainicio, $horafim){
+            $objInsertEvent = DB::conn()->prepare("INSERT INTO agenda (titulo, dtpost, dtinicio, dtfim, texto, vagas, certificado, horainicio, horafim) values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            if($objInsertEvent->execute(array($titulo, $dtpost, $dtinicio, $dtfim, $texto, $vagas, $certificado, $horainicio, $horafim))){
                 $rnum = $objInsertEvent->rowCount();
                 if($rnum>0){
                     echo '<h3>Evento inserido com sucesso</h3>';
@@ -177,9 +177,9 @@
 
 
 
-        function updateEvent($titulo, $dtpost, $dtinicio, $dtfim, $texto, $vagas, $certificado, $id){
-            $objUp = DB::conn()->prepare("UPDATE agenda SET titulo=?, dtpost=?, dtinicio=?, dtfim=?, texto=?, vagas=?, certificado=? WHERE id=?");
-            if($objUp->execute(array($titulo, $dtpost, $dtinicio, $dtfim, $texto, $vagas, $certificado, $id))){
+        function updateEvent($titulo, $dtpost, $dtinicio, $dtfim, $texto, $vagas, $certificado, $horainicio, $horafim, $id){
+            $objUp = DB::conn()->prepare("UPDATE agenda SET titulo=?, dtpost=?, dtinicio=?, dtfim=?, texto=?, vagas=?, certificado=?, horainicio=?, horafim=? WHERE id=?");
+            if($objUp->execute(array($titulo, $dtpost, $dtinicio, $dtfim, $texto, $vagas, $certificado, $horainicio, $horafim, $id))){
                 $rowNum = $objUp->rowCount();
                 if($rowNum>0){
                     echo '<h3>Alteração efetuada com sucesso!</h3>';

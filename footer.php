@@ -32,14 +32,17 @@
             transition: ease 0.4s;
         }
         #camada1Footer a:hover{
-            color: blue;
+            color: #04c052;
             transition: ease 0.4s;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
         #footerCategoriaTitulo{
             font-size: 1.5rem;
             color: #fff;
             font-weight: bold;
+        }
+        #camada2{
+            color: #fff;
         }
     </style>
 </head>
@@ -54,7 +57,7 @@
                         $obj->getCatFooter();
                     ?>
                 </div>
-                <div id="camada2">Copyright © 2023 de Robson Farias (robsonfdfarias@gmail.com)</div>
+                <div id="camada2"><em>Copyright © 2023 de Robson Farias (robsonfdfarias@gmail.com)</em></div>
             </div>
     </footer>
 </body>

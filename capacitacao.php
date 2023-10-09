@@ -62,7 +62,7 @@
             <?php include_once("top.php"); ?>
 
             <div id="itemdois">
-                <div class="post-content">
+                <div class="post-content" style="width: 100%;">
                     <header class="entry-header">
                     <h2 class="entry-title">Capacitações disponíveis para o ano de <?php echo date('Y'); ?></h2>
                                         

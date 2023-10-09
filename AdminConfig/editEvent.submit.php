@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include_once("checa.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +31,8 @@
                     $texto = $_POST['texto'];
                     $vagas = $_POST['vagas'];
                     $certificado = $_POST['certificado'];
+                    $horainicio = $_POST['horainicio'];
+                    $horafim = $_POST['horafim'];
                     $id = $_POST['id'];
                     $dt = explode("-", $dtinicio);
                     $dtinicioN = $dt[2]."/".$dt[1]."/".$dt[0];
@@ -34,7 +40,7 @@
                     $dtfimN = $dt[2]."/".$dt[1]."/".$dt[0];
                     include_once("class/capacitacao.class.php");
                     $inserir = new Capacitacao();
-                    $inserir->updateEvent($titulo, $dtpost, $dtinicioN, $dtfimN, $texto, $vagas, $certificado, $id);
+                    $inserir->updateEvent($titulo, $dtpost, $dtinicioN, $dtfimN, $texto, $vagas, $certificado, $horainicio, $horafim, $id);
                     
                 ?>
             </div>

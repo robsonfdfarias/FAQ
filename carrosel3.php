@@ -139,6 +139,32 @@
             background-size: auto 45px;
             transition: ease-in-out 0.3s;
         }
+        #quantSlides{
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        #quantSlides div{
+            margin: 3px;
+        }
+        .cxConfig{
+            border:1px solid #000;
+            box-shadow: 0 0 0px 0px rgba(0,0,0,0.5);
+            cursor: default;
+            transition: ease-in-out 0.3s;
+        }
+        .cxConfig:hover{
+            border:3px solid #000;
+            box-shadow: 0 0 2px 2px rgba(0,0,0,0.5);
+            cursor: pointer;
+            transition: ease-in-out 0.3s;
+        }
     </style>
 </head>
 <body>
@@ -150,6 +176,7 @@
     <div class="btnCarossel BtnBack disable">
       <span id="seta"></span>
     </div>
+    <div id="quantSlides"></div><!-- Aqui eu criei as caixas identificadoras para mostrar em qual slide está  -->
     <div class="carossel-Slide">
       <div class="item"><a href="perguntasFrequentes.php"><img src="imgs/perguntas-frequentes.png" alt="img" width="100%"></a></div>
       <div class="item"><a href="https://www.escolavirtual.gov.br/curso/74"><img src="imgs/cursoSei.png" alt="img" width="100%"></a></div>
@@ -188,9 +215,10 @@
 
 
 <script>
+        var quantSlides = document.getElementById("quantSlides");
         var carosseis = document.getElementsByClassName('carossel-Container')
         var tempo = 5000;
-        var numItem = 0;
+        var numItem = 1;
         var intervalo = setInterval(() => {
             roda()
         }, tempo);
@@ -210,23 +238,42 @@
 
             btnNext.addEventListener('click', ()=>{
                 mover = posicaoAnterior + parseInt(style.width)
-
+                if(mover>=(itens.length*parseInt(style.width))){
+                    numItem=1;
+                }else{
+                    numItem+=1
+                }
                 clearInterval(intervalo);
                 intervalo = setInterval(() => {
                                 roda()
                             }, tempo);
                 for(let c = 0; c < itens.length; c++ ){
-
-                    itens[c].style.right=  mover + 'px'
-
+                    if(mover>=(itens.length*parseInt(style.width))){
+                        mover = 0;
+                        itens[c].style.right=  mover+'px'
+                        //console.log(itens.length*parseInt(style.width))
+                    }else{
+                        itens[c].style.right=  mover + 'px'
+                    }
                     posicaoAnterior = mover
                 }
+                /*if(numItem==(itens.length)){
+                    numItem=0;
+                }else{
+                    numItem+=1;
+                }*/
+                    configCx(numItem);
             })
 
             btnBack.addEventListener('click', ()=>{
                 mover = posicaoAnterior - parseInt(style.width)
-                if(mover<0){
-                    mover=0;
+                if(mover>=(itens.length*parseInt(style.width))){
+                    numItem-=1
+                }else{
+                    numItem=1;
+                }
+                if(mover<1){
+                    mover=1;
                 }
 
                 clearInterval(intervalo);
@@ -239,16 +286,19 @@
 
                     posicaoAnterior = mover
                 }
+                configCx(numItem);
 
             });
         }
         function roda(){
             updateVar();
+            numItem +=1;
             var total = itens.length * parseInt(style.width)
             if(mover<(total-parseInt(style.width))){
                 mover = posicaoAnterior + parseInt(style.width)
             }else{
                 mover = 0;
+                numItem=1;
             }
 
             for(let c = 0; c < itens.length; c++ ){
@@ -257,7 +307,7 @@
 
                 posicaoAnterior = mover
             }
-            numItem +=1;
+            configCx(numItem);
         }
         function updateVar(){
             var secCar = document.getElementById("secCar");
@@ -276,7 +326,7 @@
         window.addEventListener('resize', function(){
             clearInterval(intervalo);
             posicaoAnterior = numItem*parseInt(style.width)
-            roda();
+            //roda();
                 intervalo = setInterval(() => {
                                 roda()
                             }, tempo);
@@ -288,11 +338,62 @@
                 clearInterval(intervalo);
             });
             itens[i].addEventListener("mouseout", function(){
-                roda();
+                //roda();
                 intervalo = setInterval(() => {
                                 roda()
                             }, tempo);
             });
+        }
+
+        function caixas(){
+            for(j=1; j<=itens.length; j++){
+                var cx = document.createElement('div');
+                cx.setAttribute("id", "cx_"+j)
+                cx.setAttribute("class", "cxConfig")
+                cx.setAttribute("onclick", "actionBt(this)");
+                cx.setAttribute("style", "width: 20px; height: 10px; border: 1px solid #000; background-color: #fff;")
+                //cx.setAttribute("style", "height: 10px;")
+                //cx.setAttribute("style", "background-color: #000;")
+                quantSlides.appendChild(cx)
+            }
+        }
+        caixas();
+        function configCx(itemAtual){
+            for(p=1;p<=itens.length; p++){
+                var divAtual = document.getElementById("cx_"+p);
+                if(itemAtual==p){
+                    divAtual.setAttribute("style", "width: 20px; height: 10px; border: 1px solid #000; background-color: #000; transition: ease-in-out 0.3s;");
+                }else{
+                    divAtual.setAttribute("style", "width: 20px; height: 10px; border: 1px solid #000; background-color: #fff; transition: ease-in-out 0.3s;");
+                }
+            }
+        }
+        function actionBt(obj){
+            var id=obj.getAttribute("id");
+            console.log(id+"<<<<<<<")
+            clearInterval(intervalo);
+            if(mover>=(itens.length*parseInt(style.width))){
+                    numItem=1;
+                }else{
+                    numItem+=1
+                }
+
+            for(a=1; a<=itens.length; a++){
+                if(id==('cx_'+a)){
+                    numItem=a;
+                    mover = (a-1)*parseInt(style.width);
+                    for(let c = 0; c < itens.length; c++ ){
+
+                    itens[c].style.right=  mover + 'px'
+
+                    posicaoAnterior = mover
+                    }
+                }
+            }
+            configCx(numItem);
+            intervalo = setInterval(() => {
+                    roda()
+                }, tempo);
         }
     </script>
 </body>

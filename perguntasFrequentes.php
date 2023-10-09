@@ -27,10 +27,12 @@
             </div>
 
             <div id="itemdois">
-                <h3>Artigos recentes</h3><hr id="recentes"><br>
-                <?php
-                    $obj2->selectArtigos();
-                ?>
+                <div id="centroItemDois" style="margin-top: 30px; width: 84%;">
+                    <h3>Artigos recentes</h3><hr id="recentes"><br>
+                    <?php
+                        $obj2->selectArtigos();
+                    ?>
+                </div>
                 
             </div>
         </div>

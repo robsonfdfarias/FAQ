@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("checa.php");
 
 $id = $_GET["id"];

@@ -17,8 +17,8 @@
             $email = $limpa->limpa($email);
             $idevento = $limpa->limpa($idevento);
             $objCap = new Capacitacao();
-            if(self::checkedEmailDuplicateEvent($email, $idevento)){
-                echo 'Já foi feito uma inscrição com esse e-mail!';
+            if(self::checkedMatDuplicateEvent($matricula, $idevento)){
+                echo 'Servidor já matriculado nessa Capacitação. Só é permitido uma matrícula por servidor!';
             }else{
                 if($objCap->updateVagaEvent($idevento)){
                     $obj = DB::conn()->prepare("INSERT INTO inscritos(nome, secretaria, matricula, email, idevento) values (?, ?, ?, ?, ?)");
@@ -37,6 +37,20 @@
         function checkedEmailDuplicateEvent($email, $idEvent){
             $objDupl = DB::conn()->prepare("SELECT * FROM inscritos WHERE id=? and email=?");
             if($objDupl->execute(array($idEvent, $email))){
+                $rn = $objDupl->rowCount();
+                if($rn>0){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        }
+
+        function checkedMatDuplicateEvent($matricula, $idEvent){
+            $objDupl = DB::conn()->prepare("SELECT * FROM inscritos WHERE id=? and matricula=?");
+            if($objDupl->execute(array($idEvent, $matricula))){
                 $rn = $objDupl->rowCount();
                 if($rn>0){
                     return true;

@@ -18,17 +18,14 @@
             <div id="itensum">
 
                 <div id="artigo" style="border-radius: 5px; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);">
-                
                     <?php
-                        $dt = $_GET['dt'];
-                        echo '<header id="titulo">Eventos do dia '.$dt.'</header>';
+                        $id = $_GET['id'];
                         include_once("class/capacitacao.class.php");
                         $obj = new Capacitacao();
-                        //$obj->getEventById($dt);
-                        $obj->getEventForDate($dt);
+                        $obj->getEventById($id);
                     ?>
                 </div>
- 
+
             </div>
 
         </div>

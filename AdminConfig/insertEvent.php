@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include_once("checa.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,6 +49,14 @@
                             <tr>
                                 <td><span id="nn">Data de fim:</span></td>
                                 <td><input type="date" id="dtfim" name="dtfim" required></td>
+                            </tr>
+                            <tr>
+                                <td><span id="nn">Hora de inicio:</span></td>
+                                <td><input type="time" id="horainicio" name="horainicio" required></td>
+                            </tr>
+                            <tr>
+                                <td><span id="nn">Hora de fim:</span></td>
+                                <td><input type="time" id="horafim" name="horafim" required></td>
                             </tr>
                             <tr>
                                 <td><span id="nn">Número de vagas:</span></td>
