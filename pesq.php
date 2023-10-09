@@ -9,9 +9,10 @@
     <title>Document</title>
     <!--<script type="text/javascript" src="jquery/code.jquery.com_jquery-3.7.1.min.js">-->
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="shortcut icon" href="imgs/logo_sei_93x60.ico" type="image/x-icon" />
     <style>
 
-        #duvida {
+        /*#duvida {
             width: calc(100% - 170px); 
             height:35px;
             border-radius: 15px;
@@ -19,7 +20,7 @@
             border: 0px;
             margin-bottom: 5px;
             font-size: 120%;
-            padding-left: 5px;
+            padding-left: 5px; 
         }
 
         #pesquisar {
@@ -41,7 +42,7 @@
             transition: ease-in-out 0.5s;
             background-color: #0c582c;
             color: #fff;
-        }
+        }*/
 
         #itemdois {
             width: calc(100% - 10px);
@@ -55,8 +56,8 @@
             width: calc(90%-10px) !important;
             padding: 10px;
             border-radius: 5px;
-            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-            border: 0.5px solid rgba(0, 0, 0, 0.2);
+            /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
         }
 
         .tituloQuestao{
@@ -71,8 +72,8 @@
             transition: ease-in-out 0.5s;
         }
         .tituloQuestao a:hover{
-            font-size: 23px;
-            color: red;
+            font-size: 20px;
+            color: forestgreen;
             text-decoration: none;
             transition: ease-in-out 0.5s;
         }
@@ -84,8 +85,8 @@
             transition: ease-in-out 0.5s;
         }
         .descQuestao a:hover{
-            font-size: 20px;
-            color: red;
+            font-size: 17px;
+            color: forestgreen;
             text-decoration: none;
             transition: ease-in-out 0.5s;
         }
@@ -102,27 +103,19 @@
     <?php include_once("menu.php"); ?>
     <div id="geral">
         <div id="central">
-            <div id="top">
-                <div id="form">
-                    <span id="titulo">Sei! Sistema Eletrônico de Informações</span><br>
-                    <span id="subtitulo">Perguntas frequentes</span><br><br>
-                    <form id="pesq" method="post" action="pesq.php">
-                        <input type="text" name="duvida" id="duvida" placeholder="Digite sua pesquisa">
-                        <input type="submit" name="pesquisar" id="pesquisar" value="Pesquisar">    
-                    </form>
-                </div>
-            </div>
+            <?php include_once("top.php"); ?>
             <div id="itensum">
             </div>
 
-            <div id="itemdois">
-                <h2>Você pesquisou por: <?php echo "<span style='color:#0c582c;'>".$pesq."</span>"; ?></h2>
-                <?php
-                    include_once("class/crud.artigo.class.php");
-                    $obj2 = new CRUD();
-                    $obj2->findArticle($pesq);
-                ?>
-                
+            <div id="itemdois" style="box-shadow: none;">
+                <div id="centroItemDois" style="margin-top: -20px; width: 84%;">
+                    <h2>Você pesquisou por: <?php echo "<span style='color:#0c582c;'>".$pesq."</span>"; ?></h2>
+                    <?php
+                        include_once("class/crud.artigo.class.php");
+                        $obj2 = new CRUD();
+                        $obj2->findArticle($pesq);
+                    ?>
+                </div>
             </div>
         </div>
     </div>

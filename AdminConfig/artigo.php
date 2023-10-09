@@ -15,19 +15,10 @@
         <?php include_once("menu.php"); ?>
     <div id="geral">
         <div id="central">
-            <div id="top">
-                <div id="form">
-                    <span id="titulo">Sei! Sistema Eletrônico de Informações</span><br>
-                    <span id="subtitulo">Perguntas frequentes</span><br><br>
-                    <form id="pesq" method="post" action="pesq.php">
-                        <input type="text" name="duvida" id="duvida" placeholder="Digite sua pesquisa">
-                        <input type="submit" name="pesquisar" id="pesquisar" value="Pesquisar">    
-                    </form>
-                </div>
-            </div>
+            <?php include_once("top.php"); ?>
 
 
-            <div id="itensum" style="margin-top:-35px;">
+            <div id="itensum" style="margin-top: 20px;">
 
                 <div id="artigo" style="border-radius: 5px; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);">
                     <?php
