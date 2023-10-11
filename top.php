@@ -18,6 +18,7 @@
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+      /*
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -93,15 +94,15 @@
 
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
-      }
+      }*/
     </style>
 
     
-    <!-- Custom styles for this template -->
-    <link href="heroes.css" rel="stylesheet">
+    <!-- Custom styles for this template 
+    <link href="heroes.css" rel="stylesheet">-->
 </head>
 <body>
-<div class="px-1 py-1 my-1 text-center">
+<!--<div class="px-1 py-1 my-1 text-center">
     <h1 class="display-5 fw-bold text-body-emphasis">Sei! Sistema Eletrônico de Informações</h1>
     <div class="col-lg-10 mx-auto">
       <p class="lead mb-4">Perguntas frequentes</p>
@@ -112,21 +113,21 @@
           </form>
       </div>
     </div>
-  </div>
-  <!--<div id="top">
+  </div>-->
+  <div id="top">
       <div id="form">
           <span id="titulo">Sei! Sistema Eletrônico de Informações</span><br>
           <span id="subtitulo">Perguntas frequentes</span><br><br>
           <form id="pesq" method="post" action="pesq.php" role="search">
-              <input class="form-control" type="search" aria-label="Search" name="duvida" placeholder="Digite sua pesquisa">
+              <input class="search" type="search" aria-label="Search" name="duvida" placeholder="Digite sua pesquisa">
               <input type="submit" name="pesquisar" id="pesquisar" value="Pesquisar">    
           </form>
       </div>
   </div>
-        <form role="search">
+        <!--<form role="search">
           <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-        </form>-->
+        </form>
 
-    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>-->
 </body>
 </html>

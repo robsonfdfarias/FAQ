@@ -79,8 +79,10 @@ body{
     -webkit-animation: gradient 0.5s alternate;
     animation-fill-mode:forwards;*/
 
-    height: 3.4rem;
-    border-top: 4px solid green;
+    height: 3.6rem;
+    border-top: 6px solid green;
+    padding-bottom: 10px;
+    text-shadow: chartreuse;
     transition: ease-in-out 0.3s;
 }
 @keyframes gradient {

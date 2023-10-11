@@ -68,12 +68,12 @@ body{
 
 #titulo{
     font-size: 200% !important;
-    color: white;
+    color: black;
 }
 
 #subtitulo{
     font-size: 150%;
-    color: white;
+    color: black;
 }
 
 div.objitensum {
@@ -89,6 +89,10 @@ div.objitensum {
 
 #pesq{
     width: 100%;
+}
+
+.search{
+    width: 50%;
 }
 
 #duvida {

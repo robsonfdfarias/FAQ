@@ -1,5 +1,8 @@
 <?php
     $pesq = $_POST['duvida'];
+    include_once("AdminCongig/class/limpa.variavel.class.php");
+    $limpa = new LimpaVar();
+    $pesq = $limpa->limpa($pesq);
 ?>
 <!DOCTYPE html>
 <html lang="en">

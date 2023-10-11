@@ -19,11 +19,21 @@
 
                 <div id="artigo" style="border-radius: 5px; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);">
                     <?php
+                        include_once("AdminCongig/class/limpa.variavel.class.php");
+                        $limpa = new LimpaVar();
+
                         $nome = $_POST['nome'];
                         $secretaria = $_POST['secretaria'];
                         $matricula = $_POST['matricula'];
                         $email = $_POST['email'];
                         $idevento = $_POST['idevento'];
+
+                        $nome = $limpa->limpa($nome);
+                        $secretaria = $limpa->limpa($secretaria);
+                        $matricula = $limpa->limpa($matricula);
+                        $email = $limpa->limpa($email);
+                        $idevento = $limpa->limpa($idevento);
+
                         include_once("class/inscricao.class.php");
                         $obj = new Inscricao();
                         $obj->insertInsc($nome, $secretaria, $matricula, $email, $idevento);

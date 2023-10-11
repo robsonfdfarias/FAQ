@@ -137,7 +137,7 @@
         <input type="text" placeholder="Insira aqui o endereco" id="url">
         <input type="text" placeholder="Digite a Largura ex(400)" id="largura">
         <input type="text" placeholder="Digite a altura ex(300)" id="altura">
-        <button onclick="insertUrlVideo()">Inserir Imagem</button><button onclick="cancel()">Cancelar</button>
+        <button onclick="insertUrlVideo()">Inserir vídeo</button><button onclick="cancel()">Cancelar</button>
     </div>
 </div>
 

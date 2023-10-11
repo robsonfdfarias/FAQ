@@ -85,13 +85,22 @@
                         if($dt!=$linha->dtinicio){
                             if($linha->dtinicio!=$linha->dtfim){
                                 if($status>0){
-                                    echo '<a href="evento.php?dt='.$linha->dtinicio.'">Evento: '.$linha->dtinicio.' à '.$linha->dtfim.'</a><br>';
+                                    if(self::verifyDate($linha->dtinicio)){
+                                        echo '<a href="evento.php?dt='.$linha->dtinicio.'">Evento: '.$linha->dtinicio.' à '.$linha->dtfim.'</a><br>';
+                                    }else{
+                                        echo 'Evento: '.$linha->dtinicio.' à '.$linha->dtfim.' (Passou da data)<br>';
+                                    }
                                 }else{
                                     echo 'Evento: '.$linha->dtinicio.' à '.$linha->dtfim.' (Sem vagas)<br>';
                                 }
                             }else{
                                 if($status>0){
-                                    echo '<a href="evento.php?dt='.$linha->dtinicio.'">Evento do dia '.$linha->dtinicio.'</a><br>';
+                                    if(self::verifyDate($linha->dtinicio)){
+                                        echo '<a href="evento.php?dt='.$linha->dtinicio.'">Evento do dia '.$linha->dtinicio.'</a><br>';
+                                    }else{
+                                        echo 'Evento do dia '.$linha->dtinicio.' (Passou da data)<br>';
+                                    }
+                                    
                                 }else{
                                     echo 'Evento do dia '.$linha->dtinicio.' (Sem vagas)<br>';
                                 }
@@ -254,7 +263,7 @@
                             $cert = 'NÃO';
                         }
                         echo '
-                            <h3>Turma da hora: '.$linha->dtinicio.'</h3>
+                            <h2>Turma da hora: '.$linha->horainicio.'</h2>
                             <article>
                                 <header id="data">Data da postagem: '.$linha->dtpost.'</header>
                                 <header id="data">Total de vagas: <span id="catSpan"> '.$linha->vagas.'</span></header>
@@ -304,6 +313,29 @@
                 }else{
                     echo '<h3>Sem eventos para essa data</h3>';
                 }
+            }
+        }
+
+        function verifyDate($date){
+            $dt = explode("/", $date);
+            $dataAtual = date("d/m/Y");
+            $dtAtual = explode("/", $dataAtual);
+            if($dtAtual[2]<$dt[2]){
+                return true;
+            }else if($dtAtual[2]==$dt[2]){
+                if($dtAtual[1]<$dt[1]){
+                    return true;
+                }else if($dtAtual[1]==$dt[1]){
+                    if($dtAtual[0]<=$dt[0]){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
             }
         }
 
