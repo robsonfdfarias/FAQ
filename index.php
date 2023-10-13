@@ -7,6 +7,13 @@
     <!--<script type="text/javascript" src="jquery/code.jquery.com_jquery-3.7.1.min.js">-->
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="shortcut icon" href="imgs/logo_sei_93x60.ico" type="image/x-icon" />
+    <meta property="og:image" content="imagens/faq_pic.jpg"> 
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="200">
+    <meta property="og:autor" content="Robson Ferreira de Farias">
+    <meta property="og:title" content="Área principal do FAQ">
+    <meta property="og:description" content="Seja bem vindo ao FAQ referente ao SEI da prefeitura de Jaraguá do Sul / SC">
     <script type="text/javascript">
         /*function resizeRobson(){
             //alert("sdafdfad");
@@ -28,16 +35,6 @@
     <div id="geral">
             <?php include_once("menu.php"); ?>
         <div id="central">
-            <!--<div id="top">
-                <div id="form">
-                    <span id="titulo">Sei! Sistema Eletrônico de Informações</span><br>
-                    <span id="subtitulo">Perguntas frequentes</span><br><br>
-                    <form id="pesq" method="post" action="pesq.php">
-                        <input type="text" name="duvida" id="duvida" placeholder="Digite sua pesquisa">
-                        <input type="submit" name="pesquisar" id="pesquisar" value="Pesquisar">    
-                    </form>
-                </div>
-            </div>-->
             <?php include_once("top.php"); ?>
 
             <div id="itensum">
@@ -68,7 +65,7 @@
                                     </tr>
                                     <tr>
                                         <td><img src="imgs/globo.svg" alt="Acesse site da prefeitura de Jaraguá do Sul" height="30"></td>
-                                        <td><span id="texto"><a href="#">Site da prefeitura</a></span></td>
+                                        <td><span id="texto"><a href="https://www.jaraguadosul.sc.gov.br/">Site da prefeitura</a></span></td>
                                     </tr>
                                     <tr>
                                         <td><img src="imgs/grampo.svg" alt="Acesse o manual do SEI" height="30"></td>

@@ -451,3 +451,11 @@ span#catSpan{
     align-items: center;
     text-align: center;
 }
+
+#clique{
+    display: block;
+}
+
+#clique div{
+    width: 100%;
+}

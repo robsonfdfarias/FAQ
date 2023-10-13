@@ -35,7 +35,7 @@
                             <form action="inserir.submit.php" method="post" id="formulario"  enctype="multipart/form-data" autocomplete="on" onsubmit="return ValidateContactForm();">
                             <tr>
                                 <td><span id="nn">Título:</span></td>
-                                <td><input type="text" id="tituloArt" name="tituloArt" required></td>
+                                <td><input type="text" id="tituloArt" name="tituloArt" required spellcheck="true"></td>
                             </tr>
                             <tr>
                                 <td><span id="nn">Resumo:</span></td>

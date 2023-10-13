@@ -127,7 +127,11 @@
                     $linha = $obj->fetchObject();
                     $vg = $linha->vagas - $linha->preenchido;
                     if($vg>0){
-                        return '<td style="background-color: #ADFF2F;" title="Clique para saber mais"><a href="evento.php?dt='.$data.'">'.$dt[0].'</a></td>';
+                        if(self::verifyDate($data)){
+                            return '<td class="clique" style="background-color: #ADFF2F; padding:0px;" title="Clique para saber mais"><a href="evento.php?dt='.$data.'"><div style="padding: 7px 0px;">'.$dt[0].'</div></a></td>';
+                        }else{
+                            return '<td style="background-color: #dfdfdf; color:#fff;" title="Esgotado o prazo de inscrição">'.$dt[0].'</td>';
+                        }
                     }else{
                         return '<td style="background-color: #ADFF2F;" title="Não há vagas disponíveis para essa capacitação">'.$dt[0].'</td>';
                     }

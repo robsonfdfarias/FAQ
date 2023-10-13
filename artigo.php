@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+$id = $_GET['id'];
+include_once("class/crud.artigo.class.php");
+$obj = new CRUD();
+$obj->getArtById($id);
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +12,12 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="shortcut icon" href="imgs/logo_sei_93x60.ico" type="image/x-icon" />
+    <meta property="og:image" content="<?php echo $obj->imgArt(); ?>"> 
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="200">
+    <meta property="og:title" content="<?php echo $obj->titulo(); ?>">
+    <meta property="og:description" content="<?php echo $obj->resumo(); ?>">
 </head>
 <body>
         <?php include_once("menu.php"); ?>
@@ -19,10 +31,7 @@
 
                 <div id="artigo" style="border-radius: 5px; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);">
                     <?php
-                        $id = $_GET['id'];
-                        include_once("class/crud.artigo.class.php");
-                        $obj = new CRUD();
-                        $obj->getArtById($id);
+                        echo $obj->artigo();
                     ?>
                 </div>
 
@@ -35,12 +44,12 @@
             include_once("footer.php");
         ?>
     <script type="text/javascript">
-        var elemento = document.getElementById('top');
+        /*var elemento = document.getElementById('top');
         var calcula = 260-elemento.clientHeight;
         calcula = calcula/2;
         console.log(calcula+" ---");
         elemento.style.paddingTop  = calcula + 'px';
-        elemento.style.paddingBottom  = calcula + 'px';
+        elemento.style.paddingBottom  = calcula + 'px';*/
     </script>
 </body>
 </html>

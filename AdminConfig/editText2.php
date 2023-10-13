@@ -187,7 +187,7 @@
     <img src="imgEditor/hangingindent.svg" title="Identar linha" onClick="addIdent()" />
     <img src="imgEditor/hangingindentremove.svg" title="Remove a identação" onClick="addOutIdent()" />
 </div>
-<div id="texto" contenteditable="true" autofocus required autocomplete="off">Digite o seu artigo aqui...</div>
+<div id="texto" contenteditable="true" autofocus required autocomplete="off" spellcheck="true">Digite o seu artigo aqui...</div>
 
 
 <div id="geralInseriImagem">

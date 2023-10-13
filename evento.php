@@ -38,12 +38,12 @@
             include_once("footer.php");
         ?>
     <script type="text/javascript">
-        var elemento = document.getElementById('top');
+        /*var elemento = document.getElementById('top');
         var calcula = 260-elemento.clientHeight;
         calcula = calcula/2;
         console.log(calcula+" ---");
         elemento.style.paddingTop  = calcula + 'px';
-        elemento.style.paddingBottom  = calcula + 'px';
+        elemento.style.paddingBottom  = calcula + 'px';*/
     </script>
 </body>
 </html>

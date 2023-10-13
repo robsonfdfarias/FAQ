@@ -8,6 +8,11 @@ class CRUD{
         DB::conn();
     }
 
+    public $imgArt='Sem imagem';
+    public $artigo = '';
+    public $titleArt = '';
+    public $resumoArt = '';
+
 
     function removeArtigosDefinidos($texto){
         $art = ['a', 'e', 'i', 'o', 'u', 
@@ -143,6 +148,59 @@ class CRUD{
             if($nr>0){
                 $categ = new Categoria();
                 $linha = $obj->fetchObject();
+                $this->imgArt = 'imagens/'.$linha->img;
+                $this->titleArt = $linha->titulo;
+                $this->resumoArt = $linha->resumo;
+                if($linha->dataAlter!=null || $linha->dataAlter!=''){
+                    $dataAlter = "Ultima atualização ".$linha->dataAlter;
+                }else{
+                    $dataAlter = "Este artigo não sofreu nenhuma atualização até o momento.";
+                }
+                $this->artigo = '
+                    <header id="titulo">'.$linha->titulo.'</header>
+                    <nav>
+                        <a href="index.php">HOME</a> -> 
+                        <a href="perguntasFrequentes.php">Perguntas Frequentes</a> -> 
+                        <a href="categoria.php?id='.$linha->categoria.'">'.$categ->getCatById($linha->categoria).'</a>
+                    </nav>
+                    
+                    <article>
+                        <header id="data">Data da postagem: '.$linha->dataPost.'</header>
+                        <p>'.str_replace("../imagens", "imagens", $linha->conteudo).'</p>
+                    </article>
+                    <aside><section id="cat">Categoria: <span id="catSpan"> '.$categ->getCatById($linha->categoria).'</span></section></aside>
+                    <footer>
+                        <p><time pubdate datetime="2014-01-10">'.$dataAlter.'</time></p>
+                    </footer>
+                ';
+            }
+        }
+    }
+
+    function imgArt(){
+        return $this->imgArt;
+    }
+
+    function artigo(){
+        return $this->artigo;
+    }
+
+    function titulo(){
+        return $this->titleArt;
+    }
+
+    function resumo(){
+        return $this->resumoArt;
+    }
+
+    /*function getArtById($id){
+        $obj = DB::conn()->prepare("SELECT * FROM artigo WHERE id=?");
+        if($obj->execute(array($id))){
+            $nr=$obj->rowCount();
+            if($nr>0){
+                $categ = new Categoria();
+                $linha = $obj->fetchObject();
+                $imgArt = $linha->img;
                 if($linha->dataAlter!=null || $linha->dataAlter!=''){
                     $dataAlter = "Ultima atualização ".$linha->dataAlter;
                 }else{
@@ -167,7 +225,7 @@ class CRUD{
                 ';
             }
         }
-    }
+    }*/
 
 
     function getCountArtForCat($idCat){

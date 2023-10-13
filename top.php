@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="assets/js/color-modes.js"></script>
+    <!--<script src="assets/js/color-modes.js"></script>-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -9,13 +9,13 @@
     <meta name="generator" content="RobsonFarias">
     <title>Menu</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
+    <!--<link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
 
     
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">-->
 
     <style>
       /*
@@ -119,7 +119,7 @@
           <span id="titulo">Sei! Sistema Eletrônico de Informações</span><br>
           <span id="subtitulo">Perguntas frequentes</span><br><br>
           <form id="pesq" method="post" action="pesq.php" role="search">
-              <input class="search" type="search" aria-label="Search" name="duvida" placeholder="Digite sua pesquisa">
+              <input class="search" type="search" aria-label="Search" id="duvida" name="duvida" placeholder="Digite sua pesquisa">
               <input type="submit" name="pesquisar" id="pesquisar" value="Pesquisar">    
           </form>
       </div>
