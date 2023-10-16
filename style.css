@@ -13,7 +13,7 @@ body{
     background-repeat: no-repeat;
     background-size: auto 300px;
     background-position: center top;*/
-    background-color: #fff;
+    background-color: #dfdfdf;
 }
 
 * a:link{
@@ -33,18 +33,63 @@ body{
 #geral {
     width: 100%;
     /*background-color: beige;*/
-    padding-bottom: 20px;
+    padding-bottom: 0px;
 }
 
 #central {
     max-width: 1100px;
-    /*background-color: white;*/
+    background-color: white;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
     min-height: 300px;
-    padding-bottom: 20px;
 }
+
+/* ------------------------------ Inicio do index do usuario comum ------------------------------ */
+
+#topo{
+    width: calc(100% - 64px);
+    padding: 60px 32px;
+    text-align: left;
+    margin-top: 60px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: #0c582c;
+    color: #fff;
+}
+
+#tabTop{
+    max-width: 550px;
+}
+
+#itemdoisHome{
+    padding: 32px;
+    display:flex;
+    /*text-align: center;
+    height: 3.6rem;*/
+    justify-content: space-between;
+    vertical-align: top;
+    align-items: top;
+    background-color: #fff;
+}
+
+#centroItemDoisHome{
+    max-width: 798px;
+}
+
+#acessoRapido{
+    float: left;
+    line-height: 32px;
+}
+
+#acessoRapido a{
+    border-bottom: 1px solid #000;
+    line-height: 32px;
+}
+
+/* ---------------------- FIM do index do usuario comum ------------------------------ */
+
 
 #top {
     /*min-height: 30%;*/
@@ -340,7 +385,7 @@ table#principal{
     padding: 2px;
 }
 #carrosel{
-    width: 700px;
+    width: 798px;
 
 }
 #id{

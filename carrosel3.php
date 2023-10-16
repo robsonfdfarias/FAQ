@@ -87,7 +87,7 @@
 
         .BtnBack{
             left: 0;
-                background-image: url('imgs/anterior.png');
+                background-image: url('imgs/angulo-esquerdo.svg');
                 background-repeat: no-repeat;
                 /*background-size: 100%;*/
                 background-size: auto 35px;
@@ -115,7 +115,7 @@
 
         .BtnNext{
             right: 0;
-                background-image: url('imgs/proximo.png');
+                background-image: url('imgs/angulo-direito.svg');
                 background-repeat: no-repeat;
                 /*background-size: 100%;*/
                 background-size: auto 35px;
@@ -146,9 +146,11 @@
             top: 0;
             display: flex;
             text-align: center;
-            align-items: center;
+            align-items: end;
             justify-content: center;
             z-index: 1000;
+            margin-top: 270px;
+            background: transparent;
         }
         #quantSlides div{
             margin: 3px;
@@ -164,6 +166,9 @@
             box-shadow: 0 0 2px 2px rgba(0,0,0,0.5);
             cursor: pointer;
             transition: ease-in-out 0.3s;
+        }
+        #container, #secCar{
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -319,7 +324,8 @@
             var item = document.getElementsByClassName("item")[0];
             let style = window.getComputedStyle(item);
             //console.log(style.width);
-            let heig = parseInt(style.width)*0.5;
+            //let heig = parseInt(style.width)*0.5;
+            let heig = 300; ///-------------------------- ALTURA DO CARROSEL
             //console.log(heig+"px;")
             secCar.setAttribute("style", "height: "+heig+"px;")
             container.setAttribute("style", "height: "+heig+"px;")
@@ -355,7 +361,7 @@
                 cx.setAttribute("id", "cx_"+j)
                 cx.setAttribute("class", "cxConfig")
                 cx.setAttribute("onclick", "actionBt(this)");
-                cx.setAttribute("style", "width: 20px; height: 10px; border: 1px solid #000; background-color: #fff;")
+                cx.setAttribute("style", "width: 25px; height: 5px; border: 1px solid #000; background-color: #fff;")
                 //cx.setAttribute("style", "height: 10px;")
                 //cx.setAttribute("style", "background-color: #000;")
                 quantSlides.appendChild(cx)
@@ -366,9 +372,9 @@
             for(p=1;p<=itens.length; p++){
                 var divAtual = document.getElementById("cx_"+p);
                 if(itemAtual==p){
-                    divAtual.setAttribute("style", "width: 20px; height: 10px; border: 1px solid #000; background-color: #000; transition: ease-in-out 0.3s;");
+                    divAtual.setAttribute("style", "width: 25px; height: 5px; border: 1px solid #000; background-color: #000; transition: ease-in-out 0.3s;");
                 }else{
-                    divAtual.setAttribute("style", "width: 20px; height: 10px; border: 1px solid #000; background-color: #fff; transition: ease-in-out 0.3s;");
+                    divAtual.setAttribute("style", "width: 25px; height: 5px; border: 1px solid #000; background-color: #fff; transition: ease-in-out 0.3s;");
                 }
             }
         }

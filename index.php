@@ -11,7 +11,7 @@
     <meta property="og:image:type" content="image/jpg">
     <meta property="og:image:width" content="400">
     <meta property="og:image:height" content="200">
-    <meta property="og:autor" content="Robson Ferreira de Farias">
+    <meta property="og:autor" content="Robson Farias (robsonfdfarias@gmail.com)">
     <meta property="og:title" content="Área principal do FAQ">
     <meta property="og:description" content="Seja bem vindo ao FAQ referente ao SEI da prefeitura de Jaraguá do Sul / SC">
     <script type="text/javascript">
@@ -33,13 +33,23 @@
 </head>
 <body>
     <div id="geral">
-            <?php include_once("menu.php"); ?>
         <div id="central">
-            <?php include_once("top.php"); ?>
+            <?php include_once("menu.php"); ?>
+            <div id="topo" style="">
+                    <table id="tabTop">
+                        <tr>
+                            <td><img src="imgs/logo_sei_93x60.png" alt="Logo SEI" style="margin-right: 20px;"></td>
+                            <td style="text-align: left;"><span style="font-size: 40px; font-weight: 700;">Sistema Eletrônico de Informações</span></td>
+                        </tr>
+                    </table>
+            </div>
 
-            <div id="itensum">
-                <div id="carrosel"><?php include_once("carrosel3.php"); ?></div>
-                <table id="redes">
+            <!--<div id="itensum">
+            </div>-->
+
+            <div id="itemdoisHome">
+
+            <!--<table id="redes">
                     <tr>
                         <td Valign="top">
                             <div id="redeSocial">
@@ -71,20 +81,26 @@
                                         <td><img src="imgs/grampo.svg" alt="Acesse o manual do SEI" height="30"></td>
                                         <td><span id="texto"><a href="anexos/POP-Procedimento-Operacional-Padrao.pdf">Acesse o manual do SEI</a></span></td>
                                     </tr>
-                                    <!--<tr>
+                                    <tr>
                                         <td><img src="imgs/email.svg" alt="E-mail de contato" height="30"></td>
                                         <td><span id="texto">robsonfdfarias@gmail.com</span></td>
-                                    </tr>-->
+                                    </tr>
                                 </table>
                             </div>
                         </td>
                     </tr>
-                </table>
-            </div>
+                </table>-->
+                <div id="acessoRapido" style="display: block; width: 222px;">
+                    <span id="tituloAcessoRapido"><strong>Acesso rápido</strong></span><br>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">Servidor Público <img src="imgs/seta-para-a-direita.svg" alt="seta" width="15"></a><br>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">Usuário Externo <img src="imgs/seta-para-a-direita.svg" alt="seta" width="15"></a><br>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">Consulta de Processos <img src="imgs/seta-para-a-direita.svg" alt="seta" width="15"></a><br>
+                </div>
 
-            <div id="itemdois">
-                <div id="centroItemDois" style="margin-top: 30px; width: 84%;">
-                    <h3 style="padding-left: 10px;">Postagens recentes</h3><hr id="recentes"><br>
+                
+                <div id="centroItemDoisHome" style="">
+                <div id="carrosel"><?php include_once("carrosel3.php"); ?></div>
+                    <h1 style="margin-bottom: 0px;">Últimas notícias</h1>
                     <?php
                         include_once("class/crud.artigo.class.php");
                         $obj2 = new CRUD();
@@ -93,10 +109,10 @@
                 </div>
                 
             </div>
-        </div>
         <?php
             include_once("footer.php");
         ?>
+        </div>
     </div>
 </body>
 </html>
