@@ -64,17 +64,26 @@ body{
     justify-content: center;
     align-items: center;
     vertical-align: middle;
+    padding-top: 10px;
 }
 #menu li a{
-    height: 65%;
+    height: 25px;
     padding: 0px 10px;
     text-decoration: none;
     color: #fff;
 }
 #menu li span{
     width: 100%;
-    height: 35%;
+    height: 17px !important;
+    display:flex;
+    flex-direction: column;
     text-align: center;
+    /*height: 3.6rem;*/
+    transition: ease 0.3s;
+    justify-content: end;
+    vertical-align: bottom;
+    align-items: end;
+    /*background-color: aquamarine;*/
 }
 #menu li span #barra{
     width: 100%;
@@ -82,10 +91,12 @@ body{
     text-align: center;
     border-top: 0px solid green;
     transition: ease 0.3s;
+    background-color: #fff;
 }
 #menu li:hover span #barra{
+    align-items: end;
     height: 0px;
-    border-top: 7px solid #b1cd49;
+    border-top: 9px solid #b1cd49;
     /*box-shadow: 0 1px 6px 4px rgba(127, 255, 0, 0.5);
     box-shadow: 0 1px 6px 6px rgba(255, 255, 255, 0.8);*/
     text-shadow: chartreuse;

@@ -29,11 +29,11 @@
                 <a href="index.php">
                     <img src="imgs/logo_sei_93x60.png" height="30" style="margin-right: 10px;" id="logo">
                   </a>
-                    <li <?php $checa->retorna('index') ?>><a href="index.php">Home</a></li>
-                    <li <?php $checa->retorna('inserir') ?>><a href="inserir.php">Inserir artigo</a></li>
-                    <li <?php $checa->retorna('eventos') ?>><a href="eventos.php">Eventos</a></li>
-                    <li <?php $checa->retorna('categoriaIndex') ?>><a href="categoriaIndex.php">Categoria</a></li>
-                    <li <?php $checa->retorna('desloga') ?>><a href="desloga.php">Sair</a></li>
+                    <li><a href="index.php">Home</a><span><div id="barra" <?php $checa->retorna('index') ?>></div></span></li>
+                    <li><a href="inserir.php">Inserir artigo</a><span><div id="barra" <?php $checa->retorna('inserir') ?>></div></span></li>
+                    <li><a href="eventos.php">Eventos</a><span><div id="barra" <?php $checa->retorna('eventos') ?>></div></span></li>
+                    <li><a href="categoriaIndex.php">Categoria</a><span><div id="barra" <?php $checa->retorna('categoriaIndex') ?>></div></span></li>
+                    <li><a href="desloga.php">Sair</a><span><div id="barra" <?php $checa->retorna('desloga') ?>></div></span></li>
                     <span id="boasVindas">Logado como: <span id="nome"><?php echo $_SESSION['nome']; ?></span></span>
             </ul>
         </nav>

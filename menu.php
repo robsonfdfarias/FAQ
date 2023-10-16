@@ -29,14 +29,14 @@
                 <a href="index.php">
                     <img src="imgs/logo_sei_93x60.png" height="30" style="margin-right: 10px;" id="logo">
                   </a>
-                    <li><span><div id="barra" <?php $checa->retorna('index') ?>></div></span><a href="index.php">Home</a></li>
-                    <li><span><div id="barra" <?php $checa->retorna('sei') ?>></div></span><a href="sei.php">O que é o sei</a></li>
-                    <li><span><div id="barra" <?php $checa->retorna('mapa') ?>></div></span><a href="mapa.php">Mapa</a></li>
-                    <li><span><div id="barra" <?php $checa->retorna('capacitacao') ?>></div></span><a href="capacitacao.php">Capacitação</a></li>
-                    <li><span><div id="barra" <?php $checa->retorna('legislacao') ?>></div></span><a href="legislacao.php">Legislação</a></li>
-                    <li><span><div id="barra" <?php $checa->retorna('coisasParaSaberSei') ?>></div></span><a href="coisasParaSaberSei.php">Curiosidades sobre o SEI</a></li>
-                    <li><span><div id="barra" <?php $checa->retorna('declaracaoUtilidadePublica') ?>></div></span><a href="declaracaoUtilidadePublica.php">Declaração de Utilidade Pública</a></li>
-                    <li><span><div id="barra" <?php $checa->retorna('perguntasFrequentes') ?>></div></span><a href="perguntasFrequentes.php">Perguntas frequentes</a></li>
+                    <li><a href="index.php">Home</a><span><div id="barra" <?php $checa->retorna('index') ?>></div></span></li>
+                    <li><a href="sei.php">O que é o sei</a><span><div id="barra" <?php $checa->retorna('sei') ?>></div></span></li>
+                    <li><a href="mapa.php">Mapa</a><span><div id="barra" <?php $checa->retorna('mapa') ?>></div></span></li>
+                    <li><a href="capacitacao.php">Capacitação</a><span><div id="barra" <?php $checa->retorna('capacitacao') ?>></div></span></li>
+                    <li><a href="legislacao.php">Legislação</a><span><div id="barra" <?php $checa->retorna('legislacao') ?>></div></span></li>
+                    <li><a href="coisasParaSaberSei.php">Curiosidades sobre o SEI</a><span><div id="barra" <?php $checa->retorna('coisasParaSaberSei') ?>></div></span></li>
+                    <li><a href="declaracaoUtilidadePublica.php">Declaração de Utilidade Pública</a><span><div id="barra" <?php $checa->retorna('declaracaoUtilidadePublica') ?>></div></span></li>
+                    <li><a href="perguntasFrequentes.php">Perguntas frequentes</a><span><div id="barra" <?php $checa->retorna('perguntasFrequentes') ?>></div></span></li>
             </ul>
         </nav>
     </div>
