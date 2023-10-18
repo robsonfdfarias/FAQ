@@ -236,6 +236,131 @@ class CRUD{
             return 0;
         }
     }
+
+    function getAllArticlePergGreq(){
+        $objAll = DB::conn()->prepare("SELECT * FROM artigo");
+        try{
+            if($objAll->execute()){
+                $numRows = $objAll->rowCount();
+                if($numRows>0){
+                    $categ = new Categoria();
+                    $n=0;
+                    while($linha = $objAll->fetchObject()){
+                        echo '
+                            <div id="summaryArticle" class="summaryArticle">
+                                <div id="titleArticle_'.$n.'" class="titleArticle" onclick="abre(this)"><span id="status" style="display:none;">false</span><span id="ttArtigo">'.$linha->titulo.'</span>
+                                <span id="setOpenClose"><img id="imagem" src="imgs/angulo-para-baixo.svg" alt="Seta indicando para abrir" width="20"></span></div>
+                                <div id="contentArticle_'.$n.'" class="contentArticle" style="">
+                                    <article>
+                                        <header id="data">Data da postagem: '.$linha->dataPost.'</header>
+                                        <p>'.str_replace("../imagens", "imagens", $linha->conteudo).'</p>
+                                    </article>
+                                    <aside><section id="cat">Categoria: <span id="catSpan"> '.$categ->getCatById($linha->categoria).'</span></section></aside>
+                                    <footer>
+                                        <p><time pubdate datetime="2014-01-10">'.$dataAlter.'</time></p>
+                                    </footer>
+                                </div>
+                            </div>
+                        ';
+                        $n++;
+                    }
+                }
+            }
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+
+    function getArticleForCategory($id){
+        $objAll = DB::conn()->prepare("SELECT * FROM artigo WHERE categoria=?");
+        try{
+            if($objAll->execute(array($id))){
+                $numRows = $objAll->rowCount();
+                if($numRows>0){
+                    $categ = new Categoria();
+                    $n=0;
+                    while($linha = $objAll->fetchObject()){
+                        echo '
+                            <div id="summaryArticle" class="summaryArticle">
+                                <div id="titleArticle_'.$n.'" class="titleArticle" onclick="abre(this)"><span id="status" style="display:none;">false</span><span id="ttArtigo">'.$linha->titulo.'</span>
+                                <span id="setOpenClose"><img id="imagem" src="imgs/angulo-para-baixo.svg" alt="Seta indicando para abrir" width="20"></span></div>
+                                <div id="contentArticle_'.$n.'" class="contentArticle" style="">
+                                    <article>
+                                        <header id="data">Data da postagem: '.$linha->dataPost.'</header>
+                                        <p>'.str_replace("../imagens", "imagens", $linha->conteudo).'</p>
+                                    </article>
+                                    <aside><section id="cat">Categoria: <span id="catSpan"> '.$categ->getCatById($linha->categoria).'</span></section></aside>
+                                    <footer>
+                                        <p><time pubdate datetime="2014-01-10">'.$dataAlter.'</time></p>
+                                    </footer>
+                                </div>
+                            </div>
+                        ';
+                        $n++;
+                    }
+                }
+            }
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+
+    function getFindArticle($pesq){
+        $pesq = strip_tags($pesq);
+        $original = $pesq;
+        $array = explode(" ", $pesq);
+        $sql = "SELECT * FROM artigo WHERE titulo LIKE ? OR resumo LIKE ? OR conteudo LIKE ?";
+        for($i=0; $i<count($array); $i++){
+            if(self::removeArtigosDefinidos($array[$i])){
+                if($array[$i]!=''){
+                    $array2[] = $array[$i];
+                }
+            }
+            
+        }
+        for($i=0; $i<count($array2); $i++){
+            $sql = $sql." OR tags LIKE ?";
+        }
+        //echo $sql;
+        
+        $obj = DB::conn()->prepare($sql);
+        $dados[] = "%".$original."%";
+        $dados[] = "%".$original."%";
+        $dados[] = "%".$original."%";
+        for($i=0; $i<count($array2); $i++){
+            $dados[] = "%".$array2[$i]."%";
+        }
+        try{
+            if($obj->execute($dados)){
+                $numRows = $obj->rowCount();
+                if($numRows>0){
+                    $categ = new Categoria();
+                    $n=0;
+                    while($linha = $obj->fetchObject()){
+                        echo '
+                            <div id="summaryArticle" class="summaryArticle">
+                                <div id="titleArticle_'.$n.'" class="titleArticle" onclick="abre(this)"><span id="status" style="display:none;">false</span><span id="ttArtigo">'.$linha->titulo.'</span>
+                                <span id="setOpenClose"><img id="imagem" src="imgs/angulo-para-baixo.svg" alt="Seta indicando para abrir" width="20"></span></div>
+                                <div id="contentArticle_'.$n.'" class="contentArticle" style="">
+                                    <article>
+                                        <header id="data">Data da postagem: '.$linha->dataPost.'</header>
+                                        <p>'.str_replace("../imagens", "imagens", $linha->conteudo).'</p>
+                                    </article>
+                                    <aside><section id="cat">Categoria: <span id="catSpan"> '.$categ->getCatById($linha->categoria).'</span></section></aside>
+                                    <footer>
+                                        <p><time pubdate datetime="2014-01-10">'.$dataAlter.'</time></p>
+                                    </footer>
+                                </div>
+                            </div>
+                        ';
+                        $n++;
+                    }
+                }
+            }
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
     
 
 }

@@ -33,8 +33,7 @@
 </head>
 <body>
     <div id="geral">
-        <div id="central">
-            <?php include_once("menu.php"); ?>
+        <?php include_once("menu.php"); ?>
             <div id="topo" style="">
                     <table id="tabTop">
                         <tr>
@@ -43,6 +42,8 @@
                         </tr>
                     </table>
             </div>
+        <div id="central">
+            
 
             <!--<div id="itensum">
             </div>-->
@@ -102,17 +103,20 @@
                 <div id="carrosel"><?php include_once("carrosel3.php"); ?></div>
                     <h1 style="margin-bottom: 0px;">Últimas notícias</h1>
                     <?php
-                        include_once("class/crud.artigo.class.php");
+                        /*include_once("class/crud.artigo.class.php");
                         $obj2 = new CRUD();
-                        $obj2->selectArtigos();
+                        $obj2->selectArtigos();*/
+                        include_once("class/noticia.class.php");
+                        $obj2 = new Noticia();
+                        $obj2->getNewsSample();
                     ?>
                 </div>
                 
             </div>
+        </div>
         <?php
             include_once("footer.php");
         ?>
-        </div>
     </div>
 </body>
 </html>

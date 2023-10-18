@@ -14,26 +14,44 @@
 <body>
     <div id="geral">
             <?php include_once("menu.php"); ?>
-        <div id="central">
             <?php include_once("top.php"); ?>
+        <div id="central">
             
 
-            <div id="itemdois">
+            <!--<div id="itemdois">
                 <div id="centroItemDois" style="margin-top: 30px; width: 84%;">
                     <h3>Artigos recentes</h3><hr id="recentes"><br>
                     <?php
                         $idCat = $_GET['id'];
+                        //include_once("class/crud.artigo.class.php");
+                        //$obj2 = new CRUD();
+                        //$obj2->getArtByCat($idCat);
+                        include_once("class/crud.categoria.class.php");
+                        $objCat = new Categoria();
+                        
+                    ?>
+                </div>
+            </div>-->
+
+            
+            <div id="itemdoisPergFreq" style="max-width: 1036px; padding: 0 32px;">
+                <div id="centroItemDoisPergFreq" style="max-width: 100%; width: 100%;"> 
+                    <?php
+                    echo '<h2>'.$objCat->getCatById($idCat).'</h2>';
+                        //$idCat = $_GET['id'];
                         include_once("class/crud.artigo.class.php");
                         $obj2 = new CRUD();
-                        $obj2->getArtByCat($idCat);
+                        $obj2->getArticleForCategory($idCat);
                     ?>
                 </div>
             </div>
+
         </div>
     </div>
         <?php
             include_once("footer.php");
         ?>
+        <script src="efeito.js"></script>
     <script type="text/javascript">
         var elemento = document.getElementById('top');
         var calcula = 260-elemento.clientHeight;

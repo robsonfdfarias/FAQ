@@ -21,6 +21,18 @@ body{
 #quebra{
     display: none;
 }
+#barraMenu{
+    width: 100%;
+    background-color: #0c582c;
+    min-height: 60px;
+}
+#centroMenu{
+    max-width: 1100px;
+    background-color: #0c582c;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
 #mP{
     display: row;
     justify-content: center;

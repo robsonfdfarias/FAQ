@@ -1,6 +1,6 @@
 <?php
     $pesq = $_POST['duvida'];
-    include_once("AdminCongig/class/limpa.variavel.class.php");
+    include_once("AdminConfig/class/limpa.variavel.class.php");
     $limpa = new LimpaVar();
     $pesq = $limpa->limpa($pesq);
 ?>
@@ -103,28 +103,29 @@
     </style>
 </head>
 <body>
-    <?php include_once("menu.php"); ?>
     <div id="geral">
-        <div id="central">
+    <?php include_once("menu.php"); ?>
             <?php include_once("top.php"); ?>
-            <div id="itensum">
-            </div>
+        <div id="central">
+            
 
-            <div id="itemdois" style="box-shadow: none;">
-                <div id="centroItemDois" style="margin-top: -20px; width: 84%;">
+            <div id="itemdoisPergFreq" style="max-width: 1036px; padding: 0 32px;">
+                <div id="centroItemDoisPergFreq" style="max-width: 100%; width: 100%;"> 
                     <h2>Você pesquisou por: <?php echo "<span style='color:#0c582c;'>".$pesq."</span>"; ?></h2>
                     <?php
                         include_once("class/crud.artigo.class.php");
                         $obj2 = new CRUD();
-                        $obj2->findArticle($pesq);
+                        $obj2->getFindArticle($pesq);
                     ?>
                 </div>
             </div>
+
         </div>
     </div>
         <?php
             include_once("footer.php");
         ?>
+        <script src="efeito.js"></script>
     <script type="text/javascript">
         /*var elemento = document.getElementById('top');
         var calcula = 260-elemento.clientHeight;

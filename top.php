@@ -113,7 +113,7 @@
           </form>
       </div>
     </div>
-  </div>-->
+  </div>
   <div id="top">
       <div id="form">
           <span id="titulo">Sei! Sistema Eletrônico de Informações</span><br>
@@ -123,7 +123,20 @@
               <input type="submit" name="pesquisar" id="pesquisar" value="Pesquisar">    
           </form>
       </div>
-  </div>
+  </div>-->
+  
+                <?php 
+                    include_once("class/checked.pag.class.php");
+                    $checa = new CheckedPag();
+                ?>
+            <div id="geralTopo" style="background-color:#EFEFEF; text-align: -webkit-center;">
+              <div id="topo" style="background-color:#EFEFEF; max-width: 1036px;">
+                <div id="centroTop" style="width: 100%; text-align: left; color: #000;">
+                  <?php $checa->returnDataTop() ?>
+                  
+                </div>
+              </div>
+            </div>
         <!--<form role="search">
           <input class="form-control" type="search" placeholder="Search" aria-label="Search">
         </form>

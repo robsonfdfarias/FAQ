@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
 $id = $_GET['id'];
-include_once("class/crud.artigo.class.php");
-$obj = new CRUD();
-$obj->getArtById($id);
+include_once("class/noticia.class.php");
+$obj = new Noticia();
+$obj->getNewsByCat($id);
 ?>
 <html lang="en">
 <head>
@@ -12,11 +12,7 @@ $obj->getArtById($id);
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="shortcut icon" href="imgs/logo_sei_93x60.ico" type="image/x-icon" />
-    <meta property="og:image" content="<?php echo $obj->imgArt(); ?>"> 
     <meta property="og:autor" content="Robson Farias (robsonfdfarias@gmail.com)">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="400">
-    <meta property="og:image:height" content="200">
     <meta property="og:title" content="<?php echo $obj->titulo(); ?>">
     <meta property="og:description" content="<?php echo $obj->resumo(); ?>">
 </head>

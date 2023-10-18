@@ -13,7 +13,7 @@ body{
     background-repeat: no-repeat;
     background-size: auto 300px;
     background-position: center top;*/
-    background-color: #dfdfdf;
+    background-color: #fff;
 }
 
 * a:link{
@@ -34,6 +34,7 @@ body{
     width: 100%;
     /*background-color: beige;*/
     padding-bottom: 0px;
+    min-height: 81.8vh;
 }
 
 #central {
@@ -45,13 +46,36 @@ body{
     min-height: 300px;
 }
 
+/* ---------------------- Inicio do rodapé do usuario comum ------------------------------ */
+
+#redesFooter img{
+    padding-left: 5px;
+    filter: invert(71%) sepia(49%) saturate(488%) hue-rotate(31deg) brightness(98%) contrast(91%);
+    transition: ease-in-out 0.3s;
+}
+#redesFooter img:hover{
+    /*filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);*/
+    filter: invert(var(--invert)) sepia(var(--sepia)) saturate(var(--saturate)) hue-rotate(var(--hueRotate)) brightness(var(--brightness)) contrast(var(--contrast));
+    transition: ease-in-out 0.3s;
+}
+
+#camada1Footer #login{
+    float: left;
+    font-size: 16px;
+}
+#camada1Footer #redesFooter{
+    float: right;
+}
+
+/* ---------------------------- FIM do rodapé do usuario comum ------------------------------ */
+
 /* ------------------------------ Inicio do index do usuario comum ------------------------------ */
 
 #topo{
     width: calc(100% - 64px);
     padding: 60px 32px;
+    padding-top: 30px;
     text-align: left;
-    margin-top: 60px;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -90,6 +114,100 @@ body{
 
 /* ---------------------- FIM do index do usuario comum ------------------------------ */
 
+/* ---------------------- Inicio do feed de notícias do usuario comum ------------------------------ */
+
+#generalFeedNews{
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid #DEE2E6;
+    border-radius: 4px;
+}
+
+#titleNewsFeed{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+#dateNewsFeed{
+    color: #666666;
+    font-size: 12px;
+    font-weight: 400;
+    float: right;
+}
+
+#summaryNewsFeed{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+#readMore{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    float: right;
+}
+/* ---------------------- FIM do feed de notícias do usuario comum ------------------------------ */
+
+/* ------------------------------ Inicio do perguntas frequentes do usuario comum ------------------------------ */
+
+#itemdoisPergFreq{
+    padding: 32px;
+    display:flex;
+    /*text-align: center;
+    height: 3.6rem;*/
+    justify-content: space-between;
+    vertical-align: top;
+    align-items: top;
+    background-color: #fff;
+}
+
+#centroItemDoisPergFreq{
+    max-width: 798px;
+}
+
+#categoriaPergFreq{
+    float: left;
+    line-height: 32px;
+}
+
+#categoriaPergFreq a{
+    border-bottom: 1px solid #000;
+    line-height: 32px;
+}
+
+/* ---------------------- FIM do perguntas frequentes do usuario comum ------------------------------ */
+
+/* ------------------------------ Inicio do Artigo classe do usuario comum ------------------------------ */
+
+#summaryArticle{
+    width: 100%;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.titleArticle{
+    padding: 16px 20px;
+    border: 1px solid #dfdfdf;
+}
+.titleArticle #setOpenClose{
+    float: right;
+}
+
+.contentArticle{
+    padding: 16px 20px;
+    display: none;
+    transition: ease-in 1s;
+}
+.contentArticleOpen{
+    padding: 16px 20px;
+    display: block;
+    transition: ease-in 1s;
+}
+
+/* ---------------------- FIM do perguntas frequentes do usuario comum ------------------------------ */
 
 #top {
     /*min-height: 30%;*/
@@ -220,10 +338,10 @@ div.objitensum {
 }
 
 #itemdois {
-    width: calc(100% - 10px);
+    width: calc(100% - 0px);
     padding-top: 0px;
     background-color: white;
-    margin-top: -15px;
+    margin-top: 0px;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -232,6 +350,16 @@ div.objitensum {
 }
 #itemdois .post-content{
     width: 84%;
+}
+.post-content .center p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1A202C;
+}
+
+.post-content #conteudoMapa{
+    line-height: 24px;
 }
 
 .questao{
@@ -288,7 +416,7 @@ hr#recentes{
     justify-content: space-between;
     align-items: top;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 0px;
 }
 
 #img{
@@ -385,7 +513,7 @@ table#principal{
     padding: 2px;
 }
 #carrosel{
-    width: 798px;
+    max-width: 798px;
 
 }
 #id{
@@ -459,12 +587,12 @@ span#catSpan{
 
 .center h3{
     margin: 20px 0;
-    padding-left: 75px;
+    padding-left: 0px;
 }
 
 .post-content .entry-title{
     margin: 20px 0;
-    padding-left: 75px;
+    padding-left: 0px;
 }
 
 #tabFormInsc{

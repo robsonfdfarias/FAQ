@@ -213,10 +213,10 @@
     </style>
 </head>
 <body>
-        <?php include_once("menu.php"); ?>
     <div id="geral">
-        <div id="central">
+        <?php include_once("menu.php"); ?>
             <?php include_once("top.php"); ?>
+        <div id="central">
 
             <div id="itemdois">
 

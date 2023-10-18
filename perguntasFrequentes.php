@@ -14,23 +14,29 @@
 <body>
     <div id="geral">
             <?php include_once("menu.php"); ?>
-        <div id="central">
             <?php include_once("top.php"); ?>
-            <div id="itensum">
+        <div id="central">
                 <?php
 
                     include_once("class/crud.artigo.class.php");
                     $obj2 = new CRUD();
-                    $obj2->selectPrioridades();
+                    //$obj2->selectPrioridades();
 
                 ?>
-            </div>
 
-            <div id="itemdois">
-                <div id="centroItemDois" style="margin-top: 30px; width: 84%;">
-                    <h3>Artigos recentes</h3><hr id="recentes"><br>
+            <div id="itemdoisPergFreq">
+                <div id="categoriaPergFreq" style="display: block; width: 222px;">
+                    <span id="tituloAcessoRapido"><strong>Categorias</strong></span><br>
                     <?php
-                        $obj2->selectArtigos();
+                        include_once("class/crud.categoria.class.php");
+                        $objCat = new Categoria();
+                        $objCat->getCatBlock();
+                    ?>
+                </div>
+                <div id="centroItemDoisPergFreq" style="width: 84%;"> 
+                    <?php
+                        //$obj2->selectArtigos();
+                        $obj2->getAllArticlePergGreq();
                     ?>
                 </div>
                 
@@ -40,26 +46,43 @@
         <?php
             include_once("footer.php");
         ?>
-    <script type="text/javascript">
-        /*$(document).ready(function() {
-            var height = $("#top").height();
-            console.log(height);
-            alert(height);
-        });*/
-        //var largDoc = window.innerWidth;
-        /*var elemento2 = document.getElementById('central');
-        var elemento = document.getElementById('top');
-        console.log(elemento2);
-        console.log(elemento2.clientWidth);
-        var calc = (elemento2.clientWidth/5);
-        elemento.style.height  = calc + 'px';
-        var elemento = document.getElementById('top');
-        var calcula = 260-elemento.clientHeight;
-        calcula = calcula/2;
-        console.log(calcula+" ---");
-        elemento.style.paddingTop  = calcula + 'px';
-        elemento.style.paddingBottom  = calcula + 'px';*/
-
+        <script src="efeito.js"></script>
+    <script>
+        /*function func(){
+            var tt = document.getElementsByClassName("titleArticle")
+            for(i=0; i<tt.length; i++){
+                var obj = document.getElementById("titleArticle_"+i);
+                console.log(obj)
+                obj.addEventListener("click", function(){
+                    alert("nnn-"+obj.id);
+                });
+            }
+        }
+        //func();
+        function abre(ob){
+            //alert(ob.id)
+            var child = ob.children[0];
+            //alert(child.innerHTML);
+            var father = ob.parentElement;
+            //alert(father.id);
+            var conteudo = father.children[1]
+            //alert(conteudo.id)
+            var img = ob.children[2].children[0];
+            //alert(img.id)
+            if(child.innerHTML=="false"){
+                conteudo.setAttribute("style", "display:block; transition: ease-in 1s;");
+                child.innerHTML = "true";
+                ob.setAttribute("style", "background-color: #c1ffe2; color: #0c582c; font-weight: 700; transition: ease-in 0.5s;")
+                img.setAttribute("src", "imgs/angulo-para-cima.svg")
+                img.setAttribute("alt", "Seta indicando para fechar a visualização do conteudo")
+            }else{
+                conteudo.setAttribute("style", "display:none; transition: ease-in 1s;");
+                child.innerHTML = "false";
+                ob.setAttribute("style", "background-color: #fff; color: #000; font-weight: 400; transition: ease-in 0.5s;")
+                img.setAttribute("src", "imgs/angulo-para-baixo.svg")
+                img.setAttribute("alt", "Seta indicando para abrir a visualização do conteudo")
+            }
+        }*/
     </script>
 </body>
 </html>

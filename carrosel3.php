@@ -248,6 +248,7 @@
                 }else{
                     numItem+=1
                 }
+                updateVar();
                 clearInterval(intervalo);
                 intervalo = setInterval(() => {
                                 roda()
@@ -284,6 +285,7 @@
                 if(mover<1){
                     mover=1;
                 }
+                updateVar();
 
                 clearInterval(intervalo);
                 intervalo = setInterval(() => {
@@ -322,10 +324,17 @@
             var secCar = document.getElementById("secCar");
             var container = document.getElementById("container");
             var item = document.getElementsByClassName("item")[0];
-            let style = window.getComputedStyle(item);
+            let style = window.getComputedStyle(container);
             //console.log(style.width);
             //let heig = parseInt(style.width)*0.5;
-            let heig = 300; ///-------------------------- ALTURA DO CARROSEL
+            //let heig = 300; ///-------------------------- ALTURA DO CARROSEL
+            let heig = parseInt(style.width)*0.4;
+            if(heig>300){
+                heig=300;
+            }
+            if(heig<=0){
+                heig=300;
+            }
             //console.log(heig+"px;")
             secCar.setAttribute("style", "height: "+heig+"px;")
             container.setAttribute("style", "height: "+heig+"px;")

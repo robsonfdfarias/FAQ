@@ -7,15 +7,16 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="Layer_1"
+   data-name="Layer 1"
    viewBox="0 0 24 24"
    width="512"
    height="512"
    version="1.1"
-   id="svg5"
-   sodipodi:docname="seta-para-a-direita.svg"
+   sodipodi:docname="angulo-para-cima.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15)">
   <metadata
-     id="metadata11">
+     id="metadata9">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -26,7 +27,7 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs9" />
+     id="defs7" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -38,21 +39,16 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
      inkscape:window-height="1019"
-     id="namedview7"
+     id="namedview5"
      showgrid="false"
-     inkscape:zoom="1.1559539"
-     inkscape:cx="121.32962"
-     inkscape:cy="286.02529"
+     inkscape:zoom="1.6347656"
+     inkscape:cx="256"
+     inkscape:cy="256"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg5" />
-  <g
-     id="_01_align_center"
-     data-name="01 align center"
-     transform="translate(0,5.0625)">
-    <path
-       d="M 23.124,9.879 18.538,5.293 17.124,6.707 21.386,10.97 0,11 v 2 l 21.446,-0.03 -4.323,4.323 1.414,1.414 4.587,-4.586 a 3.007,3.007 0 0 0 0,-4.242 z"
-       id="path2" />
-  </g>
+     inkscape:current-layer="Layer_1" />
+  <path
+     d="M 22.586,18.071048 12.707,8.1920479 a 1.021,-1.021 0 0 0 -1.414,0 L 1.42,18.066048 0.006,16.652048 9.879,6.7780479 a 3.075,-3.075 0 0 1 4.243,0 L 24,16.657048 Z"
+     id="path2" />
 </svg>
