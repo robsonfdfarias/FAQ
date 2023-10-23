@@ -9,5 +9,12 @@ class LimpaVar{
         return $var;
     }
 }
+//como usar o mix-blend-mode: difference; \\ do css
+//https://www.youtube.com/watch?v=KQgtEygCPDY 
 
+//animação com scroll da página
+//https://www.youtube.com/watch?v=T33NN_pPeNI
+
+//Perspective e transform com css
+//https://www.youtube.com/watch?v=2KWdT4PkXgY&t=227s
 ?>

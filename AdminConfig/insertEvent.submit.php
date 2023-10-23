@@ -40,7 +40,6 @@
                     include_once("class/capacitacao.class.php");
                     $inserir = new Capacitacao();
                     $inserir->insertEvent($titulo, $dtpost, $dtinicio, $dtfim, $texto, $vagas, $certificado, $horainicio, $horafim);
-                    
                 ?>
             </div>
         </div>

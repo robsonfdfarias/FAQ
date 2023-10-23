@@ -60,7 +60,7 @@ body{
 #mP #nav #logoPref{
     position: absolute;
     left: 32px;
-    top: 15px;
+    top: 12px;
 }
 #menu{
     display: flex;
@@ -91,7 +91,7 @@ body{
 }
 #menu li a{
     height: 25px;
-    padding: 0px 10px;
+    padding: 0px 12px;
     text-decoration: none;
     color: #fff;
 }
@@ -116,6 +116,7 @@ body{
     transition: ease 0.3s;
     background-color: #fff;
 }
+
 #menu li:hover span #barra{
     align-items: end;
     height: 0px;
@@ -125,6 +126,7 @@ body{
     text-shadow: chartreuse;
     transition: ease 0.3s;
 }
+
 @keyframes gradient {
 	0% {background-position: 50% 100%; border-top: 0px solid rgba(16, 157, 157, 0.9);}
 	/*50% {background-position: 50% 50%;}*/
@@ -184,6 +186,9 @@ span #duvida {
         position: absolute;
         top: 10px;
         left: 10px;
+    }
+    #mP #nav #logoPref{
+        top: 0px;
     }
 }
 

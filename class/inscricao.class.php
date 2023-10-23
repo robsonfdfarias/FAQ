@@ -10,12 +10,12 @@
         }
 
         function insertInsc($nome, $secretaria, $matricula, $email, $idevento){
-            $limpa = new LimpaVar();
+            /*$limpa = new LimpaVar(); 
             $nome = $limpa->limpa($nome);
             $secretaria = $limpa->limpa($secretaria);
             $matricula = $limpa->limpa($matricula);
             $email = $limpa->limpa($email);
-            $idevento = $limpa->limpa($idevento);
+            $idevento = $limpa->limpa($idevento);*/
             $objCap = new Capacitacao();
             if(self::checkedMatDuplicateEvent($matricula, $idevento)){
                 echo 'Servidor já matriculado nessa Capacitação. Só é permitido uma matrícula por servidor!';

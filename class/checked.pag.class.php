@@ -41,6 +41,9 @@
             }else if($pag == 'noticia'){
                 $titulo = 'Notícias';
                 $subtitulo = '';
+            }else if($pag == 'evento'){
+                $titulo = 'Área de inscrição para evento';
+                $subtitulo = 'Aqui você poderá fazer sua inscrição se houver vagas disponíveis.';
             }
             echo '
             <span style="font-size: 40px; font-weight: 700; line-height: 65px;">
