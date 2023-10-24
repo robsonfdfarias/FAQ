@@ -36,7 +36,12 @@
                 <div id="centroItemDoisPergFreq" style="width: 84%;"> 
                     <?php
                         //$obj2->selectArtigos();
-                        $obj2->getAllArticlePergGreq();
+                        $pg = $_GET['pg'];
+                        if(empty($pg) && $pg==0){
+                            $pg=1;
+                        }
+                        $k=2;
+                        $obj2->getAllArticlePergGreq($pg, $k);
                     ?>
                 </div>
                 

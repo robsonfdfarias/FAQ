@@ -237,7 +237,87 @@ class CRUD{
         }
     }
 
-    function getAllArticlePergGreq(){
+
+
+
+
+    function getAllArticlePergGreq($pag, $numReg){
+        $totReg = self::getTotalArticle();
+        //echo $totReg;
+        $verifyNumReg = ($pag*$numReg)-$numReg;
+        //echo '<br>'.$verifyNumReg.'<br>';
+        if($totReg<=$verifyNumReg){
+            echo '<h1>Não existem registros nestá página.</h1>';
+            return false;
+        }
+        
+        try{
+            $sql = "SELECT * FROM artigo ORDER BY id DESC LIMIT ".$verifyNumReg.",".$numReg." ";
+            $obj = DB::conn()->prepare($sql);
+            //$verifyNumReg = parseInt($verifyNumReg);
+            //$numReg = parseInt($numReg);
+            if($obj->execute()){
+                $numRows = $obj->rowCount();
+                if($numRows>0){
+                    $categ = new Categoria();
+                    $n=0;
+                    while($linha = $obj->fetchObject()){
+                        echo '
+                                <div id="summaryArticle" class="summaryArticle">
+                                    <div id="titleArticle_'.$n.'" class="titleArticle" onclick="abre(this)"><span id="status" style="display:none;">false</span><span id="ttArtigo">'.$linha->titulo.'</span>
+                                    <span id="setOpenClose"><img id="imagem" src="imgs/angulo-para-baixo.svg" alt="Seta indicando para abrir" width="20"></span></div>
+                                    <div id="contentArticle_'.$n.'" class="contentArticle" style="">
+                                        <article>
+                                            <header id="data">Data da postagem: '.$linha->dataPost.'</header>
+                                            <p>'.str_replace("../imagens", "imagens", $linha->conteudo).'</p>
+                                        </article>
+                                        <aside><section id="cat">Categoria: <span id="catSpan"> '.$categ->getCatById($linha->categoria).'</span></section></aside>
+                                        <footer>
+                                            <p><time pubdate datetime="2014-01-10">'.$dataAlter.'</time></p>
+                                        </footer>
+                                    </div>
+                                </div>
+                            ';
+                            $n++;
+                    }
+                    $pags = ceil($totReg/$numReg);
+                    for($i=1; $i<=$pags; $i++){
+                        echo '<div id="pg"><a href="?pg='.$i.'">'.$i.'</a></div>';
+                    }
+                    echo '
+                        <div id="numreg">
+                            Número de registros: '.$totReg.' | 
+                            Número de páginas: '.$pags.' | 
+                            Número de registro por página: '.$numReg.' | 
+                            Página atual: '.$pag.' | 
+                        </div>
+                    ';
+                }
+            }else{
+                echo 'Erro ao fazer a consulta';
+            }
+        }catch(PDOException $e){
+            echo 'ERRO: '.$e->getMessage();
+        }
+    }
+
+    function getTotalArticle(){
+        $objTot = DB::conn()->prepare("SELECT * FROM artigo");
+        try{
+            if($objTot->execute()){
+                return $objTot->rowCount();
+            }else{
+                return 0;
+            }
+        }catch(PDOException $e){
+            echo 'ERRO: '.$e->getMessage();
+        }
+    }
+
+
+
+
+    function getAllArticlePergGreq2(){
         $objAll = DB::conn()->prepare("SELECT * FROM artigo");
         try{
             if($objAll->execute()){
