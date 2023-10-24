@@ -14,7 +14,7 @@
         <div id="toggleMenu">MENU</div>
         <nav id="nav">
         <?php 
-            include_once("../class/checked.pag.class.php");
+            include_once("class/checked.pag.class.php");
             $checa = new CheckedPag();
         ?>
             <ul id="menu">
@@ -32,6 +32,7 @@
                     <li><a href="index.php">Home</a><span><div id="barra" <?php $checa->retorna('index') ?>></div></span></li>
                     <li><a href="inserir.php">Inserir artigo</a><span><div id="barra" <?php $checa->retorna('inserir') ?>></div></span></li>
                     <li><a href="eventos.php">Eventos</a><span><div id="barra" <?php $checa->retorna('eventos') ?>></div></span></li>
+                    <li><a href="noticias.php">Notícias</a><span><div id="barra" <?php $checa->retorna('noticias') ?>></div></span></li>
                     <li><a href="categoriaIndex.php">Categoria</a><span><div id="barra" <?php $checa->retorna('categoriaIndex') ?>></div></span></li>
                     <li><a href="desloga.php">Sair</a><span><div id="barra" <?php $checa->retorna('desloga') ?>></div></span></li>
                     <span id="boasVindas">Logado como: <span id="nome"><?php echo $_SESSION['nome']; ?></span></span>

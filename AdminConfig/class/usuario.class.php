@@ -22,11 +22,13 @@
                 //echo "<br>".$numRow;
                 if($numRow>0){
                     while($linha = $obj->fetchObject()){
+                        $_SESSION["id"] = $linha->id;
                         $_SESSION["nome"] = $linha->nome;
                         $_SESSION['nivel'] = $linha->nivel;
                         $_SESSION['email'] = $linha->email;
-                        echo "Logado com sucesso!";
                         header('Location: index.php');
+                        echo "Logado com sucesso!";
+                        echo '<br><a href="index.php">Ir para a área principal.</a>';
                     }
                 }else{
                     echo "Usuário ou senha não cadastrado!";

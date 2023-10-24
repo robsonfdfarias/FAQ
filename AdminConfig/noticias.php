@@ -36,19 +36,20 @@
             
 
             <div id="itemdois">
-                <h3 style="padding-left: 10px;">Postagens recentes</h3><hr id="recentes"><br>
+            <div id="geralMenuCat">
+                    <div id="tituloCatMenuPag">Notícias:</div>
+                    <div id="addCatMenuPag">
+                        <a href="noticiaInsert.php">
+                            <img src="imgs/cat-add.svg" alt="Adicionar categoria" title="Adicionar categoria" height="30"> Adicionar notícia
+                        </a>
+                    </div>
+                </div>
                 <?php
-                    include_once("class/crud.artigo.class.php");
-                    $obj2 = new CRUD();
-                    $obj2->selectArtigos();
+                    include_once("class/noticia.class.php");
+                    $obj2 = new Noticia();
+                    $obj2->getAllNews();
                 ?>
-                <form action="#">
-                <!--<input type="text" id="resumo" name="resumo" required pattern="[\s]{1}[A-Za-z0-9]{4,}" maxLength="250">
-                <input type="text" id="resumo" name="resumo" required pattern="^[0-9]{3}.{1}[0-9]{3}.{1}[0-9]{3}-{1}[0-9]{2}$" maxLength="250">
-                <input type="text" id="resumo" name="resumo" required pattern="^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$" maxLength="250">
-                <input type="text" id="resumo" name="resumo" required pattern="^[0-9]{2}[\/][0-9]{2}[\/][0-9]{4}$" maxLength="250">
-                <input type="text" id="resumo" name="resumo" required pattern="^#[0-9a-f]{3}$|^#[0-9a-f]{6}$" maxLength="250">-->
-                </form>
+                
             </div>
         </div>
     </div>
