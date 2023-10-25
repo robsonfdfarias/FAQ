@@ -15,6 +15,44 @@ body{
     background-position: center top;*/
     background-color: #fff;
 }
+* {
+    scrollbar-width: auto;          /* "auto" or "thin" */
+    scrollbar-color: #b1cd49 #0c582c;   /* scroll thumb and track */
+}
+*::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+    background: #0c582c;        /* color of the tracking area */
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #b1cd49;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 1px solid #0c582c;  /* creates padding around scroll thumb */
+}
+
+/* barra de rolagem da paginação*/
+#barraPg {
+    scrollbar-width: thin;          /* "auto" or "thin" */
+    scrollbar-color: #b1cd49 #0c582c;   /* scroll thumb and track */
+}
+#barraPg::-webkit-scrollbar {
+    width: 1px;               /* width of the entire scrollbar */
+    height: 8px;
+}
+
+#barraPg::-webkit-scrollbar-track {
+    background: #0c582c;        /* color of the tracking area */
+}
+
+#barraPg::-webkit-scrollbar-thumb {
+    background-color: #b1cd49;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 1px solid #0c582c;  /* creates padding around scroll thumb */
+}
+/* FIM dabarra de rolagem da paginação*/
 
 * a:link{
     color: #0c582c;
@@ -491,6 +529,13 @@ hr#recentes{
     }
     #duvida {
         min-width: 150px;
+    }
+}
+
+@media screen and (max-width: 730px){
+    #itemdoisPergFreq{
+        display: flex;
+        flex-direction: column;
     }
 }
 

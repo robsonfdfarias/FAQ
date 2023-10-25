@@ -33,14 +33,14 @@
                         $objCat->getCatBlock();
                     ?>
                 </div>
-                <div id="centroItemDoisPergFreq" style="width: 84%;"> 
+                <div id="centroItemDoisPergFreq" style=""> 
                     <?php
                         //$obj2->selectArtigos();
                         $pg = $_GET['pg'];
                         if(empty($pg) && $pg==0){
                             $pg=1;
                         }
-                        $k=2;
+                        $k=1;
                         $obj2->getAllArticlePergGreq($pg, $k);
                     ?>
                 </div>
@@ -88,6 +88,9 @@
                 img.setAttribute("alt", "Seta indicando para abrir a visualização do conteudo")
             }
         }*/
+        function menuSelect(valor){
+            window.location.href = 'perguntasFrequentes.php?pg='+valor;
+        }
     </script>
 </body>
 </html>

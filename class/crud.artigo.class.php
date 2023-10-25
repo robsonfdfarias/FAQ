@@ -259,6 +259,15 @@ class CRUD{
             if($obj->execute()){
                 $numRows = $obj->rowCount();
                 if($numRows>0){
+                    $pags = ceil($totReg/$numReg);
+                    echo '
+                        <div id="numreg" style="margin-bottom: 10px;">
+                            Número de registros: '.$totReg.' | 
+                            Número de páginas: '.$pags.' | 
+                            Número de registro por página: '.$numReg.' | 
+                            Página atual: '.$pag.' | 
+                        </div>
+                    ';
                     $categ = new Categoria();
                     $n=0;
                     while($linha = $obj->fetchObject()){
@@ -280,18 +289,55 @@ class CRUD{
                             ';
                             $n++;
                     }
-                    $pags = ceil($totReg/$numReg);
-                    for($i=1; $i<=$pags; $i++){
-                        echo '<div id="pg"><a href="?pg='.$i.'">'.$i.'</a></div>';
-                    }
                     echo '
-                        <div id="numreg">
-                            Número de registros: '.$totReg.' | 
-                            Número de páginas: '.$pags.' | 
-                            Número de registro por página: '.$numReg.' | 
-                            Página atual: '.$pag.' | 
-                        </div>
+                        <div id="paginacao" style="display: flex; justify-content: center; text-align: center; vertical-align: middle;">
+                        <div style="padding: 5px 0; margin-right: 7px;">Total '.$totReg.' itens</div>
+                        <div style="border-radius: 4px; display: flex; justify-content: center; text-align: center; vertical-align: middle; border:1px solid #dfdfdf; width:60%;">
                     ';
+                    //BT Voltar
+                    if($pag>1){
+                        $pgPre = $pag-1;
+                        echo '<div id="pg" style="padding: 5px 10px; border-right:1px solid #dfdfdf; margin-right: 0px;"><a href="?pg='.$pgPre.'"><</a></div>';
+                    }else{
+                        echo '<div id="pg" style="padding: 5px 10px; border:0px solid #dfdfdf; margin-right: 0px; color: #c8c8c8; background-color: #f2f2f2;"><</div>';
+                    }
+                    //Páginas
+                    echo '<div id="barraPg" style="display: flex; justify-content: center; text-align: center; vertical-align: middle; overflow-x: auto;">';
+                    for($i=1; $i<=$pags; $i++){
+                        if($i!=$pag){
+                            echo '<div id="pg" style="padding: 5px 10px; border-right:1px solid #dfdfdf; margin-right: 0px;"><a href="?pg='.$i.'">'.$i.'</a></div>';
+                            echo '<div id="pg" style="padding: 5px 10px; border-right:1px solid #dfdfdf; margin-right: 0px;"><a href="?pg='.$i.'">'.$i.'</a></div>';
+                            echo '<div id="pg" style="padding: 5px 10px; border-right:1px solid #dfdfdf; margin-right: 0px;"><a href="?pg='.$i.'">'.$i.'</a></div>';
+                            echo '<div id="pg" style="padding: 5px 10px; border-right:1px solid #dfdfdf; margin-right: 0px;"><a href="?pg='.$i.'">'.$i.'</a></div>';
+                            echo '<div id="pg" style="padding: 5px 10px; border-right:1px solid #dfdfdf; margin-right: 0px;"><a href="?pg='.$i.'">'.$i.'</a></div>';
+                            echo '<div id="pg" style="padding: 5px 10px; border-right:1px solid #dfdfdf; margin-right: 0px;"><a href="?pg='.$i.'">'.$i.'</a></div>';
+                        }else{
+                            echo '<div id="pg" style="padding: 5px 10px; border-right:1px solid #dfdfdf; margin-right: 0px; background-color: #0c582c; color: #fff;">'.$i.'</div>';
+                        }
+                    }
+                    echo '</div>';
+                    //BT Avançar
+                    if($pag<$pags){
+                        $pgPre = $pag+1;
+                        echo '<div id="pg" style="padding: 5px 10px; border:0px solid #dfdfdf; margin-right: 0px;"><a href="?pg='.$pgPre.'">></a></div>';
+                    }else{
+                        echo '<div id="pg" style="padding: 5px 10px; border:0px solid #dfdfdf; margin-right: 0px; color: #c8c8c8; background-color: #f2f2f2;">></div>';
+                    }
+                    echo '</div>';
+                    //Menu DropDown
+                    echo '
+                        <select id="pgsMenu" style="border: 1px solid #dfdfdf; background-color: #fff; font-size:1rem; margin-left: 7px; border-radius: 4px;" onchange="menuSelect(this.value)">
+                            <option value="0" selected="selected" disabled="disabled">'.$pags.'/page</option>
+                        ';
+                        for($j=1;$j<=$pags;$j++){
+                            echo '
+                                <option value="'.$j.'">'.$j.'</option>
+                            ';
+                        }
+                    echo '</select>';
+                    //
+                    echo '</div>';
+                    echo '<div id="pg" style="display:none;">'.$pag.'</div>';
                 }
             }else{
                 echo 'Erro ao fazer a consulta';
