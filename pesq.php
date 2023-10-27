@@ -3,6 +3,14 @@
     include_once("AdminConfig/class/limpa.variavel.class.php");
     $limpa = new LimpaVar();
     $pesq = $limpa->limpa($pesq);
+
+    $pg=$_GET['pg'];
+    if($pg<0 || empty($pg)){
+        $pg=1;
+    }
+    if(!empty($_GET['pesq'])){
+        $pesq=$_GET['pesq'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -113,12 +121,14 @@
                 <div id="centroItemDoisPergFreq" style="max-width: 100%; width: 100%;"> 
                     <h2>Você pesquisou por: <?php echo "<span style='color:#0c582c;'>".$pesq."</span>"; ?></h2>
                     <?php
+                        $numReg=1;
                         include_once("class/crud.artigo.class.php");
                         $obj2 = new CRUD();
-                        $obj2->getFindArticle($pesq);
+                        $obj2->getFindArticle($pesq, $pg, $numReg);
                     ?>
                 </div>
             </div>
+            <idv id="idcateg" style="display:none;"><?php echo $pesq; ?></div>
 
         </div>
     </div>
@@ -134,6 +144,10 @@
         elemento.style.paddingTop  = calcula + 'px';
         elemento.style.paddingBottom  = calcula + 'px';*/
 
+        function menuSelect(valor){
+            var idcateg = document.getElementById('idcateg');
+            window.location.href = 'pesq.php?pesq='+idcateg.innerText+'&pg='+valor;
+        }
     </script>
 </body>
 </html>

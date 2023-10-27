@@ -202,7 +202,8 @@ body{
 }
 
 #centroItemDoisPergFreq{
-    max-width: 798px;
+    /*max-width: 798px;*/
+    width: 75%;
 }
 
 #categoriaPergFreq{
@@ -536,6 +537,9 @@ hr#recentes{
     #itemdoisPergFreq{
         display: flex;
         flex-direction: column;
+    }
+    #centroItemDoisPergFreq {
+        width: 100%;
     }
 }
 

@@ -130,7 +130,7 @@ function copiar() {
 function recortar() {
     document.execCommand("cut", false, null);
 }
-
+ 
 function colar() {
     document.execCommand("paste", false, null);
 }
@@ -177,6 +177,22 @@ function addOutIdent(){
 
 function teste(){
     window.getSelection().getRangeAt(0).insertNode(id_('bold').firstChild);
+}
+
+function tagRffTextShadow() {
+    selection = window.getSelection().toString();
+    console.log(selection)
+    wrappedselection = '<rffTextShadow>' + selection + '</rffTextShadow>';
+    //var img = new Image();
+    document.execCommand('insertHTML', false, wrappedselection);
+}
+
+function insertTagsNew(valor) {
+    selection = window.getSelection().toString();
+    console.log(selection)
+    wrappedselection = '<'+valor+'>' + selection + '</'+valor+'>';
+    //var img = new Image();
+    document.execCommand('insertHTML', false, wrappedselection);
 }
 
 function insertTag(valor, style) {

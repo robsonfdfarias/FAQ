@@ -2,7 +2,8 @@
 
 <head>
 
-<title>Editor de Texto JavaScript ::: Linha de Código</title>
+<title>Editor de Texto JavaScript ::: Linha de Código (Robson Farias)</title>
+    <link rel="stylesheet" type="text/css" href="../editorRobsonFarias.css" />
 <style>
     .tabela tr td{
         padding: 10px;
@@ -171,12 +172,16 @@
     <img src="imgEditor/changecasetolower.svg" title="Deixar texto em caixa baixa" onClick='insertTag("span", "style=\"text-transform:lowercase;\"")' />
     <img src="imgEditor/capitalize.svg" title="Deixar iniciais das palavras em caixa alta" onClick='insertTag("span", "style=\"text-transform:capitalize;\"")' />
     <img src="imgEditor/capitular.svg" title="Inserir capitular" onClick='insertTag("p", "class=\"p\"")' />
-    <img src="imgEditor/insertShadowText.svg" title="Inserir sombra no texto" onClick='insertTag("span", "style=\"text-shadow:3px 3px 2px #aaa;\"")' />
+    <img src="imgEditor/insertShadowText.svg" title="Inserir sombra no texto" onClick="insertTagsNew('rffTextShadow')" />
     <img src="imgEditor/insertNeonText.svg" title="Inserir um neon no texto" onClick='insertTag("span", "style=\"text-shadow:0px 0px 4px blue;\"")' />
     <img src="imgEditor/insertNeonTextEColorWhite.svg" title="Inserir um neon no texto e deixar o texto transparente" onClick='insertTag("span", "style=\"text-shadow:0px 0px 4px blue; color:#fff;\"")' />
     
     <img src="imgEditor/inserthyperlinkcontrol.svg" title="Inserir hiperlink" onClick="openWindowLink()" />
     <img src="imgEditor/removehyperlink.svg" title="Remover hiperlink" onClick="unlink()" />
+    <img src="imgEditor/rffText3D.svg" title="rffText3D" onClick="insertTagsNew('rffText3D')" />
+    <img src="imgEditor/rffTextSimples.svg" title="rffText3DSimples" onClick="insertTagsNew('rffText3DSimples')" />
+    <img src="imgEditor/rffTextExtreme.svg" title="rffText3DExtreme" onClick="insertTagsNew('rffText3DExtreme')" />
+    <img src="imgEditor/rffTextDegrade.svg" title="rffTextDegrade" onClick="insertTagsNew('rffTextDegrade')" />
     <select name="formatH" id="formatH">
         <option value="h1">H1</option>
         <option value="h2">H2</option>

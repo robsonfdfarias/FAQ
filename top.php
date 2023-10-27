@@ -130,7 +130,7 @@
                     $checa = new CheckedPag();
                 ?>
             <div id="geralTopo" style="background-color:#EFEFEF; text-align: -webkit-center;">
-              <div id="topo" style="background-color:#EFEFEF; max-width: 1036px;">
+              <div id="topo" style="background-color:#EFEFEF; max-width: 1036px; margin-left: auto; margin-right: auto;">
                 <div id="centroTop" style="width: 100%; text-align: left; color: #000;">
                   <?php $checa->returnDataTop() ?>
                   
