@@ -52,26 +52,34 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-       }
+       } 
     </style>
 </head>
 <body>
     <div id="geral">
         <?php include_once("menu.php"); ?>
             <?php include_once("top.php"); ?>
-        <div id="central">
+        <div id="central" style="margin-top: 30px;">
 
             <div id="itemdois">
                 <div class="post-content" style="width: 100%; padding:0px;">
-                    <header class="entry-header">
-                    <h2 class="entry-title">Capacitações disponíveis para o ano de <?php echo date('Y'); ?></h2>
-                                        
-                    </header>
                     <div id="conteudoMapa">
                         <?php
                             include_once("class/capacitacao.class.php");
                             $agenda = new Capacitacao();
-                            $agenda->nextEvent();
+                            $data = date('d/m/Y');
+                            $year = date('Y');
+                            $month= date('m');
+                            echo '
+                                <div id="conteudoCal" style="width:48%;">
+                            ';
+                            $agenda->getEventMonth($month, $year);
+                            echo '
+                                </div>
+                                <div id="eventDayDiv" style="width:48%;">
+                            ';
+                            $agenda->getEventDay($data);
+                            echo '</div>';
                         ?>
                     </div>
 
@@ -83,12 +91,62 @@
             include_once("footer.php");
         ?>
     <script type="text/javascript">
-        var elemento = document.getElementById('top');
-        var calcula = 260-elemento.clientHeight;
-        calcula = calcula/2;
-        console.log(calcula+" ---");
-        elemento.style.paddingTop  = (calcula-50) + 'px';
-        elemento.style.paddingBottom  = calcula + 'px';
+
+        function findEventDay(dia){
+            var eventDayDiv = document.getElementById('eventDayDiv');
+            let dt = dia.split('/');
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'chamada.ajax.php?dia='+dt[0]+'&mes='+dt[1]+'&ano='+dt[2]+'&tipo=eventDay');
+            xhr.send();
+            xhr.onload = function (){
+                if(xhr.status!=200){
+                    alert('Erro '+xhr.status+': '+xhr.statusText);
+                }else{
+                    eventDayDiv.innerHTML = xhr.response;
+                }
+            }
+            xhr.onprogress = function (event){
+                if(event.lengthComputable){
+                    console.log('Carregado '+event.loaded+' de '+event.total+' bytes');
+                }else{
+                    console.log('Carregado '+event.loaded+' bytes');
+                }
+            }
+            xhr.onerror = function (){
+                alert('Falha na requisição!');
+            }
+        }
+
+        function getMonthYear(ano, mes){
+            var conteudoCal = document.getElementById('conteudoCal');
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'chamada.ajax.php?tipo=calendar&mes='+mes+'&ano='+ano);
+            xhr.send();
+            xhr.onload = function (){
+                if(xhr.status!=200){
+                    alert('Erro '+xhr.status+': '+xhr.statusText);
+                }else{
+                    conteudoCal.innerHTML = xhr.response;
+                }
+            }
+            xhr.onprogress = function (event){
+                if(event.lengthComputable){
+                    console.log('Carregado '+event.loaded+' de '+event.total+' bytes');
+                }else{
+                    console.log('Carregado '+event.loaded+' bytes');
+                }
+            }
+            xhr.onerror = function (){
+                alert('Falha na requisição!');
+            }
+        }
+
+        function getToday(data){
+            //alert(data);
+            var dd = data.split('/');
+            findEventDay(data);
+            getMonthYear(dd[2], dd[1]);
+        }
 
     </script>
 </body>
