@@ -73,7 +73,7 @@
                             echo '
                                 <div id="conteudoCal" style="width:48%;">
                             ';
-                            $agenda->getEventMonth($month, $year);
+                            $agenda->getEventMonth($month, $year, 0);
                             echo '
                                 </div>
                                 <div id="eventDayDiv" style="width:48%;">
@@ -117,10 +117,10 @@
             }
         }
 
-        function getMonthYear(ano, mes){
+        function getMonthYear(ano, mes, bt){
             var conteudoCal = document.getElementById('conteudoCal');
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'chamada.ajax.php?tipo=calendar&mes='+mes+'&ano='+ano);
+            xhr.open('GET', 'chamada.ajax.php?tipo=calendar&mes='+mes+'&ano='+ano+'&bt='+bt);
             xhr.send();
             xhr.onload = function (){
                 if(xhr.status!=200){

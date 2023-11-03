@@ -38,12 +38,18 @@
             }else if($pag == 'coisasParaSaberSei'){
                 $titulo = 'Curiosidades';
                 $subtitulo = 'Conheça algumas curiosidades sobre o SEI.';
-            }else if($pag == 'noticia'){
+            }else if($pag == 'noticias'){
                 $titulo = 'Notícias';
-                $subtitulo = '';
+                $subtitulo = 'Incluir notícias SEI';
             }else if($pag == 'evento'){
                 $titulo = 'Área de inscrição para evento';
                 $subtitulo = 'Aqui você poderá fazer sua inscrição se houver vagas disponíveis.';
+            }else if($pag == 'index'){
+                $titulo = 'Bem vindo!';
+                $subtitulo = 'Painel';
+            }else if($pag == 'eventos'){
+                $titulo = 'Administrar Eventos';
+                $subtitulo = 'Painel de eventos';
             }
             echo '
             <span style="font-size: 40px; font-weight: 700; line-height: 65px;">

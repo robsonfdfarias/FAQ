@@ -21,18 +21,6 @@ body{
 #quebra{
     display: none;
 }
-#barraMenu{
-    width: 100%;
-    background-color: #0c582c;
-    min-height: 60px;
-}
-#centroMenu{
-    max-width: 1100px;
-    background-color: #0c582c;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-}
 #mP{
     display: row;
     justify-content: center;
@@ -47,37 +35,19 @@ body{
     overFlow: hidden;
     margin: 0;
 }
-#mP #nav{ 
+#mp nav{ 
     height: 60px;
-    padding: 0px 32px !important;
-    padding-left: 180px !important;
-    display: flex;
-    flex-wrap: wrap;
-    text-align: right;
-    justify-content: left;
-    align-items: left;
-    vertical-align: middle;
-}
-#mP #nav #logoPref{
-    position: absolute;
-    left: 32px;
-    top: 12px;
-}
-#mP #nav #objRight{
-    height: 60px;
-    position: absolute;
-    right: 32px;
-    top: 5px;
 }
 #menu{
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     padding:0;
     margin: 0;
 }
 #menu li{
+    float:left;
     text-decoration: none;
     list-style: none;
     /*background-image: linear-gradient(180deg, #052412, #083a1d,#083a1d);
@@ -88,7 +58,7 @@ body{
     animation-fill-mode:forwards;*/
     display:flex;
     flex-direction: column;
-    height: 3.6rem;
+    height: 4.2rem;
     transition: ease 0.3s;
     text-align: center;
     justify-content: center;
@@ -98,7 +68,7 @@ body{
 }
 #menu li a{
     height: 25px;
-    padding: 0px 12px;
+    padding: 0px 10px;
     text-decoration: none;
     color: #fff;
 }
@@ -123,7 +93,6 @@ body{
     transition: ease 0.3s;
     background-color: #fff;
 }
-
 #menu li:hover span #barra{
     align-items: end;
     height: 0px;
@@ -133,7 +102,6 @@ body{
     text-shadow: chartreuse;
     transition: ease 0.3s;
 }
-
 @keyframes gradient {
 	0% {background-position: 50% 100%; border-top: 0px solid rgba(16, 157, 157, 0.9);}
 	/*50% {background-position: 50% 50%;}*/
@@ -166,11 +134,6 @@ body{
 	100% {background-position: 50% 100%; border-top: 0px solid rgba(16, 157, 157, 0.9);}
 }
 
-span #duvida {
-    width: 230px;
-    padding-left: 15px;
-}
-
 @media (max-width:1119px){
     #barra{
         display:none;
@@ -193,9 +156,6 @@ span #duvida {
         position: absolute;
         top: 10px;
         left: 10px;
-    }
-    #mP #nav #logoPref{
-        top: 0px;
     }
 }
 

@@ -14,15 +14,15 @@
 <body>
 <div id="geral">
             <?php include_once("menu.php"); ?>
-        <div id="central">
             <?php include_once("top.php"); ?>
+        <div id="central">
 
-            <div id="itemdois">
+            <div id="itemdois" style="position:relative;">
                 <div id="tituloLogin">
                     Inserir notícia
                 </div>
                 
-                <div id="formLogin">
+                <div id="formInsert">
                     
                         <table>
                             <tr>
@@ -34,16 +34,17 @@
                             </tr>
                             <form action="noticiaInsert.submit.php" method="post" id="formulario"  enctype="multipart/form-data" autocomplete="on" onsubmit="return ValidateContactForm();">
                             <tr>
-                                <td><span id="nn">Título:</span></td>
-                                <td><input type="text" id="titulo" name="titulo" required spellcheck="true"></td>
+                                <!--<td><span id="nn">Título:</span></td>-->
+                                <td colspan="2"><input type="text" id="titulo" name="titulo" placeholder="Insira o título do artigo" required spellcheck="true"></td>
                             </tr>
                             <tr>
-                                <td><span id="nn">Resumo:</span></td>
-                                <td><input type="text" id="resumo" name="resumo" required pattern="[A-Za-z0-9.-\/|* ']{4,}" maxLength="250"></td>
+                                <!--<td><span id="nn">Resumo:</span></td>-->
+                                <td colspan="2"><input type="text" id="resumo" name="resumo" placeholder="Insira um resumo do artigo" required pattern="[A-Za-z0-9.-\/|* ']{4,}" maxLength="250"></td>
                             </tr>
                             <tr>
-                                <td><span id="nn">Status:</span></td>
-                                <td>
+                                <!--<td><span id="nn">Status:</span></td>-->
+                                <td colspan="2">
+                                    Status:<br>
                                     <select name="statusNews" id="statusNews">
                                         <option value="1">Ativo</option>
                                         <option value="0">Inativo</option>
@@ -56,7 +57,7 @@
                         </table>
                         <textarea name="conteudo" id="conteudo" cols="30" rows="10" style="display:none;" required></textarea>
                     </form>
-                        <button onclick="insertTextoEmTextarea()">Inserir textarea</button>
+                        <!--<button onclick="insertTextoEmTextarea()">Inserir textarea</button>-->
                 </div>
             </div>
         </div>

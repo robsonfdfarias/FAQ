@@ -15,11 +15,51 @@ body{
     background-size: auto 300px;
     background-attachment: fixed;
     background-position: center top;*/
-    background-color: beige;
+    background-color: white;
 }
+
+* {
+    scrollbar-width: auto;          /* "auto" or "thin" */
+    scrollbar-color: #b1cd49 #0c582c;   /* scroll thumb and track */
+}
+*::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+    background: #0c582c;        /* color of the tracking area */
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #b1cd49;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 1px solid #0c582c;  /* creates padding around scroll thumb */
+}
+
+/* barra de rolagem da paginação*/
+#barraPg {
+    scrollbar-width: thin;          /* "auto" or "thin" */
+    scrollbar-color: #b1cd49 #0c582c;   /* scroll thumb and track */
+}
+#barraPg::-webkit-scrollbar {
+    width: 1px;               /* width of the entire scrollbar */
+    height: 8px;
+}
+
+#barraPg::-webkit-scrollbar-track {
+    background: #0c582c;        /* color of the tracking area */
+}
+
+#barraPg::-webkit-scrollbar-thumb {
+    background-color: #b1cd49;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 1px solid #0c582c;  /* creates padding around scroll thumb */
+}
+/* FIM dabarra de rolagem da paginação*/
 
 * a:link{
     color: #0c582c;
+    text-decoration: none;
     transition: ease-in-out 0.5s;
 }
 
@@ -59,8 +99,59 @@ body{
     align-items: center;
 }
 
+/* ---------------------- Inicio do TOPO da área de administração ------------------------------ */
 
-/* ---------------------- Inicio do feed de notícias do usuario comum ------------------------------ */
+#geralTopo{
+    background-color:#EFEFEF;
+    text-align: -webkit-center;
+}
+#topo{
+    width: calc(100% - 64px);
+    padding: 60px 0px;
+    padding-top: 30px;
+    text-align: left;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+    background-color:#EFEFEF;
+    max-width: 1036px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#centroTop{
+    width: 100%;
+    text-align: left;
+    color: #000;
+}
+
+/* ---------------------------- FIM do TOPO da área de administração ------------------------------ */
+
+/* ---------------------- Inicio do rodapé da área de administração ------------------------------ */
+
+#redesFooter img{
+    padding-left: 5px;
+    filter: invert(71%) sepia(49%) saturate(488%) hue-rotate(31deg) brightness(98%) contrast(91%);
+    transition: ease-in-out 0.3s;
+}
+#redesFooter img:hover{
+    /*filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);*/
+    filter: invert(var(--invert)) sepia(var(--sepia)) saturate(var(--saturate)) hue-rotate(var(--hueRotate)) brightness(var(--brightness)) contrast(var(--contrast));
+    transition: ease-in-out 0.3s;
+}
+
+#camada1Footer #login{
+    float: left;
+    font-size: 16px;
+    color: white;
+}
+#camada1Footer #redesFooter{
+    float: right;
+}
+
+/* ---------------------------- FIM do rodapé da área de administração ------------------------------ */
+
+/* ---------------------- Inicio do feed de notícias da área de administração ------------------------------ */
 
 #generalFeedNews{
     margin-top: 10px;
@@ -94,7 +185,74 @@ body{
     line-height: 24px;
     float: right;
 }
-/* ---------------------- FIM do feed de notícias do usuario comum ------------------------------ */
+
+#insertArticle{
+    border: 0px solid #000;
+    border-radius: 4px;
+    background-color: #0c582c;
+    color: white;
+    padding: 6px 12px;
+}
+/* ---------------------- FIM do feed de notícias da área de administração ------------------------------ */
+
+/* ---------------------- Inicio do inserir notícias da área de administração ------------------------------ */
+
+#formInsert {
+    border: 1px solid #dfdfdf;
+    border-radius: 8px;
+    padding: 60px 32px;
+    margin: 20px;
+    margin-top: 10px;
+}
+
+#tituloLogin{
+    position: absolute;
+    top: -10px;
+    padding: 0 10px;
+    background-color: #fff;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-left: 40px;
+}
+
+#formInsert input{
+    min-height: 38px;
+    border-radius: 4px;
+    border: 1px solid #000;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+#formInsert input[type="file"]{
+    min-height: 30px;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    width: 95%;
+}
+#formInsert select{
+    min-height: 30px;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    padding: 10px;
+    font-size: 1.3rem;
+}
+#formInsert #statusNews{
+    width: 100%;
+}
+#formInsert #imagemInsert{
+    min-height: 30px;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    padding: 10px;
+    font-size: 1.3rem;
+    width: 96%;
+}
+
+#formInsert table tr td{
+    padding-bottom: 10px;
+}
+
+/* ---------------------- FIM do inserir notícias da área de administração ------------------------------ */
 
 #form {
     margin-left: auto;
@@ -107,8 +265,8 @@ body{
 }
 
 #titulo{
-    font-size: 200% !important;
-    color: white;
+    /*font-size: 200% !important;
+    color: white;*/
 }
 
 #subtitulo{
@@ -443,15 +601,15 @@ span#catSpan{
 }
 
 #formLogin{
-    border: 1px solid #cfcfcf;
+    border: 0px solid #cfcfcf;
     padding: 25px;
     border-radius: 10px;
     margin: 20px;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 #formLogin input{
-    min-height: 30px;
-    border-radius: 10px;
+    min-height: 38px;
+    border-radius: 4px;
     border: 1px solid #000;
     font-size: 1.2rem;
     width: 100%;
@@ -481,24 +639,20 @@ span#catSpan{
 #formLogin span{
     /*font-size: 25px;*/
 }
-#tituloLogin{
-    position: absolute;
-    padding: 10px;
-    background-color: #fff;
-    font-weight: bold;
-    font-size: 2rem;
-    margin-left: 40px;
-}
+
 #formLogin table tr td{
     padding-bottom: 10px;
 }
 
 #enviar{
-    padding: 12px 40px;
-    font-size: 1.3rem;
+    /* padding: 8px 40px;*/
+    height: 40px;
+    font-size: 16px;
     background-color: rgb(27, 88, 3);
     color: #fff;
     transition: ease 1s;
+    width: 100% !important;
+    margin-top: 20px;
 }
 
 #boasVindas{
@@ -513,8 +667,8 @@ span#catSpan{
     align-items: center;
     text-align: center;
     justify-content: center;*/
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 0 15px;
+    margin-bottom: 70px;
 }
 #opMenuCat{
     margin: 10px;
@@ -579,8 +733,8 @@ span#catSpan{
 #tituloCatMenuPag{
     float:left;
     font-weight: bold;
-    font-size: 1.5rem;
-    text-transform: uppercase;
+    font-size: 36px;
+    /*text-transform: uppercase;*/
 }
 #addCatMenuPag{
     float:right;

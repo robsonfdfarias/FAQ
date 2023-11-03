@@ -11,7 +11,12 @@
     }else if($tipo=='calendar'){
         $mes = $_GET['mes'];
         $ano = $_GET['ano'];
-        $objEventDay->getEventMonth($mes, $ano);
+        $bt = $_GET['bt'];
+        if(empty($bt) || $bt==''){
+            $bt=0;
+        }
+        //echo $bt;
+        $objEventDay->getEventMonth($mes, $ano, $bt);
     }
     exit;
 

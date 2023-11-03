@@ -11,6 +11,7 @@ $obj->getNewsByCat($id);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="editorRobsonFarias.css" />
     <link rel="shortcut icon" href="imgs/logo_sei_93x60.ico" type="image/x-icon" />
     <meta property="og:autor" content="Robson Farias (robsonfdfarias@gmail.com)">
     <meta property="og:title" content="<?php echo $obj->titulo(); ?>">

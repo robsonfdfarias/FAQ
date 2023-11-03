@@ -7,7 +7,43 @@
             DB::conn();
         }
 
-        function getEventMonth($mes, $ano){
+        function getEventMonth($mes, $ano, $bt){
+            $yearPrev = $ano-1;
+            $yearNext = $ano+1;
+            $monthPrev = $mes-1;
+            $monthNext = $mes+1;
+            /*if($mes<1){
+                $monthPrev=11;
+                $monthNext=1;
+                $mes=12;
+                $ano=$ano-1;
+            }
+            if($mes>12){
+                $monthPrev=12;
+                $monthNext=2;
+                $mes=1;
+                $ano=$ano+1;
+            }*/
+                if($monthPrev<1){
+                    $monthPrev=12;
+                }
+                if($monthNext>12){
+                    $monthNext=1;
+                }
+            if($bt==0){
+                if($monthPrev==11){
+                    $ano-=1;
+                    $yearPrev-=1;
+                    $yearNext=$yearPrev+1;
+                }
+            }else if($bt==1){
+                if($monthNext==2){
+                    $ano+=1;
+                    $yearNext=$ano+1;
+                    $yearPrev=$yearNext-1;
+                }
+            }
+            
             $mesesExt = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
             $data = date('Y-m-d');
             $diaAtual = strftime('%e');
@@ -18,23 +54,19 @@
             $pula=0;
             $first_of_month = gmmktime(0,0,0,$mes,1,$ano);
             $diaSemana = gmstrftime('%w', $first_of_month);
-            $yearPrev = $ano-1;
-            $yearNext = $ano+1;
-            $monthPrev = $mes-1;
-            $monthNext = $mes+1;
             //echo $diaSemana;
             echo '<div id="monthBody" style="">
                     <div id="showMonth" style="">
                         <div id="btnsPrev">
-                            <a onclick="getMonthYear('.$yearPrev.', '.$mes.')"><<</a>
-                            <a onclick="getMonthYear('.$ano.', '.$monthPrev.')"><</a>
+                            <a id="" onclick="getMonthYear('.$yearPrev.', '.$mes.', 3)"><<</a>
+                            <a id="btMonthPrev" onclick="getMonthYear('.$ano.', '.$monthPrev.', 0)"><</a>
                         </div>
                         <div id="monthYear">
                             '.$mesesExt[($mes-1)].' '.$ano.'
                         </div>
                         <div id="btnsNext">
-                            <a  onclick="getMonthYear('.$ano.', '.$monthNext.')">></a>
-                            <a  onclick="getMonthYear('.$yearNext.', '.$mes.')">>></a>
+                            <a id="btMonthNext" onclick="getMonthYear('.$ano.', '.$monthNext.', 1)">></a>
+                            <a  onclick="getMonthYear('.$yearNext.', '.$mes.', 3)">>></a>
                         </div>
                     </div>
                 ';
@@ -247,7 +279,7 @@
                     if($rows>0){
                         while($linha=$obj->fetchObject()){
                             if(self::testDayWithEvent($data)){
-                                $local = '<a href="#">'.$linha->localEvent.' -></a>';
+                                $local = '<a href="evento.php?dt='.$data.'">'.$linha->localEvent.' -></a>';
                             }else{
                                 $local = $linha->localEvent;
                             }

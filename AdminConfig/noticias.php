@@ -31,23 +31,34 @@
 <body>
     <div id="geral">
             <?php include_once("menu.php"); ?>
-        <div id="central">
             <?php include_once("top.php"); ?>
+        <div id="central">
             
 
-            <div id="itemdois">
+            <div id="itemdois" style="margin-top:0;">
             <div id="geralMenuCat">
-                    <div id="tituloCatMenuPag">Notícias:</div>
+                    <div id="tituloCatMenuPag">Últimas notícias</div>
                     <div id="addCatMenuPag">
-                        <a href="noticiaInsert.php">
+                        <button id="insertArticle" onclick="newArticle()">+ Nova Notícia</button>
+                        <!--<a href="noticiaInsert.php">
                             <img src="imgs/cat-add.svg" alt="Adicionar categoria" title="Adicionar categoria" height="30"> Adicionar notícia
-                        </a>
+                        </a>-->
                     </div>
                 </div>
                 <?php
+                    
+                    if(!empty($_GET['pg'])){
+                        $pg = $_GET['pg'];
+                    }else{
+                        $pg = 1;
+                    }
+                    $numReg = 1;
+                    include_once("class/limpa.variavel.class.php");
+                    $limpa = new LimpaVar();
+                    $pg=$limpa->limpa($pg);
                     include_once("class/noticia.class.php");
                     $obj2 = new Noticia();
-                    $obj2->getAllNews();
+                    $obj2->getAllNews($pg, $numReg);
                 ?>
                 
             </div>
@@ -56,5 +67,14 @@
     <?php
         include_once("footer.php");
     ?>
+    <script src="efeito.js"></script>
+    <script>
+        function newArticle(){
+            window.open("noticiaInsert.php");
+        }
+        function menuSelect(valor){
+            window.location.href = '?pg='+valor;
+        }
+    </script>
 </body>
 </html>
