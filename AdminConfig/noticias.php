@@ -11,6 +11,13 @@
     <!--<script type="text/javascript" src="jquery/code.jquery.com_jquery-3.7.1.min.js">-->
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="shortcut icon" href="imgs/logo_sei_93x60.ico" type="image/x-icon" />
+    <style>
+        footer{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
     <script type="text/javascript">
         /*function resizeRobson(){
             //alert("sdafdfad");
@@ -36,15 +43,15 @@
             
 
             <div id="itemdois" style="margin-top:0;">
-            <div id="geralMenuCat">
+                <!--<div id="geralMenuCat"></div>-->
                     <div id="tituloCatMenuPag">Últimas notícias</div>
                     <div id="addCatMenuPag">
                         <button id="insertArticle" onclick="newArticle()">+ Nova Notícia</button>
                         <!--<a href="noticiaInsert.php">
                             <img src="imgs/cat-add.svg" alt="Adicionar categoria" title="Adicionar categoria" height="30"> Adicionar notícia
-                        </a>-->
-                    </div>
-                </div>
+                        </a>--> 
+                    </div><br><br>
+                
                 <?php
                     
                     if(!empty($_GET['pg'])){
@@ -52,7 +59,7 @@
                     }else{
                         $pg = 1;
                     }
-                    $numReg = 1;
+                    $numReg = 2;
                     include_once("class/limpa.variavel.class.php");
                     $limpa = new LimpaVar();
                     $pg=$limpa->limpa($pg);
@@ -64,7 +71,7 @@
             </div>
         </div>
     </div>
-    <?php
+    <?php 
         include_once("footer.php");
     ?>
     <script src="efeito.js"></script>

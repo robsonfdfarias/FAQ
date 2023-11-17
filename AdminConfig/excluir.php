@@ -128,7 +128,7 @@
             window.open("excluir.submit.php?id="+id.innerText);
         }
         function cancelar(){
-            window.open("index.php");
+            window.close();
         }
 
     </script>

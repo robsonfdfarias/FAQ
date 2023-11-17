@@ -1,5 +1,10 @@
 <?php
 $pasta = '../imagens/';
+$ano = date('Y');
+$mes = date('m');
+$dia = date('d');
+$pasta .= $ano.'/'.$mes.'/'.$dia.'/';
+mkdir($pasta, 0777, true);
 ini_set('upload_max_filesize', '10M');
 if (isset($_FILES['file']) && !empty($_FILES['file']['name'])) {
   //substr($linha->resumo, 0,120)

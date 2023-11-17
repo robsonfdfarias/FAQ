@@ -30,7 +30,7 @@
                 $titulo = 'Capacitação';
                 $subtitulo = '';
             }else if($pag == 'categoria'){
-                $titulo = 'Categoria';
+                $titulo = 'Pesquisa';
                 $subtitulo = 'Pesquisa por categoria';
             }else if($pag == 'pesq'){
                 $titulo = 'Pesquisa';
@@ -50,6 +50,45 @@
             }else if($pag == 'eventos'){
                 $titulo = 'Administrar Eventos';
                 $subtitulo = 'Painel de eventos';
+            }else if($pag == 'inserir'){
+                $titulo = 'Inserir pergunta';
+                $subtitulo = 'Formulário de pergunta';
+            }else if($pag == 'insertEvent'){
+                $titulo = 'Inserir Evento';
+                $subtitulo = 'Formulário de evento';
+            }else if($pag == 'noticiaInsert'){
+                $titulo = 'Inserir notícia';
+                $subtitulo = 'Formulário de notícia';
+            }else if($pag == 'categoriaIndex'){
+                $titulo = 'Categorias';
+                $subtitulo = 'Painel de categorias';
+            }else if($pag == 'catAdd'){
+                $titulo = 'Inserir categoria';
+                $subtitulo = 'Formulário de categoria';
+            }else if($pag == 'noticiaEdit'){
+                $titulo = 'Editar notícia';
+                $subtitulo = 'Formulário de edição de notícia';
+            }else if($pag == 'editar'){
+                $titulo = 'Editar artigo';
+                $subtitulo = 'Formulário de edição de artigo';
+            }else if($pag == 'editEvent'){
+                $titulo = 'Editar evento';
+                $subtitulo = 'Formulário de edição de evento';
+            }else if($pag == 'catEdit'){
+                $titulo = 'Editar categoria';
+                $subtitulo = 'Formulário de edição de categoria';
+            }else if($pag == 'catDelete'){
+                $titulo = 'Deletar categoria';
+                $subtitulo = 'Recurso de exclusão de categoria';
+            }else if($pag == 'inscritos'){
+                $titulo = 'Inscrição em envento';
+                $subtitulo = 'Lista de inscritos';
+            }else if($pag == 'artigo'){
+                $titulo = 'Artigo';
+                $subtitulo = '';
+            }else if($pag == 'perguntas'){
+                $titulo = 'Perguntas';
+                $subtitulo = 'Painel de perguntas';
             }
             echo '
             <span style="font-size: 40px; font-weight: 700; line-height: 65px;">

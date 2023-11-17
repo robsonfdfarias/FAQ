@@ -9,7 +9,7 @@
     body{
         background-image: url("imgs/fundo.jpg");
         background-size: 100vw 100vh;
-        background-repeat: no-repeat;
+        background-repeat: contain;
         background-position: center top;
     }
     .tabela tr td{
@@ -54,7 +54,7 @@
         -webkit-backdrop-filter: blur( 9.5px );
         border-radius: 10px;
         border: 1px solid rgba( 255, 255, 255, 0.18 );
-        position: absolute;
+        position: fixed;
         left: 0;
         top:0;
         width: 100%;
@@ -127,6 +127,32 @@
     input[type="text"]{
         width:150px;
     }
+
+    #lista a{
+        font-size: 22px;
+        color: #0c582c;
+        text-decoration: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: ease-in-out 0.5s;
+    }
+    #lista a:hover{
+        font-size: 22px;
+        color: forestgreen;
+        text-decoration: none;
+        text-shadow: 0 0 1px 1px green;
+        transition: ease-in-out 0.5s;
+    }
+
+    #lista img {
+        cursor: pointer;
+        transition: ease 0.3s;
+    }
+
+    #lista img:hover{
+        filter:  invert(25%) sepia(111%) saturate(100%) hue-rotate(29deg);
+        transition: ease 0.3s;
+    }
     
 </style>
 </head>
@@ -134,12 +160,12 @@
 <div id="geralInseriImagem">
     <div id="glassImageBackground"></div>
     <div id="inseriImagemCentro">
-        <form action="ex2.class.php" method="post" id="upload">
+        <form action="ex2.class.php" method="post" id="upload"> 
             <input type="file" name="file" id="file" accept="image/*" />
             <!--<input type="text" name="name" value="Robson" /><br>-->
             <input type="submit" value="Carregar e visualizar" id="cv" />
         </form>
-        <div id="preview"></div>
+        <div id="preview">-</div>
         <div id="porcento"></div>
         <span id="info">
             Se deixar em branco a altura e a largura, eles ficarão com o padrão. Se colocar o valor em apenas um dos campos, o outro será redimencionado para não deformar a imagem.
@@ -147,7 +173,14 @@
         <input type="text" placeholder="Digite a Largura ex(400)" id="largura">
         <input type="text" placeholder="Digite a altura ex(300)" id="altura">
         <button onclick="insert()">Inserir Imagem</button><button onclick="cancel()">Cancelar</button>
+        <div id="filesCentral" style="margin-top: 70px;">
+            <?php
+                include_once("listaImgs.php");
+            ?>
+            <br>
+        </div>
     </div>
+    
 </div>
 
 <script src="upload.js"></script>

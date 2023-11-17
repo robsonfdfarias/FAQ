@@ -61,6 +61,12 @@
             background-color: green;
             margin-left: 10px;
         }
+
+        footer{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
     </style>
 </head>
 <body>

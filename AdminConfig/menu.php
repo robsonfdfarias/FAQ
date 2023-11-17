@@ -33,10 +33,11 @@
                         <li><a href="declaracaoUtilidadePublica.php">Declaração de Utilidade Pública</a></li><span id="barra">|</span>
                         <li><a href="perguntasFrequentes.php">Perguntas frequentes</a></li>-->
                             
-                            <li><a href="index.php">Home</a><span><div id="barra" <?php $checa->retorna('index') ?>></div></span></li>
-                            <li><a href="inserir.php">Inserir artigo</a><span><div id="barra" <?php $checa->retorna('inserir') ?>></div></span></li>
-                            <li><a href="eventos.php">Eventos</a><span><div id="barra" <?php $checa->retorna('eventos') ?>></div></span></li>
+                            <li><a href="index.php">Início</a><span><div id="barra" <?php $checa->retorna('index') ?>></div></span></li>
+                            <!--<li><a href="inserir.php">Inserir artigo</a><span><div id="barra" <?php //$checa->retorna('inserir') ?>></div></span></li>-->
                             <li><a href="noticias.php">Notícias</a><span><div id="barra" <?php $checa->retorna('noticias') ?>></div></span></li>
+                            <li><a href="perguntas.php">Perguntas</a><span><div id="barra" <?php $checa->retorna('perguntas') ?>></div></span></li>
+                            <li><a href="eventos.php">Agenda</a><span><div id="barra" <?php $checa->retorna('eventos') ?>></div></span></li>
                             <li><a href="categoriaIndex.php">Categoria</a><span><div id="barra" <?php $checa->retorna('categoriaIndex') ?>></div></span></li>
                             
                     </ul>

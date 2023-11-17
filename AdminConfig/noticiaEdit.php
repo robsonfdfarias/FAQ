@@ -14,18 +14,21 @@
         input[type="date"], input[type="number"]{
             padding: 10px;
         }
+        #itemdois{
+            margin-top: 0;
+        }
     </style>
 </head>
 <body>
 <div id="geral">
             <?php include_once("menu.php"); ?>
-        <div id="central">
             <?php include_once("top.php"); ?>
+        <div id="central">
 
             <div id="itemdois">
-                <div id="tituloLogin">
+                <!--<div id="tituloLogin">
                     Inserir Evento
-                </div>
+                </div>-->
 
                 <?php
                     $id = $_GET['id'];

@@ -10,17 +10,25 @@
     <title>Formulário de inserção de artigo</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="shortcut icon" href="imgs/logo_sei_93x60.ico" type="image/x-icon" />
+    <style>
+        #itemdois{
+            margin-top: 0;
+        }
+        #formLogin{
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
 <div id="geral">
             <?php include_once("menu.php"); ?>
-        <div id="central">
             <?php include_once("top.php"); ?>
+        <div id="central">
 
             <div id="itemdois">
-                <div id="tituloLogin">
+                <!--<div id="tituloLogin">
                     Inserir postagem
-                </div>
+                </div>-->
                 
                 <div id="formLogin">
                     
@@ -77,7 +85,6 @@
                         <input type="hidden" name="dataPost" value="<?php echo date("d/m/Y"); ?>">
                         <textarea name="conteudoArtigo" id="conteudoArtigo" cols="30" rows="10" style="display:none;" required></textarea>
                     </form>
-                        <button onclick="insertTextoEmTextarea()">Inserir textarea</button>
                 </div>
             </div>
         </div>

@@ -43,9 +43,9 @@ function watchColorPicker(event) {
 let colorPicker;
 const defaultColor = "#0000ff";
 
-window.addEventListener("load", startup, false);
+window.addEventListener("load", startup1, false);
 
-function startup() {
+function startup1() {
     colorPicker = document.querySelector("#cores");
     colorPicker.value = defaultColor;
     colorPicker.addEventListener("input", cor, false);
@@ -111,6 +111,7 @@ function sublinhado() {
 }
 function cor() {
     var cores = document.getElementById('cores');
+    document.execCommand('styleWithCSS', false, true);
     document.execCommand("foreColor", window.getSelection(), cores.value);
 }
 

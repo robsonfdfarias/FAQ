@@ -14,18 +14,24 @@
         input[type="date"], input[type="number"]{
             padding: 10px;
         }
+        #itemdois{
+            margin-top: 0;
+        }
+        #formLogin{
+            padding: 0;
+        }
     </style>
 </head>
 <body>
 <div id="geral">
             <?php include_once("menu.php"); ?>
-        <div id="central">
             <?php include_once("top.php"); ?>
+        <div id="central">
 
             <div id="itemdois">
-                <div id="tituloLogin">
+                <!--<div id="tituloLogin">
                     Inserir Evento
-                </div>
+                </div>-->
                 
                 <div id="formLogin">
                     
@@ -41,6 +47,10 @@
                             <tr>
                                 <td><span id="nn">Título:</span></td>
                                 <td><input type="text" id="titulo" name="titulo" required style="color:#000;padding-left: 10px;"></td>
+                            </tr>
+                            <tr>
+                                <td><span id="nn">Local:</span></td>
+                                <td><input type="text" id="local" name="local" required style="color:#000;padding-left: 10px;"></td>
                             </tr>
                             <tr>
                                 <td><span id="nn">Data de inicio:</span></td>

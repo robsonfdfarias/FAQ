@@ -25,6 +25,7 @@
             <div id="itemdois">
                 <?php
                     $titulo = $_POST['titulo'];
+                    $local = $_POST['local'];
                     $dtpost = $_POST['dataPost'];
                     $dtinicio = $_POST['dtinicio'];
                     $dtfim = $_POST['dtfim'];
@@ -39,7 +40,7 @@
                     $dtfim = $dt[2]."/".$dt[1]."/".$dt[0];
                     include_once("class/capacitacao.class.php");
                     $inserir = new Capacitacao();
-                    $inserir->insertEvent($titulo, $dtpost, $dtinicio, $dtfim, $texto, $vagas, $certificado, $horainicio, $horafim);
+                    $inserir->insertEvent($titulo, $dtpost, $dtinicio, $dtfim, $texto, $vagas, $certificado, $horainicio, $horafim, $local);
                 ?>
             </div>
         </div>

@@ -85,8 +85,9 @@ body{
     margin-left: auto;
     margin-right: auto;
     min-height: 300px;
+    padding: 18px;
     padding-bottom: 20px;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 #top {
@@ -104,6 +105,7 @@ body{
 #geralTopo{
     background-color:#EFEFEF;
     text-align: -webkit-center;
+    padding-top: 60px;
 }
 #topo{
     width: calc(100% - 64px);
@@ -187,22 +189,23 @@ body{
 }
 
 #insertArticle{
+    font-size: 110%;
     border: 0px solid #000;
     border-radius: 4px;
     background-color: #0c582c;
     color: white;
-    padding: 6px 12px;
+    padding: 10px 20px;
 }
 /* ---------------------- FIM do feed de notícias da área de administração ------------------------------ */
 
 /* ---------------------- Inicio do inserir notícias da área de administração ------------------------------ */
 
 #formInsert {
-    border: 1px solid #dfdfdf;
+    /*border: 1px solid #dfdfdf;
     border-radius: 8px;
-    padding: 60px 32px;
+    padding: 60px 32px;*/
     margin: 20px;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 #tituloLogin{
@@ -374,6 +377,7 @@ div.objitensum {
     background-color: white;
     margin-top: 15px;
     /*box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);*/
+    position: relative;
 }
 
 .questao{
@@ -421,6 +425,8 @@ hr#recentes{
     float: left;
     margin-top: -10px;
 }
+
+
 
 
 #itensum {
@@ -602,7 +608,7 @@ span#catSpan{
 
 #formLogin{
     border: 0px solid #cfcfcf;
-    padding: 25px;
+    /*padding: 25px;*/
     border-radius: 10px;
     margin: 20px;
     margin-top: 10px;
@@ -825,3 +831,92 @@ span#catSpan{
 #tabInscForEvent tr:nth-child(1){
     background-color: #e7e7e7;
 }
+
+
+/* ------------------------------ Inicio da CAPACITAÇÃO do usuario comum ------------------------------ */
+
+#calendar {
+    border-spacing: 20px;
+    height: 400px;
+}
+
+#calendar tr td {
+    text-align: center;
+    cursor: pointer;
+    transition: ease-in 0.3s;
+    border: 0px solid #000;
+    /*line-height: 3.9rem;*/
+    border-radius: 4px;
+    width: 14%;
+    overflow: cover;
+}
+
+#calendar tr td:hover {
+    text-align: center;
+    cursor: pointer;
+    background-color: #dfdfdf;
+    transition: ease-in 0.3s;
+}
+
+#showMonth {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    border-bottom: 1px solid #dfdfdf;
+    padding: 5px;
+    font-size: 18px;
+}
+
+#conteudoMapa {
+    justify-content:space-between !important;
+}
+
+#showMonth #btnsPrev a {
+    cursor: pointer;
+}
+
+#showMonth #btnsNext a {
+    cursor: pointer;
+}
+
+#conteudoCal {
+    vertical-align: top;
+    width: 48%;
+}
+#eventDayDiv {
+    vertical-align: top;
+    align-self: baseline;
+    width: 48%;
+}
+#eventDayTitle {
+    font-size: 18px;
+    align-self: baseline;
+    margin-bottom: 10px;
+}
+#divEventDayList {
+    border-radius: 4px;
+    border:1px solid #dfdfdf;
+    padding: 15px;
+    font-size: 16px;
+}
+
+#divToday {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #dfdfdf;
+    padding: 10px;
+    color: #0c582c;
+    transition: ease-in 0.3s;
+    cursor: pointer;
+}
+
+#divToday:hover {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #dfdfdf;
+    padding: 10px;
+    color: #04c052;
+    transition: ease-in 0.3s;
+}
+
+/* ---------------------- FIM da CAPACITAÇÃO do usuario comum ------------------------------ */

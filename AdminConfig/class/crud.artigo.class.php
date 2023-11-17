@@ -32,25 +32,64 @@ class CRUD{
         return true;
     }
 
-    function selectArtigos(){
-        $obj = DB::conn()->prepare("SELECT * FROM artigo ORDER BY id DESC LIMIT 0,8");
-        if($obj->execute()){
-            $numRows = $obj->rowCount();
-            $categoria = new Categoria();
-            if($numRows>0){
-                while($linha = $obj->fetchObject()){
-                    echo '<div class="questao">
-                            <span id="categoria"><i>Categoria: <a href="categoria.php?id='.$linha->categoria.'">'.$categoria->getCatById($linha->categoria).'</a></i><br></span>
-                            <span class="tituloQuestao"><a href="artigo.php?id='.$linha->id.'">'.$linha->titulo.'</a></span><br>
-                            <hr style="width:100%; height:50%;">
-                            <span class="descQuestao">'.$linha->resumo.'<br>
-                            <a href="editar.php?id='.$linha->id.'">Editar</a> |
-                            <a href="excluir.php?id='.$linha->id.'">Excluir</a> |
-                            <a href="artigo.php?id='.$linha->id.'">Ler o artigo completo</a>
-                            </span>
-                        </div>';
+    function selectArtigos($pag, $numReg){
+        $totReg = self::getTotalArticle("SELECT * FROM artigo", '');
+        //echo $totReg;
+        $verifyNumReg = ($pag*$numReg)-$numReg;
+        //echo '<br>'.$verifyNumReg.'<br>';
+        if($totReg<=$verifyNumReg){
+            echo '<h1>Não existem registros nestá página.</h1>';
+            return false;
+        }
+        try{
+            $obj = DB::conn()->prepare("SELECT * FROM artigo ORDER BY id DESC LIMIT ".$verifyNumReg.",".$numReg." ");
+            if($obj->execute()){
+                $numRows = $obj->rowCount();
+                $categoria = new Categoria();
+                if($numRows>0){
+                    $pags = ceil($totReg/$numReg);
+                        echo '
+                            <div id="numreg" style="margin-bottom: 10px; display:none;">
+                                Número de registros: '.$totReg.' | 
+                                Número de páginas: '.$pags.' | 
+                                Número de registro por página: '.$numReg.' | 
+                                Página atual: '.$pag.' | 
+                            </div>
+                        ';
+                    while($linha = $obj->fetchObject()){
+                        /*echo '<div class="questao">
+                                <span id="categoria"><i>Categoria: <a href="categoria.php?id='.$linha->categoria.'">'.$categoria->getCatById($linha->categoria).'</a></i><br></span>
+                                <span class="tituloQuestao"><a href="artigo.php?id='.$linha->id.'">'.$linha->titulo.'</a></span><br>
+                                <hr style="width:100%; height:50%;">
+                                <span class="descQuestao">'.$linha->resumo.'<br>
+                                <a href="editar.php?id='.$linha->id.'">Editar</a> |
+                                <a href="excluir.php?id='.$linha->id.'" target="_blank">Excluir</a> |
+                                <a href="artigo.php?id='.$linha->id.'">Ler o artigo completo</a>
+                                </span>
+                            </div>';*/
+                            echo '
+                            <div id="generalFeedNews" style="display:flex; flex-direction:row; padding-left: 10px; justify-content:center;text-align:center; vertical-align:middle;align-items: center;">
+                                <div style="text-align:left;width:91%;">
+                                    <span id="titleNewsFeed">'.$linha->titulo.'</span><br>
+                                    <span id="summaryNewsFeed">'.substr($linha->resumo, 0, 190).'...</span><br>
+                                </div>
+                                <div style="display:flex;">
+                                    <a href="editar.php?id='.$linha->id.'">
+                                    <div id="divBtEdit" style="background-color:green; padding:10px; margin-right: 5px; border-radius:5px;"><img src="imgs/edit-lapis.svg" width="20" title="Editar notícia"></div>
+                                    </a>
+                                    <a href="excluir.php?id='.$linha->id.'" target="_blank">
+                                    <div id="divBtDelete" style="background-color:red; padding:10px; margin-left: 5px; border-radius:5px;"><img src="imgs/delete-bin.svg" width="20" title="Deletar notícia"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        ';
+                    }
+                    echo '<br>';
+                    self::pagination($pags,$totReg,$pag,'');
                 }
             }
+        }catch(PDOException $e){
+            echo 'Erro: '.$e->getMessage();
         }
     }
 
@@ -103,26 +142,47 @@ class CRUD{
     }
 
 
-    function getArtByCat($idCat){
-        $objCateg = DB::conn()->prepare("SELECT * FROM artigo WHERE categoria=?");
-        if($objCateg->execute(array($idCat))){
-            $nr = $objCateg->rowCount();
-            if($nr>0){
-                while($linha = $objCateg->fetchObject()){
-                    echo '<div class="questao">
-                            <span class="tituloQuestao"><a href="artigo.php?id='.$linha->categoria.'">'.$linha->titulo.'</a></span><br>
-                            <span class="descQuestao">'.$linha->resumo.'<br>
-                            <a href="editar.php?id='.$linha->id.'">Editar</a> |
-                            <a href="excluir.php?id='.$linha->id.'">Excluir</a> |
-                            <a href="artigo.php?id='.$linha->id.'">Ler o artigo completo</a>
-                            </span>
-                        </div>';
+    function getArtByCat($idCat, $pag, $numReg){
+        $totReg = self::getTotalArticle("SELECT * FROM artigo WHERE categoria=? ", $idCat);
+        $verifyNumReg = ($pag*$numReg)-$numReg;
+        if($totReg<=$verifyNumReg){
+            echo '<h1>Não existem registros nestá página.</h1>';
+            return false;
+        }
+        try{
+            $objCateg = DB::conn()->prepare("SELECT * FROM artigo WHERE categoria=? ORDER BY id DESC LIMIT ".$verifyNumReg.",".$numReg." ");
+            if($objCateg->execute(array($idCat))){
+                $nr = $objCateg->rowCount();
+                if($nr>0){
+                    $pags = ceil($totReg/$numReg);
+                        echo '
+                            <div id="numreg" style="margin-bottom: 10px; display:none;">
+                                Número de registros: '.$totReg.' | 
+                                Número de páginas: '.$pags.' | 
+                                Número de registro por página: '.$numReg.' | 
+                                Página atual: '.$pag.' |  
+                            </div>
+                        ';
+                    while($linha = $objCateg->fetchObject()){
+                        echo '<div class="questao">
+                                <span class="tituloQuestao"><a href="artigo.php?id='.$linha->id.'">'.$linha->titulo.'</a></span><br><br>
+                                <span class="descQuestao">'.$linha->resumo.'<br>
+                                <a href="editar.php?id='.$linha->id.'">Editar</a> |
+                                <a href="excluir.php?id='.$linha->id.'">Excluir</a> |
+                                <a href="artigo.php?id='.$linha->id.'">Ler o artigo completo</a>
+                                </span>
+                            </div>';
+                    }
+                    echo '<br>';
+                    self::pagination($pags,$totReg,$pag,'');
+                }else{
+                    echo "Nenhum artigo encontrado nessa categoria";
                 }
             }else{
-                echo "Nenhum artigo encontrado nessa categoria";
+                echo "Erro na conexão com a base de dados!";
             }
-        }else{
-            echo "Erro na conexão com a base de dados!";
+        }catch(PDOException $e){
+            echo 'Erro: '.$e->getMessage();
         }
     }
 
@@ -241,6 +301,129 @@ class CRUD{
             return 0;
         }
     }
+
+
+    /*********************************** PAGINAÇÃO INICIO ***************************************************/
+
+    function pagination($pags,$totReg,$pag, $pesq){
+        echo '
+                <div id="paginacao" style="display: flex; justify-content: center; text-align: center; vertical-align: middle;">
+                <div style="padding: 5px 0; margin-right: 7px;">Total '.$totReg.' itens</div>
+                <div style="border-radius: 4px; display: flex; justify-content: center; text-align: center; vertical-align: middle; border:1px solid #dfdfdf; max-width:60%;">
+            ';
+            //BT Voltar
+            if($pag>1){
+                $pgPre = $pag-1;
+                if($pesq!=''){
+                    echo '<div id="pg" style="padding: 5px 10px; border-right:1px solid #dfdfdf; margin-right: 0px;"><a href="?pesq='.$pesq.'&pg='.$pgPre.'"><</a></div>';
+                }else{
+                    echo '<div id="pg" style="padding: 5px 10px; border-right:1px solid #dfdfdf; margin-right: 0px;"><a href="?pg='.$pgPre.'"><</a></div>';
+                }
+            }else{
+                echo '<div id="pg" style="padding: 5px 10px; border:0px solid #dfdfdf; margin-right: 0px; color: #c8c8c8; background-color: #f2f2f2;"><</div>';
+            }
+            //Páginas
+            echo '<div id="barraPg" style="display: flex; justify-content: center; text-align: center; vertical-align: middle; overflow-x: auto;">';
+            $smaller = 1;
+            $bigger = 5;
+            $margin = 2;
+            //$pags = 7;
+            for($i=1; $i<=$pags; $i++){
+                if($pags>($margin+$margin+1)){
+                    
+                    if($pag>$margin and $pag<=($pags-$margin)){
+                        if(($i>=($pag-$margin)) and ($i <= ($pag+$margin)) ){
+                            self::comparePag($i, $pag, $pesq);
+                        }
+                    }else if($pag<=$margin){
+                        //self::comparePag($i, $pag);
+                        if($i<6){
+                            self::comparePag($i, $pag, $pesq);
+                        }
+                    }else if($pag>=($pags-$margin)){
+                        if($i>($pags-5)){
+                            self::comparePag($i, $pag, $pesq);
+                        }
+                        //self::comparePag($i, $pag);
+                    }
+                    //echo '<div id="pg" style="padding: 5px 10px; border-right:1px solid #dfdfdf; margin-right: 0px;"><a href="?pg='.$i.'">'.$i.'</a></div>';
+                    
+                }else{
+                    self::comparePag($i, $pag, $pesq);
+                }
+            }
+            echo '</div>';
+            //BT Avançar
+            if($pag<$pags){
+                $pgPre = $pag+1;
+                if($pesq!=''){
+                    echo '<div id="pg" style="padding: 5px 10px; border-right:1px solid #dfdfdf; margin-right: 0px;"><a href="?pesq='.$pesq.'&pg='.$pgPre.'">></a></div>';
+                }else{
+                    echo '<div id="pg" style="padding: 5px 10px; border-right:1px solid #dfdfdf; margin-right: 0px;"><a href="?pg='.$pgPre.'">></a></div>';
+                }
+            }else{
+                echo '<div id="pg" style="padding: 5px 10px; border:0px solid #dfdfdf; margin-right: 0px; color: #c8c8c8; background-color: #f2f2f2;">></div>';
+            }
+            echo '</div>';
+            //Menu DropDown
+            echo '
+                <select id="pgsMenu" style="border: 1px solid #dfdfdf; background-color: #fff; font-size:1rem; margin-left: 7px; border-radius: 4px;" onchange="menuSelect(this.value)">
+                    <option value="0" selected="selected" disabled="disabled">'.$pags.'/page</option>
+                ';
+                for($j=1;$j<=$pags;$j++){
+                    echo '
+                        <option value="'.$j.'">'.$j.'</option>
+                    ';
+                }
+            echo '</select>';
+            //
+            echo '</div>';
+            //echo '<div id="pg" style="display:none;">'.$pag.'</div>';
+        
+    }
+
+
+    function getTotalArticle($sql, $dados){
+        //$objTot = DB::conn()->prepare("SELECT * FROM artigo");
+        $objTot = DB::conn()->prepare($sql);
+        if(!empty($dados) && $dados!='' &&  $dados!=null){
+            try{
+                if($objTot->execute(array($dados))){
+                    return $objTot->rowCount();
+                }else{
+                    return 0;
+                }
+            }catch(PDOException $e){
+                echo 'ERRO: '.$e->getMessage();
+            }
+        }else{
+            try{
+                if($objTot->execute()){
+                    return $objTot->rowCount();
+                }else{
+                    return 0;
+                }
+            }catch(PDOException $e){
+                echo 'ERRO: '.$e->getMessage();
+            }
+        }
+    }
+
+
+    function comparePag($pag1, $pag2, $pes){
+        if($pag1!=$pag2){
+            //echo $pes.'-----';
+            if($pes!=''){
+                echo '<div id="pg" style="border-right:1px solid #dfdfdf; margin-right: 0px; vertical-align:middle;"><a href="?pesq='.$pes.'&pg='.$pag1.'"><div style="padding: 5px 10px; ">'.$pag1.'</div></a></div>';
+            }else{
+                echo '<div id="pg" style="border-right:1px solid #dfdfdf; margin-right: 0px; vertical-align:middle;"><a href="?pg='.$pag1.'"><div style="padding: 5px 10px; ">'.$pag1.'</div></a></div>';
+            }
+        }else{
+            echo '<div id="pg" style="padding: 5px 10px; border-right:1px solid #dfdfdf; margin-right: 0px; background-color: #0c582c; color: #fff;">'.$pag1.'</div>';
+        }
+    }
+
+    /*********************************** PAGINAÇÃO FIM ***************************************************/
 
 
 }

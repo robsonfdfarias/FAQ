@@ -8,6 +8,36 @@
     <link rel="shortcut icon" href="imgs/logo_sei_93x60.ico" type="image/x-icon" />
 </head>
 <body>
+    <?php
+        //filtro de acesso por IP
+        //isolado para caso desejem remover essa camada de segurança, é só comentar essa parte do código
+        /*$ipaddress = '';
+        if ($_SERVER['HTTP_CLIENT_IP'])
+            $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+        else if($_SERVER['HTTP_X_FORWARDED_FOR'])
+            $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        else if($_SERVER['HTTP_X_FORWARDED'])
+            $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+        else if($_SERVER['HTTP_FORWARDED_FOR'])
+            $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+        else if($_SERVER['HTTP_FORWARDED'])
+            $ipaddress = $_SERVER['HTTP_FORWARDED'];
+        else if($_SERVER['REMOTE_ADDR'])
+            $ipaddress = $_SERVER['REMOTE_ADDR'];
+        else
+            $ipaddress = 'UNKNOWN';
+        $ip = $ipaddress;
+        if(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+            $id=$_SERVER['HTTP_X_FORWARDED_FOR'];
+        }else{
+            $id=$_SERVER['REMOTE_ADDR'];
+        }*/
+        //echo '<br><br><br><h1>'.$ip.'</h1>';
+        //$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+        //var_dump($details);
+        //echo '<br>'+$details->ip;
+        //echo '<br>'.$ip.'--<br>';
+    ?>
             <?php include_once("menu.php"); ?>
 <div id="geral" style="min-height:75vh; display:flex; flex-direction: row; align-items:center; justify-content: center;">
         <div id="central" style="width: 500px;">

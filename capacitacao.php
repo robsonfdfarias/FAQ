@@ -71,12 +71,12 @@
                             $year = date('Y');
                             $month= date('m');
                             echo '
-                                <div id="conteudoCal" style="width:48%;">
+                                <div id="conteudoCal">
                             ';
                             $agenda->getEventMonth($month, $year, 0);
                             echo '
                                 </div>
-                                <div id="eventDayDiv" style="width:48%;">
+                                <div id="eventDayDiv">
                             ';
                             $agenda->getEventDay($data);
                             echo '</div>';

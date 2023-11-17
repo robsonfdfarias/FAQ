@@ -208,8 +208,7 @@ function openWindowInsertImage(){
 }
 
 function openWindowEditImage(img){
-  objImg = img;
-  localStorage.setItem('endImg', srcImg);
+  localStorage.setItem('endImg', img.src);
   localStorage.setItem('widImg', width);
   localStorage.setItem('heigImg', height);
   window.open("windowEditImage.php");

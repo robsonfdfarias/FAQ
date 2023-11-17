@@ -18,9 +18,9 @@
         <div id="central">
 
             <div id="itemdois" style="position:relative;">
-                <div id="tituloLogin">
+                <!--<div id="tituloLogin">
                     Inserir notícia
-                </div>
+                </div>-->
                 
                 <div id="formInsert">
                     

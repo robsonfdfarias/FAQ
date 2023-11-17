@@ -36,7 +36,7 @@ class Noticia{
                             Página atual: '.$pag.' | 
                         </div>
                     ';
-                    while($linha = $objAll->fetchObject()){
+                    while($linha = $objAll->fetchObject()){ 
                         echo '
                             <div id="generalFeedNews" style="display:flex; flex-direction:row; padding-left: 10px; justify-content:center;text-align:center; vertical-align:middle;align-items: center;">
                                 <div style="text-align:left;width:91%;">
@@ -47,7 +47,7 @@ class Noticia{
                                     <a href="noticiaEdit.php?id='.$linha->id.'">
                                     <div id="divBtEdit" style="background-color:green; padding:10px; margin-right: 5px; border-radius:5px;"><img src="imgs/edit-lapis.svg" width="20" title="Editar notícia"></div>
                                     </a>
-                                    <a href="noticiaDelete.php?id='.$linha->id.'">
+                                    <a href="noticiaDelete.php?id='.$linha->id.'" target="_blank">
                                     <div id="divBtDelete" style="background-color:red; padding:10px; margin-left: 5px; border-radius:5px;"><img src="imgs/delete-bin.svg" width="20" title="Deletar notícia"></div>
                                     </a>
                                 </div>
@@ -66,6 +66,7 @@ class Noticia{
                             </div>
                         ';*/
                     }
+                    echo '<br>';
                     self::pagination($pags,$totReg,$pag,'');
                 }else{
                     echo 'Nenhum registro encontrado.';

@@ -296,10 +296,12 @@ body{
 
 #conteudoCal {
     vertical-align: top;
+    width: 48%;
 }
 #eventDayDiv {
     vertical-align: top;
     align-self: baseline;
+    width: 48%;
 }
 #eventDayTitle {
     font-size: 18px;
@@ -596,6 +598,19 @@ hr#recentes{
     }
     #redes{
         margin-top: 20px;
+    }
+    #conteudoMapa {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column !important;
+        justify-content: center;
+    }
+
+    #conteudoCal {
+        width: 100%;
+    }
+    #eventDayDiv {
+        width: 100%;
     }
 }
 
