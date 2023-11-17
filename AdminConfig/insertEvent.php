@@ -54,11 +54,11 @@
                             </tr>
                             <tr>
                                 <td><span id="nn">Data de inicio:</span></td>
-                                <td><input type="date" id="dtinicio" name="dtinicio" required></td>
+                                <td><input type="date" id="dtinicio" name="dtinicio" required  onkeypress="return false"></td>
                             </tr>
                             <tr>
                                 <td><span id="nn">Data de fim:</span></td>
-                                <td><input type="date" id="dtfim" name="dtfim" required></td>
+                                <td><input type="date" id="dtfim" name="dtfim" required  onkeypress="return false" disabled></td>
                             </tr>
                             <tr>
                                 <td><span id="nn">Hora de inicio:</span></td>
@@ -99,6 +99,24 @@
         include_once("footer.php");
     ?>
     <script>
+        var today = new Date();
+today.setDate(today.getDate()); //Voalá
+today = today.toISOString().split('T')[0];
+
+var dtinicio = document.getElementById("dtinicio");
+var dtfim = document.getElementById("dtfim");
+
+dtinicio.setAttribute('min', today);
+dtfim.setAttribute('min', today);
+dtinicio.addEventListener("change", function(){
+    dtfim.disabled = false;
+    dtfim.setAttribute('min', this.value);
+    if(dtfim.value<this.value){
+        dtfim.value = this.value;
+    }
+})
+
+
         var enviar = document.getElementById("enviar");
         enviar.addEventListener("click", function(){
             insertTextoEmTextarea();
