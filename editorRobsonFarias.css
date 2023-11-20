@@ -215,3 +215,326 @@ rffTextDegrade {
   -webkit-text-stroke-width: 2px; /* largura da borda */
     -webkit-text-stroke-color: #adadad;/*  cor da borda */
 }
+
+/*********************************************** Inicio do efeito de background no texto  ********************************************************/
+
+@import url('https://fonts.googleapis.com/css?family=Cairo');
+/*body {
+	background-color: #010;
+}
+
+.title {
+	font-family: "Cairo";
+	text-align: center;
+	color: #FFF;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	letter-spacing: 1px;
+	line-height:2
+}
+
+#efeito {
+	background-image: url('https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif');
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 70px;
+	margin: 10px 0;
+    font-weight: 900;
+}*/
+
+rffEfeitoBGText2 {
+	background-image: url('https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif');
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 70px;
+	margin: 10px 0;
+    font-weight: 900;
+}
+
+rffEfeitoBGText3 {
+	background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3g3cW1yM2FxbzJ1eDVpOHBic2w2bTN4Z2lheG4xajY4Ym53YWtncyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8vIEv5JZmO1RRU0Wmz/giphy.gif');
+	background-size: 100% cover;
+    background-position: center;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 70px;
+	margin: 10px 0;
+    font-weight: 900;
+}
+
+
+rffEfeitoBGText4 {
+	background-image: url('https://i.giphy.com/media/5UH51qWQaShz7KCug8/giphy.webp');
+	background-size: cover;
+    background-position: center;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 70px;
+	margin: 10px 0;
+    font-weight: 900;
+}
+
+
+rffEfeitoBGText5 {
+	background-image: url('https://i.giphy.com/media/4bhs1boql4XVJgmm4H/giphy.webp');
+	background-size: cover;
+    background-position: center;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 70px;
+	margin: 10px 0;
+    font-weight: 900;
+}
+
+
+rffEfeitoBGText6 {
+	background-image: url('https://i.giphy.com/media/5RKNOaiojPbbMUsikF/giphy.webp');
+	background-size: cover;
+    background-position: center;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 70px;
+	margin: 10px 0;
+    font-weight: 900;
+}
+
+
+rffEfeitoBGText7 {
+	background-image: url('https://i.giphy.com/media/9JxkPTP3alOykb8PmQ/giphy.webp');
+	background-size: cover;
+    background-position: center;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 70px;
+	margin: 10px 0;
+    font-weight: 900;
+}
+
+
+rffEfeitoBGText8 {
+	background-image: url('https://i.giphy.com/media/2SYpZ92iLQsF6QZl5u/giphy.webp');
+	background-size: cover;
+    background-position: center;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 70px;
+	margin: 10px 0;
+    font-weight: 900;
+}
+
+
+rffEfeitoBGText9 {
+	background-image: url('https://i.giphy.com/media/3bc8pP1rVdfgN1uoMV/giphy.webp');
+	background-size: cover;
+    background-position: center;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 70px;
+	margin: 10px 0;
+    font-weight: 900;
+}
+
+
+rffEfeitoBGText10 {
+	background-image: url('https://i.giphy.com/media/3CSDXE3UCIiWPdqwql/giphy.webp');
+	background-size: cover;
+    background-position: center;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 70px;
+	margin: 10px 0;
+    font-weight: 900;
+}
+
+
+rffEfeitoBGText11 {
+	background-image: url('https://i.giphy.com/media/WFjcyy95rUXPXo1k43/giphy.webp');
+	background-size: cover;
+    background-position: center;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 70px;
+	margin: 10px 0;
+    font-weight: 900;
+}
+
+
+rffEfeitoBGText12 {
+	background-image: url('https://i.giphy.com/media/LAsvbjyumSIz67f40e/giphy.webp');
+	background-size: cover;
+    background-position: center;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 70px;
+	margin: 10px 0;
+    font-weight: 900;
+}
+
+
+rffEfeitoBGText13 {/*O melhor*/
+	background-image: url('https://i.giphy.com/media/xGrjBxxEBvWTBtkAk4/giphy.webp');
+	background-size: cover;
+    background-position: center;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 70px;
+	margin: 10px 0;
+    font-weight: 900;
+}
+
+
+rffEfeitoBGText14 {
+	background-image: url('https://i.giphy.com/media/bG1oRM2Qp2kN3MTZCO/giphy.webp');
+	background-size: cover;
+    background-position: center;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 70px;
+	margin: 10px 0;
+    font-weight: 900;
+}
+
+
+rffEfeitoBGText15 {
+	background-image: url('https://i.giphy.com/media/7hRKmVhZRqkEvRvVJn/giphy.webp');
+	background-size: cover;
+    background-position: center;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 70px;
+	margin: 10px 0;
+    font-weight: 900;
+}
+
+
+rffEfeitoBGText16 {
+	background-image: url('https://i.ibb.co/RDTnNrT/animated-text-fill.png');
+	background-size: cover;
+    /* Animate Background Image */
+
+	  -webkit-text-fill-color: transparent;
+	  -webkit-animation: aitf 80s linear infinite;
+
+/* Activate hardware acceleration for smoother animations */
+
+	  -webkit-transform: translate3d(0,0,0);
+	  -webkit-backface-visibility: hidden;
+
+    background-position: center;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 70px;
+	margin: 10px 0;
+    font-weight: 900;
+}
+/* Animate Background Image */
+
+@-webkit-keyframes aitf {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
+}
+
+
+
+rffEfeitoBGText17 {
+	background-image: url('imgs/bk.png');
+	background-size: cover;
+    /* Animate Background Image */
+
+	  -webkit-text-fill-color: transparent;
+	  -webkit-animation: aitf 35s linear infinite;
+
+/* Activate hardware acceleration for smoother animations */
+
+	  -webkit-transform: translate3d(0,0,0);
+	  -webkit-backface-visibility: hidden;
+
+    background-position: center;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 70px;
+	margin: 10px 0;
+    font-weight: 900;
+    border-image: 1px solid #ddd;
+}
+/* Animate Background Image */
+
+@-webkit-keyframes aitf {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
+}
+
+
+
+rffEfeitoBGText {
+	background-image: url('imgs/bk2.png');
+	background-size: cover;
+    /* Animate Background Image */
+
+	  -webkit-text-fill-color: transparent;
+	  -webkit-animation: aitf 5s linear infinite;
+
+/* Activate hardware acceleration for smoother animations */
+
+	  -webkit-transform: translate3d(0,0,0);
+	  -webkit-backface-visibility: hidden;
+
+    background-position: center;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 70px;
+	margin: 10px 0;
+    font-weight: 900;
+    border-image: 1px solid #ddd;
+}
+/* Animate Background Image */
+
+@-webkit-keyframes aitf {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
+}
+
+
+
+/*********************************************** FIM do efeito de background no texto  ********************************************************/

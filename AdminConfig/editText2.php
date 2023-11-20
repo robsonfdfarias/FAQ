@@ -182,12 +182,14 @@
     <img src="imgEditor/rffTextSimples.svg" title="rffText3DSimples" onClick="insertTagsNew('rffText3DSimples')" />
     <img src="imgEditor/rffTextExtreme.svg" title="rffText3DExtreme" onClick="insertTagsNew('rffText3DExtreme')" />
     <img src="imgEditor/rffTextDegrade.svg" title="rffTextDegrade" onClick="insertTagsNew('rffTextDegrade')" />
+    <img src="imgEditor/rffTextDegrade.svg" title="rffEfeitoBGText" onClick="insertTagsNew('rffEfeitoBGText')" />
     <select name="formatH" id="formatH">
         <option value="h1">H1</option>
         <option value="h2">H2</option>
         <option value="h3">H3</option>
         <option value="h4">H4</option>
         <option value="h5">H5</option>
+        <option value="" disabled selected>Hs</option>
     </select>
     <img src="imgEditor/hangingindent.svg" title="Identar linha" onClick="addIdent()" />
     <img src="imgEditor/hangingindentremove.svg" title="Remove a identação" onClick="addOutIdent()" />

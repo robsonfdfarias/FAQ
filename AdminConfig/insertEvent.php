@@ -20,6 +20,23 @@
         #formLogin{
             padding: 0;
         }
+
+        #formLogin input[type="text"]{
+            width: 98%;
+        }
+
+        #formLogin input[type="date"]{
+            width: 96.5%;
+        }
+
+        #formLogin input[type="time"]{
+            width: 99%;
+        }
+
+        #formLogin input[type="number"]{
+            width: 96.5%;
+        }
+
     </style>
 </head>
 <body>
@@ -62,11 +79,11 @@
                             </tr>
                             <tr>
                                 <td><span id="nn">Hora de inicio:</span></td>
-                                <td><input type="time" id="horainicio" name="horainicio" required></td>
+                                <td><input type="time" id="horainicio" name="horainicio" min="07:30" max="17:00" required></td>
                             </tr>
                             <tr>
                                 <td><span id="nn">Hora de fim:</span></td>
-                                <td><input type="time" id="horafim" name="horafim" required></td>
+                                <td><input type="time" id="horafim" name="horafim" min="07:30" max="17:00" required></td>
                             </tr>
                             <tr>
                                 <td><span id="nn">Número de vagas:</span></td>
