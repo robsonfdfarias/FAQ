@@ -139,6 +139,7 @@
             if(height<=0 || height==null || height==''){
                 height='auto';
             }
+            //alert("Chegou aqui")
             top.opener.editImgNovo(width, height);
             window.close();
         }else{

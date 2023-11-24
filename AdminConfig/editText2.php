@@ -123,6 +123,106 @@
         float: left;
         margin: -5px 5px;
     }
+
+    #efeitosTexto {
+        width: 100%;
+        position: absolute;
+        margin: auto;
+        background-color: white;
+        padding: 20px;
+        height: 70%;
+        /* overflow-y: auto; */
+        display: none;
+        flex-direction: column;
+        border: 1px solid #dfdfdf;
+        box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+        border-radius: 8px;
+    }
+    #topEfeitoTexto{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        border-bottom: 1px solid #dfdfdf;
+    }
+    #listaEfeitoTexto{
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    #listaEfeitoTexto button{
+        background-color: white;
+        border: none;
+    }
+    #tituloEfeitoTexto{
+        font-size: 40px;
+        font-weight: 900;
+    }
+    #fecharEfeitosTexto{
+        padding: 10px 15px;
+        font-size: 20px;
+        font-weight: 900;
+        background-color: #0c852c;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        color: white;
+        cursor: pointer;
+    }
+    #fecharEfeitosTexto:hover{
+        background-color: rgb(21, 206, 77);
+    }
+
+
+
+    
+
+    #emotions {
+        width: 100%;
+        position: absolute;
+        margin: auto;
+        background-color: white;
+        padding: 20px;
+        height: 70%;
+        /* overflow-y: auto; */
+        display: none;
+        flex-direction: column;
+        border: 1px solid #dfdfdf;
+        box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+        border-radius: 8px;
+    }
+    #topEmotions{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        border-bottom: 1px solid #dfdfdf;
+    }
+    #listaEmotions{
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    #listaEmotions button{
+        background-color: white;
+        border: none;
+    }
+    #tituloEmotions{
+        font-size: 40px;
+        font-weight: 900;
+    }
+    #fecharEmotions{
+        padding: 10px 15px;
+        font-size: 20px;
+        font-weight: 900;
+        background-color: #0c852c;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        color: white;
+        cursor: pointer;
+    }
+    #fecharEmotions:hover{
+        background-color: rgb(21, 206, 77);
+    }
     
 </style>
 <script language="JavaScript">
@@ -132,6 +232,51 @@
 </head>
 
 <body>
+<div id="efeitosTexto">
+    <div id="topEfeitoTexto">
+        <div id="tituloEfeitoTexto">Efeitos de texto</div>
+        <div id="fecharEfeitosTexto" onclick="fechaJanEfeitosTexto()">X</div>
+    </div>
+    <div id="listaEfeitoTexto">
+        <button onClick="insertTagsNew('rffEfeitoBGText'), fechaJanEfeitosTexto()"><rffEfeitoBGText>rff Efeito BG Text 1</rffEfeitoBGText></button><br>
+        <button onClick="insertTagsNew('rffEfeitoBGText2'), fechaJanEfeitosTexto()"><rffEfeitoBGText2>rff Efeito BG Text 2</rffEfeitoBGText2></button><br>
+        <button onClick="insertTagsNew('rffEfeitoBGText3'), fechaJanEfeitosTexto()"><rffEfeitoBGText3>rff Efeito BG Text 3</rffEfeitoBGText3></button><br>
+        <button onClick="insertTagsNew('rffEfeitoBGText4'), fechaJanEfeitosTexto()"><rffEfeitoBGText4>rff Efeito BG Text 4</rffEfeitoBGText4></button><br>
+        <button onClick="insertTagsNew('rffEfeitoBGText5'), fechaJanEfeitosTexto()"><rffEfeitoBGText5>rff Efeito BG Text 5</rffEfeitoBGText5></button><br>
+        <button onClick="insertTagsNew('rffEfeitoBGText6'), fechaJanEfeitosTexto()"><rffEfeitoBGText6>rff Efeito BG Text 6</rffEfeitoBGText6></button><br>
+        <button onClick="insertTagsNew('rffEfeitoBGText7'), fechaJanEfeitosTexto()"><rffEfeitoBGText7>rff Efeito BG Text 7</rffEfeitoBGText7></button><br>
+        <button onClick="insertTagsNew('rffEfeitoBGText8'), fechaJanEfeitosTexto()"><rffEfeitoBGText8>rff Efeito BG Text 8</rffEfeitoBGText8></button><br>
+        <button onClick="insertTagsNew('rffEfeitoBGText9'), fechaJanEfeitosTexto()"><rffEfeitoBGText9>rff Efeito BG Text 9</rffEfeitoBGText9></button><br>
+        <button onClick="insertTagsNew('rffEfeitoBGText10'), fechaJanEfeitosTexto()"><rffEfeitoBGText10>rff Efeito BG Text 10</rffEfeitoBGText10></button><br>
+        <button onClick="insertTagsNew('rffEfeitoBGText11'), fechaJanEfeitosTexto()"><rffEfeitoBGText11>rff Efeito BG Text 11</rffEfeitoBGText11></button><br>
+        <button onClick="insertTagsNew('rffEfeitoBGText12'), fechaJanEfeitosTexto()"><rffEfeitoBGText12>rff Efeito BG Text 12</rffEfeitoBGText12></button><br>
+        <button onClick="insertTagsNew('rffEfeitoBGText13'), fechaJanEfeitosTexto()"><rffEfeitoBGText13>rff Efeito BG Text 13</rffEfeitoBGText13></button><br>
+        <button onClick="insertTagsNew('rffEfeitoBGText14'), fechaJanEfeitosTexto()"><rffEfeitoBGText14>rff Efeito BG Text 14</rffEfeitoBGText14></button><br>
+        <button onClick="insertTagsNew('rffEfeitoBGText15'), fechaJanEfeitosTexto()"><rffEfeitoBGText15>rff Efeito BG Text 15</rffEfeitoBGText15></button><br>
+        <button onClick="insertTagsNew('rffEfeitoBGText16'), fechaJanEfeitosTexto()"><rffEfeitoBGText16>rff Efeito BG Text 16</rffEfeitoBGText16></button><br>
+        <button onClick="insertTagsNew('rffEfeitoBGText17'), fechaJanEfeitosTexto()"><rffEfeitoBGText17>rff Efeito BG Text 17</rffEfeitoBGText17></button>
+        <button onClick="insertTagsNew('rffEfeitoBGText18'), fechaJanEfeitosTexto()"><rffEfeitoBGText18>rff Efeito BG Text 18</rffEfeitoBGText18></button>
+        <button onClick="insertTagsNew('rffEfeitoBGText19'), fechaJanEfeitosTexto()"><rffEfeitoBGText19>rff Efeito BG Text 19</rffEfeitoBGText19></button>
+    </div>
+</div>
+
+
+
+<div id="emotions">
+    <div id="topEmotions">
+        <div id="tituloEmotions">Efeitos de texto</div>
+        <div id="fecharEmotions" onclick="fechaJanEmotions()">X</div>
+    </div>
+    <div id="listaEmotions">
+        <?php
+            include_once("class/list-file.class.php");
+            $emotions = new ListFile();
+            $emotions->listFiles('../icones');
+        ?>
+    </div>
+</div>
+
+
 
 <div id="ferramentas">
     <img src="imgEditor/bold.svg" title="Colocar em Negrito" onClick="negrito()" />
@@ -182,7 +327,9 @@
     <img src="imgEditor/rffTextSimples.svg" title="rffText3DSimples" onClick="insertTagsNew('rffText3DSimples')" />
     <img src="imgEditor/rffTextExtreme.svg" title="rffText3DExtreme" onClick="insertTagsNew('rffText3DExtreme')" />
     <img src="imgEditor/rffTextDegrade.svg" title="rffTextDegrade" onClick="insertTagsNew('rffTextDegrade')" />
-    <img src="imgEditor/rffTextDegrade.svg" title="rffEfeitoBGText" onClick="insertTagsNew('rffEfeitoBGText')" />
+    <img src="imgEditor/coroa2.svg" title="rffEfeitoBGText" onClick="abreJanEfeitosTexto()" />
+    <img src="imgEditor/emotions.svg" title="Inserir emotions" style="width:40px; height:auto;" onClick="abreJanEmotions()" />
+    
     <select name="formatH" id="formatH">
         <option value="h1">H1</option>
         <option value="h2">H2</option>
@@ -195,6 +342,7 @@
     <img src="imgEditor/hangingindentremove.svg" title="Remove a identação" onClick="addOutIdent()" />
 </div>
 <div id="texto" contenteditable="true" autofocus required autocomplete="off" spellcheck="true">Digite o seu artigo aqui...</div>
+
 
 
 <div id="geralInseriImagem">
@@ -217,7 +365,24 @@
 
 <script src="upload.js"></script>
 <script src="func.editor.robson.js"></script>
+<script>
+    var janEfeitoTexto = document.getElementById("efeitosTexto");
+    function fechaJanEfeitosTexto(){
+        janEfeitoTexto.setAttribute("style", "display:none;");
+    }
+    function abreJanEfeitosTexto(){
+        janEfeitoTexto.setAttribute("style", "display:flex;");
+    }
 
+    
+    var emotions = document.getElementById("emotions");
+    function fechaJanEmotions(){
+        emotions.setAttribute("style", "display:none;");
+    }
+    function abreJanEmotions(){
+        emotions.setAttribute("style", "display:flex;");
+    }
+</script>
 </body>
 </html>
         <div id="preview"></div>

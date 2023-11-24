@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'VarelaRound-Regular';
+    src: url('fontes/Varela_Round/VarelaRound-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'JosefinSans-VariableFont_wght';
+    src: url('fontes/Josefin_Sans/JosefinSans-VariableFont_wght.ttf') format('truetype');
+}
+
 .tabela tr td{
     padding: 10px;
 }
@@ -218,7 +227,6 @@ rffTextDegrade {
 
 /*********************************************** Inicio do efeito de background no texto  ********************************************************/
 
-@import url('https://fonts.googleapis.com/css?family=Cairo');
 /*body {
 	background-color: #010;
 }
@@ -249,206 +257,222 @@ rffTextDegrade {
 }*/
 
 rffEfeitoBGText2 {
-	background-image: url('https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif');
+	/* background-image: url('https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif'); */
+	background-image: url('imgs/giphy2.webp');
 	background-size: cover;
-	color: transparent;
-	-moz-background-clip: text;
-	-webkit-background-clip: text;
-	text-transform: uppercase;
-	font-size: 70px;
-	margin: 10px 0;
-    font-weight: 900;
-}
-
-rffEfeitoBGText3 {
-	background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3g3cW1yM2FxbzJ1eDVpOHBic2w2bTN4Z2lheG4xajY4Ym53YWtncyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8vIEv5JZmO1RRU0Wmz/giphy.gif');
-	background-size: 100% cover;
     background-position: center;
 	color: transparent;
 	-moz-background-clip: text;
 	-webkit-background-clip: text;
 	text-transform: uppercase;
-	font-size: 70px;
+	font-size: 50px;
+	margin: 10px 0;
+    font-weight: 900;
+}
+
+rffEfeitoBGText3 {
+	/* background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3g3cW1yM2FxbzJ1eDVpOHBic2w2bTN4Z2lheG4xajY4Ym53YWtncyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8vIEv5JZmO1RRU0Wmz/giphy.gif'); */
+	background-image: url('imgs/giphy3.webp');
+	background-size: cover;
+    background-position: center;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 50px;
 	margin: 10px 0;
     font-weight: 900;
 }
 
 
 rffEfeitoBGText4 {
-	background-image: url('https://i.giphy.com/media/5UH51qWQaShz7KCug8/giphy.webp');
+	/* background-image: url('https://i.giphy.com/media/5UH51qWQaShz7KCug8/giphy.webp'); */
+	background-image: url('imgs/giphy4.webp');
 	background-size: cover;
     background-position: center;
 	color: transparent;
 	-moz-background-clip: text;
 	-webkit-background-clip: text;
 	text-transform: uppercase;
-	font-size: 70px;
+	font-size: 50px;
 	margin: 10px 0;
     font-weight: 900;
 }
 
 
 rffEfeitoBGText5 {
-	background-image: url('https://i.giphy.com/media/4bhs1boql4XVJgmm4H/giphy.webp');
+	/* background-image: url('https://i.giphy.com/media/4bhs1boql4XVJgmm4H/giphy.webp'); */
+	background-image: url('imgs/giphy5.webp');
 	background-size: cover;
     background-position: center;
 	color: transparent;
 	-moz-background-clip: text;
 	-webkit-background-clip: text;
 	text-transform: uppercase;
-	font-size: 70px;
+	font-size: 50px;
 	margin: 10px 0;
     font-weight: 900;
 }
 
 
 rffEfeitoBGText6 {
-	background-image: url('https://i.giphy.com/media/5RKNOaiojPbbMUsikF/giphy.webp');
+	/* background-image: url('https://i.giphy.com/media/5RKNOaiojPbbMUsikF/giphy.webp'); */
+	background-image: url('imgs/giphy6.webp');
 	background-size: cover;
     background-position: center;
 	color: transparent;
 	-moz-background-clip: text;
 	-webkit-background-clip: text;
 	text-transform: uppercase;
-	font-size: 70px;
+	font-size: 50px;
 	margin: 10px 0;
     font-weight: 900;
 }
 
 
 rffEfeitoBGText7 {
-	background-image: url('https://i.giphy.com/media/9JxkPTP3alOykb8PmQ/giphy.webp');
+	/* background-image: url('https://i.giphy.com/media/9JxkPTP3alOykb8PmQ/giphy.webp'); */
+	background-image: url('imgs/giphy7.webp');
 	background-size: cover;
     background-position: center;
 	color: transparent;
 	-moz-background-clip: text;
 	-webkit-background-clip: text;
 	text-transform: uppercase;
-	font-size: 70px;
+	font-size: 50px;
 	margin: 10px 0;
     font-weight: 900;
 }
 
 
 rffEfeitoBGText8 {
-	background-image: url('https://i.giphy.com/media/2SYpZ92iLQsF6QZl5u/giphy.webp');
+	/* background-image: url('https://i.giphy.com/media/2SYpZ92iLQsF6QZl5u/giphy.webp'); */
+	background-image: url('imgs/giphy8.webp');
 	background-size: cover;
     background-position: center;
 	color: transparent;
 	-moz-background-clip: text;
 	-webkit-background-clip: text;
 	text-transform: uppercase;
-	font-size: 70px;
+	font-size: 50px;
 	margin: 10px 0;
     font-weight: 900;
 }
 
 
 rffEfeitoBGText9 {
-	background-image: url('https://i.giphy.com/media/3bc8pP1rVdfgN1uoMV/giphy.webp');
+	/* background-image: url('https://i.giphy.com/media/3bc8pP1rVdfgN1uoMV/giphy.webp'); */
+	background-image: url('imgs/giphy9.webp');
 	background-size: cover;
     background-position: center;
 	color: transparent;
 	-moz-background-clip: text;
 	-webkit-background-clip: text;
 	text-transform: uppercase;
-	font-size: 70px;
+	font-size: 50px;
 	margin: 10px 0;
     font-weight: 900;
 }
 
 
 rffEfeitoBGText10 {
-	background-image: url('https://i.giphy.com/media/3CSDXE3UCIiWPdqwql/giphy.webp');
+	/* background-image: url('https://i.giphy.com/media/3CSDXE3UCIiWPdqwql/giphy.webp'); */
+	background-image: url('imgs/giphy10.webp');
 	background-size: cover;
     background-position: center;
 	color: transparent;
 	-moz-background-clip: text;
 	-webkit-background-clip: text;
 	text-transform: uppercase;
-	font-size: 70px;
+	font-size: 50px;
 	margin: 10px 0;
     font-weight: 900;
 }
 
 
 rffEfeitoBGText11 {
-	background-image: url('https://i.giphy.com/media/WFjcyy95rUXPXo1k43/giphy.webp');
+	/* background-image: url('https://i.giphy.com/media/WFjcyy95rUXPXo1k43/giphy.webp'); */
+	background-image: url('imgs/giphy11.webp');
 	background-size: cover;
     background-position: center;
 	color: transparent;
 	-moz-background-clip: text;
 	-webkit-background-clip: text;
 	text-transform: uppercase;
-	font-size: 70px;
+	font-size: 50px;
 	margin: 10px 0;
     font-weight: 900;
 }
 
 
 rffEfeitoBGText12 {
-	background-image: url('https://i.giphy.com/media/LAsvbjyumSIz67f40e/giphy.webp');
+	/* background-image: url('https://i.giphy.com/media/LAsvbjyumSIz67f40e/giphy.webp'); */
+	background-image: url('imgs/giphy12.webp');
 	background-size: cover;
     background-position: center;
 	color: transparent;
 	-moz-background-clip: text;
 	-webkit-background-clip: text;
 	text-transform: uppercase;
-	font-size: 70px;
+	font-size: 50px;
 	margin: 10px 0;
     font-weight: 900;
 }
 
 
 rffEfeitoBGText13 {/*O melhor*/
-	background-image: url('https://i.giphy.com/media/xGrjBxxEBvWTBtkAk4/giphy.webp');
+	/* background-image: url('https://i.giphy.com/media/xGrjBxxEBvWTBtkAk4/giphy.webp'); */
+	background-image: url('imgs/giphy13.webp');
 	background-size: cover;
     background-position: center;
 	color: transparent;
 	-moz-background-clip: text;
 	-webkit-background-clip: text;
 	text-transform: uppercase;
-	font-size: 70px;
+	font-size: 50px;
 	margin: 10px 0;
     font-weight: 900;
 }
 
 
 rffEfeitoBGText14 {
-	background-image: url('https://i.giphy.com/media/bG1oRM2Qp2kN3MTZCO/giphy.webp');
+	/* background-image: url('https://i.giphy.com/media/bG1oRM2Qp2kN3MTZCO/giphy.webp'); */
+	background-image: url('imgs/giphy14.webp');
 	background-size: cover;
     background-position: center;
 	color: transparent;
 	-moz-background-clip: text;
 	-webkit-background-clip: text;
 	text-transform: uppercase;
-	font-size: 70px;
+	font-size: 50px;
 	margin: 10px 0;
     font-weight: 900;
 }
 
 
 rffEfeitoBGText15 {
-	background-image: url('https://i.giphy.com/media/7hRKmVhZRqkEvRvVJn/giphy.webp');
+	/* background-image: url('https://i.giphy.com/media/7hRKmVhZRqkEvRvVJn/giphy.webp'); */
+	background-image: url('imgs/giphy15.webp');
 	background-size: cover;
     background-position: center;
 	color: transparent;
 	-moz-background-clip: text;
 	-webkit-background-clip: text;
 	text-transform: uppercase;
-	font-size: 70px;
+	font-size: 50px;
 	margin: 10px 0;
     font-weight: 900;
 }
 
 
 rffEfeitoBGText16 {
-	background-image: url('https://i.ibb.co/RDTnNrT/animated-text-fill.png');
+	/* background-image: url('https://i.ibb.co/RDTnNrT/animated-text-fill.png'); */
+	background-image: url('imgs/bkVertical.png');
 	background-size: cover;
     /* Animate Background Image */
 
 	  -webkit-text-fill-color: transparent;
-	  -webkit-animation: aitf 80s linear infinite;
+	  -webkit-animation: aitf16 20s linear infinite;
 
 /* Activate hardware acceleration for smoother animations */
 
@@ -460,15 +484,15 @@ rffEfeitoBGText16 {
 	-moz-background-clip: text;
 	-webkit-background-clip: text;
 	text-transform: uppercase;
-	font-size: 70px;
+	font-size: 50px;
 	margin: 10px 0;
     font-weight: 900;
 }
 /* Animate Background Image */
 
-@-webkit-keyframes aitf {
-	0% { background-position: 0% 50%; }
-	100% { background-position: 100% 50%; }
+@-webkit-keyframes aitf16 {
+	0% { background-position: 50% 0%; }
+	100% { background-position: 50% 100%; }
 }
 
 
@@ -491,7 +515,7 @@ rffEfeitoBGText17 {
 	-moz-background-clip: text;
 	-webkit-background-clip: text;
 	text-transform: uppercase;
-	font-size: 70px;
+	font-size: 50px;
 	margin: 10px 0;
     font-weight: 900;
     border-image: 1px solid #ddd;
@@ -501,6 +525,60 @@ rffEfeitoBGText17 {
 @-webkit-keyframes aitf {
 	0% { background-position: 0% 50%; }
 	100% { background-position: 100% 50%; }
+}
+
+
+
+rffEfeitoBGText18 {
+	  -webkit-animation: aitf18 2s linear infinite;
+      animation: aitf18 2s linear infinite;
+	font-size: 50px;
+	margin: 10px 0;
+    font-weight: 900;
+    border-image: 1px solid #ddd;
+    color: rgb(21, 206, 77);
+    font-family: 'JosefinSans-VariableFont_wght';
+}
+/* Animate Background Image */
+
+@-webkit-keyframes aitf18 {
+	0% {
+        text-shadow: 0px 0px 0px red;
+    }
+	50% {
+        text-shadow: 0px 0px 5px red, 0px 0px 5px red, 0px 0px 5px red, 0px 0px 5px red;
+    }
+	100% {
+        text-shadow: 0px 0px 0px red;
+    }
+}
+
+
+
+rffEfeitoBGText19 {
+    -webkit-animation: aitf19 2s linear infinite;
+    animation: aitf19 2s linear infinite;
+  font-size: 50px;
+  margin: 10px 0;
+  font-weight: 900;
+  border-image: 1px solid #ddd;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: blue;
+  font-family: 'VarelaRound-Regular';
+}
+/* Animate Background Image */
+
+@-webkit-keyframes aitf19 {
+  0% {
+      text-shadow: 0px 0px 0px rgb(152, 192, 7);
+  }
+  50% {
+      text-shadow: 0px 0px 8px rgb(152, 192, 7), 0px 0px 8px rgb(152, 192, 7), 0px 0px 8px red, 0px 0px 8px red;
+  }
+  100% {
+      text-shadow: 0px 0px 0px rgb(152, 192, 7);
+  }
 }
 
 
@@ -523,7 +601,7 @@ rffEfeitoBGText {
 	-moz-background-clip: text;
 	-webkit-background-clip: text;
 	text-transform: uppercase;
-	font-size: 70px;
+	font-size: 50px;
 	margin: 10px 0;
     font-weight: 900;
     border-image: 1px solid #ddd;

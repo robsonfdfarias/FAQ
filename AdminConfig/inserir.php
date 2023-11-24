@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="shortcut icon" href="imgs/logo_sei_93x60.ico" type="image/x-icon" />
     <style>
-        #itemdois{
+        #itemdois {
             margin-top: 0;
         }
         #formLogin{

@@ -208,6 +208,7 @@ function openWindowInsertImage(){
 }
 
 function openWindowEditImage(img){
+  objImg = img;
   localStorage.setItem('endImg', img.src);
   localStorage.setItem('widImg', width);
   localStorage.setItem('heigImg', height);
@@ -215,6 +216,7 @@ function openWindowEditImage(img){
 }
 
 function editImgNovo(width, height) {
+  //alert('chegou aqui tbm');
   if(width=='' || width==null){
       width='auto'
   }

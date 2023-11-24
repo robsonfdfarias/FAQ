@@ -292,3 +292,17 @@ function addHs(){
         document.getElementById('param').textContent = 'data-param = ' + param;*/
     });
 }
+
+
+
+function insertEmotions(img){
+    if(img != null){
+        var url = img.getAttribute("src");
+        var width = 50;
+        var height = 'auto';
+        document.getElementById("porcento").innerHTML = '<img src="'+url+'" id="previewImage" width="'+width+'" height="'+height+'">';
+        insertImg();
+    }else{
+        console.log("selecione uma imagem e Clique no botão Carregar e visualizar antes de inserir")
+    }
+}

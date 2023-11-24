@@ -54,7 +54,6 @@
         include_once("footer.php");
     ?>
     
-<script src="efeito.js"></script>
     <script>
         function newArticle(){
             window.open("catAdd.php");
