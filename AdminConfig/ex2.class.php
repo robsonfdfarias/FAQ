@@ -11,7 +11,7 @@ if (isset($_FILES['file']) && !empty($_FILES['file']['name'])) {
     //$nomeAleatorio = date("Y-m-d_H-i-s_").$_FILES['file']['name'];
     include_once("class/nome.aleatorio.arquivo.php");
     $aleatorio = new NomeAleratorioArquivo();
-    $nomeAleatorio = $aleatorio->nomeAleatorio($_FILES['file']['name']);
+    $nomeAleatorio = $aleatorio->nomeAleatorio($_FILES['file']['name']); 
     //echo $nomeAleatorio."<br>";
   file_put_contents($pasta.'post.txt', 'name=' . $_POST['name'] . ',count=' . $_POST['i'] . PHP_EOL, FILE_APPEND);
   move_uploaded_file($_FILES['file']['tmp_name'], $pasta . $nomeAleatorio);

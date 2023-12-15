@@ -335,6 +335,180 @@ body{
 }
 
 /* ---------------------- FIM da CAPACITAÇÃO do usuario comum ------------------------------ */
+
+/* ---------------------- Inicio da pagina de pesquisa ------------------------------ */
+
+.funcTable{
+    border-collapse: collapse;
+    word-break: break-all;
+    width: 100%;
+}
+
+.funcTable tr td{
+    padding: 5px;
+    border: 1px solid #ddd;
+    font-size: 13px;
+}
+
+.funcTable tr td:first-child{
+    width: 75px;
+}
+
+.funcTable tr:nth-child(odd){
+    background-color: #f5f5f5;
+}
+
+.funcTable tr:first-child{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#secretaria{
+    display: none;
+}
+#btUnidades{
+    padding: 6px 20px;
+    display: inline-block;
+    cursor: pointer;
+    display: none;
+    background-color: #0c582c;
+    color:white;
+    border-radius: 4px;
+}
+#btUnidades:hover{
+    background-color: green;
+}
+
+#itemDois{
+    display: flex;
+
+}
+
+#divUnidades{
+    display:none;
+    position:absolute;
+    width:1000px;
+    margin: 0 auto;
+    min-height: 300px;
+    border:1px solid #ccc;
+    background-color: white;
+    top: 10px;
+    padding:20px;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1005;
+}
+
+#divUnidades #titulo{
+    position: relative;
+}
+
+#divUnidades #titulo #fechar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 5px;
+    background-color: #0c582c;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 100%;
+    transition: ease-out 0.3s;
+    cursor: pointer;
+}
+
+#divUnidades #titulo #fechar:hover{
+    background-color: #b1cd49;
+    color: #000;
+    transition: ease-out 0.3s;
+}
+
+
+
+.tabUnidades tr td:first-child{
+    cursor: pointer;
+    background-color: white;
+    color:#000;
+}
+
+.tabUnidades tr:hover td:first-child{
+    background-color: black;
+    color:#fff;
+}
+
+.tabUnidades{
+    text-align: left;
+    border-collapse: collapse;
+}
+
+#menuPesq #valor {
+    display: inline-block;
+    height: 20px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+#menuPesq #valor:focus{
+    /* box-shadow: inset 0px 0px 6px green; */
+    border: none;
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+#menuPesq select {
+    display: inline-block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+}
+
+#menuPesq button {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+}
+
+#menuPesq #secretaria{
+    display: none;
+}
+
+#menuPesq {
+    padding-bottom: 10px;
+}
+
+
+
+/* ---------------------- FIM da pagina de pesquisa ------------------------------ */
+
+
 #top {
     /*min-height: 30%;*/
     width: 100%;

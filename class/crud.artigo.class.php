@@ -339,6 +339,8 @@ class CRUD{
                     $categ = new Categoria();
                     $n=0;
                     while($linha = $obj->fetchObject()){
+                        $newModify = str_replace("../imagens", "imagens", $linha->conteudo);
+                        $newModify = str_replace("../icones", "icones", $newModify);
                         echo '
                                 <div id="summaryArticle" class="summaryArticle">
                                     <div id="titleArticle_'.$n.'" class="titleArticle" onclick="abre(this)"><span id="status" style="display:none;">false</span><span id="ttArtigo">'.$linha->titulo.'</span>
@@ -346,7 +348,7 @@ class CRUD{
                                     <div id="contentArticle_'.$n.'" class="contentArticle" style="">
                                         <article>
                                             <header id="data">Data da postagem: '.$linha->dataPost.'</header>
-                                            <p>'.str_replace("../imagens", "imagens", $linha->conteudo).'</p>
+                                            <p>'.$newModify.'</p>
                                         </article>
                                         <aside><section id="cat">Categoria: <span id="catSpan"> '.$categ->getCatById($linha->categoria).'</span></section></aside>
                                         <footer>

@@ -1,12 +1,13 @@
 (function () {
     document.getElementById('formatH').addEventListener('change', function() {
-        var selectedOption = this.children[this.selectedIndex];
-        console.log(selectedOption)
+        // var selectedOption = this.children[this.selectedIndex];
+        //console.log(selectedOption)
         var value = this.value;
-        var param = selectedOption.getAttribute("data-param");
+        // var param = selectedOption.getAttribute("data-param");
         insertH(value)
-        console.log(value)
-        console.log(param)
+        //console.log(value)
+        //console.log(param)
+        this.children['padrao'].selected = true;
 
         /*document.getElementById('value').textContent = 'value = ' + value;
         document.getElementById('param').textContent = 'data-param = ' + param;*/
@@ -19,6 +20,7 @@
         tamanhoFont(value)
         console.log(value)
         console.log(param)
+        this.children['padrao'].selected = true;
 
         /*document.getElementById('value').textContent = 'value = ' + value;
         document.getElementById('param').textContent = 'data-param = ' + param;*/

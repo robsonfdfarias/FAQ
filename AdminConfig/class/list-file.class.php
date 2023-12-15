@@ -33,9 +33,9 @@ class ListFile {
                 if(is_dir($cc)){
                 }else{
                     if(!strpos($arq, '.txt') && !strpos($arq, '.php')){
-                        echo '<div style="width:200px; padding:0; word-break: break-all; margin: 0 5px;">';
-                        echo '<img src="'.$pastas[$i].'/'.$arq.'" width="100" onclick="insertEmotions(this), fechaJanEmotions()">';
-                        echo '<br>'.$arq;
+                        echo '<div class="emotionsList" style="">';
+                        echo '<img src="'.$pastas[$i].'/'.$arq.'" onclick="insertEmotions(this), fechaJanEmotions()">';
+                        //echo '<br>'.$arq;
                         echo '</div>';
                     }
                 }

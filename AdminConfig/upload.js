@@ -20,13 +20,13 @@ $formUpload.addEventListener('submit', function(event){
 
   var xhr = new XMLHttpRequest();
 
-  xhr.upload.addEventListener('progress', function(e) {
+  //xhr.open("POST", $formUpload.getAttribute('action'));
+  xhr.open("POST", "ex2.class.php");
+
+  xhr.upload.addEventListener('onprogress', function(e) {
         var perc = (e.loaded/e.total)*100;
         porcentagem.innerHTML = perc;
 	});
-
-  //xhr.open("POST", $formUpload.getAttribute('action'));
-  xhr.open("POST", "ex2.class.php");
 
   var formData = new FormData($formUpload);
   formData.append("i", i++);

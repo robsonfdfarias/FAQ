@@ -34,12 +34,19 @@
                     $imgOld = $_POST['imgOld'];
                     $id = $_POST['id'];
 
+                    $pasta = '../imagens/';
+                    $ano = date('Y');
+                    $mes = date('m');
+                    $dia = date('d');
+                    $pasta .= $ano.'/'.$mes.'/'.$dia.'/';
+                    mkdir($pasta, 0777, true);
+
                     $estadoImg = false;
 
                     ini_set('upload_max_filesize', '10M');
                     if (isset($_FILES['file']) && !empty($_FILES['file']['name'])) {
                         $nomeAleatorio = date("Y-m-d_H-i-s_").$_FILES['file']['name'];
-                        if(move_uploaded_file($_FILES['file']['tmp_name'], "../imagens/" . $nomeAleatorio)){
+                        if(move_uploaded_file($_FILES['file']['tmp_name'], $pasta . $nomeAleatorio)){
                             $estadoImg=true;
                         }else{
                             $estadoImg=false;

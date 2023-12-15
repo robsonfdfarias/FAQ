@@ -39,6 +39,7 @@
                             <li><a href="legislacao.php">Legislação</a><span><div id="barra" <?php $checa->retorna('legislacao') ?>></div></span></li>
                             <li><a href="mapa.php">Estrutura Administrativa</a><span><div id="barra" <?php $checa->retorna('mapa') ?>></div></span></li>
                             <li><a href="capacitacao.php">Capacitação</a><span><div id="barra" <?php $checa->retorna('capacitacao') ?>></div></span></li>
+                            <li><a href="pesquisar.php">Pesquisar</a><span><div id="barra" <?php $checa->retorna('pesquisar') ?>></div></span></li>
                             <span>
                                 <form id="pesq" method="post" action="pesq.php" role="search">
                                     <input class="search" type="search" aria-label="Search" id="duvida" name="duvida" placeholder="Digite sua pesquisa">

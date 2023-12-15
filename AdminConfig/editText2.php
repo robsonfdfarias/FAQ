@@ -171,6 +171,21 @@
     #fecharEfeitosTexto:hover{
         background-color: rgb(21, 206, 77);
     }
+    
+    #ferramentas {
+        /* align-items: center; */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        /* justify-content: center; */
+        margin-bottom: 10px;
+    }
+    #ferramentas select{
+        padding: 5px;
+        border: 1px solid #dfdfdf;
+        border-radius: 4px;
+        font-size: 20px;
+    }
 
 
 
@@ -222,6 +237,34 @@
     }
     #fecharEmotions:hover{
         background-color: rgb(21, 206, 77);
+    }
+
+    .emotionsList{
+        padding:20px;
+        word-break: break-all;
+        margin: 0 5px;
+    }
+    
+    .emotionsList img{
+            width:100px;
+        }
+
+    @media screen and (max-width: 500px){
+        .emotionsList{
+            width:auto;
+            padding:5px;
+            word-break: break-all;
+            margin: 0 3px;
+        }
+        #emotions{
+            margin: 0;
+        }
+        #tituloEmotions{
+            font-size: 30px;
+        }
+        .emotionsList img{
+            width:40px;
+        }
     }
     
 </style>
@@ -293,7 +336,7 @@
                 echo '<option value="'.$i.'">'.$i.'</option>';
             }
         ?>
-        <option value="" disabled selected>Size</option>
+        <option value="padrao" name="padrao" id="padrao" disabled selected>Size</option>
     </select>
     <img src="imgEditor/copy.svg" title="Copiar" onClick="copiar()" />
     <img src="imgEditor/paste.svg" title="Colar" onClick="colar()" />
@@ -329,6 +372,7 @@
     <img src="imgEditor/rffTextDegrade.svg" title="rffTextDegrade" onClick="insertTagsNew('rffTextDegrade')" />
     <img src="imgEditor/coroa2.svg" title="rffEfeitoBGText" onClick="abreJanEfeitosTexto()" />
     <img src="imgEditor/emotions.svg" title="Inserir emotions" style="width:40px; height:auto;" onClick="abreJanEmotions()" />
+    <img src="imgEditor/citacao.png" title="Inserir uma citação" onClick="insertTagsNew('cite')" />
     
     <select name="formatH" id="formatH">
         <option value="h1">H1</option>
@@ -336,7 +380,7 @@
         <option value="h3">H3</option>
         <option value="h4">H4</option>
         <option value="h5">H5</option>
-        <option value="" disabled selected>Hs</option>
+        <option value="padrao" disabled selected name="padrao" id="padrao">Hs</option>
     </select>
     <img src="imgEditor/hangingindent.svg" title="Identar linha" onClick="addIdent()" />
     <img src="imgEditor/hangingindentremove.svg" title="Remove a identação" onClick="addOutIdent()" />
@@ -344,25 +388,8 @@
 <div id="texto" contenteditable="true" autofocus required autocomplete="off" spellcheck="true">Digite o seu artigo aqui...</div>
 
 
-
-<div id="geralInseriImagem">
-    <div id="inseriImagemCentro">
-        <form action="ex2.class.php" method="post" id="upload">
-            <input type="file" name="file" id="file" accept="image/*" />
-            <input type="submit" value="Carregar e visualizar" id="cv" />
-        </form>
         <div id="preview"></div>
         <div id="porcento"></div>
-        <span id="info">
-            Se deixar em branco a altura e a largura, eles ficarão com o padrão. Se colocar o valor em apenas um dos campos, o outro será redimencionado para não deformar a imagem.
-        </span>
-        <input type="text" placeholder="Digite a Largura" id="largura">
-        <input type="text" placeholder="Digite a altura" id="altura">
-        <button onclick="insertImg()">Inserir Imagem</button><button onclick="togglePaneImage()">Cancelar</button>
-    </div>
-</div>
-
-
 <script src="upload.js"></script>
 <script src="func.editor.robson.js"></script>
 <script>
@@ -385,5 +412,3 @@
 </script>
 </body>
 </html>
-        <div id="preview"></div>
-        <div id="porcento"></div>

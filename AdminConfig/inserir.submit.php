@@ -40,10 +40,16 @@
                         $calc = count($ext)-1;
                         $extencao = $ext[$calc];
                         $nomeAleatorio = date("Y-m-d_H-i-s_").substr($_FILES['file']['name'], 0, 30).".".$extencao;*/
+                        $pasta = '../imagens/';
+                        $ano = date('Y');
+                        $mes = date('m');
+                        $dia = date('d');
+                        $pasta .= $ano.'/'.$mes.'/'.$dia.'/';
+                        mkdir($pasta, 0777, true);
                         include_once("class/nome.aleatorio.arquivo.php");
                         $aleatorio = new NomeAleratorioArquivo();
                         $nomeAleatorio = $aleatorio->nomeAleatorio($_FILES['file']['name']);
-                        if(move_uploaded_file($_FILES['file']['tmp_name'], "../imagens/" . $nomeAleatorio)){
+                        if(move_uploaded_file($_FILES['file']['tmp_name'], $pasta . $nomeAleatorio)){
                             include_once("class/crud.artigo.class.php");
                             $inserir = new CRUD();
                             $inserir->insertArticle($titulo, $resumo, $conteudoArtigo, $tags, $nomeAleatorio, $prioridade, $categoria);
