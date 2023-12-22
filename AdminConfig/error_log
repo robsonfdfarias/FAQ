@@ -1,0 +1,126 @@
+[17-Dec-2023 19:14:59 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home1/robso940/public_html/site/AdminConfig/class/usuario.class.php on line 13
+[17-Dec-2023 19:14:59 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/login.submit.php:3) in /home1/robso940/public_html/site/AdminConfig/class/usuario.class.php on line 29
+[17-Dec-2023 19:40:54 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 19:40:54 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:16) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 19:41:08 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 19:41:08 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 19:41:08 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 19:41:33 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 19:41:33 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 19:41:33 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 19:41:41 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 19:41:41 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 19:41:41 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 21:20:32 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 21:20:32 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 21:20:32 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 21:22:12 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 21:22:12 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 21:22:12 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 21:37:35 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 21:37:35 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 21:37:35 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 21:41:03 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 21:41:03 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 21:41:03 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 21:44:00 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 21:44:00 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 21:44:00 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 21:46:52 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 21:46:52 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 21:46:52 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 21:48:15 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 21:48:15 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 21:48:15 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 21:49:22 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 21:49:22 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 21:49:22 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 21:50:42 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 21:50:42 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 21:50:42 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 21:51:39 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 21:51:39 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 21:51:39 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 21:53:15 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 21:53:15 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 21:53:15 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 21:54:44 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 21:54:44 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 21:54:44 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 21:54:44 America/Fortaleza] PHP Warning:  Array to string conversion in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 26
+[17-Dec-2023 21:56:24 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 21:56:24 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 21:56:24 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 21:56:24 America/Fortaleza] PHP Warning:  Array to string conversion in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 26
+[17-Dec-2023 21:58:00 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 21:58:00 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 21:58:00 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 21:59:02 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 21:59:02 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 21:59:02 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 21:59:59 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 21:59:59 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 21:59:59 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 22:00:45 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 22:00:45 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 22:00:45 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 22:02:21 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 22:02:21 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 22:02:21 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 22:04:51 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 22:04:51 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 22:04:51 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 22:05:26 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 22:05:26 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 22:05:26 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 22:06:26 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 22:06:26 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 22:06:26 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 22:07:26 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 22:07:26 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 22:07:26 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 22:08:32 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 22:08:32 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 22:08:32 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 22:08:32 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 25
+[17-Dec-2023 22:08:55 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 22:08:55 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 22:08:55 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 22:08:55 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 25
+[17-Dec-2023 22:09:58 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 22:09:58 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 22:09:58 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 22:09:58 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 25
+[17-Dec-2023 22:10:13 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 22:10:13 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 22:10:13 America/Fortaleza] PHP Warning:  Undefined array key "i" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 22:10:13 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 22:10:13 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 25
+[17-Dec-2023 22:11:10 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 22:11:10 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 22:11:10 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 22:11:10 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 25
+[17-Dec-2023 22:11:42 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 22:11:42 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 22:11:42 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 22:11:42 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 25
+[17-Dec-2023 22:14:23 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 22:14:23 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 22:14:23 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 22:14:23 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 25
+[17-Dec-2023 22:16:03 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 7
+[17-Dec-2023 22:16:03 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 16
+[17-Dec-2023 22:16:03 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 24
+[17-Dec-2023 22:16:03 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:7) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 25
+[17-Dec-2023 22:18:22 America/Fortaleza] PHP Warning:  Undefined array key "name" in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 18
+[17-Dec-2023 22:18:22 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:18) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 26
+[17-Dec-2023 22:18:22 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/robso940/public_html/site/AdminConfig/ex2.class.php:18) in /home1/robso940/public_html/site/AdminConfig/ex2.class.php on line 27
+[18-Dec-2023 09:25:41 America/Fortaleza] PHP Warning:  Undefined variable $id in /home1/robso940/public_html/site/AdminConfig/class/crud.artigo.class.php on line 244
+[18-Dec-2023 09:27:37 America/Fortaleza] PHP Warning:  include_once(crud.categoria.class.php): Failed to open stream: No such file or directory in /home1/robso940/public_html/site/AdminConfig/editar.php on line 12
+[18-Dec-2023 09:27:37 America/Fortaleza] PHP Warning:  include_once(): Failed opening 'crud.categoria.class.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/robso940/public_html/site/AdminConfig/editar.php on line 12
+[18-Dec-2023 09:33:31 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/editar.submit.php on line 42
+[18-Dec-2023 10:39:15 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/inserir.submit.php on line 48
+[18-Dec-2023 10:39:15 America/Fortaleza] PHP Warning:  Undefined variable $id in /home1/robso940/public_html/site/AdminConfig/class/crud.artigo.class.php on line 244
+[18-Dec-2023 11:47:59 America/Fortaleza] PHP Warning:  include_once(crud.categoria.class.php): Failed to open stream: No such file or directory in /home1/robso940/public_html/site/AdminConfig/editar.php on line 12
+[18-Dec-2023 11:47:59 America/Fortaleza] PHP Warning:  include_once(): Failed opening 'crud.categoria.class.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/robso940/public_html/site/AdminConfig/editar.php on line 12
+[18-Dec-2023 11:48:40 America/Fortaleza] PHP Warning:  mkdir(): File exists in /home1/robso940/public_html/site/AdminConfig/editar.submit.php on line 42

@@ -22,7 +22,8 @@
                 
                     <?php
                         $dt = $_GET['dt'];
-                        echo '<header id="titulo">Eventos do dia '.$dt.'</header>';
+                        $dt2 = explode('-', $dt);
+                        echo '<header id="titulo">Eventos do dia '.$dt2[2].'/'.$dt2[1].'/'.$dt2[0].'</header>';
                         include_once("class/capacitacao.class.php");
                         $obj = new Capacitacao();
                         //$obj->getEventById($dt);

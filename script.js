@@ -3,54 +3,83 @@ var btUnidades = document.getElementById('btUnidades');
 var filtro = document.getElementById('filtro');
 var valor = document.getElementById('valor');
 var parametro = 'nome';
+var url = window.location.href;
+var pag =1;
+var numReg = 5;
 
 
-
-
-// var jwt = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTcwMjU2MTY5NywiZXhwIjoxNzAyNTY1Mjk3LCJuYmYiOjE3MDI1NjE2OTcsImp0aSI6Iml5Zm10Z2JPdzAzanB6ZGYiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.J202pMhsLKJsVTMfzCcotdOi2Fe50HsuybZev0KVZ-4";
-
-var jwt;
-
-
+//******************** INICIA O ARMAZENAMENTO E VALIDAÇÃO DO TOKEN **********************/
 
 function getToken(){
     var json;
     var xhr = new XMLHttpRequest();
 
+    var data = 'email=robsonfdfarias@gmail.com&password=manaus123';
 
-    var data = 'email=johns.josephine@example.org&password=password';
-
-    xhr.open("POST", "http://127.0.0.1:8000/api/login");
-
+    xhr.open("POST", "http://127.0.0.1:8000/api/auth/login");
 
     xhr.setRequestHeader('Accept-Encoding', 'gzip, delate, br');
     xhr.setRequestHeader('Connection', 'keep-alive');
     xhr.setRequestHeader('Accept', 'application/json');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    // xhr.setRequestHeader('Authorization', 'Bearer ' + jwt);
-    //alert('Bearer ' + jwt)
 
     xhr.send(data);
 
-
     xhr.addEventListener('readystatechange', function(){
         if(xhr.readyState === 4 && xhr.status == 200){
-            //console.log(xhr.responseText);
+            // console.log(xhr.responseText+'***********');
             json = JSON.parse(xhr.responseText);
             // alert(json.data.token)
-            jwt = json.data.token;
+            jwt = json.access_token;
+            // console.log(jwt+'_________');
+            setT0k3n(json.access_token);
+            // return json.access_token;
         }
     })
 }
 
-getToken();
+
+// sessionStorage.clear();
+
+function setT0k3n(token){
+    let dateValid = new Date();
+    // console.log(dateValid.getTime());
+    let time = dateValid.getTime();
+    sessionStorage.setItem('dataV', time);
+    sessionStorage.setItem('t0k3n', token);
+}
+
+function getT0k3n(){
+    return sessionStorage.getItem('t0k3n');
+}
+
+function checkedT0k3n(){
+    let t0k3n = getT0k3n();
+    if(t0k3n != null && t0k3n != '' && t0k3n != 'undefined'){
+        let dateValid = new Date();
+        let checkedTime = dateValid.getTime()-sessionStorage.getItem('dataV');
+        console.log(dateValid.getTime())
+        console.log(sessionStorage.getItem('dataV'))
+        console.log(checkedTime)
+        if(parseInt(checkedTime)>=3000000){
+            getToken();
+        }
+    }else{
+        getToken();
+    }
+}
 
 
 
+checkedT0k3n();
+//******************** FINALIZA O ARMAZENAMENTO E VALIDAÇÃO DO TOKEN **********************/
 
+
+
+//******************** INICIA AS AÇÕES DO SELECT FILTRO **********************/
 
 filtro.addEventListener('change', function(){
-    // alert(this.value);
+    //alert(this.value);
     parametro = this.value;
     if(this.value=='secretaria'){
         secretaria.setAttribute('style', 'display:inline-block;');
@@ -67,9 +96,18 @@ filtro.addEventListener('change', function(){
     }
 });
 
+
+//******************** FINALIZA AS AÇÕES DO SELECT FILTRO **********************/
+
+
+//******************** INICIA AS AÇÕES DO SELECT SECRETARIA **********************/
 secretaria.addEventListener('change', function(){
     valor.value = this.value;
 })
+
+//******************** FINALIZA AS AÇÕES DO SELECT SECRETARIA **********************/
+
+
 
 function getUnidades(){
     // alert("unidades")
@@ -108,6 +146,8 @@ function retornaJson(){
     var json;
     var xhr = new XMLHttpRequest();
 
+    let jwt = getT0k3n();
+
 
     xhr.open("GET", "http://127.0.0.1:8000/api/allFunc");
 
@@ -117,6 +157,7 @@ function retornaJson(){
             porcentagem.value = pe.loaded
         }
     }
+    
 
     xhr.setRequestHeader('Accept-Encoding', 'gzip, delate, br');
     xhr.setRequestHeader('Connection', 'keep-alive');
@@ -166,21 +207,27 @@ function retornaJson(){
     }
 
 }
-// retornaJson();
+retornaJson();
 
 
 
+
+//******************** INICIA A REQUISIÇÃO DA PASQUISA **********************/
+var testPaginator = '';
 function pesq(){
-    
     var json;
     var xhr = new XMLHttpRequest();
+
+    let jwt = getT0k3n();
+
+    //url = window.location.href;
 
     if(valor.value == '' || valor.value == null || valor.value == 'undefined'){
         alert('O campo valor não pode estar em branco');
         return false;
     }
 
-    var data = 'parametro='+parametro+'&valor='+valor.value;
+    var data = 'pag='+pag+'&numReg='+numReg+'&parametro='+parametro+'&valor='+valor.value;
 
     xhr.open("POST", "http://127.0.0.1:8000/api/pesq");
 
@@ -191,19 +238,18 @@ function pesq(){
         }
     }
 
-    xhr.setRequestHeader('Accept-Encoding', 'gzip, delate, br');
-    xhr.setRequestHeader('Connection', 'keep-alive');
+    // xhr.setRequestHeader('Accept-Encoding', 'gzip, delate, br');
+    // xhr.setRequestHeader('Connection', 'keep-alive');
     xhr.setRequestHeader('Accept', 'application/json');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.setRequestHeader('Authorization', 'Bearer ' + jwt);
 
     xhr.send(data);
 
-
     xhr.addEventListener('readystatechange', function(){
         if(xhr.readyState === 4 && xhr.status == 200){
-            json = JSON.parse(xhr.responseText);
-            json=json['funcs'];
+            json1 = JSON.parse(xhr.responseText);
+            json=json1['funcs'];
             var htmlR = '<table class="funcTable"><tr>'+
             '<td>Matrícula</td><td>Nome</td>'+
             // '<td>entidade</td>'+
@@ -224,7 +270,11 @@ function pesq(){
                 htmlR+='</tr>';
             }
             htmlR+='</table>';
-            retorno.innerHTML = htmlR;
+            retorno.innerHTML = htmlR;//***************************************** */
+            if(testPaginator != valor.value){
+                paginate(json1['total'], parametro, valor.value);
+                testPaginator=valor.value;
+            }
         }
     })
 
@@ -234,12 +284,43 @@ function pesq(){
 
 }
 
+//******************** FINALIZA A REQUISIÇÃO DA PASQUISA **********************/
+
+
+
+//******************** INICIA A CAPITURA DAS VARIÁVEIS DA URL **********************/
+
+function getParametrosUrl(url){
+    var dd = url.split('?');
+    var uu = dd[1].split('&')
+    for(var i=0; i<uu.length; i++){
+        testa = uu[i].split('=');
+        if(testa[0]=='pag'){
+            pag=testa[1];
+        }else if(testa[0]=='numReg'){
+            numReg = testa[1];
+        }else if(testa[0]=='parametro'){
+            parametro = testa[1];
+        }else if(testa[0]=='valor'){
+            valor = testa[1];
+        }
+    }
+}
+getParametrosUrl(url);
+
+//******************** FINALIZA A CAPITURA DAS VARIÁVEIS DA URL **********************/
+
+
+
+//******************** INICIA A REQUISIÇÃO DAS UNIDADES **********************/
 
 function returnUnidades(divUnidades){
     var json;
     var xhr = new XMLHttpRequest();
 
     xhr.open('GET', 'http://127.0.0.1:8000/api/unidade');
+
+    let jwt = getT0k3n();
 
 
     xhr.setRequestHeader('Accept-Encoding', 'gzip, delate, br');
@@ -271,3 +352,128 @@ function returnUnidades(divUnidades){
         }
     });
 }
+
+//******************** FINALIZA A REQUISIÇÃO DAS UNIDADES **********************/
+
+function zera(){
+    pag=1;
+    totalPage=1;
+    totalReg=1;
+}
+
+//******************** INICIA PAGINAÇÃO **********************/
+
+function createBtDiv(i, div, divPag, param, val){
+    div = document.createElement('DIV');
+    div.setAttribute('class', 'pg');
+    div.setAttribute('id', 'pagina'+i);
+    div.setAttribute('onclick', 'chama('+i+', \''+param+'\', \''+val+'\')');
+    div.innerHTML=i;
+    divPag.appendChild(div);
+}
+
+var totalPage = 0;
+var totalReg = 0;
+function paginate(total, param, val){
+    let numPag = Math.ceil(total/numReg);
+    totalPage = numPag;
+    totalReg = total;
+    let divPag = document.getElementById('paginator');
+    divPag.innerHTML=''
+    /***************** Limita a quantidade de botões da página que aparecerão ********************/
+    let margin = 2;
+    let inicial = 1;
+    let final = margin+margin+1;
+    let lim = (parseInt(pag)+margin)
+    // console.log(numPag);
+    if(pag<=3){
+        inicial=1;
+        if(numPag<final){
+            final=numPag;
+        }
+    }else{
+        inicial=pag-margin;
+        if(numPag>lim){
+            final=lim;
+        }else{
+            final=totalPage;
+        }
+    }
+    if((pag > (numPag-margin)) & (numPag > (margin+margin))){
+        inicial = numPag-(margin+margin);
+    }
+    
+    /********** Inseri o botão de voltar uma página *************/
+    let div = document.createElement('DIV');
+    div.setAttribute('class', 'pg');
+    div.setAttribute('id', 'btPrev');
+    div.setAttribute('onclick', 'movePage(\'prev\', \''+param+'\', \''+val+'\')');
+    // div.innerHTML='<div id="btPrev" onclick="movePage(\'prev\')"><</div>';
+    div.innerHTML='<';
+    divPag.appendChild(div);
+    /********** Inseri os botãos das páginas *************/
+        // console.log(final)
+    for(let i=inicial;i<=final; i++){
+        createBtDiv(i, div, divPag, param, val);
+    }
+    if(pag==1){
+        document.getElementById('pagina'+inicial).setAttribute('style', 'background-color: #cdcdcd; color: #000;');
+        document.getElementById('btPrev').setAttribute('style', 'background-color: #cdcdcd;');
+    }
+    /********** Inseri o botão de Avançar uma página *************/
+    div = document.createElement('DIV');
+    div.setAttribute('class', 'pg');
+    div.setAttribute('id', 'btNext');
+    div.setAttribute('onclick', 'movePage(\'next\', \''+param+'\', \''+val+'\')');
+    div.innerHTML='>';
+    divPag.appendChild(div);
+    if(pag==totalPage){
+        document.getElementById('btNext').setAttribute('style', 'background-color: #cdcdcd;');
+    }
+}
+
+var background = 'green';
+var color = 'white';
+function chama(pg, param, val){
+    pag = pg;
+    p = 'pagina'+pg;
+    parametro = param;
+    valor.value = val;
+    paginate(totalReg, param, val);
+    if(pg==totalPage){
+        document.getElementById('btNext').setAttribute('style', 'background-color: #cdcdcd;');
+    }else{
+        document.getElementById('btNext').setAttribute('style', 'background-color: '+background+';');
+    }
+    if(pg==1){
+        document.getElementById('btPrev').setAttribute('style', 'background-color: #cdcdcd;');
+    }else{
+        document.getElementById('btPrev').setAttribute('style', 'background-color: '+background+';');
+    }
+    document.getElementById(p).setAttribute('style', 'background-color: #cdcdcd; color: #000;');
+    pesq();
+}
+
+function movePage(m, param, val){
+    if(m=='next' && pag < totalPage){
+        pag = pag+1;
+    }else if(m=='prev' && pag>1){
+        pag = pag-1;
+    }
+    paginate(totalReg, param, val);
+    document.getElementById('pagina'+pag).setAttribute('style', 'background-color: #cdcdcd; color: #000;');
+    if(pag<=1){
+        document.getElementById('btPrev').setAttribute('style', 'background-color: #cdcdcd;');
+    }else{
+        document.getElementById('btPrev').setAttribute('style', 'background-color: '+background+';');
+    }
+    if(pag>=totalPage){
+        document.getElementById('btNext').setAttribute('style', 'background-color: #cdcdcd;');
+    }else{
+        document.getElementById('btNext').setAttribute('style', 'background-color: '+background+';');
+    }
+    pesq();
+}
+
+//******************** FINALIZA PAGINAÇÃO **********************/
+

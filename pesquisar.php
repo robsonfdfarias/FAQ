@@ -8,9 +8,6 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="shortcut icon" href="imgs/logo_sei_93x60.ico" type="image/x-icon" />
     <style>
-        #itemdois{
-            padding-bottom: 20px;
-        }
     </style>
 </head>
 <body>
@@ -46,12 +43,12 @@
                             <option value="Semplu">Secretaria Municipal de Planejamento e Urbanismo - (Semplu)</option>
                             <option value="Sedein">Secretaria Municipal de Desenvolvimento Econômico e Inovação - (Sedein)</option>
                             <option value="Semash">Secretaria Municipal de Assistência Social e Habitação - (Semash)</option>
-                            <option value="CMEI Jader Marcolla">CMEI Jader Marcolla</option>
+                            <option value="EMEB Renato Pradi - Caic">EMEB Renato Pradi - Caic</option>
                             <option value="padrao" disabled selected name="padrao" id="padrao">Selecione uma secretaria</option>
                         </select>
                         <div id="btUnidades" onclick="getUnidades()">Ver Unidades</div>
                         <input type="text" id="valor" placeholder="Pesquisar" required>
-                        <button onclick="pesq()">Pesquisar</button>
+                        <button onclick="zera(),pesq()">Pesquisar</button>
                     </div>
                     <div id="porcentagem"></div>
                     <div id="retorno"></div>
@@ -59,6 +56,7 @@
                     <div id="divUnidades"></div>
 
                 </div>
+                <div id="paginator"></div>
             </div>
         </div>
     </div>

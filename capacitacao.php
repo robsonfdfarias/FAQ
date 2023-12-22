@@ -67,18 +67,19 @@
                         <?php
                             include_once("class/capacitacao.class.php");
                             $agenda = new Capacitacao();
-                            $data = date('d/m/Y');
+                            $data = date('Y-m-d');
                             $year = date('Y');
                             $month= date('m');
                             echo '
                                 <div id="conteudoCal">
                             ';
-                            $agenda->getEventMonth($month, $year, 0);
+                            $agenda->getEventMonth($month, $year, 1, 5);
                             echo '
                                 </div>
                                 <div id="eventDayDiv">
                             ';
                             $agenda->getEventDay($data);
+                            // $agenda->getEventDay('08/01/2024');
                             echo '</div>';
                         ?>
                     </div>
@@ -94,9 +95,9 @@
 
         function findEventDay(dia){
             var eventDayDiv = document.getElementById('eventDayDiv');
-            let dt = dia.split('/');
+            let dt = dia.split('-');
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'chamada.ajax.php?dia='+dt[0]+'&mes='+dt[1]+'&ano='+dt[2]+'&tipo=eventDay');
+            xhr.open('GET', 'chamada.ajax.php?dia='+dt[2]+'&mes='+dt[1]+'&ano='+dt[0]+'&tipo=eventDay');
             xhr.send();
             xhr.onload = function (){
                 if(xhr.status!=200){
@@ -117,10 +118,10 @@
             }
         }
 
-        function getMonthYear(ano, mes, bt){
+        function getMonthYear(ano, mes, bt, tipo){
             var conteudoCal = document.getElementById('conteudoCal');
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'chamada.ajax.php?tipo=calendar&mes='+mes+'&ano='+ano+'&bt='+bt);
+            xhr.open('GET', 'chamada.ajax.php?tipo=calendar&mes='+mes+'&ano='+ano+'&bt='+bt+'&am='+tipo);
             xhr.send();
             xhr.onload = function (){
                 if(xhr.status!=200){
@@ -143,9 +144,10 @@
 
         function getToday(data){
             //alert(data);
-            var dd = data.split('/');
+            // var dd = data.split('/');
+            var dd = data.split('-');
             findEventDay(data);
-            getMonthYear(dd[2], dd[1]);
+            getMonthYear(dd[0], dd[1], 3, 5);
         }
 
     </script>

@@ -92,13 +92,21 @@
                         </td>
                     </tr>
                 </table>-->
-                <div id="acessoRapido" style="display: block; width: 222px;">
-                    <span id="tituloAcessoRapido"><strong>Acesso rápido</strong></span><br>
-                    <a href="http://" target="_blank" rel="noopener noreferrer">Servidor Público <img src="imgs/seta-para-a-direita.svg" alt="seta" width="15"></a><br>
-                    <a href="http://" target="_blank" rel="noopener noreferrer">Usuário Externo <img src="imgs/seta-para-a-direita.svg" alt="seta" width="15"></a><br>
-                    <a href="http://" target="_blank" rel="noopener noreferrer">Consulta de Processos <img src="imgs/seta-para-a-direita.svg" alt="seta" width="15"></a><br>
+                <div id="blockLeft">
+                    <div id="acessoRapido" style="display: block; width: 222px;">
+                        <span id="tituloAcessoRapido"><strong>Acesso rápido</strong></span><br>
+                        <a href="http://" target="_blank" rel="noopener noreferrer">Servidor Público <img src="imgs/seta-para-a-direita.svg" alt="seta" width="15"></a><br>
+                        <a href="http://" target="_blank" rel="noopener noreferrer">Usuário Externo <img src="imgs/seta-para-a-direita.svg" alt="seta" width="15"></a><br>
+                        <a href="http://" target="_blank" rel="noopener noreferrer">Consulta de Processos <img src="imgs/seta-para-a-direita.svg" alt="seta" width="15"></a><br>
+                    </div>
+                    <div id="NextEvents" style="margin-top: 20px; float: left;">
+                        <?php
+                            include_once("class/capacitacao.class.php");
+                            $agenda = new Capacitacao();
+                            $agenda->blockNextEvents();
+                        ?>
+                    </div>
                 </div>
-
                 
                 <div id="centroItemDoisHome" style="">
                 <div id="carrosel"><?php include_once("carrosel3.php"); ?></div>

@@ -339,6 +339,11 @@ class CRUD{
                     $categ = new Categoria();
                     $n=0;
                     while($linha = $obj->fetchObject()){
+                        if($linha->dataAlter != null || $linha->dataAlter != ''){
+                            $dataAlter = $linha->dataAlter;
+                        }else{
+                            $dataAlter = '';
+                        }
                         $newModify = str_replace("../imagens", "imagens", $linha->conteudo);
                         $newModify = str_replace("../icones", "icones", $newModify);
                         echo '
@@ -533,7 +538,7 @@ class CRUD{
             echo '<h1>Não existem registros nestá página.</h1>';
             return false;
         }
-        $objAll = DB::conn()->prepare("SELECT * FROM artigo WHERE categoria=? ORDER BY id DESC LIMIT ".$verifyNumReg.",".$numReg." ");
+        $objAll = DB::conn()->prepare("SELECT * FROM artigo WHERE categoria=? ORDER BY id ASC LIMIT ".$verifyNumReg.",".$numReg." ");
         try{
             if($objAll->execute(array($id))){
                 $numRows = $objAll->rowCount();
@@ -550,6 +555,11 @@ class CRUD{
                     $categ = new Categoria();
                     $n=0;
                     while($linha = $objAll->fetchObject()){
+                        if($linha->dataAlter != null || $linha->dataAlter != ''){
+                            $dataAlter = $linha->dataAlter;
+                        }else{
+                            $dataAlter = '';
+                        }
                         echo '
                             <div id="summaryArticle" class="summaryArticle">
                                 <div id="titleArticle_'.$n.'" class="titleArticle" onclick="abre(this)"><span id="status" style="display:none;">false</span><span id="ttArtigo">'.$linha->titulo.'</span>
@@ -629,6 +639,11 @@ class CRUD{
                     $categ = new Categoria();
                     $n=0;
                     while($linha = $obj->fetchObject()){
+                        if($linha->dataAlter != null || $linha->dataAlter != ''){
+                            $dataAlter = $linha->dataAlter;
+                        }else{
+                            $dataAlter = '';
+                        }
                         echo '
                             <div id="summaryArticle" class="summaryArticle">
                                 <div id="titleArticle_'.$n.'" class="titleArticle" onclick="abre(this)"><span id="status" style="display:none;">false</span><span id="ttArtigo">'.$linha->titulo.'</span>

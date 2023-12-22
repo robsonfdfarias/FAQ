@@ -160,7 +160,8 @@
 <div id="geralInseriImagem">
     <div id="glassImageBackground"></div>
     <div id="inseriImagemCentro">
-        <form action="ex2.class.php" method="post" id="upload"> 
+        <!-- <form action="ex2.class.php" method="post" id="upload">  -->
+        <form method="post" id="upload"> 
             <input type="file" name="file" id="file" accept="image/*" />
             <!--<input type="text" name="name" value="Robson" /><br>-->
             <input type="submit" value="Carregar e visualizar" id="cv" />

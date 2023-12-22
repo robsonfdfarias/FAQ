@@ -338,7 +338,7 @@
 
 
 
-    function getEventMonth($mes, $ano, $bt){
+    function getEventMonth($mes, $ano, $bt, $tipo){
         $yearPrev = $ano-1;
         $yearNext = $ano+1;
         $monthPrev = $mes-1;
@@ -361,17 +361,24 @@
             if($monthNext>12){
                 $monthNext=1;
             }
+            // echo '<div style="position:absolute; top:0; left:0; z-index:10001;"><h1>---'.$tipo.'</h1></div>';
         if($bt==0){
-            if($monthPrev==11){
-                $ano-=1;
-                $yearPrev-=1;
-                $yearNext=$yearPrev+1;
+            // echo '<div style="position:absolute; top:0; left:0; z-index:10001;"><h1>---'.$bt.'</h1></div>';
+            if($tipo==1){
+                if($monthPrev==11){
+                    $ano-=1;
+                    $yearPrev=$ano-1;
+                    $yearNext=$yearPrev+1;
+                }
             }
         }else if($bt==1){
-            if($monthNext==2){
-                $ano+=1;
-                $yearNext=$ano+1;
-                $yearPrev=$yearNext-1;
+            // echo '<div style="position:absolute; top:0; left:0; z-index:10001;"><h1>---'.$bt.'</h1></div>';
+            if($tipo==1){
+                if($monthNext==2){
+                    $ano+=1;
+                    $yearNext=$ano+1;
+                    $yearPrev=$yearNext-1;
+                }
             }
         }
         
@@ -389,15 +396,15 @@
         echo '<div id="monthBody" style="">
                 <div id="showMonth" style="">
                     <div id="btnsPrev">
-                        <a id="" onclick="getMonthYear('.$yearPrev.', '.$mes.', 3)"><<</a>
-                        <a id="btMonthPrev" onclick="getMonthYear('.$ano.', '.$monthPrev.', 0)"><</a>
+                        <a id="" onclick="getMonthYear('.$yearPrev.', '.$mes.', 0, 0)"><<</a>
+                        <a id="btMonthPrev" onclick="getMonthYear('.$ano.', '.$monthPrev.', 0, 1)"><</a>
                     </div>
                     <div id="monthYear">
                         '.$mesesExt[($mes-1)].' '.$ano.'
                     </div>
                     <div id="btnsNext">
-                        <a id="btMonthNext" onclick="getMonthYear('.$ano.', '.$monthNext.', 1)">></a>
-                        <a  onclick="getMonthYear('.$yearNext.', '.$mes.', 3)">>></a>
+                        <a id="btMonthNext" onclick="getMonthYear('.$ano.', '.$monthNext.', 1, 1)">></a>
+                        <a  onclick="getMonthYear('.$yearNext.', '.$mes.', 1, 0)">>></a>
                     </div>
                 </div>
             ';
@@ -437,16 +444,21 @@
         //echo '<div style="padding:5px;">';
         //echo self::agenda($mes, $ano);
         //echo '</div>';
-        $dd = date('d/m/Y');
+        // $dd = date('d/m/Y');
+        $dd = date('Y-m-d');
         echo '<div id="divToday" onclick="getToday(\''.$dd.'\')">Hoje</div>';
         echo '</div>';
     }
 
+    
     function linkCalDay($data){
         $dt = explode("/", $data);
         $dias = ["0", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18",
                 "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"];
-        $data = $dias[$dt[0]].'/'.$dt[1].'/'.$dt[2];
+        // $data = $dias[$dt[0]].'/'.$dias[$dt[1]].'/'.$dt[2];
+        $data = $dt[2].'-'.$dias[$dt[1]].'-'.$dias[$dt[0]];
+        // $data = self::convertDateNumber($data);
+        // echo '<div style="position:absolute; top:0; right:0;">'.$data.'</div>';
         $obj = DB::conn()->prepare("SELECT * FROM agenda WHERE dtinicio=?");
         if($obj->execute(array($data))){
             $rowNum = $obj->rowCount();
@@ -470,7 +482,8 @@
     }
 
     function ifDay($data){
-        $dataAtual = date("d/m/Y");
+        // $dataAtual = date("d/m/Y");
+        $dataAtual = date("Y-m-d");
         if($data==$dataAtual){
             return 'background-color: #0C582C; color: #fff;';
         }else{
@@ -481,15 +494,17 @@
 
 
     function getEventDay($data){
+        // $data = self::convertDateNumber($data);
         $mesesExt = ['', 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
-        $dt = explode("/", $data);
+        $dt = explode("-", $data);
+        // echo '<div style="position:absolute; top:0; left:0; z-index:10001;"><h1>---***'.$data.'</h1></div>';
         $obj = DB::conn()->prepare("SELECT * FROM agenda WHERE dtinicio=?");
         try{
             if($obj->execute(array($data))){
                 $rows = $obj->rowCount();
                     echo '
                         <div id="generalDivEventDay" style="">
-                            <div id="eventDayTitle">Eventos para '.$dt[0].' de '.$mesesExt[$dt[1]].' de '.$dt[2].'</div>
+                            <div id="eventDayTitle">Eventos para '.$dt[2].' de '.$mesesExt[$dt[1]].' de '.$dt[0].'</div>
                     ';
                 if($rows>0){
                     while($linha=$obj->fetchObject()){
@@ -514,11 +529,8 @@
                                 </tr>';*/
                     }
                 }else{
-                    echo '<strong>Nenhum evento para esse dia.</strong><br>';
+                    echo '<strong>Nenhum evento para esse dia.</strong>';
                 }
-                    if(self::verifyDate($data)){
-                        echo '<br><center><button id="insertArticle" onclick="newArticle()">+ Novo Evento</button></center>';
-                    }
                     echo '</div>';
             }else{
                 echo '<h3>Não foi possível fazer a pesquisa.</h3>';
@@ -530,10 +542,7 @@
 
 
     function testDayWithEvent($data){
-        $dt = explode("/", $data);
-        $dias = ["0", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18",
-                "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"];
-        $data = $dias[$dt[0]].'/'.$dt[1].'/'.$dt[2];
+        // echo '<div style="position:absolute; top:0; left:0;">'.$data.'</div>';
         $obj = DB::conn()->prepare("SELECT * FROM agenda WHERE dtinicio=?");
         if($obj->execute(array($data))){
             $rowNum = $obj->rowCount();
@@ -556,16 +565,17 @@
     }
 
     function verifyDate($date){
-        $dt = explode("/", $date);
-        $dataAtual = date("d/m/Y");
-        $dtAtual = explode("/", $dataAtual);
-        if($dtAtual[2]<$dt[2]){
+        $dt = explode("-", $date);
+        // $dataAtual = date("d/m/Y");
+        $dataAtual = date("Y-m-d");
+        $dtAtual = explode("-", $dataAtual);
+        if($dtAtual[0]<$dt[0]){
             return true;
-        }else if($dtAtual[2]==$dt[2]){
+        }else if($dtAtual[0]==$dt[0]){
             if($dtAtual[1]<$dt[1]){
                 return true;
             }else if($dtAtual[1]==$dt[1]){
-                if($dtAtual[0]<=$dt[0]){
+                if($dtAtual[2]<=$dt[2]){
                     return true;
                 }else{
                     return false;

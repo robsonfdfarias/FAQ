@@ -6,7 +6,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="menu.css">
     <style type="text/css">
-         
+        @media only screen and (max-device-width: 1119px){
+            .movel{
+                display: flex !important;
+            }
+            .pc{
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -39,19 +46,32 @@
                             <li><a href="perguntas.php">Perguntas</a><span><div id="barra" <?php $checa->retorna('perguntas') ?>></div></span></li>
                             <li><a href="eventos.php">Agenda</a><span><div id="barra" <?php $checa->retorna('eventos') ?>></div></span></li>
                             <li><a href="categoriaIndex.php">Categoria</a><span><div id="barra" <?php $checa->retorna('categoriaIndex') ?>></div></span></li>
+                            <?php
+                                    if(empty($_SESSION['nome'])){
+                                        echo '<li class="movel">
+                                            <form id="pesq" method="post" action="pesq.php" role="search" style="padding-top:5px;">
+                                                <input class="search" type="search" aria-label="Search" id="duvida" name="duvida" placeholder="Digite sua pesquisa">
+                                            </form></li>
+                                        ';
+                                    }else{
+                                        echo '
+                                                <li class="movel"><a href="desloga.php">Sair</a><span><div id="barra"></div></span></li>
+                                        ';
+                                    }
+                                ?>
                             
                     </ul>
                             <span id="objRight">
                                 <?php
                                     if(empty($_SESSION['nome'])){
-                                        echo '
-                                            <form id="pesq" method="post" action="pesq.php" role="search" style="padding-top:5px;">
-                                                <input class="search" type="search" aria-label="Search" id="duvida" name="duvida" placeholder="Digite sua pesquisa">
-                                            </form>
-                                        ';
+                                        //echo '
+                                        //    <form id="pesq" class="pc" method="post" action="pesq.php" role="search" style="padding-top:5px;">
+                                        //        <input class="search" type="search" aria-label="Search" id="duvida" name="duvida" placeholder="Digite sua pesquisa">
+                                        //    </form>
+                                        //';
                                     }else{
                                         echo '
-                                            <ul id="menu">
+                                            <ul id="menu" class="pc">
                                                 <li><a href="desloga.php">Sair</a><span><div id="barra"></div></span></li>
                                             </ul>
                                         ';

@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" type="text/css" href="editorRobsonFarias.css" />
     <link rel="shortcut icon" href="imgs/logo_sei_93x60.ico" type="image/x-icon" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <style>
         
     </style>
@@ -37,9 +42,17 @@
                 <div id="centroItemDoisPergFreq" style=""> 
                     <?php
                         //$obj2->selectArtigos();
-                        $pg = $_GET['pg'];
-                        if(empty($pg) && $pg==0){
+                        //$pg = $_GET['pg'];
+                        //if(empty($pg) && $pg==0){
+                        //    $pg=1;
+                        //}
+
+                        
+                        $pg = 1;
+                        if(empty($_GET['pg'])){
                             $pg=1;
+                        }else{
+                            $pg=$_GET['pg'];
                         }
                         $k=1;
                         $obj2->getAllArticlePergGreq($pg, $k);

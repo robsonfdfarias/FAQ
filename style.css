@@ -384,6 +384,30 @@ body{
 
 }
 
+#itemdois{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+.pg{
+    padding:5px 10px;
+    background-color: green;
+    cursor: pointer;
+    color: white;
+}
+.pg:hover{
+    background-color: yellow;
+}
+#paginator{
+    display: flex;
+    flex-direction: row;
+    margin-top:20px;
+    width: 100%;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+
 #divUnidades{
     display:none;
     position:absolute;

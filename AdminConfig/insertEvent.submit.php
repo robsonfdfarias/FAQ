@@ -34,10 +34,10 @@
                     $certificado = $_POST['certificado'];
                     $horainicio = $_POST['horainicio'];
                     $horafim = $_POST['horafim'];
-                    $dt = explode("-", $dtinicio);
-                    $dtinicio = $dt[2]."/".$dt[1]."/".$dt[0];
-                    $dt = explode("-", $dtfim);
-                    $dtfim = $dt[2]."/".$dt[1]."/".$dt[0];
+                    // $dt = explode("-", $dtinicio);
+                    // $dtinicio = $dt[2]."/".$dt[1]."/".$dt[0];
+                    // $dt = explode("-", $dtfim);
+                    // $dtfim = $dt[2]."/".$dt[1]."/".$dt[0];
                     include_once("class/capacitacao.class.php");
                     $inserir = new Capacitacao();
                     $inserir->insertEvent($titulo, $dtpost, $dtinicio, $dtfim, $texto, $vagas, $certificado, $horainicio, $horafim, $local);

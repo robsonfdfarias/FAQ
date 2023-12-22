@@ -81,7 +81,7 @@
                     </span><br>
                     <hr style="border: 1px solid #b1cd49;">
                 </div>
-                <div id="camada2"><em>Prefeitura de Jaraguá do Sul - SC - CNPJ: 83.102.459/0001-23 - Rua Walter Marquardt, 1111 - Barra do Rio Molha - 89259-565 - Caixa Postal 421 - Fone: (047) 2106-8000</em></div>
+                <div id="camada2"><em>Desenvolvido por Robson Ferreira de Farias ©2023</em></div>
             </div>
     </footer>
 </body>

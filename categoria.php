@@ -36,14 +36,14 @@
             <div id="itemdoisPergFreq" style="max-width: 1036px; padding: 0 32px;">
                 <div id="centroItemDoisPergFreq" style="max-width: 100%; width: 100%;"> 
                     <?php
-                    $pesq = $_GET['pesq'];
-                    if(!empty($pesq) and $pesq!=''){
-                        $idCat=$pesq;
+                    if(!empty($_GET['pesq']) and $_GET['pesq']!=''){
+                        $idCat=$_GET['pesq'];
                     }
                     echo '<h2>'.$objCat->getCatById($idCat).'</h2>';
                         //$idCat = $_GET['id'];
-                        $pag = $_GET['pg'];
-                        if(empty($pag) and $pag=='' and $pag<1){
+                        if(!empty($_GET['pg']) and $_GET['pg']!='' and $_GET['pg']>0){
+                            $pag=$_GET['pg'];
+                        }else{
                             $pag=1;
                         }
                         $numReg=1;

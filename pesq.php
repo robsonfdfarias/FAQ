@@ -1,16 +1,20 @@
 <?php
-    $pesq = $_POST['duvida'];
+    if(!empty($_POST['duvida'])){
+        $pesq = $_POST['duvida'];
+    }
+    if(empty($_GET['pg'])){
+        $pg=1;
+    }else{
+        $pg=$_GET['pg'];
+    }
+    
+    if(!empty($_GET['pesq'])){
+        $pesq=$_GET['pesq'];
+    }
     include_once("AdminConfig/class/limpa.variavel.class.php");
     $limpa = new LimpaVar();
     $pesq = $limpa->limpa($pesq);
 
-    $pg=$_GET['pg'];
-    if($pg<0 || empty($pg)){
-        $pg=1;
-    }
-    if(!empty($_GET['pesq'])){
-        $pesq=$_GET['pesq'];
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

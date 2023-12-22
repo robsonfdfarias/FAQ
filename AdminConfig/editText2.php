@@ -24,20 +24,84 @@
     #cores{
         background-color: green;
         cursor: pointer;
-        opacity: 0.0;
-        position:absolute;
+        /*opacity: 0.0;*/
+        position:relative !important;
+        opacity: 1;
         width: 35px !important;
         height: 35px !important;
+        margin-top: 25px;
     }
+    #divCorText{
+        display:none;
+        flex-direction: column;
+        position: absolute;
+        width: 300px;
+        min-height: 200px;
+        top: 50px;
+        background-color: white;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    #topCorText{
+        display:flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+    #fecharDivCorText{
+        padding: 5px 10px;
+        background-color: #0c852c;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+    }
+    #fecharDivCorText:hover{
+        background-color: rgb(32, 254, 47);
+        color: #000;
+    }
+
 
     #coresDestaque{
         background-color: green;
         cursor: pointer;
-        opacity: 0.0;
-        position:absolute;
+        /*opacity: 0.0;*/
+        position:relative !important;
+        opacity: 1;
         width: 35px !important;
         height: 35px !important;
+        margin-top: 25px;
     }
+    #divCorDestText{
+        display:none;
+        flex-direction: column;
+        position: absolute;
+        width: 300px;
+        min-height: 200px;
+        top: 50px;
+        background-color: white;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    #topCorDestText{
+        display:flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+    #fecharDivCorDestText{
+        padding: 5px 10px;
+        background-color: #0c852c;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+    }
+    #fecharDivCorDestText:hover{
+        background-color: rgb(32, 254, 47);
+        color: #000;
+    }
+
 
     #geralInseriImagem{
         width:100%;
@@ -349,10 +413,25 @@
     <img src="imgEditor/graphic.svg" title="Inserir Imagem" onClick="openWindowInsertImage()" />
     <img src="imgEditor/editImage.svg" title="Acrescentar a função de editar as imagens" onClick="funcBtImg()" />
     <img src="imgEditor/inserttable.svg" title="Inserir tabela" onClick="insertTable()" />
-    <input type="color" id="cores" />
-    <img src="imgEditor/color.svg" title="Mudar a cor do texto" onClick="cor()" />
-    <input type="color" id="coresDestaque" />
-    <img src="imgEditor/backcolor.svg" title="Cor de destaque do texto" onClick="backColorText()" />
+
+    <div id="divCorText">
+        <div id="topCorText">
+            <div id="tituloCorText">Escolha a cor do texto</div>
+            <div id="fecharDivCorText" onclick="closeWindowsColorText()">X</div>
+        </div>
+        <input type="color" id="cores" onClick="cor()" />
+    </div>
+    <img src="imgEditor/color.svg" title="Mudar a cor do texto" onclick="openWindowsColorText()" />
+    
+    <div id="divCorDestText">
+        <div id="topCorDestText">
+            <div id="tituloCorDestText">Escolha a cor do texto</div>
+            <div id="fecharDivCorDestText" onclick="closeWindowsColorDestText()">X</div>
+        </div>
+        <input type="color" id="coresDestaque" onClick="backColorText()" />
+    </div>
+    <img src="imgEditor/backcolor.svg" title="Cor de destaque do texto" onClick="openWindowsColorDestText()" />
+
     <img src="imgEditor/resetattributes.svg" title="Remover formatação" onClick="removeFormatT()" />
     <img src="imgEditor/subscript.svg" title="Colocar em subescrito" onClick="addSubScript()" />
     <img src="imgEditor/superscript.svg" title="Colocar em superescrito" onClick="addSuperScript()" />
@@ -409,6 +488,23 @@
     function abreJanEmotions(){
         emotions.setAttribute("style", "display:flex;");
     }
+
+    var divCorText = document.getElementById('divCorText');
+    function openWindowsColorText(){
+        divCorText.setAttribute('style', 'display:flex;');
+    }
+    function closeWindowsColorText(){
+        divCorText.setAttribute('style', 'display:none;');
+    }
+
+    var divCorDestText = document.getElementById('divCorDestText');
+    function openWindowsColorDestText(){
+        divCorDestText.setAttribute('style', 'display:flex;');
+    }
+    function closeWindowsColorDestText(){
+        divCorDestText.setAttribute('style', 'display:none;');
+    }
+
 </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
-var $formUpload = document.getElementById('upload');
-var $preview = document.getElementById('preview');
+var formUpload = document.getElementById('upload');
+var preview = document.getElementById('preview');
 var porcentagem = document.getElementById("porcento");
 var i = 0;
 
@@ -15,12 +15,12 @@ var srcImg;
 var objImg;
 var json;
 
-$formUpload.addEventListener('submit', function(event){
+formUpload.addEventListener('submit', async function(event){
   event.preventDefault();
 
   var xhr = new XMLHttpRequest();
 
-  //xhr.open("POST", $formUpload.getAttribute('action'));
+  //xhr.open("POST", formUpload.getAttribute('action'));
   xhr.open("POST", "ex2.class.php");
 
   xhr.upload.addEventListener('onprogress', function(e) {
@@ -28,22 +28,25 @@ $formUpload.addEventListener('submit', function(event){
         porcentagem.innerHTML = perc;
 	});
 
-  var formData = new FormData($formUpload);
+  var formData = new FormData(formUpload);
   formData.append("i", i++);
-  xhr.send(formData);
-
+  await xhr.send(formData);
+console.log(i)
   xhr.addEventListener('readystatechange', function() {
     if (xhr.readyState === 4 && xhr.status == 200) {
+      console.log(xhr.responseText+'------------************');
+      preview.innerHTML = xhr.status;
       json = JSON.parse(xhr.responseText);
 
-      if (json.error!=='no_file' && json.status === 'ok') {
+      if (json.status!=='no_file' && json.status === 'ok') {
         porcentagem.innerHTML = '<img id="previewImage" src="'+json.img+'" width="300">';
-        $preview.innerHTML = '<img id="previewImage" src="'+json.img+'" width="300">';
+        preview.innerHTML = '<img id="previewImage" src="'+json.img+'" width="300">';
       } else {
-        $preview.innerHTML = 'Arquivo não enviado';
+        preview.innerHTML = 'Arquivo não enviado';
       }
     } else {
-      $preview.innerHTML = xhr.statusText;
+      console.log('Erro robson')
+      preview.innerHTML = xhr.statusText+' ------------------';
     }
   });
 /*
@@ -57,7 +60,7 @@ $formUpload.addEventListener('submit', function(event){
   }, false);*/
 
   xhr.upload.addEventListener("load", function(e){
-    $preview.innerHTML = String(100) + '%';
+    porcentagem.innerHTML = String(100) + '%';
   }, false);
 
 }, false);

@@ -138,6 +138,8 @@ body{
     transition: ease 0.3s;
 }
 
+
+
 @keyframes gradient {
 	0% {background-position: 50% 100%; border-top: 0px solid rgba(16, 157, 157, 0.9);}
 	/*50% {background-position: 50% 50%;}*/
@@ -175,7 +177,7 @@ span #duvida {
     padding-left: 15px;
 }
 
-@media (max-width:1119px){
+@media screen and (max-width:1119px){
     #barra{
         display:none;
     }
@@ -201,10 +203,20 @@ span #duvida {
     #mP #nav #logoPref{
         top: 0px;
     }
+
+    
+
+    .movel{
+        display: flex !important;
+    }
+    .pc{
+        display: none !important;
+        font-size: 30px;
+    }
 }
 
 
-@media (min-width:1120px){
+@media screen and (min-width:1120px){
     #mP nav{
         /*display:none;*/
         margin-top:0px;
@@ -212,6 +224,14 @@ span #duvida {
     #mP{
         height: 60px;
     }
-}
 
+    
+
+    .movel{
+        display: none !important;
+    }
+    .pc{
+        display: flex !important;
+    }
+}
 
