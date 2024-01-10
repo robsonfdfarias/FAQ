@@ -4,10 +4,9 @@ class Noticia{
     function __construct(){
         include_once("conn.php");
         include_once("DB.class.php");
+        include_once("user.class.php");
         DB::conn();
     }
-
-
 
     public $imgArt='Sem imagem';
     public $artigo = '';
@@ -21,11 +20,12 @@ class Noticia{
             if($obj->execute()){
                 $numRow = $obj->rowCount();
                 if($numRow>0){
+                    $userObj = new User();
                     while($linha = $obj->fetchObject()){
                         echo '
                             <div id="generalFeedNews">
                                 <span id="titleNewsFeed">'.$linha->titulo.'</span>
-                                <span id="dateNewsFeed">Publicado por: '.$linha->autor.' - '.$linha->datacad.'</span><br><br>
+                                <span id="dateNewsFeed">Publicado por: '.$userObj->getUserNameById($linha->autor).' - '.$linha->datacad.'</span><br><br>
                                 <span id="summaryNewsFeed">'.$linha->resumo.'</span><br>
                                 <span id="readMore"><a href="noticia.php?id='.$linha->id.'">Leia mais <img src="imgs/seta-para-a-direita.svg" alt="seta" width="15"></a></span><br>
                             </div>
@@ -44,6 +44,7 @@ class Noticia{
             if($obj->execute(array($idNews))){
                 $nr = $obj->rowCount();
                 if($nr>0){
+                    $userObj = new User();
                     $linha = $obj->fetchObject();
                     //$this->imgArt = 'imagens/'.$linha->img;
                     $this->titleArt = $linha->titulo;
@@ -51,7 +52,7 @@ class Noticia{
                     $this->artigo = '
                         <header id="titulo">'.$linha->titulo.'</header>
                         <nav>
-                            Publicado por: '.$linha->autor.'<br>
+                            Publicado por: '.$userObj->getUserNameById($linha->autor).'<br>
                         </nav>
                         
                         <article>

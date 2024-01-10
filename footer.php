@@ -57,7 +57,7 @@
                         //$obj = new Categoria();
                         //$obj->getCatFooter();
                     ?>
-                    <span id="login"><a href="AdminConfig/index.php" target="_blank" rel="noopener noreferrer">Logar</a></span>
+                    <span id="login"><a href="login.php" target="_blank" rel="noopener noreferrer">Logar</a></span>
                     <span id="redesFooter">
                         <a href="#">
                             <!--<img src="imgs/facebook.svg" style="--invert: 24%; --sepia: 38%; --saturate:1515%; --hueRotate: 192deg; --brightness: 110%; --contrast: 81%;" alt="Acesse nosso canal do Facebook" title="Acesse nosso canal do Facebook" height="20">-->
@@ -81,7 +81,7 @@
                     </span><br>
                     <hr style="border: 1px solid #b1cd49;">
                 </div>
-                <div id="camada2"><em>Desenvolvido por Robson Ferreira de Farias ©2023</em></div>
+                <div id="camada2"><em>Prefeitura de Jaraguá do Sul - SC - CNPJ: 83.102.459/0001-23 - Rua Walter Marquardt, 1111 - Barra do Rio Molha - 89259-565 - Caixa Postal 421 - Fone: (047) 2106-8000</em></div>
             </div>
     </footer>
 </body>

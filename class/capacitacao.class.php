@@ -7,11 +7,12 @@
             DB::conn();
         }
 
-        function getEventMonth($mes, $ano, $bt, $tipo){
+        function getEventMonth($mes, $ano, $bt, $tipo, $dt){
             $yearPrev = $ano-1;
             $yearNext = $ano+1;
             $monthPrev = $mes-1;
             $monthNext = $mes+1;
+            $dataSel = explode('-', $dt);
             /*if($mes<1){
                 $monthPrev=11;
                 $monthNext=1;
@@ -104,7 +105,11 @@
                         echo '<td style="">'.$dia.'</td>';
                     }
                 }else{
-                    echo self::linkCalDay($dia."/".$mes."/".$ano);
+                    if($dia == $dataSel[2] && $mes == $dataSel[1] && $ano == $dataSel[0]){
+                        echo '<td class="clique" style="background-color: #cdcdcd;" title="Dia selecionado" onclick="findEventDay(\''.$dataSel[2].'/'.$dataSel[1].'/'.$dataSel[0].'\')">'.$dataSel[2].'</td>';
+                    }else{
+                        echo self::linkCalDay($dia."/".$mes."/".$ano);
+                    }
                 }
                 $semana++;
             }
@@ -288,7 +293,7 @@
                     $rows = $obj->rowCount();
                         echo '
                             <div id="generalDivEventDay" style="">
-                                <div id="eventDayTitle">Eventos para '.$dt[2].' de '.$mesesExt[$dt[1]].' de '.$dt[0].'</div>
+                                <div id="eventDayTitle">Eventos para '.$dt[2].' de '.$mesesExt[(int)$dt[1]].' de '.$dt[0].'</div>
                         ';
                     if($rows>0){
                         while($linha=$obj->fetchObject()){
@@ -545,12 +550,15 @@
 
 
         function blockNextEvents(){
-            $obj = DB::conn()->prepare('SELECT *, DATE_FORMAT(dtinicio, "%Y-%m-%d") FROM agenda WHERE dtinicio>="2023-12-21"');
+            $dt = date('Y-m-d');
+            // $obj = DB::conn()->prepare('SELECT *, DATE_FORMAT(dtinicio, "%Y-%m-%d") FROM agenda WHERE dtinicio>="2023-12-21"');
+            $obj = DB::conn()->prepare('SELECT *, DATE_FORMAT(dtinicio, "%Y-%m-%d") FROM agenda WHERE dtinicio>=? ORDER BY dtinicio ASC');
                     echo '<div id="titleBlockEvents"><strong>Próximos treinamentos</strong></div>';
-            if($obj->execute()){
+            if($obj->execute(array($dt))){
                 if($obj->rowCOunt()>0){
                     while($linha = $obj->fetchObject()){
-                        echo 'data de inicio: <a href="evento.php?dt='.$linha->dtinicio.'">'.$linha->dtinicio.'</a><br>';
+                        $data = explode('-', $linha->dtinicio);
+                        echo 'Data de inicio: <a href="evento.php?dt='.$linha->dtinicio.'">'.$data[2].'/'.$data[1].'/'.$data[0].'</a><br>';
                     }
                 }else{
                     echo 'Não encontrou nada';

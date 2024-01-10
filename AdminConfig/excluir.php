@@ -125,7 +125,8 @@
         function excluir(){
             var id = document.getElementById("id");
             //alert(id.innerText);
-            window.open("excluir.submit.php?id="+id.innerText);
+            // window.open("excluir.submit.php?id="+id.innerText);
+            document.location.href = "excluir.submit.php?id="+id.innerText;
         }
         function cancelar(){
             window.close();

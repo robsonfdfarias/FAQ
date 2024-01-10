@@ -172,12 +172,13 @@
         height: 2rem;
         transition: ease-in-out 0.5s;
         border: 0px solid #cfcfcf;
+        cursor: pointer;
     }
     
-    #ferramentas img:hover{
-        height: 2.2rem;
-        filter: invert(25%) sepia(11%) saturate(4040%) hue-rotate(99deg) brightness(93%) contrast(91%);
-        border: 1px solid #cfcfcf;
+    #ferramentas img:hover{ 
+        /* height: 2.2rem; */
+        /* filter: invert(25%) sepia(11%) saturate(4040%) hue-rotate(99deg) brightness(93%) contrast(91%); */
+        /* border: 1px solid #cfcfcf; */
         transition: ease-in-out 0.5s;
     }
     .p::first-letter {

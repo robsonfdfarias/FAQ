@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include_once("checa.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,19 +71,26 @@
                         <?php
                             include_once("class/capacitacao.class.php");
                             $agenda = new Capacitacao();
-                            $data = date('Y-m-d');
-                            $year = date('Y');
-                            $month= date('m');
+                            if(empty($_GET['dt'])){
+                                $data = date('Y-m-d');
+                                $year = date('Y');
+                                $month= date('m');
+                            }else{
+                                $data = $_GET['dt'];
+                                $dt = explode('-', $data);
+                                $year = $dt[0];
+                                $month= $dt[1];
+                            }
                             echo '
                                 <div id="conteudoCal">
                             ';
-                            $agenda->getEventMonth($month, $year, 1, 5);
+                            $agenda->getEventMonth($month, $year, 1, 5, $data);
                             echo '
                                 </div>
                                 <div id="eventDayDiv">
                             ';
                             $agenda->getEventDay($data);
-                            echo '</div>';
+                            echo '<div id="btNewEvent" style="width:100%; text-align:center; padding-top: 20px;"><button id="insertArticle" onclick="newEvent()">+ Novo Evento</button></div></div>';
                         ?>
                     </div>
 
@@ -92,30 +103,30 @@
         ?>
     <script type="text/javascript">
 
-        function findEventDay(dia){
-            var eventDayDiv = document.getElementById('eventDayDiv');
-            let dt = dia.split('-');
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'chamada.ajax.php?dia='+dt[2]+'&mes='+dt[1]+'&ano='+dt[0]+'&tipo=eventDay');
-            xhr.send();
-            xhr.onload = function (){
-                if(xhr.status!=200){
-                    alert('Erro '+xhr.status+': '+xhr.statusText);
-                }else{
-                    eventDayDiv.innerHTML = xhr.response;
-                }
-            }
-            xhr.onprogress = function (event){
-                if(event.lengthComputable){
-                    console.log('Carregado '+event.loaded+' de '+event.total+' bytes');
-                }else{
-                    console.log('Carregado '+event.loaded+' bytes');
-                }
-            }
-            xhr.onerror = function (){
-                alert('Falha na requisição!');
-            }
-        }
+        // function findEventDay(dia){
+        //     var eventDayDiv = document.getElementById('eventDayDiv');
+        //     let dt = dia.split('-');
+        //     var xhr = new XMLHttpRequest();
+        //     xhr.open('GET', 'chamada.ajax.php?dia='+dt[2]+'&mes='+dt[1]+'&ano='+dt[0]+'&tipo=eventDay');
+        //     xhr.send();
+        //     xhr.onload = function (){
+        //         if(xhr.status!=200){
+        //             alert('Erro '+xhr.status+': '+xhr.statusText);
+        //         }else{
+        //             eventDayDiv.innerHTML = xhr.response;
+        //         }
+        //     }
+        //     xhr.onprogress = function (event){
+        //         if(event.lengthComputable){
+        //             console.log('Carregado '+event.loaded+' de '+event.total+' bytes');
+        //         }else{
+        //             console.log('Carregado '+event.loaded+' bytes');
+        //         }
+        //     }
+        //     xhr.onerror = function (){
+        //         alert('Falha na requisição!');
+        //     }
+        // }
  
         function getMonthYear(ano, mes, bt, tipo){
             var conteudoCal = document.getElementById('conteudoCal');
@@ -141,6 +152,11 @@
             }
         }
 
+        function findEventDay(data){
+            document.location.href= 'eventos.php?dt='+data;
+        }
+
+
         function getToday(data){
             //alert(data);
             // var dd = data.split('/');
@@ -149,7 +165,7 @@
             getMonthYear(dd[0], dd[1], 3, 5);
         }
 
-        function newArticle(){
+        function newEvent(){
             window.open("insertEvent.php");
         }
 

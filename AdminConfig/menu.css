@@ -47,7 +47,7 @@ body{
     float:right;
     background-color: #0c582c;
     padding: 0;
-    height: 60px;
+    height: 80px;
     overFlow: hidden;
     margin: 0;
 }
@@ -58,9 +58,10 @@ body{
     display: flex;
     flex-wrap: wrap;
     text-align: right;
-    justify-content: left;
-    align-items: left;
+    justify-content: right;
+    align-items: middle;
     vertical-align: middle;
+    margin-right: 70px;
 }
 #mP #nav #logoPref{
     position: absolute;
@@ -71,15 +72,19 @@ body{
     height: 60px;
     position: absolute;
     right: 32px;
-    top: 5px;
+    top: 0px;
 }
 #menu{
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: right;
     align-items: center;
     padding:0;
     margin: 0;
+    height: 100%;
+    font-family: 'Bebas Neue';
+    font-size: 1.3em;
+    margin-top: 10px;
 }
 #menu li{
     text-decoration: none;
@@ -98,6 +103,7 @@ body{
     justify-content: center;
     align-items: center;
     vertical-align: middle;
+    padding: 10px;
     padding-top: 10px;
 }
 #menu li a{
@@ -183,7 +189,7 @@ span #duvida {
     }
     #mP nav{
         /*display:none;*/
-        margin-top:5px;
+        margin-top:15px;
     }
     #toggleMenu{
         display:block;
@@ -222,7 +228,7 @@ span #duvida {
         margin-top:0px;
     }
     #mP{
-        height: 60px;
+        height: 80px;
     }
 
     

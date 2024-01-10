@@ -338,11 +338,12 @@
 
 
 
-    function getEventMonth($mes, $ano, $bt, $tipo){
+    function getEventMonth($mes, $ano, $bt, $tipo, $dt){
         $yearPrev = $ano-1;
         $yearNext = $ano+1;
         $monthPrev = $mes-1;
         $monthNext = $mes+1;
+        $dataSel = explode('-', $dt);
         /*if($mes<1){
             $monthPrev=11;
             $monthNext=1;
@@ -435,7 +436,11 @@
                     echo '<td style="">'.$dia.'</td>';
                 }
             }else{
-                echo self::linkCalDay($dia."/".$mes."/".$ano);
+                if($dia==$dataSel[2] && $mes==$dataSel[1] && $ano==$dataSel[0]){
+                    echo '<td class="clique" style="background-color: #cdcdcd;" title="Dia selecionado" onclick="findEventDay(\''.$dataSel[2].'/'.$dataSel[1].'/'.$dataSel[0].'\')">'.$dataSel[2].'</td>';
+                }else{
+                    echo self::linkCalDay($dia."/".$mes."/".$ano);
+                }
             }
             $semana++;
         }
@@ -456,7 +461,7 @@
         $dias = ["0", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18",
                 "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"];
         // $data = $dias[$dt[0]].'/'.$dias[$dt[1]].'/'.$dt[2];
-        $data = $dt[2].'-'.$dias[$dt[1]].'-'.$dias[$dt[0]];
+        $data = $dt[2].'-'.$dias[(int)$dt[1]].'-'.$dias[$dt[0]];
         // $data = self::convertDateNumber($data);
         // echo '<div style="position:absolute; top:0; right:0;">'.$data.'</div>';
         $obj = DB::conn()->prepare("SELECT * FROM agenda WHERE dtinicio=?");

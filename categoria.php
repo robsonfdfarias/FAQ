@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
+    <?php
+        if(!empty($_GET['id'])){
+            $idCat = $_GET['id'];
+        }else{
+            $idCat = 1;
+        }
+        //include_once("class/crud.artigo.class.php");
+        //$obj2 = new CRUD();
+        //$obj2->getArtByCat($idCat);
+        include_once("class/crud.categoria.class.php");
+        $objCat = new Categoria();
+                        
+    ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pesquisar categoria</title>
     <!--<script type="text/javascript" src="jquery/code.jquery.com_jquery-3.7.1.min.js">-->
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" type="text/css" href="editorRobsonFarias.css" />
     <link rel="shortcut icon" href="imgs/logo_sei_93x60.ico" type="image/x-icon" />
+    <meta property="og:image" content="">
+    <meta property="og:title" content="Categoria">
+    <meta property="article:author" content="Robson Farias (robsonfdfarias@gmail.com)">
+    <meta name="description" content="<?php echo $objCat->getCatById($idCat); ?>">
+    <meta name="author" content="Robson Farias - robsonfdfarias@gmail.com">
+    <meta name="keywords" content="Categoria">
+    <meta name="generator" content="Robson Farias (robsonfdfarias@gmail.com)">
+    <meta name="robots" content="all">
+    <meta name="revisit-after" content="1 day">
+    <meta name="googlebot" content="all">
+    <meta name="googlebot-news" content="all">
     <style>
     </style>
 </head>
@@ -21,15 +46,6 @@
             <!--<div id="itemdois">
                 <div id="centroItemDois" style="margin-top: 30px; width: 84%;">
                     <h3>Artigos recentes</h3><hr id="recentes"><br>
-                    <?php
-                        $idCat = $_GET['id'];
-                        //include_once("class/crud.artigo.class.php");
-                        //$obj2 = new CRUD();
-                        //$obj2->getArtByCat($idCat);
-                        include_once("class/crud.categoria.class.php");
-                        $objCat = new Categoria();
-                        
-                    ?>
                 </div>
             </div>-->
 

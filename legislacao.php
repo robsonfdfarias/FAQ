@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Legislação</title>
     <!--<script type="text/javascript" src="jquery/code.jquery.com_jquery-3.7.1.min.js">-->
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="shortcut icon" href="imgs/logo_sei_93x60.ico" type="image/x-icon" />
+    <meta property="og:image" content="">
+    <meta property="og:title" content="Legislação">
+    <meta property="article:author" content="Robson Farias (robsonfdfarias@gmail.com)">
+    <meta name="description" content="Área contendo as leis Estaduais e Federais relacionadas ao SEI.">
+    <meta name="author" content="Robson Farias - robsonfdfarias@gmail.com">
+    <meta name="keywords" content="Legislação">
+    <meta name="generator" content="Robson Farias (robsonfdfarias@gmail.com)">
+    <meta name="robots" content="all">
+    <meta name="revisit-after" content="1 day">
+    <meta name="googlebot" content="all">
+    <meta name="googlebot-news" content="all">
 </head>
 <body>
     <div id="geral">

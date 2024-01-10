@@ -2,6 +2,10 @@
     font-family: 'Inter';
     src: url('fontes/Inter/Inter-VariableFont_slnt\,wght.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('fontes/BebasNeue-Regular.ttf') format('truetype');
+}
 *{
     scroll-behavior: smooth;
 }
@@ -142,12 +146,78 @@ body{
 
 #acessoRapido{
     float: left;
-    line-height: 32px;
 }
 
 #acessoRapido a{
-    border-bottom: 1px solid #000;
-    line-height: 32px;
+    /* border-bottom: 1px solid #000; */
+}
+
+#acessoMenuRapido{
+    display: flex;
+    flex-wrap: wrap;
+    padding:0;
+    margin-top: 25px;
+}
+#acessoMenuRapido li{
+    text-decoration: none;
+    list-style: none;
+    /*background-image: linear-gradient(180deg, #052412, #083a1d,#083a1d);
+    background-size: 100% 200%;
+    background-position: 50% 100%;
+    animation: gradientR 0.5s ease;
+    -webkit-animation: gradientR 0.5s ease;
+    animation-fill-mode:forwards;*/
+    display:flex;
+    flex-direction: column;
+    transition: ease 0.3s;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+#acessoMenuRapido li a{
+    height: 25px;
+    padding: 0px 5px;
+    text-decoration: none;
+    color: #fff;
+}
+#acessoMenuRapido li #textoAcessoRapido{
+    height: 20px !important;
+}
+#acessoMenuRapido li span{
+    width: 100%;
+    height: 14px !important;
+    display:row;
+    flex-direction: column;
+    text-align: center;
+    /*height: 3.6rem;*/
+    transition: ease 0.3s;
+    justify-content: end;
+    vertical-align: bottom;
+    align-items: end;
+    /*background-color: aquamarine;*/
+}
+#acessoMenuRapido li span #barraAcesso{
+    width: 100%;
+    height: 0px;
+    text-align: center;
+    border-top: 0px solid green;
+    transition: ease 0.3s;
+    background-color: #fff;
+}
+
+#acessoMenuRapido li:hover span #barraAcesso{
+    align-items: end;
+    height: 0px;
+    border-top: 9px solid #0c582c;
+    /*box-shadow: 0 1px 6px 4px rgba(127, 255, 0, 0.5);
+    box-shadow: 0 1px 6px 6px rgba(255, 255, 255, 0.8);*/
+    text-shadow: chartreuse;
+    transition: ease 0.3s;
+}
+
+#acessoMenuRapido a:hover {
+    color: #0c582c;
 }
 
 /* ---------------------- FIM do index do usuario comum ------------------------------ */
@@ -185,6 +255,7 @@ body{
     font-weight: 400;
     line-height: 24px;
     float: right;
+    text-decoration: underline;
 }
 /* ---------------------- FIM do feed de notícias do usuario comum ------------------------------ */
 
@@ -577,7 +648,7 @@ div.objitensum {
 #pesq{
     width: 100%;
 }
-
+ 
 .search{
     width: 50%;
 }
@@ -590,7 +661,7 @@ div.objitensum {
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     border: 0px;
     margin-bottom: 5px;
-    font-size: 120%;
+    font-size: 80%;
     padding-left: 10px;
     margin-right: 10px;
     border: 1px solid #dfdfdf;
@@ -895,7 +966,7 @@ span#categoria{
 
 #artigo header#titulo{
     font-size: 2rem;
-    color: #0c582c;
+    /* color: #0c582c; */
     text-align: left;
     font-weight: bold;
 }
@@ -979,3 +1050,68 @@ span#catSpan{
 #clique div{
     width: 100%;
 }
+
+
+/******************************************** LOGIN INICIO ****************************************************/
+#formLogin{
+    border: 0px solid #cfcfcf;
+    /*padding: 25px;*/
+    border-radius: 10px;
+    margin: 20px;
+    margin-top: 10px;
+    width: 100%;
+}
+#formLogin input{
+    min-height: 38px;
+    border-radius: 4px;
+    border: 1px solid #000;
+    /*font-size: 1.2rem;*/
+    width: 100%;
+}
+
+#formLogin input[type="file"]{
+    min-height: 30px;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    width: 95%;
+}
+#formLogin select{
+    min-height: 30px;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    padding: 10px;
+    font-size: 1.3rem;
+}
+#formLogin #imagemInsert{
+    min-height: 30px;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    padding: 10px;
+    font-size: 1.3rem;
+    width: 96%;
+}
+#formLogin span{
+    /*font-size: 25px;*/
+}
+
+#formLogin table tr td{
+    padding-bottom: 10px;
+}
+
+#enviar{
+    /* padding: 8px 40px;*/
+    height: 40px;
+    font-size: 16px;
+    background-color: #0c582c;
+    color: #fff;
+    transition: ease 1s;
+    width: 100% !important;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#enviar:hover {
+    background-color:rgb(69, 136, 7);
+}
+
+/******************************************** LOGIN FIM ****************************************************/

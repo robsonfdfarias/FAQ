@@ -11,12 +11,13 @@
         $objEventDay->getEventDay($ano.'-'.$mes.'-'.$dia);
     }else if($tipo=='calendar'){
         
-        $mes = $_GET['mes'];
+        $mes = (int) $_GET['mes'];
         $ano = $_GET['ano'];
         $bt=$_GET['bt'];
         $tipo=$_GET['am'];
+        $dt=$_GET['dt'];
         // echo $bt;
-        $objEventDay->getEventMonth($mes, $ano, $bt, $tipo);
+        $objEventDay->getEventMonth($mes, $ano, $bt, $tipo, $dt);
     }
     exit;
 

@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Capacitação</title>
     <!--<script type="text/javascript" src="jquery/code.jquery.com_jquery-3.7.1.min.js">-->
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="shortcut icon" href="imgs/logo_sei_93x60.ico" type="image/x-icon" />
+    <meta property="og:image" content="">
+    <meta property="og:title" content="Capacitação">
+    <meta property="article:author" content="Robson Farias (robsonfdfarias@gmail.com)">
+    <meta name="description" content="Calendário com as ŕ[oximas capacitações">
+    <meta name="author" content="Robson Farias - robsonfdfarias@gmail.com">
+    <meta name="keywords" content="Capacitação">
+    <meta name="generator" content="Robson Farias (robsonfdfarias@gmail.com)">
+    <meta name="robots" content="all">
+    <meta name="revisit-after" content="1 day">
+    <meta name="googlebot" content="all">
+    <meta name="googlebot-news" content="all">
     <style>
         #calendario{
             border: 1px solid #000;
@@ -67,13 +78,22 @@
                         <?php
                             include_once("class/capacitacao.class.php");
                             $agenda = new Capacitacao();
-                            $data = date('Y-m-d');
-                            $year = date('Y');
-                            $month= date('m');
+                            if(empty($_GET['dt'])){
+                                $data = date('Y-m-d');
+                                $year = date('Y');
+                                $month= (int) date('m');
+                                $dia = 0;
+                            }else{
+                                $data = trim($_GET['dt']);
+                                $dt = explode('-', $data);
+                                $year = $dt[0];
+                                $month= (int) $dt[1];
+                                $dia = (int) $dt[2];
+                            }
                             echo '
                                 <div id="conteudoCal">
                             ';
-                            $agenda->getEventMonth($month, $year, 1, 5);
+                            $agenda->getEventMonth($month, $year, 1, 5, $data);
                             echo '
                                 </div>
                                 <div id="eventDayDiv">
@@ -93,35 +113,35 @@
         ?>
     <script type="text/javascript">
 
-        function findEventDay(dia){
-            var eventDayDiv = document.getElementById('eventDayDiv');
-            let dt = dia.split('-');
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'chamada.ajax.php?dia='+dt[2]+'&mes='+dt[1]+'&ano='+dt[0]+'&tipo=eventDay');
-            xhr.send();
-            xhr.onload = function (){
-                if(xhr.status!=200){
-                    alert('Erro '+xhr.status+': '+xhr.statusText);
-                }else{
-                    eventDayDiv.innerHTML = xhr.response;
-                }
-            }
-            xhr.onprogress = function (event){
-                if(event.lengthComputable){
-                    console.log('Carregado '+event.loaded+' de '+event.total+' bytes');
-                }else{
-                    console.log('Carregado '+event.loaded+' bytes');
-                }
-            }
-            xhr.onerror = function (){
-                alert('Falha na requisição!');
-            }
-        }
+        // function findEventDay(dia){
+        //     var eventDayDiv = document.getElementById('eventDayDiv');
+        //     let dt = dia.split('-');
+        //     var xhr = new XMLHttpRequest();
+        //     xhr.open('GET', 'chamada.ajax.php?dia='+dt[2]+'&mes='+dt[1]+'&ano='+dt[0]+'&tipo=eventDay');
+        //     xhr.send();
+        //     xhr.onload = function (){
+        //         if(xhr.status!=200){
+        //             alert('Erro '+xhr.status+': '+xhr.statusText);
+        //         }else{
+        //             eventDayDiv.innerHTML = xhr.response;
+        //         }
+        //     }
+        //     xhr.onprogress = function (event){
+        //         if(event.lengthComputable){
+        //             console.log('Carregado '+event.loaded+' de '+event.total+' bytes');
+        //         }else{
+        //             console.log('Carregado '+event.loaded+' bytes');
+        //         }
+        //     }
+        //     xhr.onerror = function (){
+        //         alert('Falha na requisição!');
+        //     }
+        // }
 
-        function getMonthYear(ano, mes, bt, tipo){
+        function getMonthYear(ano, mes, bt, tipo, dt){
             var conteudoCal = document.getElementById('conteudoCal');
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'chamada.ajax.php?tipo=calendar&mes='+mes+'&ano='+ano+'&bt='+bt+'&am='+tipo);
+            xhr.open('GET', 'chamada.ajax.php?tipo=calendar&mes='+mes+'&ano='+ano+'&bt='+bt+'&am='+tipo+'&dt='+dt);
             xhr.send();
             xhr.onload = function (){
                 if(xhr.status!=200){
@@ -140,6 +160,11 @@
             xhr.onerror = function (){
                 alert('Falha na requisição!');
             }
+        }
+
+        function findEventDay(data){
+            // window.open('capacitacao.php?dt='+data);
+            window.location.href = 'capacitacao.php?dt='+data;
         }
 
         function getToday(data){

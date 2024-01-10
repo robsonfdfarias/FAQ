@@ -26,9 +26,9 @@
                         $_SESSION["nome"] = $linha->nome;
                         $_SESSION['nivel'] = $linha->nivel;
                         $_SESSION['email'] = $linha->email;
-                        header('Location: index.php');
+                        header('Location: AdminConfig/index.php');
                         echo "Logado com sucesso!";
-                        echo '<br><a href="index.php">Ir para a área principal.</a>';
+                        echo '<br><a href="AdminConfig/index.php">Ir para a área principal.</a>';
                     }
                 }else{
                     echo "Usuário ou senha não cadastrado!";

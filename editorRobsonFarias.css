@@ -113,9 +113,10 @@ input[type="text"]{
 }
 
 #ferramentas img:hover{
-    height: 2.2rem;
-    filter: invert(25%) sepia(11%) saturate(4040%) hue-rotate(99deg) brightness(93%) contrast(91%);
-    border: 1px solid #cfcfcf;
+    /* height: 2.2rem; */
+    /* filter: invert(25%) sepia(11%) saturate(4040%) hue-rotate(99deg) brightness(93%) contrast(91%); */
+    /* border: 1px solid #cfcfcf; */
+    background-color: #cdcdcd;
     transition: ease-in-out 0.5s;
 }
 .p::first-letter {

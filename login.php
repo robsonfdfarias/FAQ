@@ -64,7 +64,7 @@
                     <span id="nn">Senha</span><br>
                     <div id="divPass" style="position:relative;">
                         <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
-                        <img src="imgs/senha-mostrar.svg" id="olho" height="30" title="Mostrar senha" style="position:absolute;right:0;top:7px; cursor:pointer;" onclick="seePass(this)">
+                        <img src="AdminConfig/imgs/senha-mostrar.svg" id="olho" height="30" title="Mostrar senha" style="position:absolute;right:0;top:7px; cursor:pointer;" onclick="seePass(this)">
                     </div><br>
                     <input type="submit" id="enviar" value="Entrar"><br>
                         <!--<table style="width: 100%;">
@@ -93,10 +93,10 @@
             var senha = document.getElementById('senha');
             if(senha.getAttribute("type")!="password"){
                 senha.setAttribute("type", "password");
-                olho.setAttribute("src", "imgs/senha-mostrar.svg");
+                olho.setAttribute("src", "AdminConfig/imgs/senha-mostrar.svg");
             }else{
                 senha.setAttribute("type", "text");
-                olho.setAttribute("src", "imgs/senha-ocultar.svg");
+                olho.setAttribute("src", "AdminConfig/imgs/senha-ocultar.svg");
             }
         }
     </script>

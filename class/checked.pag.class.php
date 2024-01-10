@@ -45,8 +45,8 @@
                 $titulo = 'Área de inscrição para evento';
                 $subtitulo = 'Aqui você poderá fazer sua inscrição se houver vagas disponíveis.';
             }else if($pag == 'pesquisar'){
-                $titulo = 'Contato';
-                $subtitulo = 'Pesquisar contato';
+                $titulo = 'Contatos';
+                $subtitulo = 'Pesquisar contatos';
             }
             echo '
             <span style="font-size: 40px; font-weight: 700; line-height: 65px;">
@@ -57,6 +57,17 @@
             </span>
             ';
         }
+
+
+        function retorna2($pag){
+            $paginaCorrente = basename($_SERVER['SCRIPT_NAME']);
+            $char = explode(".", $paginaCorrente);
+            if($pag == $char[0]){
+                //echo 'style="background-color:forestgreen; font-weight: bold;"'; 
+                echo 'style="background-color: #cdcdcd;"';
+            }
+        }
+
     }
 
 ?>

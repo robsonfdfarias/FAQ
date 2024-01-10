@@ -27,27 +27,7 @@
             
 
             <div id="itemdois">
-                <div id="tituloCatMenuPag">Postagens recentes</div>
-                <div id="addCatMenuPag">
-                        <button id="insertArticle" onclick="newArticle()">+ Nova Pergunta</button>
-                        <!--<a href="noticiaInsert.php">
-                            <img src="imgs/cat-add.svg" alt="Adicionar categoria" title="Adicionar categoria" height="30"> Adicionar notícia
-                        </a>-->
-                    </div><br><br>
-                <?php
-                    // if(!empty($_GET['pg'])){
-                    //     $pg = $_GET['pg'];
-                    // }else{
-                    //     $pg = 1;
-                    // }
-                    // $numReg = 2;
-                    // include_once("class/limpa.variavel.class.php");
-                    // $limpa = new LimpaVar();
-                    // $pg=$limpa->limpa($pg);
-                    // include_once("class/crud.artigo.class.php");
-                    // $obj2 = new CRUD();
-                    // $obj2->selectArtigos($pg, $numReg);
-                ?>
+                
                 
             </div>
         </div>

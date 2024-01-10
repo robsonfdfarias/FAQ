@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sei - Jaraguá do Sul</title>
     <!--<script type="text/javascript" src="jquery/code.jquery.com_jquery-3.7.1.min.js">-->
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" type="text/css" href="editorRobsonFarias.css" />
     <link rel="shortcut icon" href="imgs/logo_sei_93x60.ico" type="image/x-icon" />
-    <meta property="og:image" content="imagens/faq_pic.jpg"> 
-    <meta property="og:image:type" content="image/jpg">
-    <meta property="og:image:width" content="400">
-    <meta property="og:image:height" content="200">
-    <meta property="og:autor" content="Robson Farias (robsonfdfarias@gmail.com)">
     <meta property="og:title" content="Área principal do FAQ">
-    <meta property="og:description" content="Seja bem vindo ao FAQ referente ao SEI da prefeitura de Jaraguá do Sul / SC">
+    <meta property="og:image" content="https://infocomrobson.com.br/site/imgs/robson.png">
+    <meta property="article:author" content="Robson Farias (robsonfdfarias@gmail.com)">
+    <meta name="description" content="Seja bem vindo ao FAQ referente ao SEI da prefeitura de Jaraguá do Sul / SC">
+    <meta name="author" content="Robson Farias - robsonfdfarias@gmail.com">
+    <meta name="keywords" content="Área principal do FAQ">
+    <meta name="generator" content="Robson Farias (robsonfdfarias@gmail.com)">
+    <meta name="robots" content="all">
+    <meta name="revisit-after" content="1 day">
+    <meta name="googlebot" content="all">
+    <meta name="googlebot-news" content="all">
     <script type="text/javascript">
         /*function resizeRobson(){
             //alert("sdafdfad");
@@ -95,9 +99,11 @@
                 <div id="blockLeft">
                     <div id="acessoRapido" style="display: block; width: 222px;">
                         <span id="tituloAcessoRapido"><strong>Acesso rápido</strong></span><br>
-                        <a href="http://" target="_blank" rel="noopener noreferrer">Servidor Público <img src="imgs/seta-para-a-direita.svg" alt="seta" width="15"></a><br>
-                        <a href="http://" target="_blank" rel="noopener noreferrer">Usuário Externo <img src="imgs/seta-para-a-direita.svg" alt="seta" width="15"></a><br>
-                        <a href="http://" target="_blank" rel="noopener noreferrer">Consulta de Processos <img src="imgs/seta-para-a-direita.svg" alt="seta" width="15"></a><br>
+                        <ul id="acessoMenuRapido">
+                            <a href="http://" target="_blank"><li><span id="textoAcessoRapido">Servidor Público <img src="imgs/seta-para-a-direita.svg" alt="seta" width="15"></span><span><div id="barraAcesso"></div></span></li></a>
+                            <a href="http://" target="_blank"><li><span id="textoAcessoRapido">Usuário Externo <img src="imgs/seta-para-a-direita.svg" alt="seta" width="15"></span><span><div id="barraAcesso"></div></span></li></a>
+                            <a href="http://" target="_blank"><li><span id="textoAcessoRapido">Consulta de Processos <img src="imgs/seta-para-a-direita.svg" alt="seta" width="15"></span><span><div id="barraAcesso"></div></span></li></a>
+                        </ul>
                     </div>
                     <div id="NextEvents" style="margin-top: 20px; float: left;">
                         <?php

@@ -75,10 +75,10 @@ class CRUD{
                                 </div>
                                 <div style="display:flex;">
                                     <a href="editar.php?id='.$linha->id.'">
-                                    <div id="divBtEdit" style="background-color:green; padding:10px; margin-right: 5px; border-radius:5px;"><img src="imgs/edit-lapis.svg" width="20" title="Editar notícia"></div>
+                                    <div id="divBtEdit"><img src="imgs/edit-lapis.svg" width="20" title="Editar notícia"></div>
                                     </a>
                                     <a href="excluir.php?id='.$linha->id.'" target="_blank">
-                                    <div id="divBtDelete" style="background-color:red; padding:10px; margin-left: 5px; border-radius:5px;"><img src="imgs/delete-bin.svg" width="20" title="Deletar notícia"></div>
+                                    <div id="divBtDelete"><img src="imgs/delete-bin.svg" width="20" title="Deletar notícia"></div>
                                     </a>
                                 </div>
                             </div>

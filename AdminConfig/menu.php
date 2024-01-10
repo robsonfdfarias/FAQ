@@ -28,7 +28,7 @@
                     ?>
                     <div id="logoPref">
                         <a href="index.php">
-                            <img src="../imgs/logo-pref-jar.svg" height="35" style="margin-right: 10px;" id="logo">
+                            <img src="../imgs/logo-pref-jar.svg" height="55" style="margin-right: 10px;" id="logo">
                         </a>
                     </div>
                     <ul id="menu">
@@ -97,7 +97,7 @@
                 //nav.setAttribute('style', "display: flex; ");
             }else{
                 num=1;
-                mp.setAttribute('style', "height: 60px; Transition: ease-in-out 0.5s;");
+                mp.setAttribute('style', "height: 80px; Transition: ease-in-out 0.5s;");
                 bt.innerText = "Menu";
                 //nav.setAttribute('style', "display: none;")
             }
