@@ -387,14 +387,15 @@
 
 
 <div id="ferramentas">
-    <img src="imgEditor/bold.svg" title="Colocar em Negrito" onClick="negrito()" />
-    <img src="imgEditor/italic.svg" title="Colocar em Itálico" onClick="italico()" />
-    <img src="imgEditor/underline.svg" title="Colocar em Sublinhado" onClick="sublinhado()" />
-    <img src="imgEditor/strikeout.svg" title="Adicionar linha riscada" onClick="addStrikeThrough()" />
-    <img src="imgEditor/alignright.svg" title="Alinhar a direita" onClick="alinharDireita()" />
-    <img src="imgEditor/alignleft.svg" title="Alinhar a esquerda" onClick="alinharEsquerda()" />
-    <img src="imgEditor/alignhorizontalcenter.svg" title="Centralizar" onClick="alinharCentro()" />
-    <img src="imgEditor/alignblock.svg" title="Justificar" onClick="justificar()" />
+    <!-- <button id="testeSel" onclick="selectElem()">Sel</button> -->
+    <img src="imgEditor/bold.svg" title="Colocar em Negrito" onClick="negrito(), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" unselectable="on" spaw_state="true" id="negrito" />
+    <img src="imgEditor/italic.svg" title="Colocar em Itálico" onClick="italico(), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="italico" />
+    <img src="imgEditor/underline.svg" title="Colocar em Sublinhado" onClick="sublinhado(), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="sublinhado" />
+    <img src="imgEditor/strikeout.svg" title="Adicionar linha riscada" onClick="addStrikeThrough(), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="strike" />
+    <img src="imgEditor/alignright.svg" title="Alinhar a direita" onClick="alinharDireita(), this.setAttribute('style', 'background-color:#cdcdcd;')" />
+    <img src="imgEditor/alignleft.svg" title="Alinhar a esquerda" onClick="alinharEsquerda(), this.setAttribute('style', 'background-color:#cdcdcd;')" />
+    <img src="imgEditor/alignhorizontalcenter.svg" title="Centralizar" onClick="alinharCentro(), this.setAttribute('style', 'background-color:#cdcdcd;')" />
+    <img src="imgEditor/alignblock.svg" title="Justificar" onClick="justificar(), this.setAttribute('style', 'background-color:#cdcdcd;')" />
     <select name="tamFont" id="tamFont">
         <?php
             for($i=1; $i<8; $i++){
@@ -434,8 +435,8 @@
     <img src="imgEditor/backcolor.svg" title="Cor de destaque do texto" onClick="openWindowsColorDestText()" />
 
     <img src="imgEditor/resetattributes.svg" title="Remover formatação" onClick="removeFormatT()" />
-    <img src="imgEditor/subscript.svg" title="Colocar em subescrito" onClick="addSubScript()" />
-    <img src="imgEditor/superscript.svg" title="Colocar em superescrito" onClick="addSuperScript()" />
+    <img src="imgEditor/subscript.svg" title="Colocar em subescrito" onClick="addSubScript(), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="subescrito" />
+    <img src="imgEditor/superscript.svg" title="Colocar em superescrito" onClick="addSuperScript(), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="superescrito" />
     <img src="imgEditor/changecasetoupper.svg" title="Deixar texto em caixa alta" onClick='insertTag("span", "style=\"text-transform:uppercase;\"")' />
     <img src="imgEditor/changecasetolower.svg" title="Deixar texto em caixa baixa" onClick='insertTag("span", "style=\"text-transform:lowercase;\"")' />
     <img src="imgEditor/capitalize.svg" title="Deixar iniciais das palavras em caixa alta" onClick='insertTag("span", "style=\"text-transform:capitalize;\"")' />

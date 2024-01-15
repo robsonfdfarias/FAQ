@@ -42,6 +42,7 @@ function watchColorPicker(event) {
 }*/
 
 
+
 let colorPicker;
 const defaultColor = "#0000ff";
 
@@ -64,6 +65,162 @@ function startup() {
     //colorPicker.addEventListener("change", updateAll, false);
     colorPicker.select();
 }
+
+// function selectElem(){
+//     var range = window.getSelection().getRangeAt(0).toString();
+//     var selecao = window.getSelection().getRangeAt(0).startContainer;
+//     console.log(selecao)
+//     var tag = selecao.parentNode;
+//     console.log(tag);
+//     // tag = tag+'';
+//     console.log(tag.nodeName);
+//     var t = tag.outerHTML;
+//     // t = t.match(/<(.*?)>.*?<\/(.*?)>/g); 
+//     console.log(t)
+//     // console.log('---> '+t.substring(t.indexOf('<'), t.indexOf('>')+1));
+//     // console.log('---> '+t.substring(t.indexOf('</'), t.indexOf('>')+1));
+//     alert(getTagName(tag.nodeName))
+//     let abre = '<'+getTagName(tag.nodeName)+'>';
+//     let fecha = '</'+getTagName(tag.nodeName)+'>';
+//     t = t.replace(abre, '');
+//     t = t.replace(fecha, '');
+//     console.log(t)
+//     // range.insertNode(t);
+//     document.execCommand('insertHTML', true, range)
+//     console.log('+++++++++++++'+range)
+// }
+
+function getTagName(tag){
+    if(tag == 'DIV'){
+        return 'div';
+    }else if(tag=='B'){
+        return 'b';
+    }else if(tag=='RFFEFEITOBGTEXT3'){
+        return 'rffefeitobgtext3';
+    }
+}
+
+/*********************************** MARCAR OS BOTÕES QUE FORAM ATIVADOS INICIO **************************************/
+    var tags = [];
+function selectElem(){
+    console.log('........................................................')
+    console.log(tags)
+    for(let j=1;j<(tags.length-1);j++){
+
+    console.log(tags[j].nodeName)
+        
+        document.getElementById(returnBtName(tags[j].nodeName)).setAttribute('style', 'background-color:none;')
+    }
+    tags = [];
+    // window.open('https://www.google.com', 'janela', 'height=300, width=430, top=50, left=100, scrollbar=no, fullscreen=no')
+    // window.open("https://www.google.com", "info", "height=300, width=430, toolbar=0, location=0, directories=0, status=0, menubar=0, scrollbars=0, resizable=0");
+    console.log('******************************************************************')
+    var selecao = window.getSelection().getRangeAt(0).startContainer;
+    console.log(selecao.parentNode.parentNode)
+    tags.push(selecao)
+    console.log('apos o primeiro push')
+    for(let i=0; i<10; i++){
+            console.log(tags[i].parentNode.nodeName)
+        if(tags[i].parentNode.nodeName=='DIV'){
+            tags.push(tags[i].parentNode)
+            // console.log('está na div')
+            break;
+            // console.log('aqui não é para aparecer')
+        }else{
+            tags.push(tags[i].parentNode)
+        }
+        elementInsert(tags[i].parentNode.nodeName)
+        // f(tags[i].parentNode.nodeName!='DIV'){
+        //     //
+        // }
+    }
+    console.log(tags)
+    var tag = selecao.parentNode;
+    // console.log(getTagName(tag.nodeName))
+    // console.log(tag.nodeName)
+    elementInsert(tag.nodeName);
+}
+function returnBtName(ele){
+    if(ele=='B'){
+        obj='negrito';
+    }else if(ele=='I'){
+        obj='italico';
+    }else if(ele=='STRIKE'){
+        obj='strike';
+    }else if(ele=='U'){
+        obj='sublinhado';
+    }else if(ele=='SUB'){
+        obj='subescrito';
+    }else if(ele=='SUP'){
+        obj='superescrito';
+    }
+    return obj;
+}
+var objEffectSelect = '';
+function elementInsert(ele){
+    // console.log(objEffectSelect)
+    // if(obj!=objEffectSelect && objEffectSelect!==''){
+    //     let m = document.getElementById(objEffectSelect);
+    //     m.setAttribute('style', 'background-color: none;');
+    // }
+    var obj;
+    console.log(ele)
+    if(ele=='B'){
+        obj='negrito';
+        negritaBt(obj)
+        objEffectSelect = obj;
+    }else if(ele=='I'){
+        obj='italico';
+        negritaBt(obj)
+        objEffectSelect = obj;
+    }else if(ele=='STRIKE'){
+        obj='strike';
+        negritaBt(obj)
+        objEffectSelect = obj;
+    }else if(ele=='U'){
+        obj='sublinhado';
+        negritaBt(obj)
+        objEffectSelect = obj;
+    }
+}
+function negritaBt(obj){
+    console.log(obj)
+    var o = document.getElementById(obj);
+    // alert(o.src)
+    o.setAttribute('style', 'background-color: #cdcdcd;')
+}
+
+var quadro = document.getElementById('texto')
+quadro.addEventListener('keydown', function(e){
+    // switch (e.keyCode) {
+    //     case 37:
+    //         str = 'Left Key pressed!';
+    //         break;
+    //     case 38:
+    //         str = 'Up Key pressed!';
+    //         break;
+    //     case 39:
+    //         str = 'Right Key pressed!';
+    //         break;
+    //     case 40:
+    //         str = 'Down Key pressed!';
+    //         break;
+    // }
+    // alert(str)
+    selectElem();
+})
+quadro.addEventListener('mouseup', function(){
+    // alert('Soltou o click')
+    selectElem();
+})
+
+
+
+/*********************************** MARCAR OS BOTÕES QUE FORAM ATIVADOS FIM **************************************/
+
+
+
+
 
 
 

@@ -102,3 +102,17 @@
     </script>
 </body>
 </html>
+
+<div id="pai">
+    Este é o elemento PAI
+    <div id="filho">Este é o elemento FILHO</div>
+</div>
+
+<script>
+    filho = document.getElementById('filho');
+    pai = filho.parentNode;
+    contaFilhos = pai.childElementCount;
+    console.log(pai);
+    console.log(filho);
+    console.log('Número de filhos do elemento PAI: '+contaFilhos);
+</script>
