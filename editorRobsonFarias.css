@@ -139,6 +139,15 @@ rffTextShadow {
     border:1px solid #000;
 }
 
+rffNeonText {
+    text-shadow:0px 0px 4px blue;
+}
+
+rffNeonTextEColorWhite {
+    text-shadow:0px 0px 4px blue;
+    color:#fff;
+}
+
 rffText3D{
     color: #dfdfdf;
     font-size: 150px;

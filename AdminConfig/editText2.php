@@ -169,7 +169,7 @@
     }
 
     #ferramentas img{
-        height: 2rem;
+        height: 40px; /* 2rem; */
         transition: ease-in-out 0.5s;
         border: 0px solid #cfcfcf;
         cursor: pointer;
@@ -387,7 +387,7 @@
 
 
 <div id="ferramentas">
-    <!-- <button id="testeSel" onclick="selectElem()">Sel</button> -->
+    <!-- <button id="testeSel" onclick="delElement()">Sel</button> -->
     <img src="imgEditor/bold.svg" title="Colocar em Negrito" onClick="negrito(), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" unselectable="on" spaw_state="true" id="negrito" />
     <img src="imgEditor/italic.svg" title="Colocar em Itálico" onClick="italico(), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="italico" />
     <img src="imgEditor/underline.svg" title="Colocar em Sublinhado" onClick="sublinhado(), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="sublinhado" />
@@ -404,35 +404,14 @@
         ?>
         <option value="padrao" name="padrao" id="padrao" disabled selected>Size</option>
     </select>
-    <img src="imgEditor/copy.svg" title="Copiar" onClick="copiar()" />
-    <img src="imgEditor/paste.svg" title="Colar" onClick="colar()" />
-    <img src="imgEditor/cut.svg" title="Recortar" onClick="recortar()" />
+    
     <img src="imgEditor/defaultbullet.svg" title="Marcador" onClick="unOrdenarLista()" />
     <img src="imgEditor/defaultnumbering.svg" title="Numeração" onClick="ordenarLista()" />
-    <img src="imgEditor/redo.svg" title="Refazer" onClick="refazer()" />
-    <img src="imgEditor/undo.svg" title="Desfazer" onClick="desfazer()" />
-    <img src="imgEditor/insertvideo.svg" title="Inserir Vídeo" onClick="openWindowInsertVideo()" />
-    <img src="imgEditor/graphic.svg" title="Inserir Imagem" onClick="openWindowInsertImage()" />
-    <img src="imgEditor/editImage.svg" title="Acrescentar a função de editar as imagens" onClick="funcBtImg()" />
-    <img src="imgEditor/inserttable.svg" title="Inserir tabela" onClick="insertTable()" />
-
-    <div id="divCorText">
-        <div id="topCorText">
-            <div id="tituloCorText">Escolha a cor do texto</div>
-            <div id="fecharDivCorText" onclick="closeWindowsColorText()">X</div>
-        </div>
-        <input type="color" id="cores" onClick="cor()" />
-    </div>
-    <img src="imgEditor/color.svg" title="Mudar a cor do texto" onclick="openWindowsColorText()" />
     
-    <div id="divCorDestText">
-        <div id="topCorDestText">
-            <div id="tituloCorDestText">Escolha a cor do texto</div>
-            <div id="fecharDivCorDestText" onclick="closeWindowsColorDestText()">X</div>
-        </div>
-        <input type="color" id="coresDestaque" onClick="backColorText()" />
-    </div>
-    <img src="imgEditor/backcolor.svg" title="Cor de destaque do texto" onClick="openWindowsColorDestText()" />
+
+    <img src="imgEditor/color.svg" title="Mudar a cor do texto" onclick="window.open('windowColorText.php', 'janela', 'height=350, width=500, top=50, left=100, scrollbar=no, fullscreen=no')" />
+    
+    <img src="imgEditor/backcolor.svg" title="Cor de destaque do texto" onClick="window.open('windowColorBackGroundText.php', 'janela', 'height=350, width=500, top=50, left=100, scrollbar=no, fullscreen=no')" />
 
     <img src="imgEditor/resetattributes.svg" title="Remover formatação" onClick="removeFormatT()" />
     <img src="imgEditor/subscript.svg" title="Colocar em subescrito" onClick="addSubScript(), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="subescrito" />
@@ -441,19 +420,16 @@
     <img src="imgEditor/changecasetolower.svg" title="Deixar texto em caixa baixa" onClick='insertTag("span", "style=\"text-transform:lowercase;\"")' />
     <img src="imgEditor/capitalize.svg" title="Deixar iniciais das palavras em caixa alta" onClick='insertTag("span", "style=\"text-transform:capitalize;\"")' />
     <img src="imgEditor/capitular.svg" title="Inserir capitular" onClick='insertTag("p", "class=\"p\"")' />
-    <img src="imgEditor/insertShadowText.svg" title="Inserir sombra no texto" onClick="insertTagsNew('rffTextShadow')" />
-    <img src="imgEditor/insertNeonText.svg" title="Inserir um neon no texto" onClick='insertTag("span", "style=\"text-shadow:0px 0px 4px blue;\"")' />
-    <img src="imgEditor/insertNeonTextEColorWhite.svg" title="Inserir um neon no texto e deixar o texto transparente" onClick='insertTag("span", "style=\"text-shadow:0px 0px 4px blue; color:#fff;\"")' />
+    <img src="imgEditor/insertShadowText.svg" title="Inserir sombra no texto" onClick="insertTagsNew('rffTextShadow'), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="rffTextShadow" />
+    <img src="imgEditor/insertNeonText.svg" title="Inserir um neon no texto" onClick="insertTagsNew('rffNeonText'), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="rffNeonText" />
+    <img src="imgEditor/insertNeonTextEColorWhite.svg" title="Inserir um neon no texto e deixar o texto transparente" onClick="insertTagsNew('rffNeonTextEColorWhite'), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="rffNeonTextEColorWhite" />
     
-    <img src="imgEditor/inserthyperlinkcontrol.svg" title="Inserir hiperlink" onClick="openWindowLink()" />
-    <img src="imgEditor/removehyperlink.svg" title="Remover hiperlink" onClick="unlink()" />
-    <img src="imgEditor/rffText3D.svg" title="rffText3D" onClick="insertTagsNew('rffText3D')" />
-    <img src="imgEditor/rffTextSimples.svg" title="rffText3DSimples" onClick="insertTagsNew('rffText3DSimples')" />
-    <img src="imgEditor/rffTextExtreme.svg" title="rffText3DExtreme" onClick="insertTagsNew('rffText3DExtreme')" />
-    <img src="imgEditor/rffTextDegrade.svg" title="rffTextDegrade" onClick="insertTagsNew('rffTextDegrade')" />
+    
+    <img src="imgEditor/rffText3D.svg" title="rffText3D" onClick="insertTagsNew('rffText3D'), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="rffText3D" />
+    <img src="imgEditor/rffTextSimples.svg" title="rffText3DSimples" onClick="insertTagsNew('rffText3DSimples'), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="rffText3DSimples" />
+    <img src="imgEditor/rffTextExtreme.svg" title="rffText3DExtreme" onClick="insertTagsNew('rffText3DExtreme'), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="rffText3DExtreme" />
+    <img src="imgEditor/rffTextDegrade.svg" title="rffTextDegrade" onClick="insertTagsNew('rffTextDegrade'), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="rffTextDegrade" />
     <img src="imgEditor/coroa2.svg" title="rffEfeitoBGText" onClick="abreJanEfeitosTexto()" />
-    <img src="imgEditor/emotions.svg" title="Inserir emotions" style="width:40px; height:auto;" onClick="abreJanEmotions()" />
-    <img src="imgEditor/citacao.png" title="Inserir uma citação" onClick="insertTagsNew('cite')" />
     
     <select name="formatH" id="formatH">
         <option value="h1">H1</option>
@@ -465,6 +441,25 @@
     </select>
     <img src="imgEditor/hangingindent.svg" title="Identar linha" onClick="addIdent()" />
     <img src="imgEditor/hangingindentremove.svg" title="Remove a identação" onClick="addOutIdent()" />
+
+    <img src="imgEditor/copy.svg" title="Copiar" onClick="copiar()" />
+    <img src="imgEditor/paste.svg" title="Colar" onClick="colar()" />
+    <img src="imgEditor/cut.svg" title="Recortar" onClick="recortar()" />
+
+    <img src="imgEditor/redo.svg" title="Refazer" onClick="refazer()" />
+    <img src="imgEditor/undo.svg" title="Desfazer" onClick="desfazer()" />
+    <img src="imgEditor/insertvideo.svg" title="Inserir Vídeo" onClick="openWindowInsertVideo()" />
+    <img src="imgEditor/graphic.svg" title="Inserir Imagem" onClick="openWindowInsertImage()" />
+    <img src="imgEditor/editImage.svg" title="Acrescentar a função de editar as imagens" onClick="funcBtImg()" />
+    <img src="imgEditor/inserttable.svg" title="Inserir tabela" onClick="insertTable()" />
+
+    <img src="imgEditor/inserthyperlinkcontrol.svg" title="Inserir hiperlink" onClick="openWindowLink(), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="insertHyperLink" />
+    <img src="imgEditor/removehyperlink.svg" title="Remover hiperlink" onClick="unlink()" />
+
+    <img src="imgEditor/emotions.svg" title="Inserir emotions" style="width:40px; height:auto;" onClick="abreJanEmotions()" />
+    <img src="imgEditor/citacao.png" title="Inserir uma citação" onClick="insertTagsNew('cite'), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="cite" />
+    
+
 </div>
 <div id="texto" contenteditable="true" autofocus required autocomplete="off" spellcheck="true">Digite o seu artigo aqui...</div>
 

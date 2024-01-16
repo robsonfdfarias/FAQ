@@ -141,8 +141,12 @@
 
 <script src="upload.js"></script>
 <script>
+
+    var link = document.getElementById("link");
+    var targ = document.getElementById("targets");
+    link.value = localStorage.getItem('link');
+    targ.value = localStorage.getItem('target');
     function inserirLink(){
-        var link = document.getElementById("link");
         
         if(link != null && link != ''){
             var targets = document.getElementById("targets");

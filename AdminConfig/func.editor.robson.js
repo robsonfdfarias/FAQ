@@ -66,6 +66,11 @@ function startup() {
     colorPicker.select();
 }
 
+
+
+
+/*********************************** EXCLUIR TAG (EFEITO) INICIO **************************************/
+
 // function selectElem(){
 //     var range = window.getSelection().getRangeAt(0).toString();
 //     var selecao = window.getSelection().getRangeAt(0).startContainer;
@@ -90,37 +95,138 @@ function startup() {
 //     console.log('+++++++++++++'+range)
 // }
 
+function delElement(){
+    // console.log(',,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,')
+    // var range = window.getSelection().getRangeAt(0).toString();
+    var range = window.getSelection().getRangeAt(0);
+    var selecao = window.getSelection().getRangeAt(0).startContainer;
+    // console.log(selecao)
+    var tag = selecao.parentNode;
+    // console.log(tag);
+    // console.log(tag.nodeName);
+    let pai = tag.parentNode;
+    let p = pai.outerHTML;
+    // pai.removeChild(tag)
+    var t = tag.outerHTML;
+    // console.log(t)
+    let abre = '<'+getTagName(tag.nodeName)+'>';
+    let fecha = '</'+getTagName(tag.nodeName)+'>';
+    // t = t.replace(abre, '');
+    // t = t.replace(fecha, '');
+    p = p.replace(abre, '');
+    p = p.replace(fecha, '');
+
+    abre = '<'+getTagName(pai.nodeName)+'>';
+    fecha = '</'+getTagName(pai.nodeName)+'>';
+    // t = t.replace(abre, '');
+    // t = t.replace(fecha, '');
+    p = p.replace(abre, '');
+    p = p.replace(fecha, '');
+    // console.log(p)
+    pai.innerHTML = p
+    // document.execCommand('insertHTML', true, pai)
+    range.insertNode(pai);
+}
+
 function getTagName(tag){
     if(tag == 'DIV'){
         return 'div';
     }else if(tag=='B'){
         return 'b';
+    }else if(tag=='RFFEFEITOBGTEXT1'){
+        return 'rffefeitobgtext1';
+    }else if(tag=='RFFEFEITOBGTEXT2'){
+        return 'rffefeitobgtext2';
     }else if(tag=='RFFEFEITOBGTEXT3'){
         return 'rffefeitobgtext3';
+    }else if(tag=='RFFEFEITOBGTEXT4'){
+        return 'rffefeitobgtext4';
+    }else if(tag=='RFFEFEITOBGTEXT5'){
+        return 'rffefeitobgtext5';
+    }else if(tag=='RFFEFEITOBGTEXT6'){
+        return 'rffefeitobgtext6';
+    }else if(tag=='RFFEFEITOBGTEXT7'){
+        return 'rffefeitobgtext7';
+    }else if(tag=='RFFEFEITOBGTEXT8'){
+        return 'rffefeitobgtext8';
+    }else if(tag=='RFFEFEITOBGTEXT9'){
+        return 'rffefeitobgtext9';
+    }else if(tag=='RFFEFEITOBGTEXT10'){
+        return 'rffefeitobgtext10';
+    }else if(tag=='RFFEFEITOBGTEXT11'){
+        return 'rffefeitobgtext11';
+    }else if(tag=='RFFEFEITOBGTEXT12'){
+        return 'rffefeitobgtext12';
+    }else if(tag=='RFFEFEITOBGTEXT13'){
+        return 'rffefeitobgtext13';
+    }else if(tag=='RFFEFEITOBGTEXT14'){
+        return 'rffefeitobgtext14';
+    }else if(tag=='RFFEFEITOBGTEXT15'){
+        return 'rffefeitobgtext15';
+    }else if(tag=='RFFEFEITOBGTEXT16'){
+        return 'rffefeitobgtext16';
+    }else if(tag=='RFFEFEITOBGTEXT17'){
+        return 'rffefeitobgtext17';
+    }else if(tag=='RFFEFEITOBGTEXT18'){
+        return 'rffefeitobgtext18';
+    }else if(tag=='RFFEFEITOBGTEXT19'){
+        return 'rffefeitobgtext19';
+    }else if(tag=='RFFEFEITOBGTEXT20'){
+        return 'rffefeitobgtext20';
+    }else if(tag=='RFFEFEITOBGTEXT21'){
+        return 'rffefeitobgtext21';
+    }else if(tag=='RFFTEXTSHADOW'){
+        return 'rfftextshadow';
+    }else if(tag=='RFFNEONTEXT'){
+        return 'rffneontext';
+    }else if(tag=='RFFNEONTEXTECOLORWHITE'){
+        return 'rffneontextecolorwhite';
+    }else if(tag=='RFFTEXT3D'){
+        return 'rfftext3d';
+    }else if(tag=='RFFTEXT3DSIMPLES'){
+        return 'rfftext3dsimples';
+    }else if(tag=='RFFTEXT3DEXTREME'){
+        return 'rfftext3dextreme';
+    }else if(tag=='RFFTEXTDEGRADE'){
+        return 'rfftextdegrade';
+    }else if(tag=='CITE'){
+        return 'cite';
+    }else if(tag=='A'){
+        return 'a';
     }
 }
+
+function getTags(){
+    var selecao = window.getSelection().getRangeAt(0).startContainer;
+    // console.log(selecao)
+    var tag = selecao.parentNode;
+    console.log('111111111111111111111111-------------'+tag.nodeName)
+    return getTagName(tag.nodeName)
+}
+
+/*********************************** EXCLUIR TAG (EFEITO) INICIO **************************************/
+
+
 
 /*********************************** MARCAR OS BOTÕES QUE FORAM ATIVADOS INICIO **************************************/
     var tags = [];
 function selectElem(){
-    console.log('........................................................')
-    console.log(tags)
+    // console.log('........................................................')
+    // console.log(tags)
     for(let j=1;j<(tags.length-1);j++){
 
-    console.log(tags[j].nodeName)
+    // console.log(tags[j].nodeName)
         
         document.getElementById(returnBtName(tags[j].nodeName)).setAttribute('style', 'background-color:none;')
     }
     tags = [];
-    // window.open('https://www.google.com', 'janela', 'height=300, width=430, top=50, left=100, scrollbar=no, fullscreen=no')
-    // window.open("https://www.google.com", "info", "height=300, width=430, toolbar=0, location=0, directories=0, status=0, menubar=0, scrollbars=0, resizable=0");
-    console.log('******************************************************************')
+    // console.log('******************************************************************')
     var selecao = window.getSelection().getRangeAt(0).startContainer;
-    console.log(selecao.parentNode.parentNode)
+    // console.log(selecao.parentNode.parentNode)
     tags.push(selecao)
-    console.log('apos o primeiro push')
+    // console.log('apos o primeiro push')
     for(let i=0; i<10; i++){
-            console.log(tags[i].parentNode.nodeName)
+            // console.log(tags[i].parentNode.nodeName)
         if(tags[i].parentNode.nodeName=='DIV'){
             tags.push(tags[i].parentNode)
             // console.log('está na div')
@@ -129,18 +235,16 @@ function selectElem(){
         }else{
             tags.push(tags[i].parentNode)
         }
-        elementInsert(tags[i].parentNode.nodeName)
-        // f(tags[i].parentNode.nodeName!='DIV'){
-        //     //
-        // }
+        elementInsert(tags[i].parentNode.nodeName, tags[i].parentNode)
     }
     console.log(tags)
-    var tag = selecao.parentNode;
+    // var tag = selecao.parentNode;
     // console.log(getTagName(tag.nodeName))
     // console.log(tag.nodeName)
-    elementInsert(tag.nodeName);
+    // elementInsert(tag.nodeName);
 }
-function returnBtName(ele){
+function returnBtName(ele, node){
+    console.log('-----............-----'+ele)
     if(ele=='B'){
         obj='negrito';
     }else if(ele=='I'){
@@ -153,38 +257,37 @@ function returnBtName(ele){
         obj='subescrito';
     }else if(ele=='SUP'){
         obj='superescrito';
+    }else if(ele=='RFFTEXTSHADOW'){
+        obj='rffTextShadow';
+    }else if(ele=='RFFNEONTEXT'){
+        obj='rffNeonText';
+    }else if(ele=='RFFNEONTEXTECOLORWHITE'){
+        obj='rffNeonTextEColorWhite';
+    }else if(ele=='RFFTEXT3D'){
+        obj='rffText3D';
+    }else if(ele=='RFFTEXT3DSIMPLES'){
+        obj='rffText3DSimples';
+    }else if(ele=='RFFTEXT3DEXTREME'){
+        obj='rffText3DExtreme';
+    }else if(ele=='RFFTEXTDEGRADE'){
+        obj='rffTextDegrade';
+    }else if(ele=='CITE'){
+        obj='cite';
+    }else if(ele=='A'){
+        obj='insertHyperLink';
     }
     return obj;
 }
-var objEffectSelect = '';
+
 function elementInsert(ele){
-    // console.log(objEffectSelect)
-    // if(obj!=objEffectSelect && objEffectSelect!==''){
-    //     let m = document.getElementById(objEffectSelect);
-    //     m.setAttribute('style', 'background-color: none;');
-    // }
     var obj;
-    console.log(ele)
-    if(ele=='B'){
-        obj='negrito';
-        negritaBt(obj)
-        objEffectSelect = obj;
-    }else if(ele=='I'){
-        obj='italico';
-        negritaBt(obj)
-        objEffectSelect = obj;
-    }else if(ele=='STRIKE'){
-        obj='strike';
-        negritaBt(obj)
-        objEffectSelect = obj;
-    }else if(ele=='U'){
-        obj='sublinhado';
-        negritaBt(obj)
-        objEffectSelect = obj;
-    }
+    // console.log(ele)
+    obj = returnBtName(ele);
+    negritaBt(obj)
+
 }
 function negritaBt(obj){
-    console.log(obj)
+    // console.log(obj)
     var o = document.getElementById(obj);
     // alert(o.src)
     o.setAttribute('style', 'background-color: #cdcdcd;')
@@ -210,7 +313,6 @@ quadro.addEventListener('keydown', function(e){
     selectElem();
 })
 quadro.addEventListener('mouseup', function(){
-    // alert('Soltou o click')
     selectElem();
 })
 
@@ -233,17 +335,31 @@ function insertVi(){
 
 
 function openWindowLink(){
-    window.open("windowInsertLink.php");
+    var selecao = window.getSelection().getRangeAt(0).startContainer;
+    // console.log(selecao)
+    var tag = selecao.parentNode;
+    console.log('555555555555555555555555-------------'+tag.nodeName)
+    if(tag.nodeName=='A'){
+        console.log(tag.getAttribute('href'))
+        console.log(tag.getAttribute('target'))
+        localStorage.setItem('link', tag.getAttribute('href'))
+        localStorage.setItem('target', tag.getAttribute('target'))
+        window.open('windowEditLink.php', 'janela', 'height=350, width=500, top=50, left=100, scrollbar=no, fullscreen=no');
+    }else{
+        window.open("windowInsertLink.php", 'janela', 'height=350, width=500, top=50, left=100, scrollbar=no, fullscreen=no');
+    }
 }
 
 function link(link, target) {
     //document.execCommand("createLink", true, "https://www.google.com");
     //document.execCommand("createLink", true, link);
+    console.log(target)
     selection = window.getSelection().toString();
     var link = '<a href="'+link+'"'+target+'>'+selection+'</a>';
     document.execCommand("insertHTML", true, link);
 }
 function unlink() {
+    selectElem();
     document.execCommand("unlink", false, null);
 }
 function justificar() {
@@ -277,6 +393,14 @@ function cor() {
 function backColorText() {
     var cores = document.getElementById('coresDestaque');
     document.execCommand("backColor", window.getSelection(), cores.value);
+}
+
+function corText(cor) {
+    document.execCommand("foreColor", window.getSelection(), '#'+cor);
+}
+
+function backColorTextNew(color) {
+    document.execCommand("backColor", window.getSelection(), '#'+color);
 }
 
 function tamanhoFont(size) {
@@ -341,15 +465,22 @@ function teste(){
 
 function tagRffTextShadow() {
     selection = window.getSelection().toString();
-    console.log(selection)
+    // console.log(selection)
     wrappedselection = '<rffTextShadow>' + selection + '</rffTextShadow>';
     //var img = new Image();
     document.execCommand('insertHTML', false, wrappedselection);
 }
 
 function insertTagsNew(valor) {
+    if(valor.toLowerCase() == getTags()){
+        // alert(valor)
+        document.getElementById(valor).setAttribute('style', 'background-color:none;');
+        // selectElem();
+        delElement();
+        exit;
+    }
     selection = window.getSelection().toString();
-    console.log(selection)
+    // console.log(selection)
     wrappedselection = '<'+valor+'>' + selection + '</'+valor+'>';
     //var img = new Image();
     document.execCommand('insertHTML', false, wrappedselection);
@@ -357,7 +488,7 @@ function insertTagsNew(valor) {
 
 function insertTag(valor, style) {
     selection = window.getSelection().toString();
-    console.log(selection)
+    // console.log(selection)
     wrappedselection = '<'+valor+' '+style+'>' + selection + '</'+valor+'>';
     //var img = new Image();
     document.execCommand('insertHTML', false, wrappedselection);
