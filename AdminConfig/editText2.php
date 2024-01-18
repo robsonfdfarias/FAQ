@@ -12,6 +12,35 @@
         margin:0px;
     }
 
+
+    #typefontface option:nth-child(2){
+        font-family: 'monospace';
+    }
+
+    #typefontface option:nth-child(3){
+        font-family: 'Arial';
+    }
+
+    #typefontface option:nth-child(4){
+        font-family: 'Courier';
+    }
+
+    #typefontface option:nth-child(5){
+        font-family: 'Verdana';
+    }
+
+    #typefontface option:nth-child(6){
+        font-family: 'Tahoma';
+    }
+
+    #typefontface option:nth-child(7){
+        font-family: 'Inter';
+    }
+
+    #typefontface option:nth-child(8){
+        font-family: 'Bebas Neue';
+    }
+
     #texto{
         min-height: 300px;
         width: calc(100%-20px);
@@ -170,16 +199,17 @@
 
     #ferramentas img{
         height: 40px; /* 2rem; */
-        transition: ease-in-out 0.5s;
+        transition: ease-in-out 0.2s;
         border: 0px solid #cfcfcf;
         cursor: pointer;
+        margin:4px 2px;
     }
     
     #ferramentas img:hover{ 
         /* height: 2.2rem; */
         /* filter: invert(25%) sepia(11%) saturate(4040%) hue-rotate(99deg) brightness(93%) contrast(91%); */
         /* border: 1px solid #cfcfcf; */
-        transition: ease-in-out 0.5s;
+        transition: ease-in-out 0.2s;
     }
     .p::first-letter {
         font-size: 2.5rem;
@@ -387,7 +417,21 @@
 
 
 <div id="ferramentas">
-    <!-- <button id="testeSel" onclick="delElement()">Sel</button> -->
+    <!-- <button id="testeSel" onclick="delElement()">Sel</button>
+    <button id="testeSel" onclick="delTr()">delTr</button> -->
+    <!-- <button id="testeSel" onclick="fontFaceSel('monospace')">corrie</button> -->
+    <select name="typefontface" id="typefontface">
+        <option value="padrao" name="padrao" id="padrao"  disabled selected>Font</option>
+        <option value="monospace" name="monospace" id="monospace">Monospace</option>
+        <option value="Arial" name="Arial" id="Arial">Arial</option>
+        <option value="Courier" name="Courier" id="Courier">Courier</option>
+        <option value="Verdana" name="Verdana" id="Verdana">Verdana</option>
+        <option value="Tahoma" name="Tahoma" id="Tahoma">Tahoma</option>
+        <option value="Inter" name="Inter" id="Inter">Inter</option>
+        <option value="Bebas Neue" name="Bebas Neue" id="Bebas Neue">Bebas Neue</option>
+    </select>
+    
+
     <img src="imgEditor/bold.svg" title="Colocar em Negrito" onClick="negrito(), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" unselectable="on" spaw_state="true" id="negrito" />
     <img src="imgEditor/italic.svg" title="Colocar em Itálico" onClick="italico(), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="italico" />
     <img src="imgEditor/underline.svg" title="Colocar em Sublinhado" onClick="sublinhado(), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="sublinhado" />
@@ -399,7 +443,7 @@
     <select name="tamFont" id="tamFont">
         <?php
             for($i=1; $i<8; $i++){
-                echo '<option value="'.$i.'">'.$i.'</option>';
+                echo '<option value="'.$i.'"  name="'.$i.'" id="'.$i.'">'.$i.'</option>';
             }
         ?>
         <option value="padrao" name="padrao" id="padrao" disabled selected>Size</option>
@@ -419,7 +463,7 @@
     <img src="imgEditor/changecasetoupper.svg" title="Deixar texto em caixa alta" onClick='insertTag("span", "style=\"text-transform:uppercase;\"")' />
     <img src="imgEditor/changecasetolower.svg" title="Deixar texto em caixa baixa" onClick='insertTag("span", "style=\"text-transform:lowercase;\"")' />
     <img src="imgEditor/capitalize.svg" title="Deixar iniciais das palavras em caixa alta" onClick='insertTag("span", "style=\"text-transform:capitalize;\"")' />
-    <img src="imgEditor/capitular.svg" title="Inserir capitular" onClick='insertTag("p", "class=\"p\"")' />
+    <img src="imgEditor/capitular.svg" title="Inserir capitular" onClick='insertTag("p", "class=\"p\""), this.setAttribute("style", "background-color:#cdcdcd;"), selectElem()' id="p" />
     <img src="imgEditor/insertShadowText.svg" title="Inserir sombra no texto" onClick="insertTagsNew('rffTextShadow'), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="rffTextShadow" />
     <img src="imgEditor/insertNeonText.svg" title="Inserir um neon no texto" onClick="insertTagsNew('rffNeonText'), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="rffNeonText" />
     <img src="imgEditor/insertNeonTextEColorWhite.svg" title="Inserir um neon no texto e deixar o texto transparente" onClick="insertTagsNew('rffNeonTextEColorWhite'), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="rffNeonTextEColorWhite" />
@@ -452,6 +496,12 @@
     <img src="imgEditor/graphic.svg" title="Inserir Imagem" onClick="openWindowInsertImage()" />
     <img src="imgEditor/editImage.svg" title="Acrescentar a função de editar as imagens" onClick="funcBtImg()" />
     <img src="imgEditor/inserttable.svg" title="Inserir tabela" onClick="insertTable()" />
+    <img src="imgEditor/inserttableColumnAfter.svg" title="Inserir coluna depois da coluna selecionada" onClick="insertTdAfter()" unselectable="on" spaw_state="true"/>
+    <img src="imgEditor/inserttableColumnBefore.svg" title="Inserir coluna antes da coluna selecionada" onClick="insertTdBefore()" unselectable="on" spaw_state="true"/>
+    <img src="imgEditor/inserttableRowAfter.svg" title="Inserir linha depois da linha selecionada" onClick="insertTrAfter()" unselectable="on" spaw_state="true"/>
+    <img src="imgEditor/inserttableRowBefore.svg" title="Inserir linha antes da linha selecionada" onClick="insertTrBefore()" unselectable="on" spaw_state="true"/>
+    <img src="imgEditor/deleteTableColumn.svg" title="Excluir coluna selecionada" onClick="delTd()" unselectable="on" spaw_state="true"/>
+    <img src="imgEditor/deleteTableRowAfter.svg" title="Excluir linha selecionada" onClick="delTr()" unselectable="on" spaw_state="true"/>
 
     <img src="imgEditor/inserthyperlinkcontrol.svg" title="Inserir hiperlink" onClick="openWindowLink(), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="insertHyperLink" />
     <img src="imgEditor/removehyperlink.svg" title="Remover hiperlink" onClick="unlink()" />

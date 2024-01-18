@@ -25,6 +25,19 @@
         /*document.getElementById('value').textContent = 'value = ' + value;
         document.getElementById('param').textContent = 'data-param = ' + param;*/
     });
+    document.getElementById('typefontface').addEventListener('change', function() {
+        var selectedOption = this.children[this.selectedIndex];
+        console.log(selectedOption)
+        var value = this.value;
+        var param = selectedOption.getAttribute("data-param");
+        fontFaceSel(value)
+        console.log(value)
+        console.log(param)
+        // this.children['padrao'].selected = true;
+
+        /*document.getElementById('value').textContent = 'value = ' + value;
+        document.getElementById('param').textContent = 'data-param = ' + param;*/
+    });
 })();
 
 
@@ -96,7 +109,7 @@ function startup() {
 // }
 
 function delElement(){
-    // console.log(',,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,')
+    // console.log('////////////////////////////////////////////////////////////')
     // var range = window.getSelection().getRangeAt(0).toString();
     var range = window.getSelection().getRangeAt(0);
     var selecao = window.getSelection().getRangeAt(0).startContainer;
@@ -109,8 +122,18 @@ function delElement(){
     // pai.removeChild(tag)
     var t = tag.outerHTML;
     // console.log(t)
-    let abre = '<'+getTagName(tag.nodeName)+'>';
-    let fecha = '</'+getTagName(tag.nodeName)+'>';
+
+    let abre = '';
+    let fecha = '';
+    if(getTagName(tag.nodeName)=='p'){
+        abre = '<'+getTagName(tag.nodeName)+' class="p">';
+        fecha = '</'+getTagName(tag.nodeName)+'>';
+        console.log('era para ter pego o class '+tag.nodeName)
+    }else{
+        abre = '<'+getTagName(tag.nodeName)+'>';
+        fecha = '</'+getTagName(tag.nodeName)+'>';
+    }
+    // console.log('--->>'+getTagName(tag.nodeName))
     // t = t.replace(abre, '');
     // t = t.replace(fecha, '');
     p = p.replace(abre, '');
@@ -122,7 +145,6 @@ function delElement(){
     // t = t.replace(fecha, '');
     p = p.replace(abre, '');
     p = p.replace(fecha, '');
-    // console.log(p)
     pai.innerHTML = p
     // document.execCommand('insertHTML', true, pai)
     range.insertNode(pai);
@@ -193,6 +215,8 @@ function getTagName(tag){
         return 'cite';
     }else if(tag=='A'){
         return 'a';
+    }else if(tag=='P'){
+        return 'p';
     }
 }
 
@@ -200,7 +224,7 @@ function getTags(){
     var selecao = window.getSelection().getRangeAt(0).startContainer;
     // console.log(selecao)
     var tag = selecao.parentNode;
-    console.log('111111111111111111111111-------------'+tag.nodeName)
+    // console.log('111111111111111111111111-------------'+tag.nodeName)
     return getTagName(tag.nodeName)
 }
 
@@ -213,12 +237,18 @@ function getTags(){
 function selectElem(){
     // console.log('........................................................')
     // console.log(tags)
-    for(let j=1;j<(tags.length-1);j++){
+        let selFont = document.getElementById('typefontface');
+        selFont.children['padrao'].selected = true;
 
+        selFont = document.getElementById('tamFont');
+        selFont.children['padrao'].selected = true;
+    for(let j=1;j<(tags.length-1);j++){
     // console.log(tags[j].nodeName)
-        
-        document.getElementById(returnBtName(tags[j].nodeName)).setAttribute('style', 'background-color:none;')
+        if(tags[j].nodeName!='FONT'){
+            document.getElementById(returnBtName(tags[j].nodeName)).setAttribute('style', 'background-color:none;')
+        }
     }
+
     tags = [];
     // console.log('******************************************************************')
     var selecao = window.getSelection().getRangeAt(0).startContainer;
@@ -237,14 +267,18 @@ function selectElem(){
         }
         elementInsert(tags[i].parentNode.nodeName, tags[i].parentNode)
     }
-    console.log(tags)
+    // let testafont = selecao.parentNode;
+    // console.log('++++++++++++++++++'+testafont.nodeName)
+    // if(testafont.nodeName=='FONT'){
+    // }
+    // console.log(tags)
     // var tag = selecao.parentNode;
     // console.log(getTagName(tag.nodeName))
     // console.log(tag.nodeName)
     // elementInsert(tag.nodeName);
 }
 function returnBtName(ele, node){
-    console.log('-----............-----'+ele)
+    // console.log('-----............-----'+ele)
     if(ele=='B'){
         obj='negrito';
     }else if(ele=='I'){
@@ -275,22 +309,41 @@ function returnBtName(ele, node){
         obj='cite';
     }else if(ele=='A'){
         obj='insertHyperLink';
+    }else if(ele=='P'){
+        obj='p';
+    }else if(ele=='FONT'){
+        obj='font';
     }
     return obj;
 }
 
-function elementInsert(ele){
+function elementInsert(ele, nodeEl){
     var obj;
     // console.log(ele)
     obj = returnBtName(ele);
-    negritaBt(obj)
+    negritaBt(obj, nodeEl)
 
 }
-function negritaBt(obj){
+function negritaBt(obj, nodeEl){
     // console.log(obj)
-    var o = document.getElementById(obj);
-    // alert(o.src)
-    o.setAttribute('style', 'background-color: #cdcdcd;')
+    if(obj=='font'){
+        if(nodeEl.getAttribute('face')!=null){
+            console.log('O tipo da fonte é: '+nodeEl.getAttribute('face'))
+            let selFont = document.getElementById('typefontface');
+            selFont.children[nodeEl.getAttribute('face')].selected = true;
+        }
+        if(nodeEl.getAttribute('size')!=null){
+            console.log('O tipo da fonte é: '+nodeEl.getAttribute('size'))
+            let selFont = document.getElementById('tamFont');
+            let n =  nodeEl.getAttribute('size');
+            n=n-1;
+            selFont.children[n].selected = true;
+        }
+    }else{
+        var o = document.getElementById(obj);
+        // alert(o.src)
+        o.setAttribute('style', 'background-color: #cdcdcd;')
+    }
 }
 
 var quadro = document.getElementById('texto')
@@ -338,10 +391,10 @@ function openWindowLink(){
     var selecao = window.getSelection().getRangeAt(0).startContainer;
     // console.log(selecao)
     var tag = selecao.parentNode;
-    console.log('555555555555555555555555-------------'+tag.nodeName)
+    // console.log('555555555555555555555555-------------'+tag.nodeName)
     if(tag.nodeName=='A'){
-        console.log(tag.getAttribute('href'))
-        console.log(tag.getAttribute('target'))
+        // console.log(tag.getAttribute('href'))
+        // console.log(tag.getAttribute('target'))
         localStorage.setItem('link', tag.getAttribute('href'))
         localStorage.setItem('target', tag.getAttribute('target'))
         window.open('windowEditLink.php', 'janela', 'height=350, width=500, top=50, left=100, scrollbar=no, fullscreen=no');
@@ -405,6 +458,10 @@ function backColorTextNew(color) {
 
 function tamanhoFont(size) {
     document.execCommand("fontsize", true, size);
+}
+
+function fontFaceSel(font) {
+    document.execCommand("fontname", true, font);
 }
 
 function copiar() {
@@ -487,6 +544,13 @@ function insertTagsNew(valor) {
 }
 
 function insertTag(valor, style) {
+    if(valor.toLowerCase() == getTags()){
+        // alert(valor)
+        document.getElementById(valor).setAttribute('style', 'background-color:none;');
+        // selectElem();
+        delElement();
+        exit;
+    }
     selection = window.getSelection().toString();
     // console.log(selection)
     wrappedselection = '<'+valor+' '+style+'>' + selection + '</'+valor+'>';
@@ -509,6 +573,14 @@ function insertH(valor) {
     document.execCommand('insertHTML', false, wrappedselection);
 }
 
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/********************************* Cria e edita tabela INICIO ***************************************************/
+
+
 function insertTableOld() {
     selection = window.getSelection().toString();
     var table = '<table border="1" cellspacing="0" class="tabela"><tr><td><td><td></tr><tr><td><td><td></tr><tr><td><td><td></tr></table>';
@@ -516,7 +588,7 @@ function insertTableOld() {
 }
 
 function insertTable() {
-    window.open("windowInsertTable.php");
+    window.open("windowInsertTable.php", 'janela', 'height=350, width=500, top=50, left=100, scrollbar=no, fullscreen=no');
 }
 
 function insertTableNovo(numRow, numCol) {
@@ -532,6 +604,155 @@ function insertTableNovo(numRow, numCol) {
     table+='</table>';
     document.execCommand('insertHTML', false, table);
 }
+
+function insertTrAfter() {
+    var selecao = window.getSelection().getRangeAt(0).startContainer;
+    selecao = selecao.parentNode
+    console.log(selecao.nodeName+"------------")
+    if(selecao.nodeName=='TD'){
+        var tbody = selecao.parentNode.parentNode;
+        let tr = selecao.parentNode;
+        let obj = document.createElement('tr');
+        var tds = '';
+        for(let i=0;i<tr.children.length;i++){
+            tds+='<td></td>'
+        }
+        obj.innerHTML = tds
+        tbody.insertBefore(obj, tr.nextElementSibling);
+        console.log('Deu certo')
+    }
+}
+
+function insertTrBefore() {
+    var selecao = window.getSelection().getRangeAt(0).startContainer;
+    selecao = selecao.parentNode
+    console.log(selecao.nodeName+"------------")
+    if(selecao.nodeName=='TD'){
+        var tbody = selecao.parentNode.parentNode;
+        let tr = selecao.parentNode;
+        let obj = document.createElement('tr');
+        var tds = '';
+        for(let i=0;i<tr.children.length;i++){
+            tds+='<td></td>'
+        }
+        obj.innerHTML = tds
+        tbody.insertBefore(obj, tr);
+        console.log('Deu certo')
+    
+    }
+}
+
+function insertTdBefore() {
+    var selecao = window.getSelection().getRangeAt(0).startContainer;
+    selecao = selecao.parentNode
+    if(selecao.nodeName=='TD'){
+        var tbody = selecao.parentNode.parentNode;
+        let tr = selecao.parentNode;
+        console.log(',,,,,,,,,,,,,'+tbody.children[0].children.length)
+        let conta = 0;
+        let n = selecao.previousElementSibling
+        for(let j=0; j<tbody.children[0].children.length; j++){
+            if(n!=null){
+                conta++;
+                console.log(conta)
+            }else{
+                break;
+            }
+            n = n.previousElementSibling
+        }
+        console.log('o numero da celula é: '+conta)
+        let obj = [];
+        for(let i=0;i<tbody.children.length;i++){
+            obj.push(document.createElement('td'))
+        }
+        for(let i=0;i<tbody.children.length;i++){
+            console.log(tbody.children[i].children[conta])
+            tbody.children[i].insertBefore(obj[i], tbody.children[i].children[conta])
+        }
+        console.log('Deu certo')
+    }
+}
+
+function insertTdAfter() {
+    var selecao = window.getSelection().getRangeAt(0).startContainer;
+    selecao = selecao.parentNode
+    if(selecao.nodeName=='TD'){
+        var tbody = selecao.parentNode.parentNode;
+        let tr = selecao.parentNode;
+        console.log(',,,,,,,,,,,,,'+tbody.children[0].children.length)
+        let conta = 1;
+        let n = selecao.previousElementSibling
+        for(let j=0; j<tbody.children[0].children.length; j++){
+            if(n!=null){
+                conta++;
+                console.log(conta)
+            }else{
+                break;
+            }
+            n = n.previousElementSibling
+        }
+        console.log('o numero da celula é: '+conta)
+        let obj = [];
+        for(let i=0;i<tbody.children.length;i++){
+            obj.push(document.createElement('td'))
+        }
+        for(let i=0;i<tbody.children.length;i++){
+            console.log(tbody.children[i].children[conta])
+            tbody.children[i].insertBefore(obj[i], tbody.children[i].children[conta])
+        }
+        console.log('Deu certo')
+    }
+}
+
+
+
+//////////////////////////
+/******* Excluir ********/
+//////////////////////////
+
+
+function delTr() {
+    var selecao = window.getSelection().getRangeAt(0).startContainer;
+    selecao = selecao.parentNode
+    // console.log(selecao.nodeName+"------------")
+    if(selecao.nodeName=='TD'){
+        var tbody = selecao.parentNode.parentNode;
+        let tr = selecao.parentNode;
+        tbody.removeChild(tr)
+    }
+}
+
+function delTd() {
+    var selecao = window.getSelection().getRangeAt(0).startContainer;
+    selecao = selecao.parentNode
+    if(selecao.nodeName=='TD'){
+        var tbody = selecao.parentNode.parentNode;
+        let tr = selecao.parentNode;
+        // console.log(',,,,,,,,,,,,,'+tbody.children[0].children.length)
+        let conta = 0;
+        let n = selecao.previousElementSibling
+        for(let j=0; j<tbody.children[0].children.length; j++){
+            if(n!=null){
+                conta++;
+                console.log(conta)
+            }else{
+                break;
+            }
+            n = n.previousElementSibling
+        }
+        // console.log('o numero da celula é: '+conta)
+        for(let i=0;i<tbody.children.length;i++){
+            // console.log(tbody.children[i].children[conta])
+            tbody.children[i].removeChild(tbody.children[i].children[conta])
+        }
+        // console.log('Deu certo')
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/************************************ Cria e edita tabela FIM ***************************************************/
+
+
 
 function insertVideoOld() {
     selection = window.getSelection().toString();
