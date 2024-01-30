@@ -375,6 +375,7 @@
         <div id="tituloEfeitoTexto">Efeitos de texto</div>
         <div id="fecharEfeitosTexto" onclick="fechaJanEfeitosTexto()">X</div>
     </div>
+        <button id="testeSel" onclick="fechaJanEfeitosTexto(), delElement()">Remover efeito</button>
     <div id="listaEfeitoTexto">
         <button onClick="insertTagsNew('rffEfeitoBGText'), fechaJanEfeitosTexto()"><rffEfeitoBGText>rff Efeito BG Text 1</rffEfeitoBGText></button><br>
         <button onClick="insertTagsNew('rffEfeitoBGText2'), fechaJanEfeitosTexto()"><rffEfeitoBGText2>rff Efeito BG Text 2</rffEfeitoBGText2></button><br>
@@ -417,8 +418,8 @@
 
 
 <div id="ferramentas">
-    <!-- <button id="testeSel" onclick="delElement()">Sel</button>
-    <button id="testeSel" onclick="delTr()">delTr</button> -->
+    <!-- <button id="testeSel" onclick="delElement()">Sel</button> -->
+    <!-- <button id="testeSel" onclick="getTags()">getTags</button> -->
     <!-- <button id="testeSel" onclick="fontFaceSel('monospace')">corrie</button> -->
     <select name="typefontface" id="typefontface">
         <option value="padrao" name="padrao" id="padrao"  disabled selected>Font</option>
@@ -436,10 +437,10 @@
     <img src="imgEditor/italic.svg" title="Colocar em Itálico" onClick="italico(), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="italico" />
     <img src="imgEditor/underline.svg" title="Colocar em Sublinhado" onClick="sublinhado(), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="sublinhado" />
     <img src="imgEditor/strikeout.svg" title="Adicionar linha riscada" onClick="addStrikeThrough(), this.setAttribute('style', 'background-color:#cdcdcd;'), selectElem()" id="strike" />
-    <img src="imgEditor/alignright.svg" title="Alinhar a direita" onClick="alinharDireita(), this.setAttribute('style', 'background-color:#cdcdcd;')" />
-    <img src="imgEditor/alignleft.svg" title="Alinhar a esquerda" onClick="alinharEsquerda(), this.setAttribute('style', 'background-color:#cdcdcd;')" />
-    <img src="imgEditor/alignhorizontalcenter.svg" title="Centralizar" onClick="alinharCentro(), this.setAttribute('style', 'background-color:#cdcdcd;')" />
-    <img src="imgEditor/alignblock.svg" title="Justificar" onClick="justificar(), this.setAttribute('style', 'background-color:#cdcdcd;')" />
+    <img src="imgEditor/alignright.svg" title="Alinhar a direita" onClick="alinharDireita()" />
+    <img src="imgEditor/alignleft.svg" title="Alinhar a esquerda" onClick="alinharEsquerda()" />
+    <img src="imgEditor/alignhorizontalcenter.svg" title="Centralizar" onClick="alinharCentro()" />
+    <img src="imgEditor/alignblock.svg" title="Justificar" onClick="justificar()" />
     <select name="tamFont" id="tamFont">
         <?php
             for($i=1; $i<8; $i++){
@@ -481,6 +482,7 @@
         <option value="h3">H3</option>
         <option value="h4">H4</option>
         <option value="h5">H5</option>
+        <option value="reset">Normal</option>
         <option value="padrao" disabled selected name="padrao" id="padrao">Hs</option>
     </select>
     <img src="imgEditor/hangingindent.svg" title="Identar linha" onClick="addIdent()" />

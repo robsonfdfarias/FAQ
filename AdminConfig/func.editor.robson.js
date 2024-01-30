@@ -4,14 +4,18 @@
         //console.log(selectedOption)
         var value = this.value;
         // var param = selectedOption.getAttribute("data-param");
+        this.children['padrao'].selected = true;
+        if(value=='reset'){
+            delElement()
+            return;
+        }
         insertH(value)
         //console.log(value)
         //console.log(param)
-        this.children['padrao'].selected = true;
 
         /*document.getElementById('value').textContent = 'value = ' + value;
         document.getElementById('param').textContent = 'data-param = ' + param;*/
-    });
+    }); 
     document.getElementById('tamFont').addEventListener('change', function() {
         var selectedOption = this.children[this.selectedIndex];
         console.log(selectedOption)
@@ -115,9 +119,19 @@ function delElement(){
     var selecao = window.getSelection().getRangeAt(0).startContainer;
     // console.log(selecao)
     var tag = selecao.parentNode;
+    // if(getTags()=='div'){
+    //     return;
+    // }
     // console.log(tag);
     // console.log(tag.nodeName);
     let pai = tag.parentNode;
+    if(pai.nodeName=='DIV'){
+        console.log(pai.nodeName)
+        console.log(pai.getAttribute('id'))
+        if(pai.getAttribute('id')=='texto' && pai.getAttribute('id')!=null){
+            return;
+        }
+    }
     let p = pai.outerHTML;
     // pai.removeChild(tag)
     var t = tag.outerHTML;
@@ -197,6 +211,8 @@ function getTagName(tag){
         return 'rffefeitobgtext20';
     }else if(tag=='RFFEFEITOBGTEXT21'){
         return 'rffefeitobgtext21';
+    }else if(tag=='RFFEFEITOBGTEXT'){
+        return 'rffefeitobgtext';
     }else if(tag=='RFFTEXTSHADOW'){
         return 'rfftextshadow';
     }else if(tag=='RFFNEONTEXT'){
@@ -217,6 +233,16 @@ function getTagName(tag){
         return 'a';
     }else if(tag=='P'){
         return 'p';
+    }else if(tag=='H1'){
+        return 'h1';
+    }else if(tag=='H2'){
+        return 'h2';
+    }else if(tag=='H3'){
+        return 'h3';
+    }else if(tag=='H4'){
+        return 'h4';
+    }else if(tag=='H5'){
+        return 'h5';
     }
 }
 
@@ -225,6 +251,7 @@ function getTags(){
     // console.log(selecao)
     var tag = selecao.parentNode;
     // console.log('111111111111111111111111-------------'+tag.nodeName)
+    console.log(getTagName(tag.nodeName))
     return getTagName(tag.nodeName)
 }
 
@@ -291,6 +318,8 @@ function returnBtName(ele, node){
         obj='subescrito';
     }else if(ele=='SUP'){
         obj='superescrito';
+    }else if(ele=='RFFEFEITOBGTEXT'){
+        obj='rffEfeitoBGText';
     }else if(ele=='RFFTEXTSHADOW'){
         obj='rffTextShadow';
     }else if(ele=='RFFNEONTEXT'){
