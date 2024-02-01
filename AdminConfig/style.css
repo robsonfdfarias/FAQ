@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'Inter';
-    src: url('fontes/Inter/Inter-VariableFont_slnt\,wght.ttf') format('truetype');
+    src: url('rffeditor/fontes/Inter/Inter-VariableFont_slnt\,wght.ttf') format('truetype');
 }
 @font-face {
     font-family: 'Bebas Neue';
-    src: url('../fontes/BebasNeue-Regular.ttf') format('truetype');
+    src: url('rffeditor/fontes/BebasNeue-Regular.ttf') format('truetype');
 }
 
 *{

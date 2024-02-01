@@ -44,7 +44,7 @@
                             <tr>
                                 <td colspan="2">
                                     <?php
-                                        include_once("editText2.php");
+                                        include_once("rffeditor/editText2.php");
                                     ?>
                                 </td>
                             </tr>
