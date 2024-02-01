@@ -11,7 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notícias</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" type="text/css" href="editorRobsonFarias.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="editorRobsonFarias.css" /> -->
+    <link rel="stylesheet" type="text/css" href="AdminConfig/rffeditor/editorRobsonFarias.css" />
     <link rel="shortcut icon" href="imgs/logo_sei_93x60.ico" type="image/x-icon" />
     <meta property="og:title" content="<?php echo $obj->titulo(); ?>">
     <meta property="og:description" content="<?php echo $obj->resumo(); ?>">

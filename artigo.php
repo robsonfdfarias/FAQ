@@ -19,6 +19,7 @@ $obj->getArtById($id);
     <meta property="og:image:height" content="200">
     <meta property="og:title" content="<?php echo $obj->titulo(); ?>">
     <meta property="og:description" content="<?php echo $obj->resumo(); ?>">
+    <link rel="stylesheet" type="text/css" href="AdminConfig/rffeditor/editorRobsonFarias.css" />
 </head>
 <body>
         <?php include_once("menu.php"); ?>
