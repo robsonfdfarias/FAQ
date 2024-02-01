@@ -1,0 +1,3 @@
+é preciso clonar o repositório https://github.com/robsonfdfarias/rffeditor para dentro de AdminConfig.
+entre na pasta AdminConfig e digite o código abaixo:
+git clone https://github.com/robsonfdfarias/rffeditor
