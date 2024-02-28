@@ -15,7 +15,7 @@
     <div id="geral">
             <?php include_once("menu.php"); ?>
         <div id="central">
-            <div id="top">
+            <div id="top" style="min-height:50px;">
             </div>
 
             <div id="itemdois">

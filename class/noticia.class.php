@@ -47,6 +47,8 @@ class Noticia{
                     $userObj = new User();
                     $linha = $obj->fetchObject();
                     //$this->imgArt = 'imagens/'.$linha->img;
+                    $configArticle = str_replace("../imagens", "imagens", $linha->conteudo);
+                    $configArticle = str_replace("rffeditor/icones", "AdminConfig/rffeditor/icones", $configArticle);
                     $this->titleArt = $linha->titulo;
                     $this->resumoArt = $linha->resumo;
                     $this->artigo = '
@@ -57,7 +59,7 @@ class Noticia{
                         
                         <article>
                             <header id="data">Data da publicação: '.$linha->datacad.'</header>
-                            <p>'.str_replace("../imagens", "imagens", $linha->conteudo).'</p>
+                            <p>'.$configArticle.'</p>
                         </article>
                     ';
                 }else{

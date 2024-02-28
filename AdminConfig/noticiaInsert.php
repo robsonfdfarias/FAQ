@@ -10,6 +10,18 @@
     <title>Formulário de inserção de artigo</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="shortcut icon" href="imgs/logo_sei_93x60.ico" type="image/x-icon" />
+    <style>
+        .teste {
+            background-color: red;
+            width: 100px;
+            height: 50px;
+            /* margin-top: 140px; altura que está do topo */
+            top: 90px; /* altura que vai parar antes do topo */
+            margin-left:-100px;
+            position: sticky;
+            display:none;
+        }
+    </style>
 </head>
 <body>
 <div id="geral">
@@ -21,7 +33,6 @@
                 <!--<div id="tituloLogin">
                     Inserir notícia
                 </div>-->
-                
                 <div id="formInsert">
                     
                         <table>
@@ -34,6 +45,8 @@
                             </tr>
                             <form action="noticiaInsert.submit.php" method="post" id="formulario"  enctype="multipart/form-data" autocomplete="on" onsubmit="return ValidateContactForm();">
                             <tr>
+                
+    <div id="teste" class="teste">ROBSON</div>
                                 <!--<td><span id="nn">Título:</span></td>-->
                                 <td colspan="2"><input type="text" id="titulo" name="titulo" placeholder="Insira o título do artigo" required spellcheck="true"></td>
                             </tr>

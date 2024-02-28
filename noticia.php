@@ -5,7 +5,7 @@
     $obj = new Noticia();
     $obj->getNewsByCat($id);
 ?>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,6 +58,27 @@
         console.log(calcula+" ---");
         elemento.style.paddingTop  = calcula + 'px';
         elemento.style.paddingBottom  = calcula + 'px';*/
+
+        var tabs = document.getElementsByClassName('tabela');
+        console.log(tabs)
+        for(let i=0; i<tabs.length; i++){
+            let tbody = tabs[i].children[0];
+            console.log(tbody.children.length)
+            for(let j=0; j<tbody.children.length; j++){
+                console.log(tbody)
+                let tr = tbody.children[j];
+                for(let r=0; r<tr.children.length; r++){
+                    console.log(tr)
+                    let td = tr.children[r];
+                    td.setAttribute('contenteditable', 'false');
+                    td.setAttribute('spellcheck', 'false');
+                }
+            }
+        }
+        // tabs.foreach(function (nome, i){
+        //     nome.setAttribute('contenteditable', 'false');
+        //     nome.setAttribute('spellcheck', 'false');
+        // });
     </script>
 </body>
 </html>
